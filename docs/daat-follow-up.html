@@ -335,38 +335,53 @@
     <div style="background: #f5f5f5; padding: 0.5cm; font-family: monospace; font-size: 9pt; white-space: pre; overflow-x: auto;">
 ┌─────────────────────────────────────────────────────────────────────────────┐
 │                              UTILISATEURS                                    │
-│     Animateurs, Directeurs, Managers          Administrateurs               │
-└──────────────────────────┬─────────────────────────────┬────────────────────┘
-                           │                             │
-                           ▼                             ▼
-┌──────────────────────────────────┐    ┌──────────────────────────────────────┐
-│     FOLLOWUP-CLIENT              │    │     FOLLOWUP-ADMIN                   │
-│     (Microfrontend Terrain)      │    │     (Microfrontend Backoffice)       │
-│     Angular 15 + Single-SPA      │    │     Angular 15 + Single-SPA          │
-│     eai-lib-material             │    │     eai-lib-material                 │
-└──────────────────────────┬───────┘    └──────────────────┬───────────────────┘
-                           │                               │
-                           └───────────────┬───────────────┘
-                                           │ HTTPS / REST API / JWT
-                                           ▼
-                           ┌───────────────────────────────────────┐
-                           │         FOLLOWUP-SERVEUR              │
-                           │         (Backend API - Hexagonal)     │
-                           │         Socle EAI / Spring Boot / J17 │
-                           └───────────────┬───────────────────────┘
-                                           │
-               ┌───────────────────────────┼───────────────────────────┐
-               │                           │                           │
-               ▼                           ▼                           ▼
-┌──────────────────────┐    ┌──────────────────────┐    ┌──────────────────────┐
-│   PostgreSQL         │    │   ASAL               │    │   Keycloak           │
-│   (Base de donnees)  │    │   (Annuaire)         │    │   (Auth)             │
-└──────────────────────┘    └──────────────────────┘    └──────────────────────┘
-               │                                                    │
-               │            ┌──────────────────────┐               │
-               └───────────►│   Apache Kafka       │◄──────────────┘
-                            │   (Messaging)        │
-                            └──────────────────────┘
+│         Animateurs, Directeurs, Managers, Administrateurs                   │
+└─────────────────────────────────────┬───────────────────────────────────────┘
+                                      │ HTTPS/TLS
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    ROOT CONFIG (Shell) - Port 9000                           │
+│                    msiboa-cc-mf-followup-root                                │
+│         Single-SPA 5.9 + SystemJS + Keycloak Init + Import Maps             │
+└─────────────────────────────────────┬───────────────────────────────────────┘
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    LAYOUT MFE - Port 9099                                    │
+│                    msiboa-cc-mf-followup-layout                              │
+│         Angular 20 - Sidebar + Header + Zone #content                        │
+└─────────────────────────────────────┬───────────────────────────────────────┘
+                                      │
+          ┌───────────────────────────┼───────────────────────────┐
+          ▼                                                       ▼
+┌─────────────────────────────┐               ┌───────────────────────────────┐
+│  CLIENT MFE - Port 9080     │               │  ADMIN MFE - Port 9080        │
+│  msiboa-cc-mf-followup-     │               │  msiboa-cc-mf-followup-       │
+│  client                     │               │  admin                        │
+│  Angular 20 + Single-SPA    │               │  Angular 20 + Single-SPA      │
+│  eai-lib-material 0.8.1     │               │  eai-lib-material 0.8.1       │
+└─────────────┬───────────────┘               └───────────────┬───────────────┘
+              │                                               │
+              └───────────────────────┬───────────────────────┘
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    UTILITY - Port 8080                                       │
+│                    msiboa-cc-mf-followup-utility                             │
+│         JavaScript + RxJS 7.8 - session$ + i18n (FR/EN) + Images            │
+└─────────────────────────────────────┬───────────────────────────────────────┘
+                                      │ REST API (JSON + JWT)
+                                      ▼
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                    FOLLOWUP-SERVEUR - Port 8080                              │
+│                    msiboa-oc-api-followup-serveur                            │
+│         Socle EAI + Spring Boot 3.x + Java 21 (Architecture Hexagonale)     │
+└─────────────────────────────────────┬───────────────────────────────────────┘
+                                      │
+               ┌──────────────────────┼──────────────────────┐
+               ▼                      ▼                      ▼
+┌──────────────────────┐  ┌───────────────────┐  ┌────────────────────────────┐
+│   PostgreSQL 15      │  │   Keycloak 26.1   │  │   SERVICES EXTERNES        │
+│   (Base de donnees)  │  │   (Auth SSO)      │  │   ASAL, Kafka, LDAP        │
+└──────────────────────┘  └───────────────────┘  └────────────────────────────┘
     </div>
 
     <h3>5.2 Description des services applicatifs</h3>
@@ -384,15 +399,33 @@
             <td>N</td>
         </tr>
         <tr>
+            <td>msiboa-cc-mf-followup-root</td>
+            <td>Haute</td>
+            <td>Shell Container (Root Config) - Orchestration Single-SPA, Keycloak init</td>
+            <td>N</td>
+        </tr>
+        <tr>
+            <td>msiboa-cc-mf-followup-layout</td>
+            <td>Haute</td>
+            <td>Layout partage - Sidebar, Header, zone #content</td>
+            <td>N</td>
+        </tr>
+        <tr>
             <td>msiboa-cc-mf-followup-client</td>
             <td>Haute</td>
-            <td>Frontend terrain - Saisie et consultation observations (PWA)</td>
+            <td>Frontend terrain - Saisie et consultation observations (Angular 20)</td>
             <td>N</td>
         </tr>
         <tr>
             <td>msiboa-cc-mf-followup-admin</td>
             <td>Moyenne</td>
-            <td>Frontend backoffice - Administration et parametrage</td>
+            <td>Frontend backoffice - Administration et parametrage (Angular 20)</td>
+            <td>N</td>
+        </tr>
+        <tr>
+            <td>msiboa-cc-mf-followup-utility</td>
+            <td>Moyenne</td>
+            <td>Shared Library - session$ (RxJS), i18n (FR/EN), images</td>
             <td>N</td>
         </tr>
     </table>
@@ -574,7 +607,7 @@
         </tr>
         <tr>
             <td>Utilisateurs</td>
-            <td>~500</td>
+            <td>~800</td>
             <td>Mensuelle</td>
             <td>+10%</td>
         </tr>
@@ -638,7 +671,7 @@
     <h2>7. UTILISATEURS</h2>
 
     <h3>7.1 Localisation</h3>
-    <p>Le nombre d'utilisateurs disposant de l'outil Follow Up est estime a <strong>~500 utilisateurs</strong>. Cela concerne les entites suivantes :</p>
+    <p>Le nombre d'utilisateurs disposant de l'outil Follow Up est estime a <strong>~800 utilisateurs</strong>. Cela concerne les entites suivantes :</p>
     <ul>
         <li>Reseau d'agences (Directeurs d'agence, Conseillers)</li>
         <li>Centres d'Affaires - CAF (Directeurs CAF, Charges d'affaires)</li>
@@ -648,7 +681,7 @@
     </ul>
 
     <h3>7.2 Postes declares</h3>
-    <p>Nombre de postes utilisateurs : <strong>~500</strong></p>
+    <p>Nombre de postes utilisateurs : <strong>~800</strong></p>
 
     <h3>7.3 Postes simultanes</h3>
     <p>Nombre de postes utilisateurs concurrents maximum : <strong>~100</strong></p>
@@ -764,23 +797,43 @@
         </tr>
         <tr>
             <td>Framework Frontend</td>
-            <td>Angular + TypeScript</td>
-            <td>15.x / 4.9.x</td>
+            <td>Angular (Standalone Components) + TypeScript</td>
+            <td>20.3.16 / 5.8.3</td>
         </tr>
         <tr>
             <td>Architecture Microfrontend</td>
-            <td>Single-SPA</td>
-            <td>8.x</td>
+            <td>Single-SPA + single-spa-angular</td>
+            <td>5.9.3 / 9.2.0</td>
+        </tr>
+        <tr>
+            <td>Module Loading</td>
+            <td>SystemJS + Import Maps</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>Bundling</td>
+            <td>Webpack + @angular-builders/custom-webpack</td>
+            <td>5.103 / 20.0.0</td>
         </tr>
         <tr>
             <td>UI Components</td>
             <td>eai-lib-material (Socle EAI)</td>
-            <td>0.2.x</td>
+            <td>0.8.1</td>
+        </tr>
+        <tr>
+            <td>Authentification Frontend</td>
+            <td>Keycloak JS</td>
+            <td>26.1.2</td>
         </tr>
         <tr>
             <td>Internationalisation</td>
-            <td>@ngx-translate</td>
-            <td>14.x</td>
+            <td>@ngx-translate/core + multi-http-loader</td>
+            <td>17.0.0 / 19.0.3</td>
+        </tr>
+        <tr>
+            <td>Tests Frontend</td>
+            <td>Jest</td>
+            <td>29.7.0</td>
         </tr>
     </table>
 
@@ -799,7 +852,7 @@
         <tr>
             <td>Runtime</td>
             <td>Java (OpenJDK)</td>
-            <td>17 LTS</td>
+            <td>21 LTS</td>
         </tr>
         <tr>
             <td>Framework</td>
@@ -880,7 +933,7 @@
         <tr>
             <td>Backend API</td>
             <td>Linux</td>
-            <td>Java 17, Spring Boot, Socle EAI</td>
+            <td>Java 21, Spring Boot, Socle EAI</td>
             <td>4 vCPU</td>
             <td>8 Go</td>
             <td>50 Go</td>
@@ -943,10 +996,31 @@
         </tr>
         <tr>
             <td>Utilisateur</td>
-            <td>Frontend (Nginx)</td>
-            <td>443</td>
+            <td>Root Config (Shell)</td>
+            <td>9000</td>
             <td>HTTPS</td>
-            <td>Acces application web</td>
+            <td>Acces application web (orchestrateur MFE)</td>
+        </tr>
+        <tr>
+            <td>Root Config</td>
+            <td>Layout MFE</td>
+            <td>9099</td>
+            <td>HTTPS</td>
+            <td>Chargement Sidebar/Header</td>
+        </tr>
+        <tr>
+            <td>Layout MFE</td>
+            <td>Client/Admin MFE</td>
+            <td>9080</td>
+            <td>HTTPS</td>
+            <td>Chargement Microfrontends</td>
+        </tr>
+        <tr>
+            <td>MFEs</td>
+            <td>Utility</td>
+            <td>8080</td>
+            <td>HTTPS</td>
+            <td>Ressources partagees (i18n, session$)</td>
         </tr>
         <tr>
             <td>Frontend</td>
@@ -1003,19 +1077,38 @@
     <table>
         <tr>
             <th>Application</th>
-            <th>URL (proposition)</th>
+            <th>Repository</th>
+            <th>URL / Port</th>
+        </tr>
+        <tr>
+            <td>Root Config (Shell)</td>
+            <td>msiboa-cc-mf-followup-root</td>
+            <td>Container orchestrateur (port 9000)</td>
+        </tr>
+        <tr>
+            <td>Layout Partage</td>
+            <td>msiboa-cc-mf-followup-layout</td>
+            <td>Sidebar/Header (port 9099)</td>
         </tr>
         <tr>
             <td>Frontend Terrain</td>
-            <td>www.followup.bmcebank.co.ma</td>
+            <td>msiboa-cc-mf-followup-client</td>
+            <td>www.followup.bmcebank.co.ma (port 9080)</td>
         </tr>
         <tr>
             <td>Frontend Admin</td>
-            <td>www.followup-admin.bmcebank.co.ma</td>
+            <td>msiboa-cc-mf-followup-admin</td>
+            <td>www.followup-admin.bmcebank.co.ma (port 9080)</td>
+        </tr>
+        <tr>
+            <td>Utility (Shared)</td>
+            <td>msiboa-cc-mf-followup-utility</td>
+            <td>Ressources partagees (port 8080)</td>
         </tr>
         <tr>
             <td>Backend API</td>
-            <td>www.followup-api.bmcebank.co.ma</td>
+            <td>msiboa-oc-api-followup-serveur</td>
+            <td>www.followup-api.bmcebank.co.ma (port 8080)</td>
         </tr>
     </table>
 

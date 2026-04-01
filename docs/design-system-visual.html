@@ -1,0 +1,1983 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EAI Design System - Composants Visuels</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #0d6efd;
+      --primary-hover: #0b5ed7;
+      --secondary: #6c757d;
+      --success: #198754;
+      --success-light: #d1e7dd;
+      --warning: #ffc107;
+      --warning-light: #fff3cd;
+      --danger: #dc3545;
+      --danger-light: #f8d7da;
+      --info: #0dcaf0;
+      --info-light: #cff4fc;
+      --light: #f8f9fa;
+      --dark: #212529;
+      --gray: #6c757d;
+      --gray-light: #e9ecef;
+      --border: #dee2e6;
+      --shadow: 0 2px 8px rgba(0,0,0,0.1);
+      --radius: 8px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .header h1 { font-size: 2.5rem; margin-bottom: 10px; }
+    .header p { opacity: 0.9; font-size: 1.1rem; }
+
+    /* Navigation */
+    .nav {
+      background: white;
+      padding: 15px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      justify-content: center;
+    }
+    .nav a {
+      padding: 8px 16px;
+      background: #f0f0f0;
+      color: #333;
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      transition: all 0.2s;
+    }
+    .nav a:hover { background: var(--primary); color: white; }
+
+    /* Container */
+    .container { max-width: 1200px; margin: 0 auto; padding: 30px 20px; }
+
+    /* Section */
+    .section {
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+    .section-header {
+      background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+      padding: 20px 25px;
+      border-bottom: 1px solid var(--border);
+    }
+    .section-header h2 {
+      font-size: 1.3rem;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-header h2 .icon {
+      width: 35px;
+      height: 35px;
+      background: var(--primary);
+      color: white;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+    }
+    .section-body { padding: 25px; }
+
+    /* Subsection */
+    .subsection {
+      margin-bottom: 25px;
+      padding-bottom: 25px;
+      border-bottom: 1px dashed var(--border);
+    }
+    .subsection:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+    .subsection h3 {
+      font-size: 0.95rem;
+      color: var(--gray);
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    /* Flex row */
+    .row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+    .row.start { align-items: flex-start; }
+    .col { flex: 1; min-width: 200px; }
+
+    /* ==================== BUTTONS ==================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: inherit;
+    }
+    .btn-primary { background: var(--primary); color: white; }
+    .btn-primary:hover { background: var(--primary-hover); }
+    .btn-secondary { background: var(--secondary); color: white; }
+    .btn-success { background: var(--success); color: white; }
+    .btn-danger { background: var(--danger); color: white; }
+    .btn-warning { background: var(--warning); color: #333; }
+    .btn-info { background: var(--info); color: #333; }
+    .btn-light { background: var(--light); color: #333; border: 1px solid var(--border); }
+    .btn-dark { background: var(--dark); color: white; }
+    .btn-link { background: transparent; color: var(--primary); text-decoration: underline; }
+    .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+    .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .btn-lg { padding: 14px 28px; font-size: 1rem; }
+    .btn-sm { padding: 6px 12px; font-size: 0.8rem; }
+    .btn-icon-only { padding: 10px; }
+    .btn .spinner {
+      width: 16px; height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: white;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ==================== INPUTS ==================== */
+    .form-group { margin-bottom: 0; }
+    .form-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-bottom: 6px;
+      color: #333;
+    }
+    .form-group label .required { color: var(--danger); }
+    .input-wrapper { position: relative; }
+    .form-control {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-family: inherit;
+      transition: all 0.2s;
+      background: white;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(13,110,253,0.15);
+    }
+    .form-control.error { border-color: var(--danger); }
+    .form-control:disabled { background: #f5f5f5; cursor: not-allowed; }
+    .form-control.with-icon { padding-left: 40px; }
+    .input-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray);
+      font-size: 1.2rem;
+    }
+    .error-msg { color: var(--danger); font-size: 0.8rem; margin-top: 4px; }
+    .input-number {
+      display: flex;
+      align-items: center;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .input-number input {
+      border: none;
+      text-align: center;
+      width: 60px;
+      padding: 10px;
+      font-size: 0.9rem;
+    }
+    .input-number button {
+      background: var(--light);
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .input-number button:hover { background: var(--gray-light); }
+
+    /* ==================== DROPDOWNS ==================== */
+    .dropdown {
+      position: relative;
+      min-width: 200px;
+    }
+    .dropdown-toggle {
+      width: 100%;
+      padding: 10px 14px;
+      padding-right: 35px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      background: white;
+      text-align: left;
+      cursor: pointer;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .dropdown-toggle::after {
+      content: 'expand_more';
+      font-family: 'Material Icons';
+      color: var(--gray);
+    }
+    .dropdown-menu {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      margin-top: 4px;
+      box-shadow: var(--shadow);
+      z-index: 100;
+      max-height: 200px;
+      overflow-y: auto;
+    }
+    .dropdown-item {
+      padding: 10px 14px;
+      cursor: pointer;
+      font-size: 0.9rem;
+    }
+    .dropdown-item:hover { background: var(--light); }
+    .dropdown-item.selected { background: #e7f1ff; color: var(--primary); }
+    .dropdown-search {
+      padding: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    .dropdown-search input {
+      width: 100%;
+      padding: 8px 10px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      font-size: 0.85rem;
+    }
+
+    /* Tags multiselect */
+    .tags-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      padding: 8px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      min-height: 42px;
+      background: white;
+    }
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 4px 10px;
+      background: #e7f1ff;
+      color: var(--primary);
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+    .tag .close {
+      cursor: pointer;
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+    .tag .close:hover { opacity: 1; }
+
+    /* ==================== TEXTAREA ==================== */
+    textarea.form-control {
+      min-height: 100px;
+      resize: vertical;
+    }
+
+    /* ==================== CHECKBOX & SWITCH ==================== */
+    .checkbox-group, .switch-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      cursor: pointer;
+    }
+    .checkbox {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--border);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s;
+    }
+    .checkbox.checked {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+    .checkbox .material-icons { font-size: 16px; }
+    .switch {
+      width: 44px;
+      height: 24px;
+      background: var(--gray-light);
+      border-radius: 12px;
+      position: relative;
+      transition: all 0.2s;
+    }
+    .switch::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: white;
+      border-radius: 50%;
+      top: 2px;
+      left: 2px;
+      transition: all 0.2s;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    }
+    .switch.checked {
+      background: var(--primary);
+    }
+    .switch.checked::after {
+      left: 22px;
+    }
+
+    /* ==================== RADIO ==================== */
+    .radio-group { display: flex; gap: 20px; }
+    .radio-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+    .radio {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .radio.checked {
+      border-color: var(--primary);
+    }
+    .radio.checked::after {
+      content: '';
+      width: 10px;
+      height: 10px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+
+    /* ==================== ALERTS ==================== */
+    .alert {
+      padding: 15px 20px;
+      border-radius: 8px;
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    .alert-success { background: var(--success-light); color: #0f5132; border-left: 4px solid var(--success); }
+    .alert-warning { background: var(--warning-light); color: #664d03; border-left: 4px solid var(--warning); }
+    .alert-danger { background: var(--danger-light); color: #842029; border-left: 4px solid var(--danger); }
+    .alert-info { background: var(--info-light); color: #055160; border-left: 4px solid var(--info); }
+    .alert .material-icons { font-size: 1.3rem; }
+    .alert-content { flex: 1; }
+    .alert-close { cursor: pointer; opacity: 0.7; }
+    .alert-close:hover { opacity: 1; }
+    .alert-actions { margin-top: 10px; display: flex; gap: 10px; }
+
+    /* Toast */
+    .toast-container {
+      position: relative;
+      height: 120px;
+      background: #f0f0f0;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .toast {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 12px 16px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+    .toast.success { border-left: 4px solid var(--success); }
+    .toast.error { border-left: 4px solid var(--danger); }
+
+    /* ==================== MODALS ==================== */
+    .modal-preview {
+      background: rgba(0,0,0,0.5);
+      padding: 30px;
+      border-radius: 8px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    .modal {
+      background: white;
+      border-radius: 12px;
+      width: 100%;
+      max-width: 450px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+      overflow: hidden;
+    }
+    .modal-header {
+      padding: 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+    }
+    .modal-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    .modal-icon.warning { background: var(--warning-light); color: #997404; }
+    .modal-icon.danger { background: var(--danger-light); color: var(--danger); }
+    .modal-icon.success { background: var(--success-light); color: var(--success); }
+    .modal-icon.info { background: var(--info-light); color: #0aa2c0; }
+    .modal-title { font-size: 1.1rem; font-weight: 600; }
+    .modal-subtitle { font-size: 0.9rem; color: var(--gray); margin-top: 4px; }
+    .modal-close {
+      margin-left: auto;
+      cursor: pointer;
+      color: var(--gray);
+    }
+    .modal-body { padding: 20px; color: #555; font-size: 0.95rem; }
+    .modal-footer {
+      padding: 15px 20px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: flex-end;
+      gap: 10px;
+    }
+
+    /* ==================== LOADER ==================== */
+    .loader-demo {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      justify-content: center;
+      padding: 30px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+    .loader-item { text-align: center; }
+    .loader-item span { display: block; margin-top: 10px; font-size: 0.85rem; color: var(--gray); }
+    .spinner-border {
+      width: 40px;
+      height: 40px;
+      border: 4px solid var(--gray-light);
+      border-top-color: var(--primary);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    .spinner-border.sm { width: 24px; height: 24px; border-width: 3px; }
+    .spinner-border.lg { width: 56px; height: 56px; border-width: 5px; }
+    .spinner-grow {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      border-radius: 50%;
+      animation: grow 0.75s linear infinite;
+    }
+    @keyframes grow {
+      0% { transform: scale(0); opacity: 1; }
+      100% { transform: scale(1); opacity: 0; }
+    }
+
+    /* ==================== TABLE ==================== */
+    .table-container {
+      overflow-x: auto;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    th, td {
+      padding: 12px 15px;
+      text-align: left;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: #f8f9fa;
+      font-weight: 600;
+      color: #555;
+    }
+    th.sortable {
+      cursor: pointer;
+      user-select: none;
+    }
+    th.sortable:hover { background: #e9ecef; }
+    th .sort-icon { font-size: 1rem; vertical-align: middle; margin-left: 4px; }
+    tr:hover { background: #f8f9fa; }
+    tr.selected { background: #e7f1ff; }
+    .table-checkbox { width: 40px; text-align: center; }
+    .table-actions { white-space: nowrap; }
+    .pagination {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 15px;
+      background: #f8f9fa;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+    .pagination-pages {
+      display: flex;
+      gap: 5px;
+    }
+    .pagination-pages button {
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--border);
+      background: white;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .pagination-pages button.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    /* ==================== TABS ==================== */
+    .tabs {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .tabs-header {
+      display: flex;
+      background: #f8f9fa;
+      border-bottom: 1px solid var(--border);
+    }
+    .tab {
+      padding: 12px 20px;
+      cursor: pointer;
+      font-size: 0.9rem;
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: all 0.2s;
+    }
+    .tab:hover { background: #e9ecef; }
+    .tab.active {
+      background: white;
+      border-bottom-color: var(--primary);
+      color: var(--primary);
+      font-weight: 500;
+    }
+    .tabs-content {
+      padding: 20px;
+      background: white;
+    }
+    /* Steps */
+    .steps-header {
+      display: flex;
+      justify-content: space-between;
+      padding: 20px;
+      background: #f8f9fa;
+    }
+    .step {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+    }
+    .step-number {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: var(--gray-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 600;
+      font-size: 0.85rem;
+    }
+    .step.active .step-number {
+      background: var(--primary);
+      color: white;
+    }
+    .step.completed .step-number {
+      background: var(--success);
+      color: white;
+    }
+
+    /* ==================== ACCORDION ==================== */
+    .accordion {
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .accordion-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .accordion-item:last-child { border-bottom: none; }
+    .accordion-header {
+      padding: 15px 20px;
+      background: #f8f9fa;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 500;
+    }
+    .accordion-header:hover { background: #e9ecef; }
+    .accordion-header.open { background: white; }
+    .accordion-body {
+      padding: 20px;
+      background: white;
+      border-top: 1px solid var(--border);
+    }
+    .accordion-item.disabled .accordion-header {
+      opacity: 0.5;
+      cursor: not-allowed;
+    }
+    .accordion-item.error .accordion-header {
+      color: var(--danger);
+    }
+
+    /* ==================== BADGES ==================== */
+    .badge {
+      display: inline-block;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+    .badge-primary { background: var(--primary); color: white; }
+    .badge-secondary { background: var(--secondary); color: white; }
+    .badge-success { background: var(--success); color: white; }
+    .badge-danger { background: var(--danger); color: white; }
+    .badge-warning { background: var(--warning); color: #333; }
+    .badge-info { background: var(--info); color: #333; }
+    .badge-light { background: var(--light); color: #333; }
+    .badge-pill { border-radius: 20px; }
+    .badge-outline {
+      background: transparent;
+      border: 1px solid currentColor;
+    }
+    /* Badge on element */
+    .badge-container {
+      position: relative;
+      display: inline-block;
+    }
+    .badge-floating {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      min-width: 20px;
+      height: 20px;
+      border-radius: 10px;
+      font-size: 0.7rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* ==================== CARDS ==================== */
+    .card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+    .card-header {
+      padding: 15px 20px;
+      border-bottom: 1px solid var(--border);
+      font-weight: 600;
+    }
+    .card-body { padding: 20px; }
+    .card-footer {
+      padding: 15px 20px;
+      border-top: 1px solid var(--border);
+      background: #f8f9fa;
+    }
+    /* Stats cards */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 15px;
+    }
+    .stat-card {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .stat-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+    }
+    .stat-icon.primary { background: #e7f1ff; color: var(--primary); }
+    .stat-icon.success { background: var(--success-light); color: var(--success); }
+    .stat-icon.warning { background: var(--warning-light); color: #997404; }
+    .stat-icon.danger { background: var(--danger-light); color: var(--danger); }
+    .stat-value { font-size: 1.5rem; font-weight: 700; }
+    .stat-label { font-size: 0.85rem; color: var(--gray); }
+
+    /* ==================== BREADCRUMBS ==================== */
+    .breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.9rem;
+      padding: 12px 16px;
+      background: #f8f9fa;
+      border-radius: 8px;
+    }
+    .breadcrumb-item { color: var(--gray); }
+    .breadcrumb-item a { color: var(--primary); text-decoration: none; }
+    .breadcrumb-item a:hover { text-decoration: underline; }
+    .breadcrumb-item.active { color: #333; font-weight: 500; }
+    .breadcrumb-separator { color: var(--gray); }
+
+    /* ==================== TITLE ==================== */
+    .page-title {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+    }
+    .page-title h1 { font-size: 1.5rem; margin-bottom: 4px; }
+    .page-title p { color: var(--gray); font-size: 0.9rem; }
+
+    /* ==================== UPLOAD ==================== */
+    .upload-zone {
+      border: 2px dashed var(--border);
+      border-radius: 8px;
+      padding: 40px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .upload-zone:hover {
+      border-color: var(--primary);
+      background: #f8f9fa;
+    }
+    .upload-zone .material-icons {
+      font-size: 3rem;
+      color: var(--gray);
+      margin-bottom: 10px;
+    }
+    .upload-zone p { color: var(--gray); }
+    .file-list { margin-top: 15px; }
+    .file-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 15px;
+      background: #f8f9fa;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+    .file-item .file-icon { color: var(--primary); }
+    .file-item .file-info { flex: 1; }
+    .file-item .file-name { font-size: 0.9rem; }
+    .file-item .file-size { font-size: 0.8rem; color: var(--gray); }
+    .file-item .file-remove { color: var(--danger); cursor: pointer; }
+
+    /* ==================== PHONE INPUT ==================== */
+    .phone-input {
+      display: flex;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .phone-prefix {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      background: #f8f9fa;
+      border-right: 1px solid var(--border);
+      cursor: pointer;
+    }
+    .phone-prefix img {
+      width: 24px;
+      height: 16px;
+      object-fit: cover;
+      border-radius: 2px;
+    }
+    .phone-input input {
+      flex: 1;
+      border: none;
+      padding: 10px 14px;
+      font-size: 0.9rem;
+    }
+
+    /* ==================== NOTIFICATION ==================== */
+    .notification {
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+      padding: 20px;
+      max-width: 350px;
+      position: relative;
+    }
+    .notification-header {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      margin-bottom: 15px;
+    }
+    .notification-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .notification-icon.info { background: var(--info-light); color: #0aa2c0; }
+    .notification-title { font-weight: 600; }
+    .notification-text { color: #555; font-size: 0.9rem; margin-bottom: 15px; }
+    .notification-actions { display: flex; gap: 10px; }
+    .notification-close {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      cursor: pointer;
+      color: var(--gray);
+    }
+
+    /* ==================== TOOLTIP ==================== */
+    .tooltip-demo {
+      display: flex;
+      gap: 30px;
+      justify-content: center;
+      padding: 40px;
+    }
+    .tooltip-item {
+      position: relative;
+      padding: 10px 20px;
+      background: #f0f0f0;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .tooltip {
+      position: absolute;
+      background: #333;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      white-space: nowrap;
+    }
+    .tooltip.top { bottom: 100%; left: 50%; transform: translateX(-50%); margin-bottom: 8px; }
+    .tooltip.bottom { top: 100%; left: 50%; transform: translateX(-50%); margin-top: 8px; }
+    .tooltip.left { right: 100%; top: 50%; transform: translateY(-50%); margin-right: 8px; }
+    .tooltip.right { left: 100%; top: 50%; transform: translateY(-50%); margin-left: 8px; }
+    .tooltip::after {
+      content: '';
+      position: absolute;
+      border: 6px solid transparent;
+    }
+    .tooltip.top::after { top: 100%; left: 50%; transform: translateX(-50%); border-top-color: #333; }
+    .tooltip.bottom::after { bottom: 100%; left: 50%; transform: translateX(-50%); border-bottom-color: #333; }
+
+    /* ==================== FILTER ==================== */
+    .filter-bar {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 15px;
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+    }
+    .filter-search {
+      flex: 1;
+      position: relative;
+    }
+    .filter-search input {
+      width: 100%;
+      padding: 10px 14px 10px 40px;
+      border: 1px solid var(--border);
+      border-radius: 6px;
+    }
+    .filter-search .material-icons {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--gray);
+    }
+    .filter-tags {
+      display: flex;
+      gap: 8px;
+    }
+    .filter-tag {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: #e7f1ff;
+      color: var(--primary);
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+
+    /* Footer */
+    .footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 30px;
+      margin-top: 50px;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .row { flex-direction: column; }
+      .col { min-width: 100%; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="header">
+    <h1>EAI Design System</h1>
+    <p>Composants UI - Exemples Visuels</p>
+  </header>
+
+  <nav class="nav">
+    <a href="#buttons">Boutons</a>
+    <a href="#inputs">Champs</a>
+    <a href="#dropdowns">Listes</a>
+    <a href="#checks">Cases</a>
+    <a href="#alerts">Alertes</a>
+    <a href="#modals">Modales</a>
+    <a href="#loaders">Loaders</a>
+    <a href="#tables">Tableaux</a>
+    <a href="#tabs">Onglets</a>
+    <a href="#accordion">Accordéon</a>
+    <a href="#badges">Badges</a>
+    <a href="#cards">Cartes</a>
+    <a href="#misc">Autres</a>
+  </nav>
+
+  <div class="container">
+
+    <!-- BUTTONS -->
+    <section id="buttons" class="section">
+      <div class="section-header">
+        <h2><span class="icon material-icons">smart_button</span> Boutons</h2>
+      </div>
+      <div class="section-body">
+        <div class="subsection">
+          <h3>Couleurs / Types</h3>
+          <div class="row">
+            <button class="btn btn-primary">Primary</button>
+            <button class="btn btn-secondary">Secondary</button>
+            <button class="btn btn-success">Success</button>
+            <button class="btn btn-danger">Danger</button>
+            <button class="btn btn-warning">Warning</button>
+            <button class="btn btn-info">Info</button>
+            <button class="btn btn-light">Light</button>
+            <button class="btn btn-dark">Dark</button>
+            <button class="btn btn-link">Link</button>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Avec Icônes</h3>
+          <div class="row">
+            <button class="btn btn-primary"><span class="material-icons">add</span> Ajouter</button>
+            <button class="btn btn-success"><span class="material-icons">check</span> Valider</button>
+            <button class="btn btn-danger"><span class="material-icons">delete</span> Supprimer</button>
+            <button class="btn btn-info"><span class="material-icons">search</span> Rechercher</button>
+            <button class="btn btn-warning"><span class="material-icons">edit</span> Modifier</button>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>États</h3>
+          <div class="row">
+            <button class="btn btn-primary">Normal</button>
+            <button class="btn btn-primary" disabled>Désactivé</button>
+            <button class="btn btn-primary"><span class="spinner"></span> Chargement...</button>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Tailles</h3>
+          <div class="row">
+            <button class="btn btn-primary btn-sm">Petit</button>
+            <button class="btn btn-primary">Normal</button>
+            <button class="btn btn-primary btn-lg">Grand</button>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Variantes</h3>
+          <div class="row">
+            <button class="btn btn-outline">Outline</button>
+            <button class="btn btn-icon-only btn-primary"><span class="material-icons">favorite</span></button>
+            <button class="btn btn-icon-only btn-danger"><span class="material-icons">close</span></button>
+            <button class="btn btn-icon-only btn-success"><span class="material-icons">check</span></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INPUTS -->
+    <section id="inputs" class="section">
+      <div class="section-header">
+        <h2><span class="icon material-icons">text_fields</span> Champs de saisie</h2>
+      </div>
+      <div class="section-body">
+        <div class="subsection">
+          <h3>Types de champs</h3>
+          <div class="row start">
+            <div class="col">
+              <div class="form-group">
+                <label>Texte simple</label>
+                <input type="text" class="form-control" placeholder="Entrez du texte...">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" placeholder="exemple@email.com">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Mot de passe</label>
+                <input type="password" class="form-control" placeholder="••••••••">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Avec icônes</h3>
+          <div class="row start">
+            <div class="col">
+              <div class="form-group">
+                <label>Recherche</label>
+                <div class="input-wrapper">
+                  <span class="material-icons input-icon">search</span>
+                  <input type="text" class="form-control with-icon" placeholder="Rechercher...">
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Email</label>
+                <div class="input-wrapper">
+                  <span class="material-icons input-icon">email</span>
+                  <input type="email" class="form-control with-icon" placeholder="Email">
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Utilisateur</label>
+                <div class="input-wrapper">
+                  <span class="material-icons input-icon">person</span>
+                  <input type="text" class="form-control with-icon" placeholder="Nom d'utilisateur">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>États</h3>
+          <div class="row start">
+            <div class="col">
+              <div class="form-group">
+                <label>Normal</label>
+                <input type="text" class="form-control" value="Valeur normale">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Obligatoire <span class="required">*</span></label>
+                <input type="text" class="form-control" placeholder="Champ requis">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Erreur</label>
+                <input type="text" class="form-control error" value="Valeur invalide">
+                <div class="error-msg">Ce champ est invalide</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Désactivé</label>
+                <input type="text" class="form-control" value="Non modifiable" disabled>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Champ numérique avec stepper</h3>
+          <div class="row">
+            <div class="form-group">
+              <label>Quantité</label>
+              <div class="input-number">
+                <button>−</button>
+                <input type="text" value="10">
+                <button>+</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Date et heure</h3>
+          <div class="row start">
+            <div class="col">
+              <div class="form-group">
+                <label>Date</label>
+                <input type="date" class="form-control">
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Date et heure</label>
+                <input type="datetime-local" class="form-control">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Zone de texte</h3>
+          <div class="form-group">
+            <label>Description</label>
+            <textarea class="form-control" placeholder="Entrez une description détaillée..."></textarea>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DROPDOWNS -->
+    <section id="dropdowns" class="section">
+      <div class="section-header">
+        <h2><span class="icon material-icons">arrow_drop_down_circle</span> Listes déroulantes</h2>
+      </div>
+      <div class="section-body">
+        <div class="subsection">
+          <h3>Dropdown simple</h3>
+          <div class="row start">
+            <div class="col">
+              <div class="form-group">
+                <label>Sélectionner une option</label>
+                <div class="dropdown">
+                  <div class="dropdown-toggle">Choisir...</div>
+                  <div class="dropdown-menu">
+                    <div class="dropdown-item">Option 1</div>
+                    <div class="dropdown-item selected">Option 2</div>
+                    <div class="dropdown-item">Option 3</div>
+                    <div class="dropdown-item">Option 4</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label>Avec recherche</label>
+                <div class="dropdown">
+                  <div class="dropdown-toggle">Sélectionner...</div>
+                  <div class="dropdown-menu">
+                    <div class="dropdown-search">
+                      <input type="text" placeholder="Rechercher...">
+                    </div>
+                    <div class="dropdown-item">Casablanca</div>
+                    <div class="dropdown-item">Rabat</div>
+                    <div class="dropdown-item">Marrakech</div>
+                    <div class="dropdown-item">Fès</div>
+                    <div class="dropdown-item">Tanger</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Sélection multiple (Tags)</h3>
+          <div class="form-group">
+            <label>Technologies</label>
+            <div class="tags-container">
+              <span class="tag">Angular <span class="material-icons close">close</span></span>
+              <span class="tag">TypeScript <span class="material-icons close">close</span></span>
+              <span class="tag">RxJS <span class="material-icons close">close</span></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHECKS -->
+    <section id="checks" class="section">
+      <div class="section-header">
+        <h2><span class="icon material-icons">check_box</span> Cases à cocher & Switches</h2>
+      </div>
+      <div class="section-body">
+        <div class="subsection">
+          <h3>Checkboxes</h3>
+          <div class="row">
+            <label class="checkbox-group">
+              <span class="checkbox"><span class="material-icons" style="opacity:0">check</span></span>
+              <span>Non coché</span>
+            </label>
+            <label class="checkbox-group">
+              <span class="checkbox checked"><span class="material-icons">check</span></span>
+              <span>Coché</span>
+            </label>
+            <label class="checkbox-group" style="opacity:0.5">
+              <span class="checkbox"><span class="material-icons" style="opacity:0">check</span></span>
+              <span>Désactivé</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Switches</h3>
+          <div class="row">
+            <label class="switch-group">
+              <span class="switch"></span>
+              <span>Désactivé</span>
+            </label>
+            <label class="switch-group">
+              <span class="switch checked"></span>
+              <span>Activé</span>
+            </label>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Boutons radio</h3>
+          <div class="radio-group">
+            <label class="radio-item">
+              <span class="radio checked"></span>
+              <span>Option A</span>
+            </label>
+            <label class="radio-item">
+              <span class="radio"></span>
+              <span>Option B</span>
+            </label>
+            <label class="radio-item">
+              <span class="radio"></span>
+              <span>Option C</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ALERTS -->
+    <section id="alerts" class="section">
+      <div class="section-header">
+        <h2><span class="icon material-icons">notifications</span> Alertes</h2>
+      </div>
+      <div class="section-body">
+        <div class="subsection">
+          <h3>Types d'alertes</h3>
+          <div class="alert alert-success">
+            <span class="material-icons">check_circle</span>
+            <div class="alert-content">
+              <strong>Succès!</strong> L'opération a été effectuée avec succès.
+            </div>
+            <span class="material-icons alert-close">close</span>
+          </div>
+          <div class="alert alert-warning">
+            <span class="material-icons">warning</span>
+            <div class="alert-content">
+              <strong>Attention!</strong> Veuillez vérifier les informations saisies.
+            </div>
+            <span class="material-icons alert-close">close</span>
+          </div>
+          <div class="alert alert-danger">
+            <span class="material-icons">error</span>
+            <div class="alert-content">
+              <strong>Erreur!</strong> Une erreur est survenue lors du traitement.
+            </div>
+            <span class="material-icons alert-close">close</span>
+          </div>
+          <div class="alert alert-info">
+            <span class="material-icons">info</span>
+            <div class="alert-content">
+              <strong>Information</strong> - Cette action nécessite une confirmation.
+            </div>
+            <span class="material-icons alert-close">close</span>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Alerte avec boutons</h3>
+          <div class="alert alert-warning">
+            <span class="material-icons">warning</span>
+            <div class="alert-content">
+              <strong>Confirmation requise</strong>
+              <p>Voulez-vous continuer cette action?</p>
+              <div class="alert-actions">
+                <button class="btn btn-sm btn-warning">Confirmer</button>
+                <button class="btn btn-sm btn-light">Annuler</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Toast (notifications temporaires)</h3>
+          <div class="toast-container">
+            <div class="toast success">
+              <span class="material-icons" style="color:var(--success)">check_circle</span>
+              Opération réussie!
+            </div>
+          </div>
+          <div class="toast-container" style="margin-top:15px">
+            <div class="toast error">
+              <span class="material-icons" style="color:var(--danger)">error</span>
+              Erreur de connexion
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODALS -->
+    <section id="modals" class="section">
+      <div class="section-header">
+        <h2><span class="icon material-icons">open_in_new</span> Fenêtres modales</h2>
+      </div>
+      <div class="section-body">
+        <div class="subsection">
+          <h3>Modal standard</h3>
+          <div class="modal-preview">
+            <div class="modal">
+              <div class="modal-header">
+                <div class="modal-icon info">
+                  <span class="material-icons">info</span>
+                </div>
+                <div>
+                  <div class="modal-title">Titre de la modal</div>
+                  <div class="modal-subtitle">Description ou sous-titre</div>
+                </div>
+                <span class="material-icons modal-close">close</span>
+              </div>
+              <div class="modal-body">
+                Contenu de la modal. Vous pouvez y mettre du texte, des formulaires ou tout autre contenu.
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-light">Annuler</button>
+                <button class="btn btn-primary">Confirmer</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Types de modales (par icône)</h3>
+          <div class="row start">
+            <div class="col">
+              <div class="modal" style="max-width:300px">
+                <div class="modal-header">
+                  <div class="modal-icon success"><span class="material-icons">check_circle</span></div>
+                  <div><div class="modal-title">Succès</div></div>
+                </div>
+                <div class="modal-body">Opération réussie!</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="modal" style="max-width:300px">
+                <div class="modal-header">
+                  <div class="modal-icon warning"><span class="material-icons">warning</span></div>
+                  <div><div class="modal-title">Attention</div></div>
+                </div>
+                <div class="modal-body">Action requise</div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="modal" style="max-width:300px">
+                <div class="modal-header">
+                  <div class="modal-icon danger"><span class="material-icons">error</span></div>
+                  <div><div class="modal-title">Erreur</div></div>
+                </div>
+                <div class="modal-body">Une erreur est survenue</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOADERS -->
+    <section id="loaders" class="section">
+      <div class="section-header">
+        <h2><span class="icon material-icons">hourglass_empty</span> Indicateurs de chargement</h2>
+      </div>
+      <div class="section-body">
+        <div class="subsection">
+          <h3>Types et tailles</h3>
+          <div class="loader-demo">
+            <div class="loader-item">
+              <div class="spinner-border sm"></div>
+              <span>Petit</span>
+            </div>
+            <div class="loader-item">
+              <div class="spinner-border"></div>
+              <span>Normal</span>
+            </div>
+            <div class="loader-item">
+              <div class="spinner-border lg"></div>
+              <span>Grand</span>
+            </div>
+            <div class="loader-item">
+              <div class="spinner-grow"></div>
+              <span>Grow</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Avec texte</h3>
+          <div class="loader-demo">
+            <div class="loader-item">
+              <div class="spinner-border"></div>
+              <span>Chargement en cours...</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABLES -->
+    <section id="tables" class="section">
+      <div class="section-header">
+        <h2><span class="icon material-icons">table_chart</span> Tableaux</h2>
+      </div>
+      <div class="section-body">
+        <div class="subsection">
+          <h3>Tableau avec sélection et actions</h3>
+          <div class="table-container">
+            <table>
+              <thead>
+                <tr>
+                  <th class="table-checkbox">
+                    <span class="checkbox checked"><span class="material-icons">check</span></span>
+                  </th>
+                  <th class="sortable">ID <span class="material-icons sort-icon">unfold_more</span></th>
+                  <th class="sortable">Nom <span class="material-icons sort-icon">arrow_upward</span></th>
+                  <th>Email</th>
+                  <th>Statut</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="selected">
+                  <td class="table-checkbox"><span class="checkbox checked"><span class="material-icons">check</span></span></td>
+                  <td>001</td>
+                  <td>Ahmed Benjelloun</td>
+                  <td>ahmed@email.com</td>
+                  <td><span class="badge badge-success">Actif</span></td>
+                  <td class="table-actions">
+                    <button class="btn btn-sm btn-light"><span class="material-icons">visibility</span></button>
+                    <button class="btn btn-sm btn-light"><span class="material-icons">edit</span></button>
+                    <button class="btn btn-sm btn-light"><span class="material-icons">delete</span></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-checkbox"><span class="checkbox"></span></td>
+                  <td>002</td>
+                  <td>Fatima Alaoui</td>
+                  <td>fatima@email.com</td>
+                  <td><span class="badge badge-warning">En attente</span></td>
+                  <td class="table-actions">
+                    <button class="btn btn-sm btn-light"><span class="material-icons">visibility</span></button>
+                    <button class="btn btn-sm btn-light"><span class="material-icons">edit</span></button>
+                    <button class="btn btn-sm btn-light"><span class="material-icons">delete</span></button>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="table-checkbox"><span class="checkbox"></span></td>
+                  <td>003</td>
+                  <td>Youssef Tazi</td>
+                  <td>youssef@email.com</td>
+                  <td><span class="badge badge-danger">Inactif</span></td>
+                  <td class="table-actions">
+                    <button class="btn btn-sm btn-light"><span class="material-icons">visibility</span></button>
+                    <button class="btn btn-sm btn-light"><span class="material-icons">edit</span></button>
+                    <button class="btn btn-sm btn-light"><span class="material-icons">delete</span></button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+            <div class="pagination">
+              <span>Affichage 1-3 sur 50</span>
+              <div class="pagination-pages">
+                <button><span class="material-icons">first_page</span></button>
+                <button><span class="material-icons">chevron_left</span></button>
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <button><span class="material-icons">chevron_right</span></button>
+                <button><span class="material-icons">last_page</span></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TABS -->
+    <section id="tabs" class="section">
+      <div class="section-header">
+        <h2><span class="icon material-icons">tab</span> Onglets</h2>
+      </div>
+      <div class="section-body">
+        <div class="subsection">
+          <h3>Onglets standard</h3>
+          <div class="tabs">
+            <div class="tabs-header">
+              <div class="tab active">Informations</div>
+              <div class="tab">Documents</div>
+              <div class="tab">Historique</div>
+              <div class="tab">Paramètres</div>
+            </div>
+            <div class="tabs-content">
+              Contenu de l'onglet "Informations"
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Mode Stepper (étapes)</h3>
+          <div class="tabs">
+            <div class="steps-header">
+              <div class="step completed">
+                <span class="step-number"><span class="material-icons" style="font-size:16px">check</span></span>
+                <span>Informations</span>
+              </div>
+              <div class="step active">
+                <span class="step-number">2</span>
+                <span>Vérification</span>
+              </div>
+              <div class="step">
+                <span class="step-number">3</span>
+                <span>Confirmation</span>
+              </div>
+            </div>
+            <div class="tabs-content">
+              Étape 2 : Vérification des données
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCORDION -->
+    <section id="accordion" class="section">
+      <div class="section-header">
+        <h2><span class="icon material-icons">expand_more</span> Accordéon</h2>
+      </div>
+      <div class="section-body">
+        <div class="accordion">
+          <div class="accordion-item">
+            <div class="accordion-header open">
+              <span>Section 1 - Ouverte</span>
+              <span class="material-icons">expand_less</span>
+            </div>
+            <div class="accordion-body">
+              Contenu de la première section. Lorem ipsum dolor sit amet.
+            </div>
+          </div>
+          <div class="accordion-item">
+            <div class="accordion-header">
+              <span>Section 2 - Fermée</span>
+              <span class="material-icons">expand_more</span>
+            </div>
+          </div>
+          <div class="accordion-item disabled">
+            <div class="accordion-header">
+              <span>Section 3 - Désactivée</span>
+              <span class="material-icons">expand_more</span>
+            </div>
+          </div>
+          <div class="accordion-item error">
+            <div class="accordion-header">
+              <span>Section 4 - Avec erreur</span>
+              <span class="material-icons">expand_more</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BADGES -->
+    <section id="badges" class="section">
+      <div class="section-header">
+        <h2><span class="icon material-icons">local_offer</span> Badges</h2>
+      </div>
+      <div class="section-body">
+        <div class="subsection">
+          <h3>Couleurs</h3>
+          <div class="row">
+            <span class="badge badge-primary">Primary</span>
+            <span class="badge badge-secondary">Secondary</span>
+            <span class="badge badge-success">Success</span>
+            <span class="badge badge-danger">Danger</span>
+            <span class="badge badge-warning">Warning</span>
+            <span class="badge badge-info">Info</span>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Formes</h3>
+          <div class="row">
+            <span class="badge badge-primary">Standard</span>
+            <span class="badge badge-primary badge-pill">Pill</span>
+            <span class="badge badge-outline" style="color:var(--primary)">Outline</span>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Sur un élément (notification)</h3>
+          <div class="row">
+            <span class="badge-container">
+              <button class="btn btn-light"><span class="material-icons">notifications</span></button>
+              <span class="badge badge-danger badge-floating">5</span>
+            </span>
+            <span class="badge-container">
+              <button class="btn btn-light"><span class="material-icons">mail</span></button>
+              <span class="badge badge-primary badge-floating">12</span>
+            </span>
+            <span class="badge-container">
+              <button class="btn btn-light"><span class="material-icons">shopping_cart</span></button>
+              <span class="badge badge-success badge-floating">3</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CARDS -->
+    <section id="cards" class="section">
+      <div class="section-header">
+        <h2><span class="icon material-icons">dashboard</span> Cartes</h2>
+      </div>
+      <div class="section-body">
+        <div class="subsection">
+          <h3>Carte simple</h3>
+          <div class="row start">
+            <div class="col">
+              <div class="card">
+                <div class="card-header">Titre de la carte</div>
+                <div class="card-body">
+                  Contenu de la carte. Peut contenir du texte, des images ou des formulaires.
+                </div>
+                <div class="card-footer">
+                  <button class="btn btn-primary btn-sm">Action</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Cartes statistiques</h3>
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon primary"><span class="material-icons">trending_up</span></div>
+              <div>
+                <div class="stat-value">1,250</div>
+                <div class="stat-label">Total opérations</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon success"><span class="material-icons">check_circle</span></div>
+              <div>
+                <div class="stat-value">980</div>
+                <div class="stat-label">Validées</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon warning"><span class="material-icons">hourglass_empty</span></div>
+              <div>
+                <div class="stat-value">45</div>
+                <div class="stat-label">En attente</div>
+              </div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon danger"><span class="material-icons">cancel</span></div>
+              <div>
+                <div class="stat-value">25</div>
+                <div class="stat-label">Rejetées</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISC -->
+    <section id="misc" class="section">
+      <div class="section-header">
+        <h2><span class="icon material-icons">widgets</span> Autres composants</h2>
+      </div>
+      <div class="section-body">
+
+        <div class="subsection">
+          <h3>Fil d'Ariane (Breadcrumb)</h3>
+          <div class="breadcrumb">
+            <span class="breadcrumb-item"><a href="#">Accueil</a></span>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-item"><a href="#">Opérations</a></span>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-item active">Détails</span>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Titre de page</h3>
+          <div class="page-title">
+            <div>
+              <h1>Liste des opérations</h1>
+              <p>Gérez vos opérations de suivi</p>
+            </div>
+            <button class="btn btn-primary"><span class="material-icons">add</span> Nouvelle opération</button>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Upload de fichiers</h3>
+          <div class="upload-zone">
+            <span class="material-icons">cloud_upload</span>
+            <p><strong>Glissez vos fichiers ici</strong></p>
+            <p>ou cliquez pour sélectionner</p>
+          </div>
+          <div class="file-list">
+            <div class="file-item">
+              <span class="material-icons file-icon">description</span>
+              <div class="file-info">
+                <div class="file-name">document.pdf</div>
+                <div class="file-size">2.4 MB</div>
+              </div>
+              <span class="material-icons file-remove">close</span>
+            </div>
+            <div class="file-item">
+              <span class="material-icons file-icon">image</span>
+              <div class="file-info">
+                <div class="file-name">photo.jpg</div>
+                <div class="file-size">1.1 MB</div>
+              </div>
+              <span class="material-icons file-remove">close</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Champ téléphone</h3>
+          <div class="form-group" style="max-width:300px">
+            <label>Téléphone</label>
+            <div class="phone-input">
+              <div class="phone-prefix">
+                <span>🇲🇦</span>
+                <span>+212</span>
+                <span class="material-icons" style="font-size:18px">expand_more</span>
+              </div>
+              <input type="text" placeholder="6XX XX XX XX">
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Notification</h3>
+          <div class="notification">
+            <span class="material-icons notification-close">close</span>
+            <div class="notification-header">
+              <div class="notification-icon info"><span class="material-icons">notifications</span></div>
+              <div>
+                <div class="notification-title">Nouvelle demande</div>
+              </div>
+            </div>
+            <div class="notification-text">
+              Une nouvelle demande de validation attend votre approbation.
+            </div>
+            <div class="notification-actions">
+              <button class="btn btn-primary btn-sm">Voir</button>
+              <button class="btn btn-light btn-sm">Ignorer</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Tooltips</h3>
+          <div class="tooltip-demo">
+            <div class="tooltip-item">
+              Haut
+              <span class="tooltip top">Info-bulle en haut</span>
+            </div>
+            <div class="tooltip-item">
+              Bas
+              <span class="tooltip bottom">Info-bulle en bas</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Barre de filtres</h3>
+          <div class="filter-bar">
+            <div class="filter-search">
+              <span class="material-icons">search</span>
+              <input type="text" placeholder="Rechercher...">
+            </div>
+            <button class="btn btn-light"><span class="material-icons">filter_list</span> Filtres</button>
+            <button class="btn btn-light"><span class="material-icons">file_download</span> Exporter</button>
+          </div>
+          <div class="filter-tags" style="margin-top:10px">
+            <span class="filter-tag">Statut: Actif <span class="material-icons" style="font-size:16px;cursor:pointer">close</span></span>
+            <span class="filter-tag">Date: 2024 <span class="material-icons" style="font-size:16px;cursor:pointer">close</span></span>
+          </div>
+        </div>
+
+        <div class="subsection">
+          <h3>Filtre de colonne (Column Filter)</h3>
+          <div class="row start" style="gap:30px">
+            <div class="col">
+              <p style="color:#666;margin-bottom:15px">Filtre avec checkboxes (statut)</p>
+              <div style="display:flex;align-items:flex-start;gap:20px">
+                <!-- Bouton déclencheur -->
+                <div style="background:#f8f9fa;padding:12px 20px;border:1px solid #dee2e6;border-radius:6px;display:flex;align-items:center;gap:8px">
+                  <span style="font-weight:500">Statut</span>
+                  <span class="material-icons" style="font-size:18px">filter_list</span>
+                </div>
+                <!-- Flèche -->
+                <span class="material-icons" style="color:#999;margin-top:12px">arrow_forward</span>
+                <!-- Menu ouvert -->
+                <div style="background:white;border:1px solid #dee2e6;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.15);width:250px">
+                  <div style="padding:12px;border-bottom:1px solid #eee">
+                    <input type="text" placeholder="Rechercher..." style="width:100%;padding:8px 10px;border:1px solid #dee2e6;border-radius:4px;font-size:0.85rem">
+                  </div>
+                  <div style="padding:8px 0">
+                    <label style="display:flex;align-items:center;gap:10px;padding:8px 15px;cursor:pointer">
+                      <span class="checkbox checked"><span class="material-icons">check</span></span>
+                      <span>Tous</span>
+                    </label>
+                    <label style="display:flex;align-items:center;gap:10px;padding:8px 15px;cursor:pointer;background:#f0f7ff">
+                      <span class="checkbox checked"><span class="material-icons">check</span></span>
+                      <span class="badge badge-success">Actif</span>
+                    </label>
+                    <label style="display:flex;align-items:center;gap:10px;padding:8px 15px;cursor:pointer">
+                      <span class="checkbox"><span class="material-icons" style="opacity:0">check</span></span>
+                      <span class="badge badge-warning">En attente</span>
+                    </label>
+                    <label style="display:flex;align-items:center;gap:10px;padding:8px 15px;cursor:pointer">
+                      <span class="checkbox"><span class="material-icons" style="opacity:0">check</span></span>
+                      <span class="badge badge-danger">Inactif</span>
+                    </label>
+                  </div>
+                  <div style="padding:12px;border-top:1px solid #eee;display:flex;justify-content:flex-end;gap:8px">
+                    <button class="btn btn-sm btn-light">Réinitialiser</button>
+                    <button class="btn btn-sm btn-primary">Appliquer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row start" style="margin-top:30px;gap:30px">
+            <div class="col">
+              <p style="color:#666;margin-bottom:15px">Filtre avec plage de dates</p>
+              <div style="display:flex;align-items:flex-start;gap:20px">
+                <!-- Bouton déclencheur -->
+                <div style="background:#f8f9fa;padding:12px 20px;border:1px solid #dee2e6;border-radius:6px;display:flex;align-items:center;gap:8px">
+                  <span style="font-weight:500">Date création</span>
+                  <span class="material-icons" style="font-size:18px;color:var(--primary)">filter_alt</span>
+                </div>
+                <!-- Flèche -->
+                <span class="material-icons" style="color:#999;margin-top:12px">arrow_forward</span>
+                <!-- Menu ouvert -->
+                <div style="background:white;border:1px solid #dee2e6;border-radius:8px;box-shadow:0 4px 12px rgba(0,0,0,0.15);width:280px;padding:15px">
+                  <div style="margin-bottom:12px">
+                    <label style="font-size:0.85rem;color:#666;display:block;margin-bottom:6px">Date de début</label>
+                    <input type="date" style="width:100%;padding:8px 10px;border:1px solid #dee2e6;border-radius:4px">
+                  </div>
+                  <div style="margin-bottom:15px">
+                    <label style="font-size:0.85rem;color:#666;display:block;margin-bottom:6px">Date de fin</label>
+                    <input type="date" style="width:100%;padding:8px 10px;border:1px solid #dee2e6;border-radius:4px">
+                  </div>
+                  <div style="display:flex;justify-content:flex-end;gap:8px">
+                    <button class="btn btn-sm btn-light">Effacer</button>
+                    <button class="btn btn-sm btn-primary">Filtrer</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+
+  <footer class="footer">
+    <p><strong>EAI Design System</strong> - Bank of Africa</p>
+    <p>Guide visuel des composants UI</p>
+  </footer>
+
+</body>
+</html>

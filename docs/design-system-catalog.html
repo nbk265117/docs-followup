@@ -1,0 +1,2320 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EAI Lib Material - Design System Catalog v0.8.1</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #667eea;
+      --primary-dark: #5a67d8;
+      --secondary: #764ba2;
+      --success: #28a745;
+      --warning: #ffc107;
+      --danger: #dc3545;
+      --info: #17a2b8;
+      --light: #f8f9fa;
+      --dark: #343a40;
+      --gray: #6c757d;
+      --border: #dee2e6;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Header */
+    .header {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+      color: white;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .header .version {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-bottom: 5px;
+    }
+
+    .header .subtitle {
+      font-size: 1rem;
+      opacity: 0.8;
+    }
+
+    .header .stats {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    .header .stat {
+      background: rgba(255,255,255,0.2);
+      padding: 10px 20px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+    }
+
+    /* Navigation */
+    .nav {
+      background: white;
+      padding: 15px 20px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+
+    .nav-inner {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .nav a {
+      display: inline-block;
+      padding: 8px 16px;
+      background: #f0f0f0;
+      color: #333;
+      text-decoration: none;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.3s;
+    }
+
+    .nav a:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* Container */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    /* Component Section */
+    .component {
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+      overflow: hidden;
+    }
+
+    .component-header {
+      background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+      padding: 20px 25px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .component-header h2 {
+      font-size: 1.4rem;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .component-header h2 .number {
+      background: var(--primary);
+      color: white;
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+    }
+
+    .component-header .selector {
+      font-family: 'Courier New', monospace;
+      background: var(--dark);
+      color: #7ee787;
+      padding: 4px 12px;
+      border-radius: 4px;
+      font-size: 0.85rem;
+      margin-top: 8px;
+      display: inline-block;
+    }
+
+    .component-header .description {
+      color: var(--gray);
+      margin-top: 8px;
+      font-size: 0.95rem;
+    }
+
+    .component-body {
+      padding: 25px;
+    }
+
+    /* Property Table */
+    .props-section {
+      margin-bottom: 25px;
+    }
+
+    .props-section h3 {
+      font-size: 1.1rem;
+      color: #444;
+      margin-bottom: 15px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid var(--primary);
+      display: inline-block;
+    }
+
+    .props-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .props-table th {
+      background: #f8f9fa;
+      padding: 12px 15px;
+      text-align: left;
+      font-weight: 600;
+      color: #555;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .props-table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid var(--border);
+      vertical-align: top;
+    }
+
+    .props-table tr:hover {
+      background: #f8f9fa;
+    }
+
+    .prop-name {
+      font-family: 'Courier New', monospace;
+      color: var(--primary);
+      font-weight: 500;
+    }
+
+    .prop-type {
+      font-family: 'Courier New', monospace;
+      color: var(--info);
+      font-size: 0.85rem;
+    }
+
+    .prop-required {
+      color: var(--danger);
+      font-size: 0.75rem;
+      font-weight: 600;
+    }
+
+    .prop-default {
+      font-family: 'Courier New', monospace;
+      background: #e9ecef;
+      padding: 2px 6px;
+      border-radius: 3px;
+      font-size: 0.8rem;
+    }
+
+    /* Values/Options */
+    .values-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 10px;
+    }
+
+    .value-tag {
+      background: #e3f2fd;
+      color: #1565c0;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-family: 'Courier New', monospace;
+    }
+
+    .value-tag.primary { background: var(--primary); color: white; }
+    .value-tag.success { background: var(--success); color: white; }
+    .value-tag.warning { background: var(--warning); color: #333; }
+    .value-tag.danger { background: var(--danger); color: white; }
+    .value-tag.info { background: var(--info); color: white; }
+
+    /* Code Example */
+    .code-example {
+      background: #1e1e1e;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 15px;
+      overflow-x: auto;
+    }
+
+    .code-example code {
+      font-family: 'Courier New', monospace;
+      font-size: 0.85rem;
+      color: #d4d4d4;
+      white-space: pre;
+    }
+
+    .code-example .tag { color: #569cd6; }
+    .code-example .attr { color: #9cdcfe; }
+    .code-example .string { color: #ce9178; }
+    .code-example .comment { color: #6a9955; }
+
+    /* Events */
+    .events-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+
+    .events-table th {
+      background: #fff3cd;
+      padding: 10px 15px;
+      text-align: left;
+      font-weight: 600;
+      color: #856404;
+    }
+
+    .events-table td {
+      padding: 10px 15px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .event-name {
+      font-family: 'Courier New', monospace;
+      color: #856404;
+      font-weight: 500;
+    }
+
+    /* Info Box */
+    .info-box {
+      background: #e8f4fd;
+      border-left: 4px solid var(--info);
+      padding: 15px 20px;
+      border-radius: 0 8px 8px 0;
+      margin: 15px 0;
+    }
+
+    .info-box.warning {
+      background: #fff3cd;
+      border-color: var(--warning);
+    }
+
+    .info-box.success {
+      background: #d4edda;
+      border-color: var(--success);
+    }
+
+    /* Services Section */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 15px;
+    }
+
+    .service-card {
+      background: #f8f9fa;
+      border-radius: 8px;
+      padding: 20px;
+      border: 1px solid var(--border);
+    }
+
+    .service-card h4 {
+      color: var(--primary);
+      margin-bottom: 10px;
+      font-family: 'Courier New', monospace;
+    }
+
+    .service-card p {
+      font-size: 0.9rem;
+      color: var(--gray);
+    }
+
+    /* Footer */
+    .footer {
+      background: var(--dark);
+      color: white;
+      text-align: center;
+      padding: 30px 20px;
+      margin-top: 50px;
+    }
+
+    .footer p {
+      margin: 5px 0;
+      opacity: 0.9;
+    }
+
+    /* Print styles */
+    @media print {
+      .nav { display: none; }
+      .component { break-inside: avoid; }
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .header h1 { font-size: 1.8rem; }
+      .props-table { font-size: 0.8rem; }
+      .props-table th, .props-table td { padding: 8px 10px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <h1>EAI Lib Material</h1>
+    <p class="version">Design System - Version 0.8.1</p>
+    <p class="subtitle">Bibliothèque de composants UI interne - Bank of Africa</p>
+    <div class="stats">
+      <span class="stat">30 Composants</span>
+      <span class="stat">6 Services</span>
+      <span class="stat">4 Directives</span>
+      <span class="stat">5 Animations</span>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#buttons">Buttons</a>
+      <a href="#inputs">Inputs</a>
+      <a href="#dropdown">Dropdown</a>
+      <a href="#multiselect">Multiselect</a>
+      <a href="#textarea">Textarea</a>
+      <a href="#checks">Checks</a>
+      <a href="#radio">Radio</a>
+      <a href="#alert">Alert</a>
+      <a href="#modal">Modal</a>
+      <a href="#notification">Notification</a>
+      <a href="#loader">Loader</a>
+      <a href="#table">Table</a>
+      <a href="#tabs">Tabs</a>
+      <a href="#accordion">Accordion</a>
+      <a href="#badge">Badge</a>
+      <a href="#cards">Cards</a>
+      <a href="#breadcrumbs">Breadcrumbs</a>
+      <a href="#title">Title</a>
+      <a href="#upload">Upload</a>
+      <a href="#phone">Phone</a>
+      <a href="#paginator">Paginator</a>
+      <a href="#filter">Filter</a>
+      <a href="#tooltip">Tooltip</a>
+      <a href="#services">Services</a>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <!-- 1. BUTTON -->
+    <section id="buttons" class="component">
+      <div class="component-header">
+        <h2><span class="number">1</span> Button</h2>
+        <span class="selector">&lt;e-button&gt;</span>
+        <p class="description">Bouton avec plusieurs types, états, icônes et options de liste</p>
+      </div>
+      <div class="component-body">
+        <div class="props-section">
+          <h3>Propriétés (Inputs)</h3>
+          <table class="props-table">
+            <thead>
+              <tr>
+                <th>Propriété</th>
+                <th>Type</th>
+                <th>Défaut</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="prop-name">text</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td><span class="prop-default">''</span></td>
+                <td>Texte affiché sur le bouton</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">type</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td><span class="prop-default">'primary'</span></td>
+                <td>Type/style du bouton</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">loading</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td><span class="prop-default">false</span></td>
+                <td>Affiche un spinner de chargement</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">disabled</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td><span class="prop-default">false</span></td>
+                <td>Désactive le bouton</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">iconName</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td><span class="prop-default">''</span></td>
+                <td>Nom de l'icône Material Icons</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">btnCta</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td><span class="prop-default">false</span></td>
+                <td>Style Call-to-Action (plus grand)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">label</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td><span class="prop-default">''</span></td>
+                <td>Label pour la liste de tags</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">list</span></td>
+                <td><span class="prop-type">IItem[]</span></td>
+                <td><span class="prop-default">[]</span></td>
+                <td>Liste de tags à afficher sous le bouton</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">required</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td><span class="prop-default">false</span></td>
+                <td>Marque le champ comme requis</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">class</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td><span class="prop-default">''</span></td>
+                <td>Classes CSS additionnelles</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">id</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td><span class="prop-default">''</span></td>
+                <td>ID HTML du bouton</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="props-section">
+          <h3>Types disponibles</h3>
+          <div class="values-list">
+            <span class="value-tag primary">primary</span>
+            <span class="value-tag" style="background:#6c757d;color:white">secondary</span>
+            <span class="value-tag success">success</span>
+            <span class="value-tag danger">danger</span>
+            <span class="value-tag warning">warning</span>
+            <span class="value-tag info">info</span>
+            <span class="value-tag" style="background:#f8f9fa;color:#333">light</span>
+            <span class="value-tag" style="background:#343a40;color:white">dark</span>
+            <span class="value-tag" style="background:transparent;color:#007bff;border:1px solid #007bff">link</span>
+          </div>
+        </div>
+
+        <div class="props-section">
+          <h3>Événements (Outputs)</h3>
+          <table class="events-table">
+            <thead>
+              <tr>
+                <th>Événement</th>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="event-name">(onRemove)</span></td>
+                <td><span class="prop-type">any</span></td>
+                <td>Émis lors de la suppression d'un tag de la liste</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="props-section">
+          <h3>Exemples d'utilisation</h3>
+          <div class="code-example">
+<code><span class="comment">&lt;!-- Bouton simple --&gt;</span>
+<span class="tag">&lt;e-button</span> <span class="attr">text</span>=<span class="string">"Valider"</span> <span class="attr">type</span>=<span class="string">"primary"</span><span class="tag">&gt;&lt;/e-button&gt;</span>
+
+<span class="comment">&lt;!-- Bouton avec icône --&gt;</span>
+<span class="tag">&lt;e-button</span> <span class="attr">text</span>=<span class="string">"Ajouter"</span> <span class="attr">type</span>=<span class="string">"success"</span> <span class="attr">iconName</span>=<span class="string">"add"</span><span class="tag">&gt;&lt;/e-button&gt;</span>
+
+<span class="comment">&lt;!-- Bouton loading --&gt;</span>
+<span class="tag">&lt;e-button</span> <span class="attr">text</span>=<span class="string">"Chargement..."</span> <span class="attr">[loading]</span>=<span class="string">"true"</span><span class="tag">&gt;&lt;/e-button&gt;</span>
+
+<span class="comment">&lt;!-- Bouton CTA --&gt;</span>
+<span class="tag">&lt;e-button</span> <span class="attr">text</span>=<span class="string">"Commencer"</span> <span class="attr">[btnCta]</span>=<span class="string">"true"</span><span class="tag">&gt;&lt;/e-button&gt;</span>
+
+<span class="comment">&lt;!-- Bouton avec liste de tags --&gt;</span>
+<span class="tag">&lt;e-button</span> <span class="attr">text</span>=<span class="string">"Sélection"</span> <span class="attr">[list]</span>=<span class="string">"selectedItems"</span> <span class="attr">label</span>=<span class="string">"Éléments"</span><span class="tag">&gt;&lt;/e-button&gt;</span></code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. INPUT -->
+    <section id="inputs" class="component">
+      <div class="component-header">
+        <h2><span class="number">2</span> Input</h2>
+        <span class="selector">&lt;e-input&gt;</span>
+        <p class="description">Champ de saisie avec support pour différents types, icônes, validation et mode téléphone</p>
+      </div>
+      <div class="component-body">
+        <div class="props-section">
+          <h3>Propriétés (Inputs)</h3>
+          <table class="props-table">
+            <thead>
+              <tr>
+                <th>Propriété</th>
+                <th>Type</th>
+                <th>Défaut</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="prop-name">label</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td><span class="prop-default">''</span></td>
+                <td>Label du champ</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">type</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td><span class="prop-default">'text'</span></td>
+                <td>Type HTML de l'input</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">typeInput</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td><span class="prop-default">''</span></td>
+                <td>Type spécial: 'number' pour stepper</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">placeholder</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td><span class="prop-default">''</span></td>
+                <td>Texte placeholder</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">value</span></td>
+                <td><span class="prop-type">any</span></td>
+                <td><span class="prop-default">''</span></td>
+                <td>Valeur du champ</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">required</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td><span class="prop-default">false</span></td>
+                <td>Champ obligatoire</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">error</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td><span class="prop-default">false</span></td>
+                <td>Affiche l'état d'erreur</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">errorMsg</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td><span class="prop-default">''</span></td>
+                <td>Message d'erreur</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">disabled</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td><span class="prop-default">false</span></td>
+                <td>Désactive le champ</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">editable</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td><span class="prop-default">true</span></td>
+                <td>Rend le champ modifiable</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">iconName</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td><span class="prop-default">''</span></td>
+                <td>Icône Material Icons</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">iconTitle</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td><span class="prop-default">''</span></td>
+                <td>Titre de l'icône (tooltip)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">unite</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td><span class="prop-default">''</span></td>
+                <td>Unité affichée (ex: MAD, €)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">min</span></td>
+                <td><span class="prop-type">number</span></td>
+                <td><span class="prop-default">-</span></td>
+                <td>Valeur minimum (type number)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">max</span></td>
+                <td><span class="prop-type">number</span></td>
+                <td><span class="prop-default">-</span></td>
+                <td>Valeur maximum (type number)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">step</span></td>
+                <td><span class="prop-type">number</span></td>
+                <td><span class="prop-default">1</span></td>
+                <td>Pas d'incrémentation</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">phone</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td><span class="prop-default">false</span></td>
+                <td>Active le mode téléphone</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">options</span></td>
+                <td><span class="prop-type">any[]</span></td>
+                <td><span class="prop-default">[]</span></td>
+                <td>Options pour le sélecteur (ex: devises)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">control</span></td>
+                <td><span class="prop-type">FormControl</span></td>
+                <td><span class="prop-default">-</span></td>
+                <td>FormControl Angular</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="props-section">
+          <h3>Types HTML supportés</h3>
+          <div class="values-list">
+            <span class="value-tag">text</span>
+            <span class="value-tag">email</span>
+            <span class="value-tag">password</span>
+            <span class="value-tag">number</span>
+            <span class="value-tag">date</span>
+            <span class="value-tag">datetime-local</span>
+            <span class="value-tag">time</span>
+            <span class="value-tag">tel</span>
+          </div>
+        </div>
+
+        <div class="props-section">
+          <h3>Événements (Outputs)</h3>
+          <table class="events-table">
+            <thead>
+              <tr>
+                <th>Événement</th>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="event-name">(onValueChanged)</span></td>
+                <td><span class="prop-type">any</span></td>
+                <td>Émis à chaque changement de valeur</td>
+              </tr>
+              <tr>
+                <td><span class="event-name">(selectedValue)</span></td>
+                <td><span class="prop-type">any</span></td>
+                <td>Émis lors de la sélection d'une option</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="props-section">
+          <h3>Exemples d'utilisation</h3>
+          <div class="code-example">
+<code><span class="comment">&lt;!-- Input simple --&gt;</span>
+<span class="tag">&lt;e-input</span> <span class="attr">label</span>=<span class="string">"Nom"</span> <span class="attr">placeholder</span>=<span class="string">"Entrez votre nom"</span><span class="tag">&gt;&lt;/e-input&gt;</span>
+
+<span class="comment">&lt;!-- Input avec icône --&gt;</span>
+<span class="tag">&lt;e-input</span> <span class="attr">label</span>=<span class="string">"Recherche"</span> <span class="attr">iconName</span>=<span class="string">"search"</span><span class="tag">&gt;&lt;/e-input&gt;</span>
+
+<span class="comment">&lt;!-- Input number avec stepper --&gt;</span>
+<span class="tag">&lt;e-input</span> <span class="attr">label</span>=<span class="string">"Quantité"</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">typeInput</span>=<span class="string">"number"</span>
+         <span class="attr">[min]</span>=<span class="string">"0"</span> <span class="attr">[max]</span>=<span class="string">"100"</span> <span class="attr">[step]</span>=<span class="string">"5"</span><span class="tag">&gt;&lt;/e-input&gt;</span>
+
+<span class="comment">&lt;!-- Input avec erreur --&gt;</span>
+<span class="tag">&lt;e-input</span> <span class="attr">label</span>=<span class="string">"Email"</span> <span class="attr">[error]</span>=<span class="string">"true"</span> <span class="attr">errorMsg</span>=<span class="string">"Email invalide"</span><span class="tag">&gt;&lt;/e-input&gt;</span>
+
+<span class="comment">&lt;!-- Input montant avec devise --&gt;</span>
+<span class="tag">&lt;e-input</span> <span class="attr">label</span>=<span class="string">"Montant"</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">[options]</span>=<span class="string">"devises"</span><span class="tag">&gt;&lt;/e-input&gt;</span>
+
+<span class="comment">&lt;!-- Input téléphone --&gt;</span>
+<span class="tag">&lt;e-input</span> <span class="attr">label</span>=<span class="string">"Téléphone"</span> <span class="attr">[phone]</span>=<span class="string">"true"</span><span class="tag">&gt;&lt;/e-input&gt;</span></code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. DROPDOWN -->
+    <section id="dropdown" class="component">
+      <div class="component-header">
+        <h2><span class="number">3</span> Dropdown</h2>
+        <span class="selector">&lt;e-dropdown&gt;</span>
+        <p class="description">Liste déroulante simple avec recherche et sélection unique</p>
+      </div>
+      <div class="component-body">
+        <div class="props-section">
+          <h3>Propriétés (Inputs)</h3>
+          <table class="props-table">
+            <thead>
+              <tr>
+                <th>Propriété</th>
+                <th>Type</th>
+                <th>Défaut</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="prop-name">list</span></td>
+                <td><span class="prop-type">any[]</span></td>
+                <td><span class="prop-default">[]</span></td>
+                <td>Liste des options (strings ou objets)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">label</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td><span class="prop-default">''</span></td>
+                <td>Label du dropdown</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">placeholder</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td><span class="prop-default">''</span></td>
+                <td>Texte placeholder</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">value</span></td>
+                <td><span class="prop-type">any</span></td>
+                <td><span class="prop-default">''</span></td>
+                <td>Valeur sélectionnée</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">selectKey</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td><span class="prop-default">''</span></td>
+                <td>Clé pour la valeur (objets)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">showKey</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td><span class="prop-default">''</span></td>
+                <td>Clé pour l'affichage (objets)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">searchFlag</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td><span class="prop-default">false</span></td>
+                <td>Active la recherche</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">removeSearch</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td><span class="prop-default">false</span></td>
+                <td>Bouton pour effacer la recherche</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">showRemove</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td><span class="prop-default">false</span></td>
+                <td>Bouton pour effacer la sélection</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">required</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td><span class="prop-default">false</span></td>
+                <td>Champ obligatoire</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">error</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td><span class="prop-default">false</span></td>
+                <td>État d'erreur</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">errorMsg</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td><span class="prop-default">''</span></td>
+                <td>Message d'erreur</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">disabled</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td><span class="prop-default">false</span></td>
+                <td>Désactive le dropdown</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">control</span></td>
+                <td><span class="prop-type">FormControl</span></td>
+                <td><span class="prop-default">-</span></td>
+                <td>FormControl Angular</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="props-section">
+          <h3>Événements (Outputs)</h3>
+          <table class="events-table">
+            <thead>
+              <tr>
+                <th>Événement</th>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="event-name">(selectedIndex)</span></td>
+                <td><span class="prop-type">number</span></td>
+                <td>Index de l'élément sélectionné</td>
+              </tr>
+              <tr>
+                <td><span class="event-name">(selectedKey)</span></td>
+                <td><span class="prop-type">any</span></td>
+                <td>Clé de l'élément sélectionné</td>
+              </tr>
+              <tr>
+                <td><span class="event-name">(valueSelected)</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Valeur sélectionnée</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="props-section">
+          <h3>Exemples d'utilisation</h3>
+          <div class="code-example">
+<code><span class="comment">&lt;!-- Dropdown simple (liste de strings) --&gt;</span>
+<span class="tag">&lt;e-dropdown</span> <span class="attr">[list]</span>=<span class="string">"['Option 1', 'Option 2', 'Option 3']"</span>
+             <span class="attr">label</span>=<span class="string">"Choix"</span> <span class="attr">placeholder</span>=<span class="string">"Sélectionner..."</span><span class="tag">&gt;&lt;/e-dropdown&gt;</span>
+
+<span class="comment">&lt;!-- Dropdown avec objets --&gt;</span>
+<span class="tag">&lt;e-dropdown</span> <span class="attr">[list]</span>=<span class="string">"villes"</span> <span class="attr">selectKey</span>=<span class="string">"id"</span> <span class="attr">showKey</span>=<span class="string">"nom"</span>
+             <span class="attr">label</span>=<span class="string">"Ville"</span><span class="tag">&gt;&lt;/e-dropdown&gt;</span>
+
+<span class="comment">&lt;!-- Dropdown avec recherche --&gt;</span>
+<span class="tag">&lt;e-dropdown</span> <span class="attr">[list]</span>=<span class="string">"pays"</span> <span class="attr">[searchFlag]</span>=<span class="string">"true"</span> <span class="attr">[removeSearch]</span>=<span class="string">"true"</span>
+             <span class="attr">label</span>=<span class="string">"Pays"</span><span class="tag">&gt;&lt;/e-dropdown&gt;</span></code>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. DROPDOWN MULTISELECT -->
+    <section id="multiselect" class="component">
+      <div class="component-header">
+        <h2><span class="number">4</span> Dropdown Multiselect</h2>
+        <span class="selector">&lt;e-dropdown-multiselect&gt;</span>
+        <p class="description">Liste déroulante avec sélection multiple</p>
+      </div>
+      <div class="component-body">
+        <div class="props-section">
+          <h3>Propriétés principales</h3>
+          <table class="props-table">
+            <thead>
+              <tr>
+                <th>Propriété</th>
+                <th>Type</th>
+                <th>Description</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="prop-name">list</span></td>
+                <td><span class="prop-type">any[]</span></td>
+                <td>Liste des options</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">showSelectedAll</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Affiche "Tout sélectionner"</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">maxSelected</span></td>
+                <td><span class="prop-type">number</span></td>
+                <td>Nombre max de sélections</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">visibleItems</span></td>
+                <td><span class="prop-type">number</span></td>
+                <td>Nombre d'items visibles dans le champ</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">maxChars</span></td>
+                <td><span class="prop-type">number</span></td>
+                <td>Limite de caractères affichés</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">searchFlag</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Active la recherche</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">size</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Taille du composant</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="props-section">
+          <h3>Événements</h3>
+          <table class="events-table">
+            <tbody>
+              <tr>
+                <td><span class="event-name">(listSelected)</span></td>
+                <td>Liste des éléments sélectionnés</td>
+              </tr>
+              <tr>
+                <td><span class="event-name">(valueSelected)</span></td>
+                <td>Valeurs sélectionnées</td>
+              </tr>
+              <tr>
+                <td><span class="event-name">(onRemove)</span></td>
+                <td>Élément supprimé</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="code-example">
+<code><span class="tag">&lt;e-dropdown-multiselect</span>
+  <span class="attr">[list]</span>=<span class="string">"technologies"</span>
+  <span class="attr">label</span>=<span class="string">"Technologies"</span>
+  <span class="attr">[searchFlag]</span>=<span class="string">"true"</span>
+  <span class="attr">[showSelectedAll]</span>=<span class="string">"true"</span>
+  <span class="attr">[maxSelected]</span>=<span class="string">"5"</span>
+  <span class="attr">(listSelected)</span>=<span class="string">"onSelect($event)"</span>
+<span class="tag">&gt;&lt;/e-dropdown-multiselect&gt;</span></code>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. TEXTAREA -->
+    <section id="textarea" class="component">
+      <div class="component-header">
+        <h2><span class="number">5</span> Textarea</h2>
+        <span class="selector">&lt;e-textarea&gt;</span>
+        <p class="description">Zone de texte multi-lignes</p>
+      </div>
+      <div class="component-body">
+        <div class="props-section">
+          <h3>Propriétés</h3>
+          <table class="props-table">
+            <tbody>
+              <tr>
+                <td><span class="prop-name">label</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Label du champ</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">placeholder</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Placeholder</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">rows</span></td>
+                <td><span class="prop-type">number</span></td>
+                <td>Nombre de lignes</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">cols</span></td>
+                <td><span class="prop-type">number</span></td>
+                <td>Nombre de colonnes</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">iconName</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Icône (avec inputGroup=true)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">inputGroup</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Active le mode groupe avec icône</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">required, error, errorMsg, disabled, control</span></td>
+                <td colspan="2">Mêmes propriétés que e-input</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="code-example">
+<code><span class="tag">&lt;e-textarea</span>
+  <span class="attr">label</span>=<span class="string">"Description"</span>
+  <span class="attr">placeholder</span>=<span class="string">"Entrez une description..."</span>
+  <span class="attr">[rows]</span>=<span class="string">"5"</span>
+  <span class="attr">[required]</span>=<span class="string">"true"</span>
+<span class="tag">&gt;&lt;/e-textarea&gt;</span></code>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. CHECKS -->
+    <section id="checks" class="component">
+      <div class="component-header">
+        <h2><span class="number">6</span> Checks (Checkbox & Switch)</h2>
+        <span class="selector">&lt;e-checks&gt;</span>
+        <p class="description">Cases à cocher et interrupteurs</p>
+      </div>
+      <div class="component-body">
+        <div class="props-section">
+          <h3>Propriétés</h3>
+          <table class="props-table">
+            <tbody>
+              <tr>
+                <td><span class="prop-name">type</span></td>
+                <td><span class="prop-type">'checkbox' | 'switch'</span></td>
+                <td>Type de contrôle</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">label</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Texte du label</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">labelClass</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Classes CSS du label</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">checked</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>État coché</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">disabled</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Désactivé</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">required, error, errorMsg, control</span></td>
+                <td colspan="2">Propriétés de validation</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="props-section">
+          <h3>Types disponibles</h3>
+          <div class="values-list">
+            <span class="value-tag">checkbox</span>
+            <span class="value-tag">switch</span>
+          </div>
+        </div>
+
+        <div class="code-example">
+<code><span class="comment">&lt;!-- Checkbox --&gt;</span>
+<span class="tag">&lt;e-checks</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">label</span>=<span class="string">"J'accepte les conditions"</span><span class="tag">&gt;&lt;/e-checks&gt;</span>
+
+<span class="comment">&lt;!-- Switch --&gt;</span>
+<span class="tag">&lt;e-checks</span> <span class="attr">type</span>=<span class="string">"switch"</span> <span class="attr">label</span>=<span class="string">"Activer les notifications"</span> <span class="attr">[checked]</span>=<span class="string">"true"</span><span class="tag">&gt;&lt;/e-checks&gt;</span></code>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. RADIO -->
+    <section id="radio" class="component">
+      <div class="component-header">
+        <h2><span class="number">7</span> Radio</h2>
+        <span class="selector">&lt;e-radio&gt;</span>
+        <p class="description">Boutons radio pour sélection exclusive</p>
+      </div>
+      <div class="component-body">
+        <div class="props-section">
+          <h3>Propriétés</h3>
+          <table class="props-table">
+            <tbody>
+              <tr>
+                <td><span class="prop-name">options</span></td>
+                <td><span class="prop-type">any[]</span></td>
+                <td>Liste des options (strings ou objets)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">label</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Label du groupe</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">selectedValue</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Valeur sélectionnée</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">selectKey</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Clé pour la valeur (objets)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">showKey</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Clé pour l'affichage (objets)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">required, error, errorMsg, disabled, control</span></td>
+                <td colspan="2">Propriétés de validation</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="code-example">
+<code><span class="tag">&lt;e-radio</span>
+  <span class="attr">label</span>=<span class="string">"Genre"</span>
+  <span class="attr">[options]</span>=<span class="string">"[{key: 'M', value: 'Masculin'}, {key: 'F', value: 'Féminin'}]"</span>
+  <span class="attr">selectKey</span>=<span class="string">"key"</span>
+  <span class="attr">showKey</span>=<span class="string">"value"</span>
+  <span class="attr">(changeValue)</span>=<span class="string">"onGenderChange($event)"</span>
+<span class="tag">&gt;&lt;/e-radio&gt;</span></code>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. ALERT -->
+    <section id="alert" class="component">
+      <div class="component-header">
+        <h2><span class="number">8</span> Alert</h2>
+        <span class="selector">&lt;e-alert&gt;</span>
+        <p class="description">Alertes et toasts avec différents types et positions</p>
+      </div>
+      <div class="component-body">
+        <div class="props-section">
+          <h3>Propriétés</h3>
+          <table class="props-table">
+            <tbody>
+              <tr>
+                <td><span class="prop-name">type</span></td>
+                <td><span class="prop-type">TypeMessage</span></td>
+                <td>Type de l'alerte</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">text</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Message de l'alerte</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">showAlert</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Affiche/masque l'alerte</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">textBtn</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Texte du bouton d'action</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">iconBtn</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Icône du bouton</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">btnCancel</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Affiche un bouton Annuler</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">btnClose</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Affiche un bouton Fermer (X)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">time</span></td>
+                <td><span class="prop-type">number</span></td>
+                <td>Durée avant fermeture auto (ms)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">isToast</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Mode toast (position absolue)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">position</span></td>
+                <td><span class="prop-type">TypePosition</span></td>
+                <td>Position du toast</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="props-section">
+          <h3>Types d'alerte (TypeMessage)</h3>
+          <div class="values-list">
+            <span class="value-tag success">success</span>
+            <span class="value-tag warning">warning</span>
+            <span class="value-tag danger">error</span>
+            <span class="value-tag info">info</span>
+          </div>
+        </div>
+
+        <div class="props-section">
+          <h3>Positions (TypePosition)</h3>
+          <div class="values-list">
+            <span class="value-tag">top-left</span>
+            <span class="value-tag">top-center</span>
+            <span class="value-tag">top-right</span>
+            <span class="value-tag">center-left</span>
+            <span class="value-tag">center</span>
+            <span class="value-tag">center-right</span>
+            <span class="value-tag">bottom-left</span>
+            <span class="value-tag">bottom-center</span>
+            <span class="value-tag">bottom-right</span>
+          </div>
+        </div>
+
+        <div class="code-example">
+<code><span class="comment">&lt;!-- Alerte inline --&gt;</span>
+<span class="tag">&lt;e-alert</span> <span class="attr">type</span>=<span class="string">"success"</span> <span class="attr">text</span>=<span class="string">"Opération réussie!"</span> <span class="attr">[showAlert]</span>=<span class="string">"true"</span><span class="tag">&gt;&lt;/e-alert&gt;</span>
+
+<span class="comment">&lt;!-- Toast --&gt;</span>
+<span class="tag">&lt;e-alert</span>
+  <span class="attr">type</span>=<span class="string">"error"</span>
+  <span class="attr">text</span>=<span class="string">"Une erreur est survenue"</span>
+  <span class="attr">[showAlert]</span>=<span class="string">"showError"</span>
+  <span class="attr">[isToast]</span>=<span class="string">"true"</span>
+  <span class="attr">position</span>=<span class="string">"top-right"</span>
+  <span class="attr">[time]</span>=<span class="string">"5000"</span>
+  <span class="attr">[btnClose]</span>=<span class="string">"true"</span>
+<span class="tag">&gt;&lt;/e-alert&gt;</span></code>
+        </div>
+
+        <div class="info-box">
+          <strong>Service disponible:</strong> AlertService permet d'afficher des alertes programmatiquement.
+        </div>
+      </div>
+    </section>
+
+    <!-- 9. MODAL -->
+    <section id="modal" class="component">
+      <div class="component-header">
+        <h2><span class="number">9</span> Modal</h2>
+        <span class="selector">&lt;e-modal&gt;</span>
+        <p class="description">Fenêtre modale avec différentes tailles et types</p>
+      </div>
+      <div class="component-body">
+        <div class="props-section">
+          <h3>Propriétés</h3>
+          <table class="props-table">
+            <tbody>
+              <tr>
+                <td><span class="prop-name">title</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Titre de la modal</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">titleDesciption</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Description sous le titre</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">showModal</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Affiche/masque la modal</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">modalWidth</span></td>
+                <td><span class="prop-type">TypeSize</span></td>
+                <td>Taille de la modal</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">type</span></td>
+                <td><span class="prop-type">TypeMessage</span></td>
+                <td>Type (affecte l'icône)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">iconName</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Icône personnalisée</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">hasIcon</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Affiche l'icône</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">hasCloseButton</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Affiche le bouton X</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">isSlideModal</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Modal slide (depuis la droite)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">staticBackdrop</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Empêche fermeture par clic extérieur</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">actions</span></td>
+                <td><span class="prop-type">IAction[]</span></td>
+                <td>Boutons d'action</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="props-section">
+          <h3>Tailles (TypeSize)</h3>
+          <div class="values-list">
+            <span class="value-tag">small</span>
+            <span class="value-tag">medium</span>
+            <span class="value-tag">large</span>
+          </div>
+        </div>
+
+        <div class="props-section">
+          <h3>Interface IAction</h3>
+          <div class="code-example">
+<code>interface IAction {
+  text: string;       <span class="comment">// Texte du bouton</span>
+  btnType: string;    <span class="comment">// Type du bouton (primary, secondary...)</span>
+  emit: string;       <span class="comment">// Valeur émise au clic</span>
+  btnWidth?: string;  <span class="comment">// Largeur du bouton</span>
+}</code>
+          </div>
+        </div>
+
+        <div class="code-example">
+<code><span class="tag">&lt;e-modal</span>
+  <span class="attr">title</span>=<span class="string">"Confirmation"</span>
+  <span class="attr">titleDesciption</span>=<span class="string">"Voulez-vous supprimer cet élément?"</span>
+  <span class="attr">[showModal]</span>=<span class="string">"showDeleteModal"</span>
+  <span class="attr">modalWidth</span>=<span class="string">"medium"</span>
+  <span class="attr">type</span>=<span class="string">"warning"</span>
+  <span class="attr">[hasIcon]</span>=<span class="string">"true"</span>
+  <span class="attr">[hasCloseButton]</span>=<span class="string">"true"</span>
+  <span class="attr">[actions]</span>=<span class="string">"[{text: 'Annuler', btnType: 'secondary', emit: 'cancel'},
+              {text: 'Supprimer', btnType: 'danger', emit: 'delete'}]"</span>
+  <span class="attr">(actionEvent)</span>=<span class="string">"onModalAction($event)"</span>
+<span class="tag">&gt;
+  &lt;p&gt;</span>Cette action est irréversible.<span class="tag">&lt;/p&gt;
+&lt;/e-modal&gt;</span></code>
+        </div>
+
+        <div class="info-box">
+          <strong>Service disponible:</strong> ModalService permet d'ouvrir des modals programmatiquement.
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. NOTIFICATION -->
+    <section id="notification" class="component">
+      <div class="component-header">
+        <h2><span class="number">10</span> Notification</h2>
+        <span class="selector">&lt;e-notification&gt;</span>
+        <p class="description">Notifications avec actions personnalisées</p>
+      </div>
+      <div class="component-body">
+        <div class="props-section">
+          <h3>Propriétés</h3>
+          <table class="props-table">
+            <tbody>
+              <tr>
+                <td><span class="prop-name">title</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Titre de la notification</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">text</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Message</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">type</span></td>
+                <td><span class="prop-type">TypeMessage</span></td>
+                <td>Type de notification</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">icon</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Icône personnalisée</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">showNotif</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Affiche/masque</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">position</span></td>
+                <td><span class="prop-type">TypePosition</span></td>
+                <td>Position</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">btnClose</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Bouton fermer</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">btn1</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Texte bouton 1</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">btn2</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Texte bouton 2</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="code-example">
+<code><span class="tag">&lt;e-notification</span>
+  <span class="attr">title</span>=<span class="string">"Nouvelle demande"</span>
+  <span class="attr">text</span>=<span class="string">"Une nouvelle demande attend votre validation"</span>
+  <span class="attr">type</span>=<span class="string">"info"</span>
+  <span class="attr">icon</span>=<span class="string">"notifications"</span>
+  <span class="attr">[showNotif]</span>=<span class="string">"hasNewRequest"</span>
+  <span class="attr">position</span>=<span class="string">"top-right"</span>
+  <span class="attr">btn1</span>=<span class="string">"Voir"</span>
+  <span class="attr">btn2</span>=<span class="string">"Ignorer"</span>
+  <span class="attr">(event1)</span>=<span class="string">"viewRequest()"</span>
+  <span class="attr">(event2)</span>=<span class="string">"ignoreRequest()"</span>
+<span class="tag">&gt;&lt;/e-notification&gt;</span></code>
+        </div>
+
+        <div class="info-box">
+          <strong>Service disponible:</strong> NotifService
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. LOADER -->
+    <section id="loader" class="component">
+      <div class="component-header">
+        <h2><span class="number">11</span> Loader</h2>
+        <span class="selector">&lt;e-loader&gt;</span>
+        <p class="description">Indicateur de chargement avec différents styles</p>
+      </div>
+      <div class="component-body">
+        <div class="props-section">
+          <h3>Propriétés</h3>
+          <table class="props-table">
+            <tbody>
+              <tr>
+                <td><span class="prop-name">show</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Affiche/masque le loader</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">type</span></td>
+                <td><span class="prop-type">'grow' | 'turn'</span></td>
+                <td>Type d'animation</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">size</span></td>
+                <td><span class="prop-type">TypeSize</span></td>
+                <td>Taille (small, medium, large)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">text</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Texte sous le loader</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">hasBackdrop</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Affiche un fond sombre</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">isInside</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Position relative au parent</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="props-section">
+          <h3>Types d'animation</h3>
+          <div class="values-list">
+            <span class="value-tag">grow</span>
+            <span class="value-tag">turn</span>
+          </div>
+        </div>
+
+        <div class="code-example">
+<code><span class="comment">&lt;!-- Loader simple --&gt;</span>
+<span class="tag">&lt;e-loader</span> <span class="attr">[show]</span>=<span class="string">"isLoading"</span> <span class="attr">type</span>=<span class="string">"turn"</span> <span class="attr">size</span>=<span class="string">"medium"</span><span class="tag">&gt;&lt;/e-loader&gt;</span>
+
+<span class="comment">&lt;!-- Loader fullscreen --&gt;</span>
+<span class="tag">&lt;e-loader</span>
+  <span class="attr">[show]</span>=<span class="string">"isLoading"</span>
+  <span class="attr">type</span>=<span class="string">"turn"</span>
+  <span class="attr">size</span>=<span class="string">"large"</span>
+  <span class="attr">text</span>=<span class="string">"Chargement en cours..."</span>
+  <span class="attr">[hasBackdrop]</span>=<span class="string">"true"</span>
+<span class="tag">&gt;&lt;/e-loader&gt;</span></code>
+        </div>
+
+        <div class="info-box">
+          <strong>Service disponible:</strong> LoaderService.showLoader() / hideLoader()
+        </div>
+      </div>
+    </section>
+
+    <!-- 12. TABLE -->
+    <section id="table" class="component">
+      <div class="component-header">
+        <h2><span class="number">12</span> Table</h2>
+        <span class="selector">&lt;e-table&gt;</span>
+        <p class="description">Tableau de données avec tri, filtre, pagination et sélection</p>
+      </div>
+      <div class="component-body">
+        <div class="props-section">
+          <h3>Propriétés principales</h3>
+          <table class="props-table">
+            <tbody>
+              <tr>
+                <td><span class="prop-name">value</span></td>
+                <td><span class="prop-type">any[]</span></td>
+                <td>Données du tableau</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">columns</span></td>
+                <td><span class="prop-type">any[]</span></td>
+                <td>Définition des colonnes</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">paginator</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Active la pagination</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">rows</span></td>
+                <td><span class="prop-type">number</span></td>
+                <td>Lignes par page</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">rowsPerPageOptions</span></td>
+                <td><span class="prop-type">number[]</span></td>
+                <td>Options de pagination</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">selectionMode</span></td>
+                <td><span class="prop-type">'single' | 'multiple'</span></td>
+                <td>Mode de sélection</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">selection</span></td>
+                <td><span class="prop-type">any | any[]</span></td>
+                <td>Éléments sélectionnés (two-way)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">dataKey</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Clé unique des données</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">lazy</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Mode lazy loading</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">totalRecords</span></td>
+                <td><span class="prop-type">number</span></td>
+                <td>Total (lazy mode)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">loading</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>État de chargement</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">rowHover</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Effet hover sur les lignes</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">captionFilter</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Active le filtre global</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">title</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Titre du tableau</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">exportType</span></td>
+                <td><span class="prop-type">'pdf' | 'excel' | 'csv'</span></td>
+                <td>Type d'export</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="props-section">
+          <h3>Templates disponibles (eTemplate)</h3>
+          <div class="values-list">
+            <span class="value-tag">header</span>
+            <span class="value-tag">body</span>
+            <span class="value-tag">caption</span>
+            <span class="value-tag">summary</span>
+            <span class="value-tag">emptymessage</span>
+            <span class="value-tag">loadingbody</span>
+          </div>
+        </div>
+
+        <div class="props-section">
+          <h3>Directives associées</h3>
+          <table class="props-table">
+            <tbody>
+              <tr>
+                <td><span class="prop-name">[eSortableColumn]</span></td>
+                <td>Rend une colonne triable</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">&lt;e-checkbox&gt;</span></td>
+                <td>Checkbox de sélection (type="all" ou "single")</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">&lt;e-column-filter&gt;</span></td>
+                <td>Filtre de colonne</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="code-example">
+<code><span class="tag">&lt;e-table</span>
+  <span class="attr">[value]</span>=<span class="string">"users"</span>
+  <span class="attr">[paginator]</span>=<span class="string">"true"</span>
+  <span class="attr">[rows]</span>=<span class="string">"10"</span>
+  <span class="attr">[rowsPerPageOptions]</span>=<span class="string">"[10, 25, 50]"</span>
+  <span class="attr">selectionMode</span>=<span class="string">"multiple"</span>
+  <span class="attr">[(selection)]</span>=<span class="string">"selectedUsers"</span>
+  <span class="attr">dataKey</span>=<span class="string">"id"</span>
+  <span class="attr">[rowHover]</span>=<span class="string">"true"</span>
+<span class="tag">&gt;
+  &lt;ng-template eTemplate="header"&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+      <span class="tag">&lt;th&gt;&lt;e-checkbox</span> <span class="attr">type</span>=<span class="string">"all"</span><span class="tag">&gt;&lt;/e-checkbox&gt;&lt;/th&gt;</span>
+      <span class="tag">&lt;th</span> <span class="attr">[eSortableColumn]</span>=<span class="string">"'nom'"</span><span class="tag">&gt;</span>Nom<span class="tag">&lt;/th&gt;</span>
+      <span class="tag">&lt;th</span> <span class="attr">[eSortableColumn]</span>=<span class="string">"'email'"</span><span class="tag">&gt;</span>Email<span class="tag">&lt;/th&gt;</span>
+    <span class="tag">&lt;/tr&gt;
+  &lt;/ng-template&gt;
+
+  &lt;ng-template eTemplate="body" let-user let-rowIndex="rowIndex"&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+      <span class="tag">&lt;td&gt;&lt;e-checkbox</span> <span class="attr">type</span>=<span class="string">"single"</span> <span class="attr">[value]</span>=<span class="string">"user"</span> <span class="attr">[index]</span>=<span class="string">"rowIndex"</span><span class="tag">&gt;&lt;/e-checkbox&gt;&lt;/td&gt;</span>
+      <span class="tag">&lt;td&gt;</span>{{user.nom}}<span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;td&gt;</span>{{user.email}}<span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;/tr&gt;
+  &lt;/ng-template&gt;
+&lt;/e-table&gt;</span></code>
+        </div>
+      </div>
+    </section>
+
+    <!-- 13. TABS -->
+    <section id="tabs" class="component">
+      <div class="component-header">
+        <h2><span class="number">13</span> TabView / TabPanel</h2>
+        <span class="selector">&lt;e-tabview&gt; &lt;e-tabpanel&gt;</span>
+        <p class="description">Navigation par onglets</p>
+      </div>
+      <div class="component-body">
+        <div class="props-section">
+          <h3>Propriétés e-tabview</h3>
+          <table class="props-table">
+            <tbody>
+              <tr>
+                <td><span class="prop-name">activeIndex</span></td>
+                <td><span class="prop-type">number</span></td>
+                <td>Index de l'onglet actif (two-way)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">scrollable</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Active le scroll horizontal</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">navigation</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Affiche les boutons prev/next</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">isStep</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Mode stepper (étapes)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">showHeader</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Affiche les headers</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">editable</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Mode édition</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="props-section">
+          <h3>Propriétés e-tabpanel</h3>
+          <table class="props-table">
+            <tbody>
+              <tr>
+                <td><span class="prop-name">header</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Titre de l'onglet</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">selected</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Onglet sélectionné</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">edited</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Indicateur de modification</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="code-example">
+<code><span class="tag">&lt;e-tabview</span> <span class="attr">[(activeIndex)]</span>=<span class="string">"currentTab"</span> <span class="attr">[scrollable]</span>=<span class="string">"true"</span><span class="tag">&gt;
+  &lt;e-tabpanel</span> <span class="attr">header</span>=<span class="string">"Informations"</span><span class="tag">&gt;</span>
+    Contenu onglet 1
+  <span class="tag">&lt;/e-tabpanel&gt;
+  &lt;e-tabpanel</span> <span class="attr">header</span>=<span class="string">"Documents"</span><span class="tag">&gt;</span>
+    Contenu onglet 2
+  <span class="tag">&lt;/e-tabpanel&gt;
+  &lt;e-tabpanel</span> <span class="attr">header</span>=<span class="string">"Historique"</span><span class="tag">&gt;</span>
+    Contenu onglet 3
+  <span class="tag">&lt;/e-tabpanel&gt;
+&lt;/e-tabview&gt;</span></code>
+        </div>
+      </div>
+    </section>
+
+    <!-- 14. ACCORDION -->
+    <section id="accordion" class="component">
+      <div class="component-header">
+        <h2><span class="number">14</span> Accordion</h2>
+        <span class="selector">&lt;e-accordion&gt; &lt;e-accordion-item&gt;</span>
+        <p class="description">Panneau accordéon pliable</p>
+      </div>
+      <div class="component-body">
+        <div class="props-section">
+          <h3>Propriétés e-accordion</h3>
+          <table class="props-table">
+            <tbody>
+              <tr>
+                <td><span class="prop-name">collapsing</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Un seul panneau ouvert à la fois</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">id</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>ID HTML</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="props-section">
+          <h3>Propriétés e-accordion-item</h3>
+          <table class="props-table">
+            <tbody>
+              <tr>
+                <td><span class="prop-name">title</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Titre du panneau</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">expanded</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>État ouvert/fermé (two-way)</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">disabled</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>Désactivé</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">error</span></td>
+                <td><span class="prop-type">boolean</span></td>
+                <td>État d'erreur</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="props-section">
+          <h3>Templates (ng-template)</h3>
+          <div class="values-list">
+            <span class="value-tag">#content</span>
+            <span class="value-tag">#customTitle</span>
+            <span class="value-tag">#customHeader</span>
+          </div>
+        </div>
+
+        <div class="code-example">
+<code><span class="tag">&lt;e-accordion</span> <span class="attr">[collapsing]</span>=<span class="string">"true"</span><span class="tag">&gt;
+  &lt;e-accordion-item</span> <span class="attr">title</span>=<span class="string">"Section 1"</span> <span class="attr">[expanded]</span>=<span class="string">"true"</span><span class="tag">&gt;
+    &lt;ng-template #content&gt;</span>
+      Contenu de la section 1
+    <span class="tag">&lt;/ng-template&gt;
+  &lt;/e-accordion-item&gt;
+  &lt;e-accordion-item</span> <span class="attr">title</span>=<span class="string">"Section 2"</span><span class="tag">&gt;
+    &lt;ng-template #content&gt;</span>
+      Contenu de la section 2
+    <span class="tag">&lt;/ng-template&gt;
+  &lt;/e-accordion-item&gt;
+&lt;/e-accordion&gt;</span></code>
+        </div>
+      </div>
+    </section>
+
+    <!-- 15. BADGE -->
+    <section id="badge" class="component">
+      <div class="component-header">
+        <h2><span class="number">15</span> Badge</h2>
+        <span class="selector">&lt;e-badge&gt; [badge]</span>
+        <p class="description">Badge et directive pour indicateurs</p>
+      </div>
+      <div class="component-body">
+        <div class="props-section">
+          <h3>Composant e-badge</h3>
+          <table class="props-table">
+            <tbody>
+              <tr>
+                <td><span class="prop-name">text</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Texte du badge</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">class</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Classes CSS (success, warning, danger, info)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="props-section">
+          <h3>Directive [badge]</h3>
+          <table class="props-table">
+            <tbody>
+              <tr>
+                <td><span class="prop-name">[badge]</span></td>
+                <td><span class="prop-type">any</span></td>
+                <td>Valeur du badge</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">variant</span></td>
+                <td><span class="prop-type">BadgeVariants</span></td>
+                <td>Couleur du badge</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">position</span></td>
+                <td><span class="prop-type">BadgePositions</span></td>
+                <td>Position du badge</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">size</span></td>
+                <td><span class="prop-type">BadgeSizes</span></td>
+                <td>Taille du badge</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="props-section">
+          <h3>Variants</h3>
+          <div class="values-list">
+            <span class="value-tag primary">primary</span>
+            <span class="value-tag" style="background:#6c757d;color:white">secondary</span>
+            <span class="value-tag success">success</span>
+            <span class="value-tag danger">danger</span>
+            <span class="value-tag warning">warning</span>
+          </div>
+        </div>
+
+        <div class="props-section">
+          <h3>Positions</h3>
+          <div class="values-list">
+            <span class="value-tag">top-right</span>
+            <span class="value-tag">top-left</span>
+            <span class="value-tag">bottom-right</span>
+            <span class="value-tag">bottom-left</span>
+          </div>
+        </div>
+
+        <div class="code-example">
+<code><span class="comment">&lt;!-- Badge composant --&gt;</span>
+<span class="tag">&lt;e-badge</span> <span class="attr">text</span>=<span class="string">"Nouveau"</span> <span class="attr">class</span>=<span class="string">"success"</span><span class="tag">&gt;&lt;/e-badge&gt;</span>
+
+<span class="comment">&lt;!-- Badge directive --&gt;</span>
+<span class="tag">&lt;button</span> <span class="attr">[badge]</span>=<span class="string">"5"</span> <span class="attr">variant</span>=<span class="string">"danger"</span> <span class="attr">position</span>=<span class="string">"top-right"</span><span class="tag">&gt;</span>
+  Notifications
+<span class="tag">&lt;/button&gt;</span></code>
+        </div>
+      </div>
+    </section>
+
+    <!-- 16. CARDS & STATS -->
+    <section id="cards" class="component">
+      <div class="component-header">
+        <h2><span class="number">16</span> Cards & Stats</h2>
+        <span class="selector">&lt;e-cards&gt; &lt;e-stats&gt;</span>
+        <p class="description">Cartes et statistiques</p>
+      </div>
+      <div class="component-body">
+        <div class="props-section">
+          <h3>e-cards</h3>
+          <table class="props-table">
+            <tbody>
+              <tr>
+                <td><span class="prop-name">title</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Titre de la carte</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">subTitle</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Sous-titre</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">size</span></td>
+                <td><span class="prop-type">string</span></td>
+                <td>Taille de la carte</td>
+              </tr>
+            </tbody>
+          </table>
+          <p style="margin-top:10px"><strong>Slots:</strong> [card-actions] pour les boutons d'action</p>
+        </div>
+
+        <div class="props-section">
+          <h3>e-stats</h3>
+          <table class="props-table">
+            <tbody>
+              <tr>
+                <td><span class="prop-name">cards</span></td>
+                <td><span class="prop-type">StatsCard[]</span></td>
+                <td>Tableau de cartes statistiques</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="code-example">
+<code>interface StatsCard {
+  title: string;
+  value: string | number;
+  extention?: string;
+  iconLeft?: string;
+  iconRight?: string;
+  color?: string;        <span class="comment">// primary, success, warning, danger</span>
+  isDisabledCard?: boolean;
+}</code>
+          </div>
+        </div>
+
+        <div class="code-example">
+<code><span class="comment">&lt;!-- Carte simple --&gt;</span>
+<span class="tag">&lt;e-cards</span> <span class="attr">title</span>=<span class="string">"Utilisateurs"</span> <span class="attr">subTitle</span>=<span class="string">"Total actifs"</span><span class="tag">&gt;</span>
+  <span class="tag">&lt;p&gt;</span>1,234 utilisateurs<span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;ng-container</span> <span class="attr">card-actions</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;e-button</span> <span class="attr">text</span>=<span class="string">"Voir"</span><span class="tag">&gt;&lt;/e-button&gt;</span>
+  <span class="tag">&lt;/ng-container&gt;
+&lt;/e-cards&gt;</span>
+
+<span class="comment">&lt;!-- Stats --&gt;</span>
+<span class="tag">&lt;e-stats</span> <span class="attr">[cards]</span>=<span class="string">"[
+  {title: 'Total', value: 1250, iconLeft: 'trending_up', color: 'primary'},
+  {title: 'Actifs', value: 980, iconLeft: 'check', color: 'success'},
+  {title: 'En attente', value: 45, iconLeft: 'hourglass', color: 'warning'}
+]"</span><span class="tag">&gt;&lt;/e-stats&gt;</span></code>
+        </div>
+      </div>
+    </section>
+
+    <!-- 17-23: Autres composants (résumé) -->
+    <section id="breadcrumbs" class="component">
+      <div class="component-header">
+        <h2><span class="number">17</span> BreadCrumbs</h2>
+        <span class="selector">&lt;e-bread-crumbs&gt;</span>
+        <p class="description">Fil d'Ariane</p>
+      </div>
+      <div class="component-body">
+        <table class="props-table">
+          <tbody>
+            <tr><td><span class="prop-name">children</span></td><td><span class="prop-type">ITitle[]</span></td><td>Liste des éléments {label, path?, icon?}</td></tr>
+            <tr><td><span class="prop-name">title</span></td><td><span class="prop-type">string</span></td><td>Titre de la page actuelle</td></tr>
+            <tr><td><span class="prop-name">icon</span></td><td><span class="prop-type">string</span></td><td>Icône</td></tr>
+            <tr><td><span class="prop-name">titleCase</span></td><td><span class="prop-type">boolean</span></td><td>Convertit en Title Case</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="title" class="component">
+      <div class="component-header">
+        <h2><span class="number">18</span> Title</h2>
+        <span class="selector">&lt;e-title&gt;</span>
+        <p class="description">En-tête de page avec bouton retour</p>
+      </div>
+      <div class="component-body">
+        <table class="props-table">
+          <tbody>
+            <tr><td><span class="prop-name">title</span></td><td><span class="prop-type">string</span></td><td>Titre principal</td></tr>
+            <tr><td><span class="prop-name">subTitle</span></td><td><span class="prop-type">string</span></td><td>Sous-titre</td></tr>
+            <tr><td><span class="prop-name">btnText</span></td><td><span class="prop-type">string</span></td><td>Texte du bouton retour</td></tr>
+            <tr><td><span class="prop-name">(onComeback)</span></td><td><span class="prop-type">boolean</span></td><td>Événement clic retour</td></tr>
+          </tbody>
+        </table>
+        <p style="margin-top:10px">Supporte le contenu projeté pour des boutons d'action</p>
+      </div>
+    </section>
+
+    <section id="upload" class="component">
+      <div class="component-header">
+        <h2><span class="number">19</span> Upload</h2>
+        <span class="selector">&lt;e-upload&gt;</span>
+        <p class="description">Composant de téléchargement de fichiers</p>
+      </div>
+      <div class="component-body">
+        <table class="props-table">
+          <tbody>
+            <tr><td><span class="prop-name">label</span></td><td><span class="prop-type">string</span></td><td>Label</td></tr>
+            <tr><td><span class="prop-name">text</span></td><td><span class="prop-type">string</span></td><td>Texte d'instruction</td></tr>
+            <tr><td><span class="prop-name">multiple</span></td><td><span class="prop-type">boolean</span></td><td>Sélection multiple</td></tr>
+            <tr><td><span class="prop-name">files</span></td><td><span class="prop-type">any[]</span></td><td>Fichiers existants</td></tr>
+            <tr><td><span class="prop-name">fileExtensions</span></td><td><span class="prop-type">string[]</span></td><td>Extensions autorisées</td></tr>
+            <tr><td><span class="prop-name">fileSize</span></td><td><span class="prop-type">number</span></td><td>Taille max (MB)</td></tr>
+            <tr><td><span class="prop-name">showRemove, showSize, showDate</span></td><td><span class="prop-type">boolean</span></td><td>Options d'affichage</td></tr>
+            <tr><td><span class="prop-name">simple</span></td><td><span class="prop-type">boolean</span></td><td>Mode simplifié</td></tr>
+            <tr><td><span class="prop-name">disabled, required, error, errorMsg</span></td><td colspan="2">Propriétés de validation</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="phone" class="component">
+      <div class="component-header">
+        <h2><span class="number">20</span> Phone</h2>
+        <span class="selector">&lt;e-phone&gt;</span>
+        <p class="description">Champ téléphone avec indicatif pays</p>
+      </div>
+      <div class="component-body">
+        <table class="props-table">
+          <tbody>
+            <tr><td><span class="prop-name">list</span></td><td><span class="prop-type">any[]</span></td><td>Liste des pays {key, value, country}</td></tr>
+            <tr><td><span class="prop-name">defaultValue</span></td><td><span class="prop-type">string</span></td><td>Indicatif par défaut</td></tr>
+            <tr><td><span class="prop-name">searchFlag</span></td><td><span class="prop-type">boolean</span></td><td>Active la recherche</td></tr>
+            <tr><td><span class="prop-name">selectKey, showKey</span></td><td><span class="prop-type">string</span></td><td>Clés pour objets</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="paginator" class="component">
+      <div class="component-header">
+        <h2><span class="number">21</span> Paginator</h2>
+        <span class="selector">&lt;e-paginator&gt;</span>
+        <p class="description">Pagination standalone</p>
+      </div>
+      <div class="component-body">
+        <table class="props-table">
+          <tbody>
+            <tr><td><span class="prop-name">totalRecords</span></td><td><span class="prop-type">number</span></td><td>Nombre total d'éléments</td></tr>
+            <tr><td><span class="prop-name">rows</span></td><td><span class="prop-type">number</span></td><td>Éléments par page</td></tr>
+            <tr><td><span class="prop-name">first</span></td><td><span class="prop-type">number</span></td><td>Index du premier élément</td></tr>
+            <tr><td><span class="prop-name">rowsPerPageOptions</span></td><td><span class="prop-type">number[]</span></td><td>Options de pagination</td></tr>
+            <tr><td><span class="prop-name">showJumpToPageDropdown</span></td><td><span class="prop-type">boolean</span></td><td>Sélecteur de page</td></tr>
+            <tr><td><span class="prop-name">showLinePage</span></td><td><span class="prop-type">boolean</span></td><td>Ligne de pages</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="filter" class="component">
+      <div class="component-header">
+        <h2><span class="number">22</span> NewFilter</h2>
+        <span class="selector">&lt;e-new-filter&gt;</span>
+        <p class="description">Composant de filtrage avancé</p>
+      </div>
+      <div class="component-body">
+        <table class="props-table">
+          <tbody>
+            <tr><td><span class="prop-name">title</span></td><td><span class="prop-type">string</span></td><td>Titre</td></tr>
+            <tr><td><span class="prop-name">columns</span></td><td><span class="prop-type">any[]</span></td><td>Colonnes filtrables</td></tr>
+            <tr><td><span class="prop-name">placeholder</span></td><td><span class="prop-type">string</span></td><td>Placeholder recherche</td></tr>
+            <tr><td><span class="prop-name">showFilter</span></td><td><span class="prop-type">boolean</span></td><td>État du panel filtres</td></tr>
+            <tr><td><span class="prop-name">exportType</span></td><td><span class="prop-type">string</span></td><td>Type d'export</td></tr>
+            <tr><td><span class="prop-name">(validateEvent)</span></td><td colspan="2">Émis lors de la validation des filtres</td></tr>
+            <tr><td><span class="prop-name">(resetEvent)</span></td><td colspan="2">Émis lors du reset</td></tr>
+            <tr><td><span class="prop-name">(searchEvent)</span></td><td colspan="2">Émis lors de la recherche</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section id="tooltip" class="component">
+      <div class="component-header">
+        <h2><span class="number">23</span> Tooltip</h2>
+        <span class="selector">[eTooltip]</span>
+        <p class="description">Directive tooltip</p>
+      </div>
+      <div class="component-body">
+        <table class="props-table">
+          <tbody>
+            <tr><td><span class="prop-name">[eTooltip]</span></td><td><span class="prop-type">string</span></td><td>Texte du tooltip</td></tr>
+            <tr><td><span class="prop-name">tooltipPosition</span></td><td><span class="prop-type">string</span></td><td>Position: top, bottom, left, right</td></tr>
+            <tr><td><span class="prop-name">backgroundColor</span></td><td><span class="prop-type">string</span></td><td>Couleur de fond (hex)</td></tr>
+          </tbody>
+        </table>
+        <div class="code-example">
+<code><span class="tag">&lt;button</span> <span class="attr">eTooltip</span>=<span class="string">"Information utile"</span> <span class="attr">tooltipPosition</span>=<span class="string">"top"</span><span class="tag">&gt;</span>
+  Survolez-moi
+<span class="tag">&lt;/button&gt;</span></code>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services" class="component">
+      <div class="component-header">
+        <h2><span class="number">+</span> Services & Utilitaires</h2>
+        <p class="description">Services injectables et utilitaires</p>
+      </div>
+      <div class="component-body">
+        <div class="services-grid">
+          <div class="service-card">
+            <h4>AlertService</h4>
+            <p>Affiche des alertes/toasts programmatiquement</p>
+            <code>alertService.show({text, type, isToast, position, time})</code>
+          </div>
+          <div class="service-card">
+            <h4>ModalService</h4>
+            <p>Ouvre des modals programmatiquement</p>
+            <code>modalService.show({title, type, actions, actionEvent})</code>
+          </div>
+          <div class="service-card">
+            <h4>NotifService</h4>
+            <p>Affiche des notifications</p>
+            <code>notifService.show({titre, text, type, btn1, btn2})</code>
+          </div>
+          <div class="service-card">
+            <h4>LoaderService</h4>
+            <p>Gère le loader global</p>
+            <code>loaderService.showLoader({text, type, size})</code><br>
+            <code>loaderService.hideLoader()</code>
+          </div>
+          <div class="service-card">
+            <h4>TableService</h4>
+            <p>Gestion des événements de table</p>
+          </div>
+          <div class="service-card">
+            <h4>FilterService</h4>
+            <p>Filtrage des données</p>
+          </div>
+        </div>
+
+        <div class="props-section" style="margin-top: 30px;">
+          <h3>Types & Enums</h3>
+          <table class="props-table">
+            <tbody>
+              <tr>
+                <td><span class="prop-name">TypeMessage</span></td>
+                <td>'warning' | 'error' | 'info' | 'success'</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">TypeSize</span></td>
+                <td>'small' | 'medium' | 'large'</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">TypePosition</span></td>
+                <td>'top-left' | 'top-center' | 'top-right' | 'center-left' | 'center' | 'center-right' | 'bottom-left' | 'bottom-center' | 'bottom-right'</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">BadgeVariants</span></td>
+                <td>'primary' | 'secondary' | 'success' | 'danger' | 'warning'</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">BadgePositions</span></td>
+                <td>'top-right' | 'top-left' | 'bottom-right' | 'bottom-left'</td>
+              </tr>
+              <tr>
+                <td><span class="prop-name">BadgeSizes</span></td>
+                <td>'small' | 'medium' | 'large'</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="props-section">
+          <h3>Animations disponibles</h3>
+          <div class="values-list">
+            <span class="value-tag">fadeIn</span>
+            <span class="value-tag">slideLeft</span>
+            <span class="value-tag">slideRight</span>
+            <span class="value-tag">slideTop</span>
+            <span class="value-tag">slideBottom</span>
+          </div>
+        </div>
+
+        <div class="props-section">
+          <h3>Constantes</h3>
+          <p><span class="prop-name">COUNTRIES</span> - Liste des pays avec codes ISO et coordonnées</p>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p><strong>EAI Lib Material v0.8.1</strong></p>
+    <p>Design System Catalog - Bank of Africa</p>
+    <p>30 Composants | 6 Services | 4 Directives | 5 Animations</p>
+    <p style="margin-top: 15px; opacity: 0.7;">Document généré pour UI/UX Design Reference</p>
+  </footer>
+
+</body>
+</html>

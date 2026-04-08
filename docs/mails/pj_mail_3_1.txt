@@ -1,0 +1,2046 @@
+%         ;Responsable Marché des particuliers
+ABACKET   ;Agent BO Etranger
+ABACKETGE ;Agent back-office Etranger GE
+ABACKOFGE ;Agent back-office GE
+ACCTR     ;Agent Caisse Centrale
+ACCUE     ;Accueil
+ACHETEUR  ;Acheteur
+ACHETEURSE;Acheteur Senior
+ACTINT1   ;Monteur négociateur opérations internationales
+ACTINT2   ;Animateur commerce international
+ACTINT3   ;Coordinateur succursales et filiales étrangères
+ACTINT4   ;Technicien spécialisé international
+ACTINT5   ;Chargé des relations bancaires extérieures
+ACTRAVABAT;Acheteur Travaux de Bâtiment
+ADDIR     ;Adjoint au Directeur d'Agence
+ADFONSIOFS;Administrateur Fonctionnel SI Offshore
+ADG       ;Administrateur Directeur Général
+ADGDEL    ;ADG Délégué auprès de la Présidence
+ADGF      ;Administrateur Directeur Général Filiale
+ADN       ;Service ADN
+ADRSPCOGRP;Adjoint au Responsable Coordination Groupe
+AFINPRO   ;Analyste Financement de Projets
+AGACHA    ;Agent Achats
+AGBOFF    ;Agent Back Office
+AGBOFFS   ;Agent Back Office Sénior
+AGCOR     ;Agent Correspondance
+AGECO     ;Agent Economat
+AGENTSRVCE;Agent de service
+AGFSGE    ;Agent FS GE
+AGMOB     ;Agent Equipement Mobilier
+AGPATR    ;Agent Gestion Patrimoine
+AGTRAN    ;Agent de Transmission
+AGUIC     ;Arrière guichet
+ANABUDPRSI;Analyste budgétaire Projets & SI
+ANABUPSISE;Analyste budgétaire Projets & SI Sénior
+ANACHAREPO;Analyste Chargé de Reporting
+ANACNORISK;Analyste Coordination et Normes Risques
+ANACNRISKS;Analyste Coordination et Normes Risques Sénior
+ANACOMP   ;Analyste Comptable
+ANACONRISK;Analyste Consolidation Risques
+ANACRDFOGE;Analyste crédit de fonctionnement GE
+ANACREDIT ;Analyste Crédit
+ANACREDTSE;Analyste Crédit Sénior
+ANACRFCPME;Analyste Crédit de fonctionnement PME
+ANACRISKSE;Analyste Consolidation Risques Sénior
+ANACXDIGIT;Analyste CX & Solutions Digitales
+ANADATAFIN;Analyste Data & Analytics - Finance
+ANADTARISK;Analyste Data & Analytics - Risques
+ANADTRISKS;Analyste Data & Analytics Sénior - Risques
+ANADYNTERR;Analyste Dynamiques Territoriales
+ANAETPERES;Anayste Etudes de Performance du Réseau
+ANAFIN    ;Analyste Financier
+ANAFINIMGE;Analyste financement immobilier GE
+ANAFINPART;Analyste Financier - Participations
+ANAFINPCSE;Analyste Financier Sénior - Participations
+ANAIMM    ;Analyste Immobilier
+ANAINVESGE;Analyste investissements GE
+ANAINVESSE;Analyste Investissement - Sénior
+ANAINVSEGE;Analyste investissements GE-Sénior
+ANAKYC    ;Analyste KYC
+ANAKYCSEN ;Analyste KYC Senior
+ANALCO    ;Analyste Confirmé
+ANALJU    ;Analyste Junior
+ANALSE    ;Analyste Senior
+ANAMSCOFIN;Responsable Pilotage et suivi
+ANANMRISKS;Analyste Notation et Modélisation des Risques Séni
+ANANOMRISK;Analyste Notation et Modélisation des Risques
+ANANRSKCRS;Analyste Normes Risque de crédit Sénior
+ANAPECRISK;Analyste Pilotage des Engagements et du Coût du Ri
+ANAPECRSKS;Analyste Pilotage des Engagements & du Coût du Ris
+ANAPFPSGPS;Analyste Pilotage des Fonds Propres & solv.Groupe
+ANAPFPSGRP;Analyste Pilotage des Fonds Propres et solvabilité
+ANAPLINTPE;Analyste Plateforme d'instruction TPE
+ANARELINVE;Analyste Relations Investisseurs
+ANARELPART;Analyste Relations Partenaires
+ANAREPORJU;Analyste Junior Reporting Stratégique Afrique et E
+ANAREPORSE;Analyste Senior Reporting Stratégique Afrique et E
+ANARIS    ;Analyste de Risque
+ANARISKCOM;Analyste Risques de Contrepartie sur Opérations de
+ANARISKCRD;Analyste Risques de Crédit
+ANARISKMAR;Analyste Risques de Marché
+ANARISKOPE;Analyste Risques Opérationnels
+ANARISKPAY;Analyste Risques Pays
+ANARMOPSEN;Analyste Senior Relations Médias et Opinion Publiq
+ANARSKCOMS;Analyste Risques de Contrepartie sur Opéra.de Marc
+ANARSKMARS;Analyste Risques de Marché Sénior
+ANARSKOPES;Analyste Risques Opérationels Sénior
+ANARSKPAYS;Analyste Risques Pays Sénior
+ANASECFINS;Analyste sécurité financière Senior
+ANASECUFIN;Analyste Sécurité Financière
+ANASERETSE;Analyste Surveillance des Engagements Sénior (Reta
+ANASTAT   ;Statisticien Analyste
+ANASTRPILO;Analyste Surveillance Transverse, Reporting et Pil
+ANASTRPISE;Analyste Surveillance Transv. Reporting et Pilotag
+ANASUEN   ;Analyste Surveillance des Engagements
+ANASUENSEN;Analyste Surveillance des Engagements Sénior
+ANASUIPILT;Analyste Suivi et Pilotage
+ANATRANSJU;Analyste Junior Transaction et Structuration Group
+ANATRANSSE;Analyste Senior Transaction et Structuration Group
+ANAVEIL   ;Analyste veille
+ANAVEISTRA;Analyste Veille Stratégique
+ANAVEISTSE;Analyste Veille Stratégique - Sénior
+ANBUD     ;Analyste Budgétaire
+ANBUDS    ;Analyste Budgétaire Sénior
+ANCRFNPMES;Analyste Crédit de fonctionnement PME Senior  
+ANFORM    ;Animateur Formateur
+ANICOM    ;Animateur formateur Commercial
+ANIMCOENT ;Animateur Commercial Entreprise
+ANIMCOM   ;Animateur Commercial
+ANIMCOMPME;Animateur Commercial PME
+ANIMCOREG ;Animateur Commercial Part / Pro
+ANIMCOREG1;Animateur Commercial Région
+ANIMPRIVE ;Animateur Marché Privé
+ANIMPRO   ;Animateur Commercial Pro.
+ANIMPROSS ;Animateur Prospection Sénior
+ANIMTERACQ;Animateur terrain acquisition
+ANLSCURFIN;Analyste Sécurité Financière
+ANSECPCSEC;Animateur Sénior en Charge d.Partenaria.&Convent.S
+APEBANK   ;Chef de Projet e-banking
+AQUAL     ;Animateur Qualité
+ARCHIV    ;Archiviste
+ARCHSEN   ;Architecte Sénior
+ASS CENTRE;Assistante du Centre
+ASSCHPROD ;Assistant Chef de Produits
+ASSCOM    ;Assistant Comptable
+ASSCOMAR  ;Assistant Correspondant Marketing
+ASSCPTABLE;Assistant Comptable
+ASSDG     ;Assistante de Direction Générale
+ASSDIR    ;Assistante (Direction)
+ASSEXECADG;Assistante Exécutive ADG
+ASSGDRH   ;Assistant Gestionnaire Développement RH
+ASSGRP    ;Assistante (Groupe)
+ASSIAGENCE;Assistante (Agence)
+ASSIEXEC  ;Assistante Exécutive DG
+ASSISTACAF;Assistante (CAF)
+ASSISTANCG;Assistante - Contrôle Général
+ASSISTANTE;Assistante
+ASSISTSI  ;Assistant SI
+ASSJUR    ;Assistante Juridique
+ASSMAR    ;Assistant Marketing
+ASSOC     ;Assistante Sociale
+ASSPOL    ;Assistante (Pôle)
+ASSPOLCTLP;Assistante de Pôle - Contrôle Permanent
+ASSPRESID ;Assistante de Présidence
+ASSREG    ;Assistante (Région)
+ASSTDIR   ;Assistant de Direction
+ASSTELR   ;Assistance Téléphonique au Réseau
+ASSTER    ;Assistant TERRAIN
+AUDCM     ;Auditeur Chef de Mission
+AUDIT     ;Auditeur
+AUDIT1    ;Contrôleur général
+AUDIT2    ;Auditeur
+AUDIT3    ;Vérificateur interne
+AUDIT4    ;Auditeur
+AUDITEURSI;Auditeur SI
+AUDJUN    ;Auditeur Junior
+AUDSEN    ;Auditeur Senior
+AUDSI     ;Auditeur Système d'Information
+BANPRCOR  ;Conseiller Spécialisé Banque Privée
+BANPRREG  ;Banquier Privé Régional
+BANQFI1   ;Chargé de dossier
+BANQFI2   ;Agent d'accueil
+BANQFI3   ;Agent Back Office banque
+BANQFI5   ;Gestionnaire de services bancaires
+BANQFI6   ;Guichetire Payeur Receveur
+BANQFI7   ;Opérateur de saisie
+BPRH      ;Business Partner
+BPRHEF    ;HR Business Partner - Entités Fonctionnelles
+BPRHJUN   ;Business Partner Junior
+BPRHREG   ;HR Business Partner - Région
+BUSDEVCHTI;Business Développer - Chine  & Traducteur Interprè
+BUSDEVEINT;Business Developper - International
+BUSDINEISE;Responsable Business Développement & Support Inter
+CACCUEIL  ;Conseiller d'Accueil
+CACHG     ;Caissier / Changeur
+CACHMN    ;Chargé d'Affaires Cash Management
+CAFINAG   ;Chargé d'Affaires Financement Projets Agricoles
+CAICEN    ;Caissier Central
+CAICO     ;Caissier/Convoyeur
+CAISS     ;Caissier
+CAMBISTE  ;Cambiste
+CATASP    ;Cash & Trade Specialist
+CBOTRMAD  ;Cadre BO Trésorerie MAD
+CC        ;Conseiller Clientèle
+CC MRE    ;Conseiller de Clientèle MRE
+CCCORP    ;Chargé de Clientèle Corporate
+CCDISTANCE;Conseiller Clientèle à Distance
+CCETS     ;Chargé d'Affaires Entreprises
+CCHDGF    ;Conseillers de Clientèle Haut de Gamme en formatio
+CCIGPF    ;Conseillers de Clientèle Part. Intermédiaires en f
+CCOFS     ;Conseiller de Clientèle - Offshore
+CCOMPTE   ;Chargé de Comptes Entreprises
+CCOMPTEGE ;Chargé de Comptes Corporate
+CCOMPTESE ;Chargé de comptes TOS
+CCOMPTET  ;Chargé de compte Titre
+CCPHDG    ;Conseiller de Clientèle Privée
+CCPIGP    ;Conseiller de Clientèle Particuliers
+CCPMIX    ;Conseillers de Clientèle Mixte
+CCPRO     ;Conseiller de Clientèle Professionnelle et TPE
+CCPROF    ;Conseillers de Clientèle Professionnels en formati
+CCPROM    ;Chargé de Clientèle Promoteur
+CENRE     ;Chargé de l'Encaissement / Recouvrement
+CESCO     ;Chargé du traitement des valeurs à l'escompte
+CFO       ;Chief Financial officer
+CGATRANSSE;Senior Contrôle Général - Activités transverses
+CGAUDITSE ;Senior Contrôle Général - Audit
+CGEAD     ;Chargé de la Gestion administrative
+CGFRDINVSE;Senior Contrôle Général - Fraudes et Investigation
+CGITDATASE;Senior Contrôle Général - IT & Data Analytics
+CGLCF     ;Chargé de gestion des Lignes Crédit et des Fonds d
+CH.PR.PCA ;Chef de Projet PCA
+CHACHA    ;Chargé Achats
+CHAFCOM   ;Chargé d'affaires Commerce Exterieur
+CHAFF     ;Chargé d'Affaires
+CHAFFACRPP;Chargé d'affaires judiciaires Actions en Responsab
+CHAFFACTRA;Chargé d'affaires Activités Transverses
+CHAFFAIRCM;Chargé d'affaires CM
+CHAFFARESE;Chargé d'affaires judiciaires - Actions en Respons
+CHAFFCOMEX;Chargé d'affaires COMEX
+CHAFFCORPJ;Chargé d'Affaires Corporate junior
+CHAFFCORPO;Chargé d'Affaires Corporate
+CHAFFIMHOT;Chargé d'affaires Financement Immobilier et Hôteli
+CHAFFINPME;Chargé d'affaires Investissement PME
+CHAFFINV  ;Chargé d'Affaires Investissement
+CHAFFJURAC;Chargé d'Affaires Juridiques Agence Corporate
+CHAFFOFS  ;Chargé d'Affaires Offshore
+CHAFFPESES;Chargé d'affaires Pénales - Entreprises
+CHAFFPSORE;Chargé d'affaires Sociales et de Recouvrement
+CHAFIMMO  ;Chargé d'affaires Immobilier
+CHAFS     ;Chargé d'Affaires Sénior
+CHANG     ;Changeur
+CHAPIL    ;Chargé de Pilotage
+CHARAFJUD ;Chargé des Affaires Judiciaires
+CHARDEV   ;Chargé de Développement
+CHAREXPERT;Chargé d'Expertise
+CHARPCA   ;Chargé Plan Continuité Activités
+CHARPROJET;Chargé de Projet
+CHARSUPADM;Chargé de Support Administratif
+CHARSYN   ;Chargé de synergies
+CHASTREGRP;Chargée de Stages & Relations Ecoles Groupe
+CHASUINTER;Chargé de Support à l'international
+CHASUPBO  ;Coordinateur Support Back Office
+CHAUF     ;Chauffeur
+CHAVPIMHOT;Chargé d'Investissement, Promotion Immobilière & H
+CHBOTR    ;Chargé BO trésorerie
+CHBROADCAS;Broadcasting Manager
+CHCBPRHREG;Chargé de coordination BP RH Régions
+CHCLCOR   ;Chargé de Clientèle Corporate
+CHCLTSYN  ;Chargé de Clientèle Synérgies
+CHCOM     ;Chargé de Communication
+CHCOMAUDSE;Chargé de Communication Audiovisuel Senior
+CHCOMBTOB ;B to B communication manager
+CHCOMCTOC ;B to C communication manager
+CHCOMEDITO;Concepteur Rédacteur
+CHCOMFI   ;Chargé de Communication Financière
+CHCOMINFSE;Chargé de Communication Infographie Senior
+CHCOMJ    ;Chargé de Communication Junior
+CHCOMPROJT;Chargé de communication Projet
+CHCOMSE   ;Chargé de Communication senior
+CHCOMSUPOR;Chargé de Communication Support
+CHCONSOLID;Chargé de Consolidation
+CHCONSOLSE;Chargé de Consolidation Sénior
+CHCOR     ;Chargé de Correspondance
+CHCORH    ;Chargé de la Coordination RH Junior
+CHCORHM   ;Chargé de Coordination RH et Moyens
+CHCORHS   ;Chargé de la Coordination RH Sénior
+CHCORJU   ;Chargé de coordination Junior
+CHCOSBUD  ;Chargé de la Coordination et du Suivi Budgétaire
+CHCPTSUIEN;Chargé de Coordination & Projets transver. (Suivi
+CHCRDSPCGE;Chargé de crédits spéciaux GE
+CHCRDSPCIX;Chargé Crédits Spéciaux
+CHCRSPE   ;Chargé de crédit Spéciaux et Consortiaux
+CHCTRSUREA;Chargé de Contrôle et Suivi des Réalisations
+CHCTRTEFIH;Chargé de Contrôle Technique - FIH
+CHCTYINFMA;Community & Influencers Manager
+CHCVJCRPAR;Chargé de Cellule de veille jurid. & coord.relat.a
+CHDEOETHIQ;Chargé de déontologie et d'éthique
+CHDEVCOM  ;Chargé du Développement Commercial
+CHDEVCOMSE;Chargé de Développement Commercial Sénior
+CHDEVCON  ;Chagé de Développement de Conventions
+CHDEVCOPAR;Chargé de Développement & Conventions (Particulier
+CHDEVCOPRO;Chargé de Développement & Conventions (PRO)
+CHDEVCOTPE;Chargé de Développement & Conventions (TPE / PE)
+CHDEVCPCRE;Chargé de Dév des Canaux Physiques & Coordination
+CHDEVINVES;Chargé de Développement de l'Investissement
+CHDEVPRIVE;Chargé de Développement (PRIVE)
+CHDOMDSI  ;Chef de Domaine DSI
+CHDOSS    ;Chargé de Dossiers
+CHDOSSEN  ;Chargé de Dossiers Sénior
+CHDOSSFINE;Chargé de Financement du Commerce Extérieur Senior
+CHDYDISPLY;Dynamic Display
+CHEF DE PR;Chef de Projet Financement Sénior
+CHEFEQUIP ;Chef d'equipe
+CHEFMISSIO;Chef de mission
+CHEFMISSIS;Chef de mission Sénior
+CHETRH    ;Chargé d'Etudes RH
+CHETUD    ;Chargé d'études
+CHETUDS   ;Chargé d'études Sénior
+CHEVAUDIOV;Events audiovisual Manager
+CHEXIMM   ;Chargé Expertise Immobilière
+CHFINEX   ;Chargé de Finex
+CHFPROCONF;Chef de Projet Confirmé
+CHINCID   ;Chargé  des Incidents
+CHINCORFIN;Chargé d'investissement
+CHINVPRJFI;Chargé d'investissement Project Finance
+CHINVSEN  ;Chargé d'Investissment Sénior
+CHISARAJUS;Chargé des incidents Saisies-Arrets & Relat. Auxil
+CHMAKDICON;Chargé Marketing Direct et contenu
+CHMARCH   ;Chargé de Marché
+CHMEDIATHQ;Responsable de la Médiathèque
+CHMIDOFFIC;Chargé de Middle Office
+CHMIDOFTOS;Chargé de Middle Office TOS
+CHMIDOFTRA;Chargé Middle Office Transactionnel
+CHMIS     ;Chargé de mission
+CHMISDG   ;Chargé de mission
+CHMISDOSSP;Chargé de mission Dossiers Spéciaux
+CHMISVEASJ;Chargé de mission Veille et Assistance Juridique
+CHMOB     ;Chargé Equipement Mobilier
+CHMOBINTER;Chargé de Mobilité Intra-Groupe
+CHMOBINTSE;Chargé de Mobilité Intra-Groupe Sénior
+CHMOFF    ;Chargé Middle Office
+CHMOYT    ;Chargé des Moyens de Transport
+CHMRDI    ;Chargé du Marketing Direct
+CHMROP    ;Chargé du Marketing Opérationnel
+CHMRSN    ;Chargé de Marketing Sénior
+CHMRST    ;Chargé de Marketing Stratégique
+CHNORMCOMT;Chargé Normes & Méthodes Comptabilité
+CHNORMCONF;Chargé Normes & Méthodes Conformité
+CHOFFDIGIT;Chargé des offres digitales
+CHOFFMEDIA;Offline Media Manager
+CHONLMEDIA;Online Media Manager
+CHOPADMINS;Chargé Opérations Administratives
+CHOPGU    ;Chargé  Opérations de Guichet - Offshore
+CHOPTR    ;Chargé Opérations de Transferts
+CHOPTRANSF;Chargé Opérations de Transferts
+CHOWNMEDIA;Own Media Manager
+CHPAMO    ;Chef de Projets
+CHPAMOJ   ;Chef de Projet Junior
+CHPAMOS   ;Chef de Projet Sénior
+CHPATR    ;Chargé Gestion Patrimoine
+CHPCONFOR ;Chef de projet Conception Formation
+CHPCSBACHA;Chargé de Pilotage, Coordination et Suivi Budgétai
+CHPCSBACSE;Chargé de Pilotage, Coord. & Suivi Budgétaire Seni
+CHPDMKBAEP;Chef de Produit Marketing -  Bancassurance & Eparg
+CHPDMKMOMP;Chef de Produit Marketing -  Monétique & Mobile Pa
+CHPDMKSECR;Chef de Produit Marketing -  Services et Crédits
+CHPFS     ;Chef de Projet Financement Sénior
+CHPICOMPME;Chargé de Pilotage Commercial Entreprises
+CHPICOPPSE;Chargé de Pilotage Commercial Part / Pro - Sénior
+CHPILCOFIL;Chargé de pilotage et de consolidation filiales
+CHPILCOMPP;Chargé de Pilotage Commercial Part / Pro
+CHPILMOINV;Chargé de Pilotage & Monitoring Investissement
+CHPILOTRGA;Chargé de Pilotage et Organisation
+CHPILPEDLG;chargé de Pilotage Pédagogique et Logistique
+CHPILQUALI;Chargé de Pilotage et Qualité CRC & Agence Directe
+CHPILSYNER;Chargé de Pilotage & Synergie
+CHPIRCLTSE;Chargé de Pilotage Senior Réclamations Clients
+CHPIRECCLT;Chargé de Pilotage Réclamations Clients
+CHPMOPTACD;Chargé PMO et suivi des performances - BOA Academy
+CHPORGJ   ;Chef de Projet Organisation junior
+CHPORGS   ;Chef de Projet Organisation Sénior
+CHPRAUD   ;Chargé de Projet Audiovisuel
+CHPRCL    ;Chef de Projet Relation Client
+CHPRCOM   ;Chef de Projet Communication
+CHPRDEVPME;Chargé de Prospection & Développement Entreprises
+CHPRDSIJ  ;Chef de Projet SI
+CHPRDSIS  ;Chef de Projet SI Sénior
+CHPRECL   ;Chef de Projet Réclamations
+CHPREIN   ;Chargé des Prestations Internes
+CHPRFIJU  ;Chef de Projet Financement Junior
+CHPRFIN   ;Chef de Projet Financement
+CHPRFINJ  ;Chef de Projet Financement Junior
+CHPRGRMUSE;Chargé de production graphique et multimédia senio
+CHPRH     ;Chef de Projets RH
+CHPRIMM   ;Chef de Projet Immobilier
+CHPRIN    ;Chef de Projet Infocentre
+CHPRJMAPME;Chef projet Marketing  PME
+CHPRJSE   ;Chef de Projet Sénior
+CHPRJTBMCE;Chef de Projet BMCE BANK
+CHPRMAJU  ;Chef de Projet Marketing Junior
+CHPRMRKS  ;Chef de Projet Marketing Sénior
+CHPROD    ;Chef de Produits
+CHPROMARK ;Chef de Projet Marketing
+CHPROMARKS;Chef de Projet Marketing Senior
+CHPROSEN  ;Chef de Projet RH Sénior
+CHPROTDCPE;Chargé de la protection des données à caractère pe
+CHPRQ     ;Chef de Projet Qualité
+CHPRQS    ;Chef de Projet Qualité Sénior
+CHPRQSEN  ;Chef de Projet Qualité Sénior
+CHPRRPCTXX;Chargé de Pilotage-Reporting-Recouvrement Pré-CTX-
+CHPRRPRCTX;Chargé de Pilotage & Reporting - Recouvrement Pré-
+CHPRRPRPP ;Chargé de Pilotage & Reporting - Recouvrement Part
+CHPRSIGJ  ;Chef de Projet SIG Junior
+CHPRSIGS  ;Chef de Projet SIG Sénior
+CHPRTELEC ;Chef de Projet Télecom
+CHPUBCOM  ;Chargée des Publications Supports Comm. interne.
+CHRAPP    ;Chargé de rapprochement de comptes
+CHRCL     ;Chargé de Clientèle
+CHRCORB   ;Chargé de Relations Corbanking
+CHRCPTABLE;Chargé de Reporting Comptable
+CHRECR    ;Chargé de recrutement
+CHRECSEN  ;Chargé de recrutement Sénior
+CHREINSMUL;Chargé de relations Institutions Multilatérales
+CHRELCBANK;Chargé de Correspondent Banking
+CHRELPARTE;Coordinateur Relation Partenaires Senior
+CHRENGAG  ;Chargé des Engagements
+CHREPANA  ;Chargé de Reporting & Analyse
+CHREPCO   ;Chargé de Reporting & Analyse Confirmé
+CHREPIANCO;Chargé de Reporting - Pilotage et Animation Confor
+CHREPJU   ;Chargé de Reporting & Analyse
+CHREPRE   ;Chargé de Relations Prestataires
+CHREPUB   ;Chargé de Relations Publiques
+CHREPUBLSE;Chargé de Relations Publiques Senior
+CHREPUBPRC;Chargé de Relations Publiques Principal
+CHREPVEENP;Chargé de Reporting& Verification des Engagements
+CHRGDEVRH ;Chargé de Développement RH
+CHRGPILOFS;Chargé de pilotage Offshore
+CHRGTROFS ;Chargé de trésorerie Offshore
+CHRPJU    ;Chargé de Relations Publiques
+CHRPSE    ;Chargé de Relations Publiques Senior
+CHRPSENGPP;Chargé de Reporting et Pilotage (Suivi des Engagem
+CHRPSUIENG;Chargé de Reporting & Pilotage (Suivi des Engageme
+CHSAL     ;Chef de salle
+CHSECINF  ;Chargé de la Sécurité Informatique
+CHSECU    ;Chargé de sécurité
+CHSEOANALY;SEO & Analytics Manager
+CHSEREGESE;Chargé du Suivi des Engagements Région - Entrepris
+CHSEREGRET;Chargé du Suivi des Engagements Région - Retail
+CHSLEREPUT;Social Listening & e-reputation Manager
+CHSOMRPCTX;Chargé de Support, Outils & Moyens - Recouvrement
+CHSOPISEGE;Chargé de support, pilotage et suivi des engagemen
+CHSOURC   ;Chargé de Sourcing
+CHSRCRLECO;Chargé de Sourcing & Relations Ecoles
+CHSUADMFIH;Chargé de Suivi Administratif - FIH
+CHSUCUSECM;Chargé de Support & Customer Service CM
+CHSUICOM  ;Chargé du Suivi des Comptes
+CHSUP     ;Chargé de Support
+CHSUPBOSEN;Chargé de Support au BO Senior
+CHSUPIINVS;Chargé de Support & Pilotage de l'Investissement
+CHTELEC   ;Chargé Equipements Télecom
+CHTSITELSE;Chef de Projet Sénior (Technique SI & Télécom)
+CHVEILCONF;Chargé de Veille conformité
+CHVEISAFIH;Chargé de Veille et du Suivi d’activité - FIH
+CHZONE    ;Chargé de Zone
+CLIENT1   ;Analyste contrôleur de crédit
+CLIENT2   ;Chargé d'études marchés clientèle entreprise
+CLIENT3   ;Commercial clientèle entreprise
+CLIENT4   ;Rédacteur crédit entreprises
+CLIENT5   ;Responsable clientèle entreprise
+CLIENT6   ;Spécialiste participations, fusions, acquisitions
+CLIENT7   ;Technico-commercial produits
+CLIPAR1   ;Chargé clientèle particuliers spécialisé
+CLIPAR2   ;Instructeur de prêts
+CLIPAR3   ;Gestionnaire de fortune
+CLIPAR4   ;Chargé de clientèle particuliers
+CLIPAR5   ;Responsable clientèle particuliers
+CLIPAR6   ;Animateur force de vente clientèle particuliers
+CMCGACTRSE;Chef de mission Senior Contrôle Général - Activité
+CMCGACTTRA;Chef de mission  Contrôle Général - Activités tran
+CMCGAUDISE;Chef de mission Senior Contrôle Général - Audit
+CMCGAUDIT ;Chef de mission Contrôle Général - Audit
+CMCGFRDINV;Chef de mission  Contrôle Général - Fraude et Inve
+CMCGFRINSE;Chef de mission Senior Contrôle Général Fraude et
+CMCGITDASE;Chef de mission Senior Contrôle Général IT & Data
+CMCGITDATA;Chef de mission Contrôle Général - IT & Data Analy
+COCOMIOF  ;Coordinateur Conventions
+COFHOLINE ;Conseiller Fonctionnel Hot Line
+COJUR     ;Conseiller Juridique
+COMINT    ;Responsable Communication Interne
+COMMUN2   ;Chargé de relations publiques
+COMMUN3   ;Technicien de communication
+COMMUN4   ;Chargé de la communication externe
+COMMUN5   ;Chargé de la communication interne
+COMMUN6   ;Responsable publications institutionnelles
+COMP      ;Compensateur
+COMPC     ;Compensateur Centrale
+COMPJU    ;Comptable Junior
+COMPSE    ;Comptable Sénior
+COMPSEN   ;Comptable Sénior
+COMPTABLE ;Comptable
+COMPTABLEJ;Comptable Junior
+CONAMOM   ;Manager
+CONCEPREDS;Concepteur Rédacteur Senior
+CONCINFLUX;Conseiller Commerce International & Flux
+CONCM     ;Contrôleur Chef de Mission
+CONCRED   ;Concepteur Rédacteur
+CONCWEBMSE;Concepteur Webgraphiste & Multimedia (Sénior)
+CONCWEBMUL;Concepteur Webgraphiste & Multimedia
+CONFORMATI;Conseiller en Formation
+CONGEJU   ;Contrôleur de gestion
+CONGESE   ;Contrôleur de Gestion Sénior
+CONJUGESES;Conseiller juridique - Grandes Entreprises
+CONJUMESPP;Conseiller juridique - Marchés Entreprises Part /
+CONJUN    ;Contrôleur Junior
+CONJURECAF;Conseiller Juridique - Réseau CAF
+CONJURFIST;Conseiller juridique - Financements Structurés
+CONJURGE  ;Conseiller juridique GE
+CONJURS   ;Consultant Juridique Sénior
+CONJUSIFIL;Conseiller juridique - Siège et Filiales
+CONMASEN  ;Consultant Manager Sénior
+CONOPTRCRC;Conseiller d'opérations Transactionnelles CRC Entr
+CONSAMO   ;Consultant AMO
+CONSBACK  ;Conseiller Back Office Mobile Money
+CONSE     ;Conseiller
+CONSECFIN ;Contrôleur Sécurité Financière
+CONSEFIN  ;Contrôleur sécurité Financière
+CONSEN    ;Contrôleur Senior
+CONSOLJUN ;Consolideur Junior
+CONSOLSEN ;Consolideur Sénior
+CONSUFS   ;Consultant Formation Senior
+CONTENG   ;Contrôleur des Engagements
+CONV      ;Convoyeur
+COOPMOFFIC;Coordinateur Opérationnel Middle Office
+COOPRJ    ;Coordinateur Projets
+COORCOM   ;Coordinateur Commercial
+COORCPRO  ;Coordinateur Commercial Pro.
+COORDGE   ;Coordinateur GE
+COORSUPREG;Coordinateur Support au Réseau
+COOSIERES ;Coordinateur Siège Réseau P/P
+COPERSESI ;Contrôleur.Permanent.Sénior.Siége
+CORDINACRC;Coordinateur CRC
+CORES     ;Correspondance
+CORMAR    ;Correspondant Marketing
+CORPBANKER;Corporate Banker
+CORSQCFENG;Coordinateur Risques Covenants Financiers et Engag
+CPAMOASE  ;Chef de Projet Sénior (AMOA)
+CPCFAMOA  ;Chef de Projet Confirmé (AMOA)
+CPCFAMOAPC;Chef de Projet Confirmé (AMOA - PCA)
+CPCFINTCPT;Chef de Projet Confirmé (Interpréteur Comptable)
+CPCFMOACOO;Chef de projet MOA & Coordination
+CPCFMOAINT;Chef de projet MOA - International
+CPCFORGCHG;Chef de Projet Confirmé (Organisation & Change)
+CPCFPMO   ;Chef de Projet Confirmé (PMO)
+CPCFTSITEL;Chef de Projet Confirmé (Technique SI & Télécom)
+CPCOMPLIAC;Chef de projet Compliance
+CPCOMPLISE;Chef de projet Compliance Senior
+CPDIGITGTB;Chef de projet Digitalisation GTB
+CPINTERNAT;Chef De Projet Sénior à l'international
+CPJUAMOA  ;Chef de Projet Junior (AMOA)
+CPJUINTCPT;Chef de Projet Junior (Interpréteur Comptable)
+CPJUNPMO  ;Chef de Projet Junior (PMO)
+CPJUTSITEL;Chef de Projet Junior (Technique & Telecom)
+CPMULCAN  ;Chef de Projet Multicanal
+CPORCHNGJU;Chef de Projet Junior (Organisation & Change)
+CPORGACHSE;Chef de Projet Sénior (Organisation & Change)
+CPPCI     ;Chef de Projet (PCI)
+CPQEQUCOSE;Chef de projet Sénior Qualité-Etudes Qualité et Co
+CPQGDCMASE;Chef projet Sénior Qual-Gest. Disp.Clt.Mys.Ani.Rés
+CPQPQDBSSE;Chef de projet Sénior Qualité-Digital & Baromètre
+CPQPQULDSE;Chef de projet Sénior Qualité-Pilotage & Qualité d
+CPQUMANQSE;Chef de projet Sénior Qualité - Management Qualité
+CPQUMANQUA;Chef de projet Qualité - Management Qualité
+CPRJGESPAT;Chef de projet Gestion de Patrimoine
+CPRJPCA   ;Chef de Projet PCA 
+CPROD     ;Chef de Produit
+CPSECURSI ;Chef de Projet (Sécurité SI)
+CPSEINTCPT;Chef de Projet Sénior (Interpréteur Comptable)
+CPSENPMO  ;Chef de Projet Sénior (PMO)
+CPTRADFINA;Chef de projet Trade Finance
+CREDETR   ;Plateforme Crédits aux Etrangers
+CRELCLT   ;Conseiller Commercial Relation Client
+CRGPR     ;Chargé de Production et Réalisation
+CSREPLG   ;Chargé de suivi et reporting des engagaments PLG
+CSTES     ;Chargé des statistiques et Etudes Sectorielles
+CTGEN     ;Contrôleur Général
+CTLPEROP  ;Contrôleur Permanent Région
+CTRGESSEN ;Contrôleur de gestion Sénior
+CTRL PER J;Contrôleur Permanent Junior
+CTRL PER S;Contrôleur Permanent Sénior - Région
+CTRL PERMA;Contrôleur Permanent
+CTRLAGENCE;Contrôleur Agence
+CTRLCONINS;Contrôleur conformité in situ
+CTRLPERBO ;Contrôleur Permanent  - Activité Back Office
+CTRLPERSBO;Contrôleur Permanent Sénior - Activité Back Office
+CTRLPERSFS;Contrôleur Permanent  - Filière Support
+CTRLPERSSU;Contrôleur Permanent Sénior - Support
+CTRLRESOFS;Contrôleur conformité Réseau Offshore
+CXCHMANAGE;CX Change Manager
+CXPRDOWNER;CX Product Owner
+DAM0001   ;Présidente du Directoire
+DAM0002   ;Membre du Directoire - Directeur SI et Opérations
+DAM00027  ;Animateur réseau
+DAM00028  ;Coordinateur réseau
+DAM00029  ;Chargée administration des ventes
+DAM0003   ;Responsable SI
+DAM00030  ;AGENT DE SERVICE
+DAM00031  ;Infographiste
+DAM00032  ;Régional
+DAM00033  ;Chargé d'Animation et Formation
+DAM00034  ;Chargé de Comptoir
+DAM00035  ;Chef de projet AMOA
+DAM00036  ;Contrôleur de gestion Back Office
+DAM00037  ;Superviseur
+DAM00039  ;Commercial Réseau Détaillants
+DAM0004   ;Responsable Opérations
+DAM00040  ;Chargé RH
+DAM00041  ;Aide Comptable
+DAM00042  ;Agent de Comptoir
+DAM00043  ;Responsable Partenariat
+DAM00044  ;Chargé de Logistique
+DAM00045  ;Responsable Activité Détaillants
+DAM00046  ;Chargé de Communication
+DAM00047  ;Chargé de Clientèle
+DAM00048  ;Responsable Monétique
+DAM00049  ;Responsable Commercial Acquisition Casablanca
+DAM0005   ;Directeur Administratif et Financier
+DAM0006   ;Responsable Administratif et Financier
+DAM0007   ;Responsable Marketing et Partenariats
+DAM0008   ;Responsable Réseau et Animation
+DAM0009   ;Responsable Communication
+DAM0010   ;Animateur Régional
+DAM0011   ;Animateur Siège
+DAM0012   ;Assistante de Direction
+DAM0013   ;Chargé de projet SI
+DAM0014   ;Chef de projet SI
+DAM0015   ;Agent SI
+DAM0016   ;Agent Helpdesk
+DAM0017   ;Chargé de Clientèle
+DAM0018   ;Agent back office
+DAM0019   ;Comptable
+DAM0020   ;Agent de Bureau
+DAM0021   ;Chargé de conformité
+DAM0022   ;Agent Conformité
+DAM0023   ;Contrôleur Permanent
+DAM0024   ;Analyste compliance
+DAM0025   ;Responsable contrôle permanent
+DAM0026   ;Responsable conformité et risques
+DAM0027   ;Responsable d'exploitation
+DAM0028   ;Chauffeur Agence Mobile
+DAM0029   ;Compliance Officer adjoint 
+DAM0030   ;Contrôleur Permanent Réseau Rabat & Nord
+DAM0031   ;Responsable Commercial Acquisition Agadir
+DAM0032   ;Coordinatrice Marketing
+DAM1000   ;Cadres Financiers
+DAM1001   ;Chargé de contrôle et de suivi de la trésorerie
+DAM1002   ;Chargé d'Activité Réseau Détaillant
+DAM1003   ;Chef de Projet Organisation
+DAM1004   ;Analyste AML
+DAM1005   ;Responsable de Formation et Déploiement Produit
+DAM1006   ;Responsable Coordination Réseau Acquisition
+DAM1007   ;Responsable Relation Client
+DAM1008   ;Responsable Back Office
+DAM1009   ;Coordinatrice Acquisition
+DAM1010   ;Animateur Junior Beni Mellal
+DAM1011   ;Animateur Junior
+DAM1012   ;Animateur Terrain Acquisition
+DAM1013   ;Membre du Directoire en Charge du Pôle Monétique
+DAM1014   ;Responsable Pôle Opérations et Technologies
+DAM1015   ;Responsable Communication & RH
+DAM1016   ;Directeur Gouvernance et Pilotage
+DAM1017   ;Contrôleur de Gestion
+DAM1018   ;Responsable Commercial Régional
+DAM1019   ;Commercial Acquisition
+DAM1020   ; Chef de projet AMOA sénior
+DAM1021   ;Coordinatrice Back Office Acquisition
+DAM1022   ;Contrôleur Permanent Réseau Casa
+DAM1023   ;Contrôleur Permanent Réseau Agadir
+DAM1024   ;Contrôleur Permanent Réseau Fès
+DAM1025   ;Contrôleur Permanent Réseau Béni Mellal
+DAM1026   ;Business Developer Acquisition
+DAMTEST   ;Animateur Junior
+DANAINTECO;Data Analyst - Intelligence Economique
+DATAPRTECT;Data Protection Officer
+DEMEN     ;Déménageur
+DESMNMEDIA;Multimedia & New Media Designer
+DESSIN    ;Dessinateur
+DESUIUX   ;UI/UX Design Manager
+DETACZA   ;Animateur Commercial Zone Anglophone
+DETACZF   ;Animateur Commercial Zone Francophone
+DETADG    ;Administrateur Directeur Général
+DETANACRD ;Analyste Crédit
+DETARD    ;Adjoint Responsable de Délégation
+DETCANCO  ;Chargé d'Animation Commerciale
+DETCC     ;Conseiller Clientèle
+DETCEO    ;Chief Executive Officer
+DETCFO    ;Chief Financial officer
+DETCG     ;Contrôleur Général
+DETCHPAMO ;Chef de Projets
+DETCM     ;Chargé de Mission
+DETCPI    ;Chef de Projet Infocentre
+DETCTRLPER;Contrôleur Interne Permanent
+DETDACC   ;Directeur Adjoint Central des Charges
+DETDADDG  ;Administrateur Directeur Général
+DETDAEF   ;Directeur Administratif Et Financier
+DETDAF    ;Directeur des Affaires Financières
+DETDAO    ;Directeur Adjoint en charge de l'Organisation
+DETDAR    ;Directeur Adjoint Direction des Risques
+DETDAUDINT;Directeur de l'Audit Interne
+DETDC     ;Directeur Commercial
+DETDCADJ  ;Directeur Commercial Adjoint
+DETDE     ;Directeur de l'Exploitation
+DETDER    ;Directeur Engagements et Risques
+DETDG     ;Directeur Général
+DETDGA    ;Directeur Général Adjoint
+DETDGAE   ;DGA Pôle Exploitation
+DETDGAGR  ;DGA Groupe BOA
+DETDGAR   ;DGA en Charge du Retail
+DETDGARET ;Directeur Général Adjoint en Charge de l'Exploitat
+DETDGARI  ;Directeur Général Adjoint risques
+DETDGARIS ;Directeur Général Adjoint risques
+DETDGPR   ;Directeur DGPR
+DETDIGG   ;Directeur Inspection Générale Groupe
+DETDIRASCE;Directeur de l'animation & de la synergie commerci
+DETDIRCOMK;Directeur Communication et Marketing
+DETDIRFIN ;Directeur Financier
+DETDMKT   ;Directeur Marketing
+DETDOPFC  ;Directeur Opérations Financières & Consolidation
+DETDPE    ;Directeur Pôle Engagements
+DETDR     ;Directeur Régional
+DETDRSEAI ;Directeur Responsable des Services
+DETDSI    ;Directeur Systèmes d'Information
+DETGESTRH ;Gestionnaire RH
+DETHINTAUD;Head Of Internal Audit
+DETHRM    ;Human Resources Manager
+DETIG     ;Inspecteur Général
+DETIGEN   ;Inspecteur Général
+DETMDCT   ;Managing Director in charge of the Transformation
+DETOPERAT ;Directeur des opérations
+DETPDIRCTO;Président du Directoire
+DETPDIRMF ;Président du Directoire Maroc Factoring
+DETPOLOPE ;Directeur Pole opérations
+DETPRJMANS;Project Manager Senior
+DETRAC    ;Responsable Animation Commerciale
+DETRACE   ;Responsable Animation Commerciale Entreprise
+DETRADMFIN;Responsable Administratif Financier
+DETRAEC   ;Responsable Analyse et Etudes de Crédits
+DETRAR    ;Responsable Adjoint Pôle Risques
+DETRBR    ;Responsable Bureau de Représentation
+DETRC     ;Responsable Commercial
+DETRD     ;Responsable Délégation
+DETRDC    ;Responsable du Développement Commercial
+DETRDEL   ;Responsable Délégation
+DETRESPON ;Responsable
+DETRET    ;Directeur en Charge du Retail
+DETRPF    ;Responsable Pôle Fonctionnement
+DETRSPPRD ;Responsable Produits
+DETRSPSUC ;Responsable Succursale
+DETRSPTEC ;Responsable Technique
+DETRSPTRAD;Responsable du Trade finance et coordinateur des p
+DETRSPTRFI;Responsable Trade Finance
+DETSENASS ;Senior Associate
+DETWEBMAST;Webmaster
+DEVBUS    ;Business Développement
+DEVELOP   ;Développeur
+DEVSIG    ;Développeur SIG
+DEXD      ;Directeur Exécutif Délégué
+DG        ;Directeur Général
+DGA       ;Directeur Général Adjoint
+DGCOM     ;DG Commercial et Equipements
+DGD       ;Directeur Général Délégué
+DGE       ;Directeur Général Exécutif
+DIRADJ    ;Directeur Adjoint
+DIRADJHOT ;Responsable Adjoint Hotline
+DIRAG     ;Directeur d'agence
+DIRAGA    ;Directeur d'agence Etendard
+DIRAGB    ;Directeur d'agence Citadine
+DIRAGC    ;Directeur d'agence Contact
+DIRAGF    ;Directeur d'agence en Formation
+DIRAGM    ;Directeur d'agence M
+DIRBMCE   ;Directeur BMCE ACADEMY
+DIRCA     ;Directeur de Centre d'Affaires B
+DIRCAA    ;Directeur de Centre d'Affaires A
+DIRCABGE  ;Directeur de Centre d'Affaires GE
+DIRCABO   ;Directeur de la succursale Tanger Offshore
+DIRCAC    ;Directeur de Centre d'Affaires C
+DIRCACK   ;Directeur Kenitra Offshore
+DIRCGACTRA;Directeur Contrôle Général – Activités transverses
+DIRCGAUDIT;Directeur Contrôle Général - Audit
+DIRCGAUDSE;Responsable Audit Maroc
+DIRCGAVTSE;Responsable Audit Groupe
+DIRCGFINSE;Responsable Fraudes et Investigations
+DIRCGFRDIN;Directeur Contrôle Général - Fraude et Investigati
+DIRCGITDAN;Directeur Contrôle Général – IT & Data Analytics
+DIRCGITDSE;Directeur Senior Contrôle Général – IT & Data Anal
+DIRCLPRVRG;Directeur Clientèle Privée Région
+DIRCOMGE  ;Directeur Commercial GE
+DIRCOV    ;Directeur Coverage
+DIRDEV    ;Directeur de Développement
+DIRECMISSI;Directeur de mission
+DIRECTEUR ;Directeur
+DIREMISSIS;Directeur de mission Sénior
+DIREXEC   ;Directeur Executif
+DIREXECF  ;Directeur Exécutif de la Fondation BMCE BANK
+DIRFIN    ;Directeur Financier
+DIRGP     ;Directeur de Groupe
+DIRGPAD   ;Directeur de Groupe Adjoint
+DIRPJSQUAL;Directeur de Projet Sénior (Qualité)
+DIRPRAMOAS;Directeur de Projet Sénior (AMOA)
+DIRPRJAMOA;Directeur de Projet (AMOA)
+DIRPRJHNGS;Directeur de Projet Sénior Change
+DIRPRJINRH;Directeur de Projet Innovation RH
+DIRPRJORGC;Directeur de Projet (Organisation & Change)
+DIRPRJORGS;Directeur de Projet Sénior (Organisation)
+DIRPRJPCIS;Directeur de Projet Sénior (PCI)
+DIRPRJPMO ;Directeur de Projet (PMO)
+DIRPRJSEBP;Directeur de Projet Sénior (Budget Projets & SI)
+DIRPRJSECS;Directeur de Projet Sénior (Sécurité SI)
+DIRPRJSEIT;Directeur de Projet Sénior (Audit IT)
+DIRPRJSEPM;Directeur de Projet Sénior (PMO)
+DIRPRJSESI;Directeur de Projet (Sécurité SI)
+DIRPRJSIRH;Directeur de Projet Senior SIRH et Technologie
+DIRPRJTSIT;Directeur de Projet (Technique SI & Télécom)
+DIRPRJTTS ;Directeur de Projet Sénior (Technique & Telecom)
+DIRPROCONF;Directeur de Projet Confirmé
+DIRPROJ   ;Directeur de Projets
+DIRREG    ;Directeur Régional
+DIRREGADJ ;Directeur Régional Adjoint
+DIRRESEAU ;Directeur Réseau
+DIRRESOFSH;Directeur Réseau des entités Offshore
+DIRRH     ;Directeur des Ressources Humaines
+DIRSTR1   ;Responsable d'études stratégiques
+DIRSTR2   ;Chargé d'études stratégiques
+DIRSTR3   ;Conseiller
+DIRSTR4   ;Chargé de mission
+DIRSTR5   ;Manager
+DIRSUC    ;Directeur Succursale Tanger Off Shore
+DIRSUMLM  ;Directeur de Succursale Multi-marchés
+DOCUM     ;Documentaliste
+DRENGRIQ  ;Directeur des Engagements et Risques
+DRH       ;Directeur Ressources Humaines
+DRSEAI    ;Directeur Responsable des Services
+DRTFIS1   ;Fiscaliste
+DRTFIS2   ;Juriste
+DRTFIS3   ;Chargé de dossiers contentieux
+DRTFIS4   ;Recouvreur
+DSCEINTECO;Data Scientist - Intelligence économique
+DTV       ;Mini DTV
+E023      ;Chef de projet Senior
+ECONOMISSE;Responsable Economie & Secteurs Maroc
+ECONOMISTE;Responsable Economie & Secteurs Afrique & Monde
+ECOSEN    ;Economiste Senior
+EDCIN     ;Evaluateur des dossiers de crédit d'investissement
+ENTPRGMASE;Responsable Entreprenariat & Partenariats
+ENTPROGMAN;Entrepreneurship Program Manager
+ETRANGER  ;Préposé Service Etranger
+EXPCAMAMOP;Expert Cash Management & Moyens de Paiement
+EXPTRADFIN;Expert Trade Finance
+FINANC1   ;Aide comptable
+FINANC2   ;Audit comptable
+FINANC3   ;Chargé d'études comptables
+FINANC4   ;Contrôleur de gestion
+FINANC5   ;Opérateur financier
+FINANC6   ;Responsable service comptable
+FINANC7   ;Technicien comptable
+FINBUDG   ;Finances & Budget
+FISCALISTE;Fiscaliste
+FISCJUN   ;Fiscaliste Junior
+FISCSEN   ;Fiscaliste Sénior
+GAADEVINTE;Gestionnaire administratif - Développement Interna
+GABUR     ;Garçon de bureau
+GARDI     ;Gardien
+GEACTPA   ;Gestionnaire Actif Passif ( Trésorerie Sociale )
+GEECO     ;Gestionnaire Economat
+GEGARAN   ;Gestionnaire des Garanties
+GERECJU   ;Gestionnaire de Recouvrement
+GERECSE   ;Gestionnaire de Recouvrement Sénior
+GES MON   ;Gestionnaire Monetique
+GESADM    ;Responsable Gestion Administrative
+GESADMG   ;Gestionnaire Administratif
+GESALM    ;Analyste ALM
+GESBANCA  ;Gestionnaire Bancassurance
+GESDEVRH  ;Gestionnaire de développement RH
+GESDEVRHJ ;Chargé de développment RH Junior
+GESDEVRHS ;Gestionnaire de développement RH Sénior
+GESMONCONF;Géstionnaire Monétique Confirmé
+GESMONSEN ;Géstionnaire Monétique Sénior
+GESPAIE   ;Gestionnaire Paie
+GESSUCC   ;Gestionnaire Successions
+GESTADM   ;Gestionnaire administrative RH
+GESTADM1  ;Acheteur
+GESTADM2  ;Agent administratif
+GESTADM3  ;Documentaliste
+GESTADM4  ;Responsable gestion administrative
+GESTADMCAF;Gestionnaire administratif CAF
+GESTADMN  ;Gestionnaire Administratif
+GESTADMSUP;Gestionnaire Administration & Support
+GESTAR    ;Gestionnaire Tarification
+GESTASS   ;Gestionnaire Assiduité et Congés
+GESTATD   ;Gestionnaire ATD
+GESTBD    ;Gestionnaire Base de Données
+GESTCOMX  ;Gestionnaire COMEX
+GESTCONPAR;Gestionnaire de conventions (Particuliers)
+GESTCRH   ;Gestionnaire Crédit RH
+GESTCVTH  ;Gestionnaire CVthèque
+GESTFONDS ;Gestionnaire de Fonds
+GESTIMP   ;Gestionnaire Titres d’importation
+GESTMULTIT;Gestionnaire Maintenance Multitechnique
+GESTOPAD  ;Chargé Opérations Administratives
+GESTREC   ;Gestionnaire Réclamations
+GESTRECPRC;Gestionnaire des réclamations Plateforme Relations
+GESTSOC   ;Gestionnaire des Œuvres Sociales
+GESYST    ;Gestionnaire des Systèmes
+GETELEC   ;Gestionnaire Télecom
+GPORTF    ;Gestionnaire de portefeuille
+GRCTXESESE;Gestionnaire recouvrement Pré-CTX E/ses - Sénior
+GRECCTXESE;Gestionnaire recouvrement Pré-CTX E/ses
+GRECCTXPP ;Gestionnaire recouvrement Pré-CTX P/P
+GRECENT   ;Gestionnaire Recouvrement amiable Entreprises
+GRECTXPPSE;Gestionnaire recouvrement Pré-CTX P/P - Sénior
+GREPPRO   ;Gestionnaire Recouvrement amiable Part/Pro
+GSETASSUR ;Gestionnaire Assurance et Prévoyance
+GSETASSURN;Gestionnaire Assurances
+GSPCREDITS;Gestionnaire Support & Production Crédits
+GUICAGUIGE;Guichetier Arrière Guichet GE
+GUICH     ;Guichetier
+GUICHAGUIC;Guichetier / Arrière Guichet
+GUPAI     ;Chargé d'Appui Commercial
+GUPAICHG  ;Chargé d'Opérations/Changeur
+GUPAIF    ;Chargé d'Appui Commercial en Formation
+GUPAIGE   ;CAC GE
+GUPAIM    ;Chargé d'Appui Commercial Mutualisé
+IMM-CMC   ;Chargé Marketing et Communication
+IMM-GAVGL ;Gestionnaire administrative Ventes & Gestion locat
+IMM-RCRC  ;Responsable Centre de Relation Client
+IMME0001  ;Directeur Général
+IMME0002  ;Responsable Etudes et Expertises
+IMME0003  ;Responsable commercial
+IMME0004  ;Responsable Centre de Relation Client
+IMME0005  ;Responsable Partenariats et Animation commerciale
+IMME0006  ;Chargé Marketing et communication
+IMME0007  ;Responsable Administrative et Financière
+IMME0008  ;Chargée de mission Etudes et Expertises
+IMME0009  ;Chef de projet Etudes et Expertises
+IMME0010  ;Assistante expertises
+IMME0011  ;Gestionnaire Administrative
+IMME0012  ;Commercial immobilier
+IMME0013  ;Chargée de clientèle CRC
+IMME0014  ;Chef comptable
+IMME0015  ;Assistante de Direction
+IMME0016  ;Coursier
+IMMOBI1   ;Chargé d'études participation immobilière
+IMMOBI2   ;Gestionnaire immobilier
+IMMOBI3   ;Promoteur négociateur immobilier
+INFIRM    ;Infirmière
+INFOGR    ;Infographiste
+INFOGRCO  ;Infographiste Confirmé
+INFOGRJU  ;Infographiste Junior
+INFOGRSE  ;Infographiste Sénior
+INFORM1   ;Opérateur informatique
+INFORM10  ;Chargé de la sécurité informatique
+INFORM11  ;Administrateur de base de données
+INFORM12  ;Rédacteur de procédures
+INFORM13  ;Assistant utilisateurs
+INFORM2   ;Responsable maintenance informatique
+INFORM3   ;Pupitreur
+INFORM4   ;Gestionnaire de chaîne informatique
+INFORM5   ;Chef de projet
+INFORM6   ;Chargé de bureautique, micro-informatique et téléc
+INFORM7   ;Analyste programmeur
+INFORM8   ;Maître d'ouvrage informatique
+INFORM9   ;Responsable de la sécurité informatique
+INFPROMANG;Influence Program Manager
+INFPROMASE;Influence Program Manager Senior
+INOVPRMANG;Innovation Program Manager
+INOVPRMASE;Innovation Program Manager Senior
+INSCM     ;Inspecteur Chef de Mission
+INSJUN    ;Inspecteur Junior
+INSPSEN   ;Inspecteur Senior
+JUCGACTRAN;Junior Contrôle Général - Activités transverses
+JUCGAUDIT ;Junior Contrôle Général - Audit
+JUCGAUDIT1;Junior 1 Contrôle Général - Audit
+JUCGAUDIT2;Junior 2 Contrôle Général - Audit
+JUCGFRDINV;Junior Contrôle Général - Fraudes et Investigation
+JUCGITDAN1;Junior 1 Contrôle Général - IT & Data Analytics
+JUCGITDAN2;Junior 2 Contrôle Général - IT & Data Analytics
+JUCGITDANA;Junior Contrôle Général - IT & Data Analytics
+JUMIOFFNPM;Juriste Middle Office fonctionnement PME
+JURIDIQ   ;Chargé d'affaires juridiques Région
+JURIDIQN  ;Chargé des affaires juridiques
+JURISTEJUN;Juriste Junior
+KNOWMANAGE;Knowledge Manager
+MANIP     ;Manipulateur
+MARFIN1   ;Commercial produits financiers
+MARFIN2   ;Analyste financier
+MARFIN3   ;Chargé d'études produits financiers
+MARFIN4   ;Gérants de fonds
+MARFIN5   ;Gestionnaire de Back Office marchés
+MARFIN6   ;Gestionnaire de Front Office marchés
+MARFIN7   ;Trader
+MARFIN8   ;Vendeur placeur titres
+MARKMANESE;Marketing Manager Référent - Entreprises
+MARKMANMRE;Marketing Manager (MRE)
+MARKMANPME;Marketing Manager - Entreprises
+MARKMANPP ;Marketing Manager (Particuliers)
+MARKMANPRO;Marketing Manager (Pro / TPE)
+MARKMANPRV;Marketing Manager - PRIVE
+MARKMANSEN;Marketing Manager Senior
+MARMANJUN ;Marketing Manager Junior
+MBE00001  ;Chargé(e) De Clientele
+MBE00002  ;Contrôleur Permanent
+MBE00003  ;Responsable Département Recouvrement Contentieux
+MBE00004  ;Responsable Département SAV
+MBE00005  ;Responsable Département Exploitation
+MBE00006  ;Agent De Bureau
+MBE00007  ;Gestionnaire Back Office Commercial
+MBE00008  ;Chargé(e) De Dossier Engagement
+MBE00009  ;Responsable Département Gestion Comptable
+MBE00010  ;DGA en charge du Pôle Technologies & Systèmes d'in
+MBE00011  ;Chargé(e) De Dossier Réalisation
+MBE00012  ;Ingénieur Chargé Des Infrastructures Et Services
+MBE00013  ;Responsable Département Marché Immobilier Pro
+MBE00014  ;Gestionnaire Administrative Recouvrement Amiable
+MBE00015  ;Directeur Production
+MBE00016  ;Chargé(e) De La Gestion Administrative RH
+MBE00017  ;Responsable Département Consultation Et Actes Juri
+MBE00018  ;Cadre Recouvreur
+MBE00019  ;Directeur Central Recouvrement Amiable et Contenti
+MBE00020  ;Cadre financier / Gestion des contrats et facturat
+MBE00021  ;Archiviste
+MBE00022  ;Responsable Département BD et BI
+MBE00023  ;Chargé(e) de la Conformité, Risques Opérationnels
+MBE00024  ;Directeur Central - Finances & Comptabilités
+MBE00025  ;Responsable Département Audit Interne
+MBE00026  ;Chargé(e) D'Animation Commerciale
+MBE00027  ;Responsable Bureau Régional De Représentation
+MBE00028  ;Responsable Département Risque De Crédit
+MBE00029  ;Responsable Département Marché Utilitaire
+MBE00030  ;Directeur Gestion Des Risques Et Conformité
+MBE00031  ;Resposable Département Organisation, Qualité Et TS
+MBE00032  ;Chargé(e) De Dossier Trésorerie
+MBE00033  ;Responsable Département Recouvrement Amiable
+MBE00034  ;Responsable Service Déblocage
+MBE00035  ;Responsable Département Communication Financière
+MBE00036  ;Président Directeur Général
+MBE00037  ;Responsable Département Trésorerie
+MBE00038  ;Responsable Département Contrôle Permanent
+MBE00039  ;Responsable Département Logistique
+MBE00040  ;Contrôleur De Gestion
+MBE00041  ;Gestionnaire Logistique
+MBE00042  ;Chargé(e) de la publicité des contrats
+MBE00043  ;Responsable Département Autres Marchés
+MBE00044  ;Chargé(e) De Marketing et Pilotage Commercial
+MBE00045  ;Chargé(e) de la TSC
+MBE00046  ;Analyste Risque De Crédit
+MBE00047  ;Responsable Bureau d'Ordre
+MBE00048  ;Agent Logistique
+MBE00049  ;Chauffeur
+MBE00050  ;Assistante De Direction
+MBE00051  ;Administrateur Directeur Général en charge du POLE
+MBE00052  ;Gestionnaire Administrative BO
+MBE00053  ;Responsable Département Corporate
+MBE00054  ;Directeur Administratif
+MBE00055  ;Directeur général en charge du Pôle Développement
+MBE00056  ;Responsable Département Contrats et Facturation
+MBE00057  ;Responsable Département Traitement Operations Comm
+MBE00058  ;Responsable Service Archives et Publicité
+MBE00059  ;Responsable Service Engagement CBM
+MBE00060  ;Chargé(e) de Dossier Déblocage Financier
+MBE00061  ;Gestionnaire Recouvrement
+MBE00062  ;Responsable Service Conformité Et Risque Opération
+MBE00063  ;Directeur Général Pôle Support
+MBE00064  ;Cadre Financier / Communication Financière
+MBE00065  ;Cadre Financier / Trésorerie Sociale
+MBE00066  ;Gestionnaire Administrative Recouvrement Contentie
+MBE00067  ;Gestionnaire Administrative Risque
+MBE00068  ;Gestionnaire Administrative RH
+MBE00069  ;DIRECTEUR COMMERCIAL
+MBE00070  ;Responsable Département Traitement Operations CBI
+MBE00071  ;AUDITEUR INTERNE
+MBE00072  ;CHARGE(E) DE DEVELOPPEMENT RH ET GESTION ADMINISTR
+MBE00073  ;Cadre financier
+MBE00074  ;DIRECTEUR COMMERCIAL ADJOINT
+MBE00075  ;AGENT DE SUPPORT
+MBER0001  ;A.D.G
+MBER0002  ;ADJOINT  DI
+MBER0003  ;ADJOINT  DJRC
+MBER0004  ;ADJOINT D.C
+MBER0005  ;ADJOINT DC
+MBER0006  ;ADJOINT DF
+MBER0007  ;ADMINISTR DG
+MBER0008  ;ADMINISTRATEUR
+MBER0009  ;ADMINISTRATEUR DES VENTES
+MBER0010  ;AGENT  LOGISTIQUE
+MBER0011  ;AGENT  RECOUVREMENT
+MBER0012  ;AGENT COMMERCIAL
+MBER0013  ;AGENT DE BUREAU
+MBER0014  ;AGENT DE RECOUVREMENT
+MBER0015  ;AGENT D'ENTRETIEN
+MBER0016  ;AGENT LOGISTIQUE
+MBER0017  ;AGENT SECURITE
+MBER0018  ;ANALYSTE RISQUE
+MBER0019  ;ANALYSTE SURVEILLANCE DES ENGA
+MBER0020  ;ARCHIVISTE
+MBER0021  ;ASS.  D.C
+MBER0022  ;ASS.  D.F
+MBER0023  ;ASS.  DEP  TRESORERIE
+MBER0024  ;ASS.  DEP CBI
+MBER0025  ;ASS.  DEP EXPLOITATION
+MBER0026  ;ASS.  DG
+MBER0027  ;ASS.  DJC
+MBER0028  ;ASS. AU BO
+MBER0029  ;ASS. BUREAU AGADIR
+MBER0030  ;ASS. BUREAU FES
+MBER0031  ;ASS. BUREAU MARRAKECH
+MBER0032  ;ASS. BUREAU RABAT
+MBER0033  ;ASS. BUREAU TANGER
+MBER0034  ;ASS. DG
+MBER0035  ;ASSISTANT DIRECTION COMMERCIAL
+MBER0036  ;ASSISTANTE
+MBER0037  ;ASSISTANTE  DG
+MBER0038  ;ASSISTANTE ADMINISTRATIVE
+MBER0039  ;ASSISTANTE B. AGADIR
+MBER0040  ;ASSISTANTE B. FES
+MBER0041  ;ASSISTANTE B. KENITRA
+MBER0042  ;ASSISTANTE B. MARRAKECH
+MBER0043  ;ASSISTANTE B. OUJDA
+MBER0044  ;ASSISTANTE B. RABAT
+MBER0045  ;ASSISTANTE B. TANGER
+MBER0046  ;ASSISTANTE B.O
+MBER0047  ;ASSISTANTE BACK OFFICIE DRC
+MBER0048  ;ASSISTANTE CHARGEE DE DOSSIER
+MBER0049  ;ASSISTANTE DE DIRECTION GENERA
+MBER0050  ;ASSISTANTE DEP EXPLOITATION
+MBER0051  ;ASSISTANTE DEP TRES
+MBER0052  ;ASSISTANTE DF
+MBER0053  ;ASSISTANTE DIRECTION COMMERC.
+MBER0054  ;ASSISTANTE DU  CBI
+MBER0055  ;CADRE  INFORMATICIEN
+MBER0056  ;CADRE COMMERCIAL
+MBER0057  ;CADRE COMPTABLE
+MBER0058  ;CADRE FINANCIER
+MBER0059  ;CADRE INFORMATICIEN
+MBER0060  ;CADRE JURISTE
+MBER0061  ;CADRE MARKETING
+MBER0062  ;CADRE RECOUVREUR
+MBER0063  ;CAHRGEE DE DOSSIER
+MBER0064  ;CHAGE CLT RESP BUR REP RABAT K
+MBER0065  ;CHAGE DE LA TSC ET PROCESS
+MBER0066  ;CHAGE DE LA TSC ET SUIVI DES P
+MBER0067  ;CHARG CLT BO
+MBER0068  ;CHARG CLT RESP BUR REP FES MEK
+MBER0069  ;CHARGEE DE DEVELOPPEMENT RH ET GESTION ADMINISTRAT
+MBER0070  ;CHARGE DE CLIENTELE
+MBER0071  ;ChargÃ© de clientÃ¨le
+MBER0072  ;CHARGE DE DOSSIER
+MBER0073  ;CHARGE DE LA TSC
+MBER0074  ;CHARGE DE LA TSC ET PROCESS
+MBER0075  ;CHARGE DE PUBLICITE
+MBER0076  ;CHARGE DES ENGAG.  ET COMM.
+MBER0077  ;CHARGE DU CONTENTIEUX
+MBER0078  ;CHARGE DU RECOUV & DU CONT.
+MBER0079  ;CHARGE(E)  DE  CLIENTELE
+MBER0080  ;CHARGE(E)  DU REC. & CTX
+MBER0081  ;CHARGE(E) DE CLIENTELE
+MBER0082  ;ChargÃ©e de Comm  et Marketing
+MBER0083  ;Chargé de Communication et Ma
+MBER0084  ;CHARGEE DE DOSSIER
+MBER0085  ;CHARGEE DE DOSSIER AG FES
+MBER0086  ;CHARGEE DE LA CONFORMITE ET RI
+MBER0087  ;ChargÃ©e de la Gestion Administ
+MBER0088  ;CHAUFFEUR
+MBER0089  ;CHAUFFEUR - COURSIER
+MBER0090  ;CHAUFFEUR RECOUVREUR
+MBER0091  ;CHEF DEP RISQUES
+MBER0092  ;COMPTABLE
+MBER0093  ;CONTROLE PERMANENT
+MBER0094  ;CONTROLEUR DE GESTION
+MBER0095  ;CONTROLEUR INTERNE
+MBER0096  ;CONTROLEUR INTERNE & CONFORMIT
+MBER0097  ;CONTROLEUR PERMANENT
+MBER0098  ;COURSIER
+MBER0099  ;CREDIT RISK MANAGER
+MBER0100  ;DIR ADJOINT EN CHARGE PRODUCTI
+MBER0101  ;DIR POLE DEV COMMERCIAL
+MBER0102  ;DIR POLE FINANCES ET PRODUCTIO
+MBER0103  ;DIR POLE JURIDIQUE ET RECOUVRE
+MBER0104  ;DIR RECOUVREMENT
+MBER0105  ;DIR RESEAUX CLIENTELEA
+MBER0106  ;DIR RESEAUX CLIENTELEB
+MBER0107  ;DIRECTEUR  ADMINISTRATIF
+MBER0108  ;DIRECTEUR  COMMERCIAL
+MBER0109  ;DIRECTEUR  FINANCIER
+MBER0110  ;DIRECTEUR  INFORMAIQUE
+MBER0111  ;DIRECTEUR  INFORMATIQUE
+MBER0112  ;DIRECTEUR  JRC
+MBER0113  ;DIRECTEUR ADMINISTRATIF
+MBER0114  ;DIRECTEUR ADMINISTRATIF ET FIN
+MBER0115  ;DIRECTEUR COMMERCIAL
+MBER0116  ;DIRECTEUR DES  ENGAGEMENTS
+MBER0117  ;DIRECTEUR DES ENGAGEMENTS
+MBER0118  ;DIRECTEUR DJC
+MBER0119  ;DIRECTEUR EN CHARG GEST RISK E
+MBER0120  ;DIRECTEUR EN CHARGE PRODUCT
+MBER0121  ;DIRECTEUR FINANCIER
+MBER0122  ;DIRECTEUR GENERAL
+MBER0123  ;DIRECTREUR ADM. & FINANCIER
+MBER0124  ;EMPLOYE
+MBER0125  ;GESTIONNAIRE ADMIN RECOUV CONT
+MBER0126  ;GESTIONNAIRE ADMIN RECOUVREMEN
+MBER0127  ;GESTIONNAIRE ADMINISTRATIVE
+MBER0128  ;GESTIONNAIRE BACK OFFICE
+MBER0129  ;GESTIONNAIRE LOGISTIQUE
+MBER0130  ;GESTIONNAIRE RECOUVREMENT
+MBER0131  ;INFORMATICIEN
+MBER0132  ;INGENIEUR CHARGE(E) des INFRAS
+MBER0133  ;INGENIEUR INFORMATICIEN
+MBER0134  ;LE PRESIDENT
+MBER0135  ;OPERATEUR DE SAISIE
+MBER0136  ;OPERATRICE  DE SAISIE DC
+MBER0137  ;OPERATRICE DE SAISIE
+MBER0138  ;P.D.G
+MBER0139  ;PREPOSEE AU B.O
+MBER0140  ;PREPOSEE AU BUREAU D'ORDRE
+MBER0141  ;PRESIDENT
+MBER0142  ;RECOUVREUR
+MBER0143  ;RESP   DEP TRESORERIE
+MBER0144  ;RESP   DPT TRESORERIE
+MBER0145  ;RESP  DEP   EXPLOITATION
+MBER0146  ;RESP  DPT LOGISTIQUE
+MBER0147  ;RESP BUR REG DE REPRESENTATION
+MBER0148  ;RESP BUR REGIONAL DE REPRESENT
+MBER0149  ;RESP BUREAU DE FES
+MBER0150  ;Resp ChargÃ©e Animation Commerc
+MBER0151  ;RESP CONTROLE PERMANENT
+MBER0152  ;RESP CREDIT RISK MANAGEMENT
+MBER0153  ;RESP DEP  PME/PMI
+MBER0154  ;RESP DEP APRES VENTE
+MBER0155  ;RESP DEP AUDIT INTERNE
+MBER0156  ;RESP DEP CORPORATE
+MBER0157  ;RESP DEP FINANCEMENT CBI
+MBER0158  ;RESP DEP MARCHE IMMOBILIER PRO
+MBER0159  ;RESP DEP MARCHE UTILITAIRE
+MBER0160  ;RESP DEP ORG ET QUAL
+MBER0161  ;RESP DEP RECOUV ET CONTENTIEUX
+MBER0162  ;RESP DEPT  ANAL RISQUE CREDIT
+MBER0163  ;RESP DIR RISK MANAGEMENT
+MBER0164  ;RESP DPT  CONTROLE PERMANENT
+MBER0165  ;RESP DPT ACTES JURIDIQUES
+MBER0166  ;RESP DPT BD ET BI
+MBER0167  ;RESP DPT CASA ENTREPRISES
+MBER0168  ;RESP DPT COMMUNICATION FINANCI
+MBER0169  ;RESP DPT FACT ET GEST CONTR
+MBER0170  ;RESP DPT FACTURATION
+MBER0171  ;RESP DPT GESTION COMPTABLE
+MBER0172  ;RESP DPT ORG ET PILOTAGE
+MBER0173  ;RESP DPT RECOUVREMENT AMIABLE
+MBER0174  ;RESP Gest des Risques et Confo
+MBER0175  ;RESP PME/PMI
+MBER0176  ;RESP SCE ARCHIVES ET PUBLICITE
+MBER0177  ;RESP SCE CONFORMITE RISK OPER
+MBER0178  ;RESP SCE CONFORMITE RISK OPER
+MBER0179  ;RESP SCE DEBLOCAGE
+MBER0180  ;RESP SCE ENGAGEM RESEAU B
+MBER0181  ;RESP SCE TRES  SOCIALE
+MBER0182  ;RESP TRES  SOCIALE
+MBER0183  ;RESP. B. KENITRA
+MBER0184  ;RESP. DEPT AUTRES MARCHES
+MBER0185  ;RESP. DEPT NOUVEAUX  MARCHES
+MBER0186  ;RESP. REALISATION CBI
+MBER0187  ;RESP.SCE ENGAG CBM RESEAU A
+MBER0188  ;RESPONSABLE  BUREAU  AGADIR
+MBER0189  ;RESPONSABLE  BUREAU  MARRAKECH
+MBER0190  ;RESPONSABLE  BUREAU  TANGER
+MBER0191  ;RESPONSABLE  CELLULE SAISIE
+MBER0192  ;RESPONSABLE  DCIC
+MBER0193  ;RESPONSABLE  DEP TRESORERIE
+MBER0194  ;RESPONSABLE  DEP. LOGISTIQUE
+MBER0195  ;RESPONSABLE  DU BO
+MBER0196  ;RESPONSABLE  SAV
+MBER0197  ;RESPONSABLE B. AGADIR
+MBER0198  ;RESPONSABLE B. FES
+MBER0199  ;RESPONSABLE B. MARRAKECH
+MBER0200  ;RESPONSABLE B. OUJDA
+MBER0201  ;RESPONSABLE B. RABAT
+MBER0202  ;RESPONSABLE B. TANGER
+MBER0203  ;RESPONSABLE BUREAU  FES
+MBER0204  ;RESPONSABLE BUREAU  RABAT
+MBER0205  ;RESPONSABLE CELLULE SAISIE
+MBER0206  ;RESPONSABLE DCIC
+MBER0207  ;RESPONSABLE DEP EXPLOITATION
+MBER0208  ;RESPONSABLE DEP LOGISTIQUE
+MBER0209  ;RESPONSABLE DPT EXPLOITATION
+MBER0210  ;RESPONSABLE DPT MARKETING
+MBER0211  ;RESPONSABLE DU CONTENTIEUX
+MBER0212  ;RESPONSABLE INFORMATIQUE
+MBER0213  ;RESPONSABLE RECOUV  ET  CONTX
+MBER0214  ;RESPONSABLE RECOUVREMENT
+MBER0215  ;RESPONSABLE SAV
+MBER0216  ;RESPONSABLE TRESORERIE
+MBER0217  ;STANDARDISTE
+MBER0218  ;RESP. B. 330
+MEDIATRICE;Médiatrice
+METGESPRO ;Méthodologie et Gestion de Projet
+MKTCOM    ;Responsable Marketing Stratégique et Communication
+MKTCOM1   ;Responsable de marchés
+MKTCOM2   ;Responsable de produits
+MKTCOM3   ;Spécialiste techniques marketing
+MKTCOM4   ;Chargé d'études marketing
+MKTCOM5   ;Responsable de publicité
+MKTGST    ;Chargé du Marketing Stratégique
+MONIT     ;Moniteur
+MOYENG1   ;Agent de sécurité
+MOYENG2   ;Agent de restauration
+MOYENG3   ;Agent de bureau
+MOYENG4   ;Agent d'imprimerie
+MOYENG5   ;Gestionnaire équipe technique
+MOYENG6   ;Agent de service
+MOYENG7   ;Chauffeur
+MOYENG8   ;Veilleur de nuit
+MRKDTANPME;Marketing Data Analyste PME
+OABACKET  ;Agent Back-office Etranger
+OAGBOFF   ;Agent Back Office
+OAGBOFFS  ;Agent Back Office Sénior
+OBPRH     ;Business Partner
+OCHDOSS   ;Chargé de Dossiers
+OCHDOSSEN ;Chargé de Dossiers Sénior
+OCHMIS    ;Chargé de mission
+OCHPAMO   ;Chef de Projet
+OCHPRJSE  ;Chef de Projet Sénior
+OCOFHOLINE;Conseiller Fonctionnel Hot Line
+OCTLOPOGS ;Contrôleur Permanent Opérationnel
+OGEGARAN  ;Gestionnaire des Garanties
+OGES MON  ;Gestionnaire Monetique
+OGESTADM  ;Gestionnaire Administratif
+OGESTATD  ;Gestionnaire ATD
+OGESTFONDS;Gestionnaire de Fonds
+OGESTIMP  ;Gestionnaire Titres d’importation
+OGSDIRPROJ;DIRECTEUR DE PROJET
+OGSRSPDPTA;Responsable Département Adjoint
+OGSRSPLOG ;Responsable Logistique
+OJOBOGS1  ;JOB OGS 1
+OJURIDIQ  ;Chargé des affaires juridiques
+OPERSA    ;Opérateur de Saisie
+OPERSACPTA;Opérateur de Saisie - Comptabilité
+OPEXPINF  ;Opérateur d'Exploitation Informatique
+OPSAI     ;Opérateur de saisie
+OPTELEX   ;Opérateur Téléx
+OPTRAI    ;Opérateur de traitement
+ORDE      ;Responsable Dossiers Entreprises
+OREBOFF   ;Responsable Back Office
+ORESPDIV  ;Responsable Division
+ORESPGAR  ;Responsable Garanties
+ORSPDIR   ;Responsable
+ORSPDPT   ;Responsable
+ORSPPOL   ;Responsable Pôle
+OSCOGRB   ;Service Communs Garçon Bureau
+OSECR     ;Assistante
+PDG       ;P.D.G
+PDTSERMULT;Produits & Services Multicanal
+PENALI    ;Pénaliste
+PILSUIBUDG;Responsable Pilotage et Suivi Budgétaire
+PMACCINSTA;Responsable du suivi des instances
+PMMANRH   ;Project Manager RH 
+PMMOACTRLP;Project Manager MOA - Contrôle Permanent
+PMMOARISK ;Project Manager MOA - Risques
+PMMOASIRH ;Project Manager MOA - SIRH
+PMMOASRISK;Project Manager MOA Sénior - Risques
+PMMOASSIRH;Project Manager MOA Sénior - SIRH
+PMRHSENIOR;Project Manager RH Sénior
+PMS       ;Project Manager Senior
+PMSENICTLP;Project Manager Sénior - Contrôle Permanent
+PORTF     ;Préposé Service Portefeuille
+PRDEP     ;Préposé aux dépassements
+PRDTSERV  ;Produits & Services
+PRIVBANKER;Private Banker
+PRJMANS   ;Project Manager Senior
+PRMARSE   ;Program Manager RSE
+PRMARSESE ;Responsable RSE
+PRMASMISE ;Program Manager Senior SMI
+PRMFINDUR ;Program Manager Finance Durable
+PRMKST    ;Chef de projet Marketing Stratégique
+PROMAN    ;Project Manager
+PROMANSUAD;Program Manager Sustainability Advocacy
+QUALIT    ;Qualiticien
+QUALITSEN ;Qualiticien Sénior
+RACCTR    ;Responsable Caisse Centrale
+RACTDET   ;Responsable Activité Détaillants
+RADMN     ;Responsable Administratif
+RAGUI     ;Responsable arrière guichet
+RASSRE    ;Responsable Assistance Réseau
+RCCTR     ;Responsable Caisse Central
+RCDV      ;Responsable Caisse Devise
+RCHDO     ;Superviseur de chargés de dossiers
+RCLEN     ;Responsable Clientèle Entreprises
+RCLENGE   ;Responsable Clientèle Entreprise GE
+RCLPA     ;Responsable Clientèle Particuliers
+RCOCOM    ;Responsable Coordination Commerciale
+RCRSP     ;Responsable Crédits Spéciaux
+RDE       ;Responsable Dossiers Entreprises
+REASSUT   ;Responsable Assistance & Support Utilisateur
+REBANK    ;Responsable e-banking
+REBOFF    ;Responsable Back Office
+RECTERR   ;Recouvreur Terrain
+RECTL     ;Réclamations clientèle
+REFCOMPRJT;Responsable Communication Projets
+REFCONSCRP;Responsable Consolidation des Comptes et Reporting
+REFERENT  ;Référent
+REFORM    ;Responsable Formation
+REFPILCESE;Responsable Pilotage Commercial Entreprises
+REFTPE    ;Référent TPE
+REGISSEUR ;Régisseur
+REGPEC    ;Responsable Gestion des Emplois et Carrières
+REPAIE    ;Responsable de la paie
+REPLADJU  ;Responsable Plateforme Administrative & Juridiques
+REPRISE   ;REPRISE
+RESACHAT  ;Responsable Achats
+RESADMPR  ;Responsable Administratif Production
+RESANIMCOM;Responsable Animation Commerciale Entreprises
+RESBANCA  ;Responsable Bancassurance
+RESCADOU  ;Responsable Cautions en Douanes
+RESCASHMAN;Responsable Cash Management Groupe
+RESCOM    ;Responsable Commercial
+RESCRC    ;Responsable Cellule Relation Client
+RESDEVRH  ;Responsable Développement RH
+RESDOMCOOR;Responsable Domaine Coordination
+RESENG    ;Responsable Engagements
+RESEQUIP  ;Responsable Equipement
+RESETEXP  ;Responsable Etudes et Expertises
+RESFDINV  ;Reponsable Fonds d'Investissement
+RESFONC   ;Responsable Fonctionnement
+RESHUM1   ;Chargé de formation
+RESHUM10  ;Technicien administratif du personnel
+RESHUM11  ;Technicien paie
+RESHUM12  ;Correspondant RH
+RESHUM2   ;Chargé de recrutement
+RESHUM3   ;Chargé d'études personnel
+RESHUM4   ;Gestionnaire du personnel
+RESHUM5   ;Médico-social
+RESHUM6   ;Responsable formation
+RESHUM7   ;Responsable paie
+RESHUM8   ;Responsable relations sociales
+RESHUM9   ;Responsable Recrutement
+RESMULTI  ;Responsable Multi-Technique
+RESP ARCH ;Responsable Gestion des Archives
+RESPAGM   ;Responsable Agence Mobile
+RESPAGS   ;Directeur Agence Sattellite
+RESPANIM  ;Responsable Animation Part/Pro
+RESPARTEMO;Responsable Parc Téléphonie Mobile
+RESPCA    ;Responsable PCA
+RESPCOORGE;Responsable Coordination GE
+RESPCREDIT;Responsable Crédit
+RESPDIV   ;Responsable Division
+RESPDOC   ;Responsable Documentation
+RESPEDI   ;Responsable EDI
+RESPEDIT  ;RESPONSABLE EDITORIAL
+RESPERGR  ;Responsable Performance Groupe
+RESPGAR   ;Responsable Garanties
+RESPILENT ;Responsable Pilotage Entreprise
+RESPILGR  ;Responsable Pilotage RH Groupe
+RESPISYN  ;Responsable Pilotage & Synérgie
+RESPON    ;Responsable
+RESPPRO   ;RESPONSABLE PROJETS
+RESPROM   ;Responsable Production Maroc
+RESPSIBOA ;Responsable SI/BOA
+RESPSOURC ;Responsable Sourcing & Recrutement
+RESPSTGREC;Responsable Stages et Relations Ecoles
+RESPSUPP  ;RESPONSABLE SUPPORTS
+RESPTARIFI;Responsable Tarification
+RESPTEL   ;Responsable Téléphone
+RESREC    ;Responsable réclamations
+RESRECMOB ;Responsable Recrutement et Mobilité Interne
+RESSMM    ;Responsable Support, Mutualisation et Moyens
+RESSUCATD ;Responsable Successions & ATD
+RESTFIN   ;Restructuration Financière et LBO
+RESTREFIN ;Responsable Trésorerie Financier
+RESUICOM  ;Responsable du Suivi des Comptes
+RESUIENG  ;Responsable Suivi des Engagements Région
+RESYSDSI  ;Responsable des Systèmes DSI
+RETELEC   ;Responsable Télecom
+RETRA     ;Responsable BO Etranger CAF
+RETRBOFF  ;Responsable Trésorerie Back Office
+REXPINF   ;Responsable d'exploitation Informatique
+RGAGE     ;Responsable Gestion Administrative GE
+RGERI     ;Responsable Gestion du Risque
+RGESDEIM  ;Responsable  Gestion et Developpement Immobilier
+RGUIC     ;Responsable Guichet
+RISKMAN   ;Risk Manager
+RJURI     ;Responsable Juridique
+RM000001  ;Agent juridique
+RM000002  ;Agent adminsitratif
+RM000003  ;Agent de bureau
+RM000004  ;Agent Support
+RM000005  ;Assistante de direction
+RM000006  ;Chargé du conseil et du suivi des procédures judic
+RM000007  ;Chargée de mise en jeu assurance
+RM000008  ;Chargée de mise en jeu CCG
+RM000009  ;chargée de pilotage de sous traitance
+RM000010  ;chargée des honoraires
+RM000013  ;Chargée du contrôle permanent, conformité et gesti
+RM000014  ;Comptable Senior
+RM000015  ;Développeur fonctionnel
+RM000016  ;Directeur Général
+RM000017  ;Directeur Juridique Contentieux
+RM000018  ;Directeur recouvrement contentieux Part / Pro
+RM000020  ;Directeur Support
+RM000021  ;Gestionnaire Administration RH
+RM000022  ;Gestionnaire IT
+RM000023  ;Gestionnaire recouvrement contentieux Entreprise
+RM000024  ;Gestionnaire recouvrement contentieux Part /Pro
+RM000025  ;Recouvreur terrain
+RM000026  ;Responsable Contrôle permanent ,compliance et gest
+RM000027  ;Responsable Organisation  et efficacité opérationn
+RM000028  ;Responsable pilotage de sous traitance et autres c
+RM000029  ;Responsable Projets ,pilotage et DATA
+RM000030  ;Responsable recouvrement contentieux Entreprise
+RM000031  ;Responsable recouvrement contentieux Part / Pro
+RM000032  ;Responsable RH et Moyens
+RMARC     ;Responsable de marché
+RMOFF     ;Responsable du Middle Office / Division Titres
+ROPCV     ;Responsable Contrôle Dépositaire OPCVM
+RORGA     ;Responsable du Département Organisation
+RORGQ     ;Responsable de la Direction Organisation & Qualité
+RPGTPVR   ;Responsable de la Gestion Préventive des Risques
+RPMIDLOFFI;Responsable Middle Office
+RPOCE     ;Responsable Portefeuille Central
+RQUAL     ;Responsable Département Qualité
+RSAFADJU  ;Responsable Affaires Administratives et Juridiques
+RSAREC    ;Responsable Accueil Nouvelles Recrues
+RSBOU     ;Responsable Service Bourse
+RSCCO     ;Responsable Service Communs
+RSDEVCOPAR;Responsable Développement Conventions (Particulier
+RSDEVPISYN;Responsable Développement Pilotage et Synergie
+RSDOMRH   ;Responsable Domaine RH
+RSGESPAT  ;Responsable Gestion du Patrimoine
+RSPACCINST;Responsable Accompagnement des instances
+RSPACHEXIM;Responsable Achats - Expertises Immobilières
+RSPACHGAPP;Responsable Achats Généraux et Approvisionnement
+RSPACHGENE;Responsable Achats Généraux
+RSPACHGRP ;Responsable Achats Groupe
+RSPACHTBAT;Responsable Achats - Travaux & Bâtiment
+RSPACINTEL;Responsable Achats - Informatique et Télécom
+RSPACPIORG;Responsable Activité Pilotage et Organisation
+RSPACTRESP;Responsable  Actions en Responsabilité
+RSPACTTRAN;Responsable Activités transverses - International
+RSPADMCTLP;Responsable Administratif Contrôle Permanent Régio
+RSPADMPROD;Responsable Administratif Production
+RSPADNFIN ;Responsable Administratif Financier
+RSPAEN    ;Responsable des PACA Entreprises
+RSPAFFJUDI;Responsable Affaires Judiciaires
+RSPAFFLITG;Responsable Affaires Litigieuses
+RSPAFFPENA;Responsable Affaires Pénales
+RSPAFFSOCI;Responsable Affaires Sociales
+RSPAGCDIRC;Responsable Agence Directe
+RSPALM    ;Responsable ALM
+RSPANAENGA;Responsable Engagements Groupe
+RSPANAREPO;Responsable Analyse et Reporting
+RSPANASECO;Responsable Analyse Sectorielle et Economique
+RSPANASPIN;Responsable Analyse Sectorielle & Pilotage de l'In
+RSPANCOPME;Responsable Animation Commerciale PME
+RSPANCRFGE;Responsable Analyse crédit de fonctionnement GE
+RSPANCTLPF;Responsable Pilotage & Animation Contrôle Permanen
+RSPANCTLPR;Responsable Pilotage & Animation Contrôle Permanen
+RSPANDIGOV;Responsable Animation du Dispositif de Gouvernance
+RSPANQUALT;Responsable Animation Qualité
+RSPANREFIL;Responsable Animation & Reporting Filiales
+RSPAPSYREG;Responsable Animation, Pilotage & Synergie Région
+RSPAPV    ;Responsable Approvisionnements
+RSPARSKGRP;Responsable Assessment Risque Groupe
+RSPASCLUB ;Responsable animation sportive du Club BANK OF AFR
+RSPASSCONG;Responsable Assiduité et Congés
+RSPASSMALD;Responsable Assurance Maladies
+RSPASSMARO;Responsable Assurances et Matériel Roulant
+RSPASSMESO;Responsable Assistance Médico-Sociale
+RSPASSPREV;Responsable Assurances et Prévoyance
+RSPBANQPME;Responsable Banque PME
+RSPBATIMSR;Responsable Batiment Sièges & Réseau
+RSPBDGECIB;Responsable du Bureau DGE Maroc & CIB
+RSPBMCETV ;Responsable BMCE TV
+RSPBNQPPME;Responsable de la Banque Part/Pro & PME
+RSPBNQUEPP;Responsable Banque Particuliers & Professionnels
+RSPBOACDMY;Responsable BOA Academy
+RSPBOETRGE;Responsable back-office Etranger GE
+RSPBOGE   ;Responsable back-office GE
+RSPBRAMMED;Responsable Branding, Amplification & Médias Relat
+RSPBRPDT  ;Responsable Bureau du Président
+RSPBUANREP;Responsable Business analytics & Reporting
+RSPBUDEINT;Responsable Business Développement à l'internation
+RSPCACHMAN;Responsable Cash Management
+RSPCAJGE  ;Responsable Conseil Juridique Grandes Entreprises
+RSPCAJRCOM;Responsable Conseil & Assistance Juridique Réseau
+RSPCAJSF  ;Responsable Conseil & Assistance Juridique siège e
+RSPCCEMR  ;Responsable Corporate Comm.Events & Media Relation
+RSPCDRHREG;Responsable Coordination Développement RH Régions
+RSPCEAFSGE;Responsable Cellule Agent Financements Structurés
+RSPCELMRE ;Responsable Cellule MRE
+RSPCEXPERH;Responsable Centre d'Expertises RH
+RSPCGG    ;Responsable Contrôle Général Groupe
+RSPCHAMAN ;Responsable Change Manuel
+RSPCHG    ;Responsable Capital Humain Groupe
+RSPCHMGMRH;Responsable Change Management RH
+RSPCIE    ;Responsable Intelligence Economique & Développemen
+RSPCJMEPP ;Responsable Conseil Juridique Marchés Entreprises
+RSPCJMJGAR;Responsable Conseil Juridique & Mise en jeu des Ga
+RSPCJSFIL ;Responsable Conseil Juridique Siège et Filiales
+RSPCLUB   ;Responsable Club BANK OF AFRICA
+RSPCMCE   ;Responsable Communication Managériale & Culture d'
+RSPCMDIGIT;Responsable Communication et Relations Institution
+RSPCMPLPBQ;Responsable Compliance Banque et Normes Groupe
+RSPCMPLPGP;Responsable Conformité Groupe
+RSPCMPME  ;Responsable Cash Management Entreprises
+RSPCMTYSL ;Responsable Community & Social Listening
+RSPCNRISKG;Responsable Coordination et Normes Risques Groupe
+RSPCOBAINT;Responsable Correspondent Banking International
+RSPCOBPREG;Responsable Coordination et Support BP RH Régions
+RSPCOMBTOB;Responsable B to B Communication
+RSPCOMCTOC;Responsable B to C Communication
+RSPCOMDD  ;Responsable Communication Directe et Digitale
+RSPCOMEDIT;Responsable Communication Editoriale
+RSPCOMERCL;Responsable Commercial TOS
+RSPCOMEX  ;Responsable Commerce Extérieur
+RSPCOMFINA;Responsable Communication Financière
+RSPCOMGROP;Responsable Communication Groupe
+RSPCOMPRGE;Responsable Commercial Portefeuille GE
+RSPCOMPRJ ;Responsable Communication Projets
+RSPCOMPTA ;Responsable Comptabilité
+RSPCOMSUP ;Responsable Communication Support
+RSPCONSOL ;Responsable consolidation
+RSPCONV   ;Responsable Convention
+RSPCOOATRH;Responsable Coordination & Assistance Technique RH
+RSPCOOBOAA;Responsable Communication & Coordination BOA Acade
+RSPCOOGROP;Responsable Stratégie et Développement Groupe
+RSPCOOPTSG;Responsable Coordination & Projets Transv. (Suivi
+RSPCORFIN ;Responsable Corporate Finance
+RSPCORISKG;Responsable Consolidation Risques Groupe
+RSPCOSOCRH;Responsable Coordination Sociale SST
+RSPCOSUREC;Responsable Coordination & Support Recrutement
+RSPCOSUSYN;Responsable Coordination-Support & Synergie
+RSPCPGPPRV;Responsbale Conseil en Placement & Gest. de Patrim
+RSPCPLCOFS;Responsable Compliance Réseau Offshore
+RSPCPOREG ;Responsable Contrôle Permanent Opérationnel Région
+RSPCRC    ;Responsable CRC
+RSPCRCAGCD;Responsable CRC & Agence Directe
+RSPCRCPOFS;Responsable Crédits Corporate & Offshore
+RSPCRDITRH;Responsable Crédits RH
+RSPCRDPMEP;Responsable Crédits PME/PMI
+RSPCRDPP  ;Responsable Crédits Particuliers Professionnels
+RSPCSMRH  ;Responsable CSM RH
+RSPCTLPABO;Responsable Contrôle Permanent Activités Back Offi
+RSPCTLPACE;Responsable Contrôle Permanent Activités Céntralis
+RSPCTLPFIL;Responsable Contrôle Permanent Filiales
+RSPCTLPFSU;Responsable Contrôle Permanent Filières Support
+RSPCTLPGRP;Responsable Contrôle Permanent Groupe
+RSPCTLPMBO;Responsable Contrôle Permanent  - Domaine Métier B
+RSPCTLPREG;Responsable Contrôle Permanent Régions
+RSPCTLPSUP;Responsable Contrôle Permanent - Domaine Support
+RSPCTRLCOT;Responsable Contrôle Comptable
+RSPCTRLGES;Responsable Contrôle de Gestion
+RSPCTRLPER;Responsable Contrôle Périodique
+RSPCTRLQOT;Responsable Contrôle quotidien
+RSPCTRLSUP;Responsable Contrôle et Support
+RSPCTVSFIH;Responsable Contrôle technique, Veille & suivi adm
+RSPCUS    ;Responsable CUSTODY
+RSPCUSEXPE;Responsable Customer Experience
+RSPDATASCI;Responsable Data Science & Analytics
+RSPDCPCRES;Responsable Dév.canaux physiques et Coordination d
+RSPDDRSE  ;Responsable Développement Durable et RSE
+RSPDEPDATA;Responsable Déontologie, Ethique et protection des
+RSPDEPFORM;Responsable Déploiement de la formation
+RSPDEPRCLT;Responsable Déontologie et Protection Client
+RSPDESK   ;Responsable Desk
+RSPDEVCCPA;Responsable Dév. Commercial & Conventions (Particu
+RSPDEVINVE;Responsable Développement de l'Investissement
+RSPDEVP   ;Responsable Développement et Pilotage Régional
+RSPDEVRECF;Responsable Développement, Recrutement et Formatio
+RSPDEVRHEF;Responsable Développement RH Entités Fonctionnelle
+RSPDEVSUMO;Responsable Développement Support & Moyens
+RSPDFIMHOT;Responsable Dév. Financement Immobilier et Hôtelie
+RSPDGETRAN;Responsable ADJ. du BDGE M&CIB en Chrg. De la Tran
+RSPDIR    ;Responsable
+RSPDIV    ;Responsable de Division
+RSPDIVI   ;Responsable de Division
+RSPDIVINCG;Responsable Diversité & Inclusion Groupe
+RSPDPCFNOA;Responsable Délégations de Pouvoirs, Relat av CF,
+RSPDPSTRAN;Responsable Détection, Pilotage & Surveillance Tra
+RSPDPSYOFS;Responsable Développement Pilotage et Synergies Of
+RSPDPT    ;Responsable
+RSPDRHCBPR;Responsable Développement RH & Coordination BP RH
+RSPDRHEFRB;Responsable Dév RH Entités Fonctionnel. & Recrutem
+RSPDRHFILM;Responsable Développement et Support RH - Filiales
+RSPDTANSRH;Responsable Data & Analytics SIRH
+RSPDVCOCM ;Responsable Développement Commercial CM
+RSPDVCOPIN;Responsable Dév.Commercial et Partenariats à l'Int
+RSPDVCOPRO;Responsable Développement Commercial (PRO)
+RSPDVCOPRV;Responsable Développement Commercial (PRIVE)
+RSPDVCOTPE;Responsable Développement Commercial (TPE / PE)
+RSPDYTERBD;Responsable Dynamiques Territoriales & Big Data
+RSPECIDIGI;Responsable Expérience Client & Innovations Digita
+RSPEDCCINT;Responsable Dév. Commercial & Coordination Interna
+RSPEMSAINT;Responsable Embargos et Sanctions Internationales
+RSPENG    ;Responsable Régional des Engagements
+RSPENGBAEC;Responsable Engagements BOA Afrique Est/Centrale
+RSPENGBAFR;Responsable Engagements BOA AFRIQUE
+RSPENGBFRA;Responsable Engagements BOA Francophones
+RSPENGBGCA;Responsable Engagements BOA GRAND CASA
+RSPENGBRMA;Responsable Engagements BOA Régions Maroc
+RSPENGCFSF;Responsable Engagements CORPO.Fin.Str.Fil.Spéc.Inv
+RSPENGCORP;Responsable Engagements Corporate
+RSPENGFSIB;Responsable Engagements Filiales Spécial.Investmen
+RSPENGFSPF;Responsable Engagements Financ.Structurés. Project
+RSPENGREG ;Responsable des Engagements Régions
+RSPEPBEPAR;Responsable Expertise produits - Bancassurance & E
+RSPEPMOBIL;Responsable Expertise produits - Monétique & Mobil
+RSPEPSCRD ;Responsable Expertise produits - Services et Crédi
+RSPETCFPME;Responsable Études Crédits de fonctionnement-PME
+RSPETPERES;Responsable Analyses et Etudes de Performance du R
+RSPEVRELAT;Responsable Evénementiel & Relationnel
+RSPFCCC   ;Responsable Formation, Communication et Culture Co
+RSPFICFPME;Responsable Plateforme Fonctionnement PME
+RSPFIMOHOT;Responsable Financement Immobilier & Hôtelier
+RSPFINBQPI;Responsable Financière Banque et Pilotage Fiscal G
+RSPFINCOME;Responsable Financement Commerce Extérieur
+RSPFINCORP;Responsable Financement Corporate
+RSPFINDURB;Responsable Finance Durable
+RSPFINIMGE;Responsable Financement immobilier GE
+RSPFINOPSP;Responsable Financements Opérations Spécifiques
+RSPFINPART;Responsable Finances & Participations
+RSPFINSBUD;Responsable Finance et Suivi des budgets
+RSPFINSOFS;Responsable Financements Structurés Offshore
+RSPFINSTGE;Responsable Financements Structurés GE
+RSPFINSTRU;Responsable Financements Structurés
+RSPFIPRIMH;Responsable Financement Promotion Immobilière et H
+RSPFPIHOGE;Responsable Financement Promotion Immobilière et H
+RSPFPIHPME;Responsable Financement Promotion Immobili.Hôtelie
+RSPFSCAGP ;Responsable Fiscalité Groupe
+RSPGAAGPER;Responsable Gestion Administrative - Agence du Per
+RSPGADMCRD;Responsable Gestion et Production Crédits
+RSPGADMRH ;Responsable Gestion Administrative RH
+RSPGAFCPME;Responsable Gestion Administrative Fonctionnement
+RSPGAOIRSK;Responsable Gestion & Admin. Outils Informatique d
+RSPGAPESPL;Responsable suivi GAPES PLG
+RSPGCARGRP;Responsable Gestion de Carrières Groupe
+RSPGCOMPTA;Responsable Gestion Comptable
+RSPGCRSOUF;Responsable Gestion des créances en souffrance
+RSPGDGROUP;Responsable Gouvernance RSE Groupe
+RSPGDPMAJO;Responsable Majoritaires et Développement des Part
+RSPGE     ;Responsable Grandes Entreprises
+RSPGEARCPT;Responsable Gestion des arrêtés comptables
+RSPGERSAEU;Responsable Gouvernance d'Eses & Reporting Strat.
+RSPGESBUDM;Responsable Gestion Budgétaire et Administrative
+RSPGESPATR;Responsable Gestion du Patrimoine
+RSPGESTCEC;Responsable Gestion des centres d'estivage et club
+RSPGESUENG;Responsable Gestion & Suivi des Engagements
+RSPGITSBUD;Responsable Production & Support - Suivi des Budge
+RSPGLTRBNK;Global Transaction Banking
+RSPGOUVDIR;Responsable Gouvernance & Communication Financière
+RSPGOVSIGP;Responsable Sécurité SI Groupe
+RSPGOVSIRH;Responsable Gouvernance SIRH et Technologie
+RSPGPIRSKG;Responsable Gestion des Projets Informatiques Risq
+RSPGPMINOR;Responsable Minoritaires et suivi des Participatio
+RSPGPPTCPG;Responsable Gestion des Projets, Portails & Proces
+RSPGRDENG ;Responsable des Grands Engagements
+RSPGSOEAPM;Resp. Gest. & Suivi Opérati. Des Engagements & Ano
+RSPHDK    ;Responsable Help Desk
+RSPHROFILM;Responsable HRO-Filiale Maroc
+RSPIANRECR;Responsable Pilotage et Animation Réclamations Rég
+RSPIFECINT;Responsable Institutions Financ.Etrangères & Coopé
+RSPIMCRCES;Responsable Implémentation & CRC Entreprises
+RSPINCCMPT;Responsable Incidents de Comptes
+RSPINFGRPH;Responsable Infographie
+RSPINMUACT;Responsable Institutions Multilatérales & Activité
+RSPINNOVRH;Responsable Innovation RH & Expérience Collaborate
+RSPINPRHGR;Responsable Innovation & Pilotage RH Groupe
+RSPINSENFI;Responsable Influence & Services Non Financier
+RSPINSTMUL;Responsable Institutions multilatérales
+RSPINVCAS1;Responsable Investissement Grand CASA 1
+RSPINVCAS2;Responsable Investissement Grand CASA 2
+RSPINVEST ;Responsable Investissement
+RSPINVFSTR;Responsable Investissements & Financements Structu
+RSPINVPFIN;Responsable Investissement & Project Finance
+RSPINVPME ;Responsable Investissement PME
+RSPINVREGI;Responsable Investissement Régions
+RSPINVREGN;Responsable Investissement Région Nord
+RSPINVREGS;Responsable Investissement Région Sud
+RSPIRMSPRE;Responsable Recouvrement Précontentieux
+RSPIRPESES;Responsable Ingénierie & Recouvrement Précontentie
+RSPJUR    ;Responsable Juridique Région
+RSPJURFINS;Responsable Juridique Financements Structurés
+RSPJURGROU;Responsable Juridique Groupe
+RSPKYC    ;Responsable KYC & Transparence fiscale
+RSPKYCN   ;Responsable KYC
+RSPLERNFAC;Responsable Learning Factory
+RSPLERNFLI;Responsable Learning Front Line
+RSPMAINTPL;Responsable Maintenance et Prestations Logistiques
+RSPMANREF ;Responsable du Management du Référentiel
+RSPMARCHEP;Responsable Marché Particuliers
+RSPMARCPME;Responsable Marché PME
+RSPMARDMIG;Responsable du Marché des Migrants
+RSPMARHMIG;Responsable Marché Migrants
+RSPMARHMRE;Responsable Marchés Part / Pro / MRE
+RSPMARHPME;Responsable Marché Entreprises
+RSPMARHPRO;Responsable Marché Pro / TPE
+RSPMARHPRV;Responsable Marché PRIVE
+RSPMARKPME;Responsable Marketing PME
+RSPMATROUL;Responsable Matériel Roulant
+RSPMBUYMON;Responsable Media Buying & Monitoring
+RSPMCPINTE;Responsable Achats-Marketing Com & Prestation Inte
+RSPMDLBOPP;Responsable Middle Office BackOffice Partenariat e
+RSPMDLOFPI;Responsale Middle Office Partenariat et Pilotage
+RSPMDLOPCF;Responsable Middle Office,Plateforme Crédit foncti
+RSPMEPATSI;Responsable Projets et Patrimoine SI
+RSPMERCH  ;Responsable Merchandising
+RSPMIOFTRB;Responsable Middle Office Transaction Banking
+RSPMOASTPP;Responsable Processus / MOA et Support transverse
+RSPMOBINGR;Responsable Mobilité Intra-Groupe
+RSPMOBINT ;Responsable Mobilité Intra-Groupe
+RSPMONITOR;Responsable Monitoring
+RSPMPRISKP;Responsable Mesure et Pilotage du Risque Pays
+RSPMPRMARH;Responsable Mesure et Pilotage des risques de Marc
+RSPMQUALIT;Responsable Management Qualité
+RSPMRISKGR;Responsable Management des Risques Groupe
+RSPMRKDPME;Responsable Marketing & Développement Entreprises
+RSPMRKOPAR;Responsable Marketing Opérationnel (Particuliers)
+RSPMRKOPRO;Responsable Marketing Opérationnel et actions com(
+RSPMRKOPRV;Responsable Marketing Opérationnel et actions comm
+RSPMULTICA;Responsable Multicanal
+RSPMULTMED;Responsable Multimédia
+RSPMUMEDOP;Responsable Multimedia Operations
+RSPNCNFREG;Responsable Normes et Conformité Réglementaire
+RSPNCNMRSK;Responsable Normes Risques de crédit
+RSPNOMEGRP;Responsable Normes et Méthodes Groupe
+RSPNRMCGRP;Responsable Normes & Méthodes Compliance Groupe
+RSPNRMCPTA;Responsable Reporting et Normes Comptables
+RSPNRMPCPT;Responsable normes et Procédures Comptables
+RSPNSRISKG;Responsable Normes et Supports Risques Groupe
+RSPOEUVSOC;Responsable Oeuvres Sociales
+RSPOMDIEXP;Responsable Own Media & Digital Experience
+RSPONBORD ;Responsable Onboarding
+RSPOPINTER;Responsable Opérations Internationales
+RSPORGA   ;Responsable Organisation et Excellence opérationne
+RSPOSRISKG;Responsable Outils et Support Informatique Risques
+RSPPAIEBNK;Responsable Paie Banque
+RSPPAIEFI ;Responsable Paie Filiales Internalisées
+RSPPARTSYN;Responsable Participations et Synergies
+RSPPCA    ;Responsable PCA Groupe
+RSPPCI    ;Responsable PCI
+RSPPCLMINO;Responsable Parcours clients Multicanal & Innovati
+RSPPCOPOCT;Responsable Pilotage Centralisé Octroi et Post Oct
+RSPPCPLGRP;Responsable Pilotage Compliance et Vigilance Group
+RSPPCRESEX;Responsable Pilotage Commercial Réseau Extérieur
+RSPPCRMARM;Responsable Pilotage Commercial Réseau Maroc & Mul
+RSPPCSBUDA;Responsable Pilotage, Coordination et Suivi Budg-
+RSPPCTRPRX;Responsable Pilotage & Coord.Transver.Recouvr.Préc
+RSPPDEVPME;Responsable Prospection & Développement Entreprise
+RSPPECRISK;Responsable Pilotage des Engagements et du Coût du
+RSPPERHGRP;Responsable Performance RH Groupe
+RSPPFPIF  ;Responsable Plateforme Project & Investment Financ
+RSPPFPSGRP;Responsable Pilotage des Fonds Propres et Solvabil
+RSPPIANPME;Responsable Pilotage & Animation Entreprises
+RSPPICOFIL;Responsable Pilotage Conformité filiales
+RSPPICOMPP;Responsable Pilotage Commercial Part / Pro
+RSPPICORHG;Responsable Pilotage & Coordination RH Groupe
+RSPPIFCIFR;Responsable Pilotage Filiales et consolidation IFR
+RSPPILCHMA;Responsable Pilotage Change Management
+RSPPILESE ;Responsable Pilotage Entreprises
+RSPPILGE  ;Responsable Pilotage Grandes Entreprises
+RSPPILOT  ;Responsable Pilotage 
+RSPPILOTRH;Responsable Pilotage RH Groupe
+RSPPILQCSM;Responsable Pilotage et Qualité CSM RH
+RSPPIRHREG;Responsable Pilotage RH Régions
+RSPPISUEPP;Responsable Reporting et Pilotage (Suivi des Engag
+RSPPLEARN ;Responsable de Programme Learning
+RSPPLEARN2;Responsable de Programme Learning
+RSPPLINTPE;Responsable Plateforme d'instruction TPE
+RSPPMOBUDG;Responsable PMO & Budget
+RSPPMORH  ;Responsable PMO RH
+RSPPOCPLGP;Responsable Projets Outils Conformité Groupe et As
+RSPPOL    ;Responsable
+RSPPQCSMRH;Responsable Pilotage Social, Assiduité & Congé
+RSPPQULFOR;Responsable Performance & Qualité de la Formation
+RSPPRCMPTA;Responsable Production & Support-Reporting & Norme
+RSPPRCTXES;Responsable de Portefeuille - Recouvrement Pré-CTX
+RSPPRCTXPP;Responsable de Portefeuille - Recouvrement Pré-CTX
+RSPPREINIS;Responsable promotion des échanges et des investis
+RSPPRELCLT;Responsable Plateforme Relation Client
+RSPPRJFIN ;Responsable Project Finance
+RSPPRJINOV;Responsable Projets & Innovation SIRH
+RSPPROJETS;Responsable Digital et Data Groupe
+RSPPROJFIN;Responsable Project Finance
+RSPPROSPEC;Responsable Prospection
+RSPPRRCTXX;Responsable Pilotage-Reportings-Recouvrement Pré-C
+RSPPRRECTX;Responsable Pilotage & Reportings - Recouvrement P
+RSPPRREPP ;Responsable Pilotage & Reportings - Recouvrement P
+RSPPSEGESE;Responsable de Portefeuille - Surveillance Engagem
+RSPPSEGPP ;Responsable de Portefeuille - Surveillance Engagem
+RSPPSFIGRP;Responsable Planification Stratégique & Financière
+RSPPSMRCTX;Responsable Pilotage Support & Moyens Recouvrement
+RSPQLICRTI;Responsable Qualité & Certification
+RSPQUALGRP;Responsable Qualité Groupe
+RSPRBANKEX;Responsable Correspondent Banking Maroc
+RSPRBFINEX;Responsable Correspondent Banking Group
+RSPRCRDGRP;Responsable Risques de Crédit Groupe
+RSPRCRISKO;Responsable Reporting & Collecte des Risques Opéra
+RSPRECPESE;Responsable Recouvrement Précontencieux Entreprise
+RSPRECPRPP;Responsable Recouvrement Précontentieux Part/Pro
+RSPRECSTG ;Responsable Recrutement, Stages & Relations Ecoles
+RSPRECTXEN;Responsable Recouvrement Contentieux Entreprises
+RSPREGFSRS;Responsable Règlement Fournisseurs
+RSPRELPART;Responsable Relation Partenaires
+RSPREM    ;Responsable Rémunération
+RSPREPCOSU;Responsable Reporting Coordination et Support
+RSPRESBUDG;Responsable Reporting & Suivi des Budgets
+RSPRESTFIN;Responsable Restructuration Financière
+RSPRFINCON;Responsable Restructuration financière et consolid
+RSPRINVEST;Responsable Relations Investisseurs
+RSPRISKCFB;Responsable Risques de Contrepartie Filiales Banca
+RSPRISKMAR;Responsable Risques de Marché
+RSPRISKOGP;Responsable Risques Opérationnels Groupe
+RSPRISKOMA;Responsable Risques Opérationnels Maroc
+RSPRJRH   ;Responsable Projets Transversaux RH
+RSPRLEARN ;Responsable de Relation Learning
+RSPRMAPCTX;Responsable Relationship Manager Portefeuilles CTX
+RSPRMOPUB ;Responsable Relations Médias et Opinion Publique
+RSPRPCSATA;Responsable Revue Plans Cont.Suivi.Ano.Transv. Act
+RSPRPCSATF;Responsable Revue Plans Cont & Suivi des Ano.Trans
+RSPRPCSATR;Responsable Revue Plans Cont & Suivi des Ano. Tran
+RSPRPSTRAN;Responsable Reporting, Pilotage et Surveillance Tr
+RSPRPUBGRP;Responsable Relations Publiques Groupe
+RSPRSECERT;Responsable RSE et Certifications
+RSPRSKCAPT;Responsable Risques de Contreparties Afriq. & Proj
+RSPRSKCFAF;Responsable Risque contrep. des Filial. Afric-Fran
+RSPRSKCFAG;Responsable Risq.contrepart.Filiales Afric.Anglo.G
+RSPRSKCOMA;Responsable Risque de Contrepartie sur opérations
+RSPRSKENSO;Responsable Risques Environnementaux et Sociaux
+RSPRSKOFIC;Responsable Risques Opérat. Filiales Internat. & C
+RSPSARAAJU;Responsable Saisies-Arrets et Relat. avec les Auxi
+RSPSASENG ;Responsable Data & Analytics de la Surveillance de
+RSPSBCFRSS;Responsable Suivi des Budgets et Comptabilité Four
+RSPSCENPME;Responsable Suivi & Coordination des Engagements E
+RSPSCFACTO;Responsable Strategy & Content Factory
+RSPSECFIN ;Responsable Sécurité Financière
+RSPSECFINN;Responsable Sécurité Financière
+RSPSECINFO;Responsable Sécurité Informatique
+RSPSECPAMU;Responsable Sécurité Patrimoine & Multimédia
+RSPSECUFIN;Responsable Sécurité financière et embargos
+RSPSEEGACO;Responsable Surveillance Engagements Eses-GRAND CA
+RSPSEENREG;Responsable Surveillance Engagements Entreprises -
+RSPSENGESE;Responsable Surveillance des engagements Entrepris
+RSPSENPPGA;Responsable Surveillance Engagements Part/Pro - GR
+RSPSEPPREG;Responsable Surveillance Engagements Part/Pro - RE
+RSPSERESE ;Responsable du suivi des Engagements Région - Entr
+RSPSERRET ;Responsable du suivi des Engagements Région - Reta
+RSPSIENGPP;Responsable Suivi de La Gestion des Engagements Pa
+RSPSIRH   ;Responsable SIRH
+RSPSIRHTEC;Responsable SIRH et Technologie
+RSPSM     ;Responsable Support et Moyens
+RSPSMIBICA;Responsable SMI et Bilan Carbone
+RSPSOMRCTX;Responsable Support, Outils & Moyens - Recouvremen
+RSPSONSORN;Responsable Sponsoring
+RSPSOREEC ;Responsable sourcing et relations écoles
+RSPSPENREG;Responsable Supervision de portefeuille Engagement
+RSPSPSENGE;Responsable Support, Pilotage et suivi des engagem
+RSPSQEVPCE;Responsable Qualité Certifications Projets Immobil
+RSPSTRAGRP;Responsable Stratégie Groupe
+RSPSTTRANS;Responsable Stratégie et Transformation
+RSPSUC    ;Responsable Succursale
+RSPSUENGPP;Responsable Surveillance des Engagements Part/Pro
+RSPSUPBAKO;Responsable Support Back Office
+RSPSUPEENG;Responsable Surveillance Permanente des Engagement
+RSPSUPIMCM;Responsable Support & Implémentation CM
+RSPSUPPILO;Responsable Supervision et Pilotage
+RSPSUPPROD;Responsable Support & Production
+RSPSURSHEX;Responsable Sûreté, sécurité Réseau & Sites Hors E
+RSPSUSEEC ;Responsable Sûreté, sécurité Entités Centrales
+RSPTCLERNG;Responsable Tour de contrôle Learning
+RSPTEC    ;Responsable Technique
+RSPTELE   ;Responsable Téléphone
+RSPTFATCRS;Responsable Transparence Fiscal (FATCA & CRS)
+RSPTPOG   ;Responsable Transformation,Processus,Organisation
+RSPTRADCBD;Responsable Trade & Cash Business Developpement
+RSPTRADE  ;Responsable BMCE TRADE
+RSPTRADFIN;Responsable Trade Finance
+RSPTRANCIB;Responsable Transformation MAROC & CIB
+RSPTRBKSUP;Responsable Transaction Banking Business Support
+RSPTRCUGRP;Responsable Transformation Culturelle Groupe
+RSPTRGOCIB;Responsable Transformation & Gouvernance CIB
+RSPTRSRFIN;Responsable Trésorerie Financier
+RSPTRSTGRP;Responsable Transactions et Structuration Groupe
+RSPTSMAGRP;Responsable Carrière et Talent Groupe
+RSPVESTRTG;Responsable Veille Stratégique
+RSPVIGIGRP;Responsable Vigilance Groupe
+RSPVLERGRP;Responsable Veille Réglementaire Groupe
+RSPVNMPGC ;Responsable Veill. Norm. Métho.Projets & Gest. Con
+RSPVSININF;Responsable Veille Stratégique, Innovation et Infl
+RSUPFOR   ;Responsable du Support Gestion Administartive de F
+RTBOU     ;Responsable Section Traitements Bourse
+RÉGISSEUR ;Régisseur
+SAISON    ;Saisonniers
+SCECOM    ;Service Communs
+SCOCHA    ;Agent de service
+SCOCON    ;Service Communs Convoyeur
+SCOCOR    ;Agent de service
+SCOGRB    ;Agent de service
+SCOSEC    ;Service Communs Secrétaire
+SCOSTA    ;Opérateur Standard
+SECR      ;Assistante
+SECRET    ;Secrétariat Relations
+SECRET1   ;Assistante
+SECRET3   ;Assistante du Président
+SECRET4   ;Assistante Exécutive auprès de la A.D.G.D
+SECUR     ;Agent de sécurité
+SENBANK   ;Sénior Banker
+SEROPMANG ;Servicing & Operation Manager
+SEROPMANGE;Servicing & Operation Manager GE
+SERVE     ;Serveur
+SMANCOECOS;Senior Manager Animation Commerciale & Ecosystèmes
+SMCMOMPME ;Senior Manager en charge du Marketing opérati. Mar
+SOCIAL    ;Responsable des Affaires Sociales
+SPDIGLEARN;Spécialiste Digital Learning
+SPINTCMPTA;Spécialiste Interpréteur Comptable
+SPREFRORGA;Spécialiste Référentiel (Organisation)
+STAGIAIRE ;STAGIAIRE
+STDRD     ;Standardiste
+SUPACHAT  ;Support Achat
+SUPADM    ;Support Administratif
+SUPAGCDIRC;Superviseur Agence Directe
+SUPASSUT  ;Support & Assistance Utilisateur
+SUPCGATRAN;Superviseur Contrôle Général – Activités transvers
+SUPCGAUDIT;Superviseur Contrôle Général - Audit
+SUPCGFRDIN;Superviseur Contrôle Général - Fraude et Investiga
+SUPCGITDTA;Superviseur Contrôle Général IT
+SUPCOM    ;Support et Assistance Commerciale
+SUPERCRC  ;SUPERVISEUR CRC
+SUPERVISEU;Superviseur
+SUPSENGESE;Superviseur Suivi des Engagements Entreprises
+SUPSENGPP ;Superviseur Suivi des Engagements Part / Pro
+SUSTAADVOC;Sustainability Advocacy
+SUTELOEV  ;Support Technique et Logistique EVMB
+TBGESENIOR;Senior Transaction Banker Grandes Entreprises
+TBPMESENIR;Senior Transaction Banker PME
+TEBAT     ;Technicien Batiment
+TECHCOM   ;Technico-commercial Métier
+TECHIT    ;Technicien IT
+TECHNICIEN;Technicien
+TECINFO   ;Gestionnaire de données
+TECSUC    ;Technicien Sécurité
+TEMOB     ;Technicien Mobilier
+TETELC    ;Technicien Télecom
+TEXPINF   ;Technicien d'Exploitation Informatique
+TRADINTERP;Traducteur Inteprète
+TRAINT    ;TRADUCTEUR INTERPRETE
+TRANSBANKR;Transaction Banker
+VEILL     ;Veilleur de Nuit
+VEILLC    ;Veilleur Confirmé
+VEILLJ    ;Veilleur Junior
+VEILLS    ;Veilleur Senior
+VERIF     ;Vérificateur Interne
+VERIFC    ;Vérificateur Central
+VERIFCAF  ;Vérificateur Interne Centre d'affaires
+VERIFCOR  ;Coordinateur Vérification
+VERIFG    ;Vérificateur de Groupe
+VERIFM    ;Vérificateur Mutualisé
+VERJUPS   ;Vérificateur Interne Junior PS
+VERSEN    ;Vérificateur Interne Sénior
+VIRMENT   ;Service Virements
+WEBGRAPH  ;Web Graphiste
+XXXXX     ;.

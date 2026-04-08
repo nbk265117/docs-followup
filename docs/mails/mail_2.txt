@@ -1,0 +1,668 @@
+None selected
+
+Skip to content
+Using Gmail with screen readers
+1 of 2
+TR: BOA Follow up: cadrage fonctionnel - Validation des rôles ASAL et mapping 
+Inbox
+
+Ayoub YOUB
+Attachments
+13:48 (8 minutes ago)
+to me
+
+ 
+
+ 
+
+
+
+Ayoub YOUB
+Prestataire/Consultant
+Développement & Canaux/Digital Dev Transverse
+ayoub.youb2@eurafric-information.com
+
+
+
+
+
+
+
+
+ 
+
+De : Salwa NANA <snana@bankofafrica.ma>
+Envoyé : mardi 24 mars 2026 11:11
+À : Ayoub YOUB <ayoub.youb2@eurafric-information.com>; Zakaria HAMMOUDI <zakaria.hammoudi@eurafric-information.com>
+Objet : TR: BOA Follow up: cadrage fonctionnel - Validation des rôles ASAL et mapping
+
+ 
+
+FYI
+
+ 
+
+De : Hicham ROCHDI <hrochdi@bankofafrica.ma>
+Envoyé : mardi 24 mars 2026 10:59
+À : Salwa NANA <snana@bankofafrica.ma>
+Cc : Salma BOURAK <sbourak@bankofafrica.ma>; Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>; Mohamed Amine KHEDIDJ <makhedidj@bankofafrica.ma>
+Objet : RE: BOA Follow up: cadrage fonctionnel - Validation des rôles ASAL et mapping
+
+ 
+
+Bonjour,
+
+ 
+
+Vous trouverez ci-joint le tableau réactualisé pour profil des gestionnaires entreprises ; merci de voir avec RH ou Marché des Professionnels .
+
+Je vous confirme par ailleurs que le mapping entre le rôle Follow Up et la fonction ASAL est conforme pour les profils utilisateurs MVP indiqués dans le tableau.
+
+ 
+
+Et pour notre estimation des utilisateurs de la solution s’élève à 800 personnes.
+
+ 
+
+Cordialement,
+
+ 
+
+De : Salwa NANA <snana@bankofafrica.ma>
+Envoyé : mardi 24 mars 2026 09:24
+À : Hicham ROCHDI <hrochdi@bankofafrica.ma>; Mohamed Amine KHEDIDJ <makhedidj@bankofafrica.ma>
+Cc : Salma BOURAK <sbourak@bankofafrica.ma>; Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>
+Objet : RE: BOA Follow up: cadrage fonctionnel - Validation des rôles ASAL et mapping
+
+ 
+
+Bonjour Amine, Hicham,
+
+ 
+
+J’espère que vous vous portez bien et vous remercie pour vos retours.
+
+ 
+
+Serait il possible de nous communiquer le code de fonction ASAL afférent au profil gestionnaire d’entreprises, s’il vous plait ?
+
+Par ailleurs, pourriez-vous nous confirmer que le mapping entre le rôle Follow UP et la fonction ASAL est correct pour les profils utilisateurs MVP indiqués dans le tableau?   
+
+Nous aurions également besoin d’une estimation du nombre des utilisateurs de la solution.
+
+ 
+
+D’avance merci.
+
+ 
+
+Cordialement,
+
+Salwa
+
+ 
+
+ 
+
+ 
+
+ 
+
+De : Hicham ROCHDI <hrochdi@bankofafrica.ma>
+Envoyé : mardi 24 mars 2026 08:57
+À : Salwa NANA <snana@bankofafrica.ma>
+Cc : Mohamed Amine KHEDIDJ <makhedidj@bankofafrica.ma>; Salma BOURAK <sbourak@bankofafrica.ma>; Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>
+Objet : TR: BOA Follow up: cadrage fonctionnel - Validation des rôles ASAL et mapping
+
+ 
+
+Bonjour,
+
+ 
+
+Vous trouverez ci-joint le tableau complété de nos remarques ; Nous tenons également à préciser que l’animateur peut aussi être considéré comme une cible de l’observation, notamment dans le cadre d’un rapport de visite de l’animation commerciale Retail.
+
+ 
+
+Restons à votre disposition pour toute information complémentaire.
+
+ 
+
+Cordialement.
+
+ 
+
+ 
+
+HICHAM ROCHDI
+
+Animation Commerciale Retail
+
+06 60 69 35 99
+
+Mail: hrochdi@bankofafrica.ma
+
+ 
+
+
+
+
+
+ 
+
+   https://www.linkedin.com/company/bmce-bank-of-africa/     https://twitter.com/bmcebankafrica     https://www.facebook.com/BMCEBankOfAfrica/     https://www.instagram.com/bmcebank.ma/     https://www.youtube.com/channel/UCpOTm_SbqbJZwsYmYSIdNKg
+
+Fichier 18.png 
+
+ 
+
+ 
+
+ 
+
+De : Salwa NANA <snana@bankofafrica.ma>
+Envoyé : jeudi 19 mars 2026 14:32
+À : Mohamed Amine KHEDIDJ <makhedidj@bankofafrica.ma>; Hicham ROCHDI <hrochdi@bankofafrica.ma>
+Cc : Salma BOURAK <sbourak@bankofafrica.ma>; Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>
+Objet : RE: BOA Follow up: cadrage fonctionnel - Validation des rôles ASAL et mapping
+
+ 
+
+Re-bonjour Amine, Hicham,
+
+ 
+
+Dans le cadre de la préparation de notre intégration avec le système ASAL pour récupérer les informations des collaborateurs, nous avons analysé la liste des rôles existants au niveau de l’annuaire et avons constaté des disparités avec les rôles définis au niveau de la solution.
+
+ 
+
+Vous trouverez en PJ la liste exhaustive des rôles tels que identifiés dans l’annuaire. J’ai procédé à une sélection des rôles les plus proches de ceux de la solution ainsi qu’au mapping ci-dessous.
+
+ 
+
+Nous avons besoin de votre validation sur les points suivants :
+
+La complétude et la pertinence des rôles sélectionnés depuis l’annuaire
+Le mapping proposé avec les profils de la solution
+ 
+
+Serait-il possible de nous communiquer également une estimation du nombre des utilisateurs de la solution ?
+
+ 
+
+Mapping :
+ 
+
+ROLE FOLLOW UP
+
+CODE FONCTION ASAL
+
+FONCTION ASAL (ANNUAIRE)
+
+PROFIL FOLLOW-UP
+
+ 
+
+Directeur de groupe
+
+DIRGP    
+
+Directeur de Groupe
+
+Observateur
+
+Directeur d’agence
+
+DIRAG    
+
+Directeur d'agence
+
+Observateur
+
+Responsable clientèle particuliers
+
+RCLPA    
+
+Responsable Clientèle Particuliers
+
+Observateur
+
+Chargé d'appui commercial
+
+GUPAI    
+
+Chargé d'Appui Commercial
+
+Cible de l’observation
+
+GUPAIF   
+
+Chargé d'Appui Commercial en Formation
+
+Cible de l’observation
+
+GUPAIM   
+
+Chargé d'Appui Commercial Mutualisé
+
+Cible de l’observation
+
+Conseiller IGP
+
+CCIGPF   
+
+Conseillers de Clientèle Part. Intermédiaires en f
+
+Cible de l’observation
+
+Conseiller PRO
+
+CCPRO    
+
+Conseiller de Clientèle Professionnelle et TPE
+
+Cible de l’observation
+
+Conseiller Premium
+
+A identifier
+
+A identifier
+
+Cible de l’observation
+
+Directeur du centre d’affaires
+
+CCETS    
+
+Chargé d'Affaires Entreprises
+
+Observateur
+
+Responsable clientèle entreprises (RCE)
+
+RCLENGE  
+
+Responsable Clientèle Entreprise GE
+
+Observateur
+
+RCLEN    
+
+Responsable Clientèle Entreprises
+
+Observateur
+
+Gestionnaire entreprises
+
+A identifier
+
+A identifier
+
+Cible de l’observation
+
+Cash & Trade Specialist
+
+CATASP   
+
+Cash & Trade Specialist
+
+Cible de l’observation
+
+Chargé d’affaires
+
+CACHMN   
+
+Chargé d'Affaires Cash Management
+
+Cible de l’observation
+
+CHAFF    
+
+Chargé d'Affaires
+
+Cible de l’observation
+
+CHAFFAIRCM
+
+Chargé d'affaires CM
+
+Cible de l’observation
+
+CHAFFCORPJ
+
+Chargé d'Affaires Corporate junior
+
+Cible de l’observation
+
+CHAFFCORPO
+
+Chargé d'Affaires Corporate
+
+Cible de l’observation
+
+CCETS    
+
+Chargé d'Affaires Entreprises
+
+Cible de l’observation
+
+Directeur du centre d’expertise multi marchés
+
+DETRSPSUC
+
+Responsable Succursale
+
+Observateur
+
+DIRCABO  
+
+Directeur de la succursale Tanger Offshore
+
+Observateur
+
+DIRSUC   
+
+Directeur Succursale Tanger Off Shore
+
+Observateur
+
+DIRSUMLM 
+
+Directeur de Succursale Multi-marchés
+
+Observateur
+
+RSPSUC   
+
+Responsable Succursale
+
+Observateur
+
+Animateur 
+
+ACTINT2  
+
+Animateur commerce international
+
+Observateur
+
+ANFORM   
+
+Animateur Formateur
+
+Observateur
+
+ANICOM   
+
+Animateur formateur Commercial
+
+Observateur
+
+ANIMCOENT
+
+Animateur Commercial Entreprise
+
+Observateur
+
+ANIMCOM  
+
+Animateur Commercial
+
+Observateur
+
+ANIMCOMPME
+
+Animateur Commercial PME
+
+Observateur
+
+ANIMCOREG
+
+Animateur Commercial Part / Pro
+
+Observateur
+
+ANIMCOREG1
+
+Animateur Commercial Région
+
+Observateur
+
+ANIMPRIVE
+
+Animateur Marché Privé
+
+Observateur
+
+ANIMPRO  
+
+Animateur Commercial Pro.
+
+Observateur
+
+ANIMPROSS
+
+Animateur Prospection Sénior
+
+Observateur
+
+ANIMTERACQ
+
+Animateur terrain acquisition
+
+Observateur
+
+ANSECPCSEC
+
+Animateur Sénior en Charge d.Partenaria.&Convent.S
+
+Observateur
+
+CLIPAR6  
+
+Animateur force de vente clientèle particuliers
+
+Observateur
+
+DAM00027 
+
+Animateur réseau
+
+Observateur
+
+DAM0010  
+
+Animateur Régional
+
+Observateur
+
+DAM0011  
+
+Animateur Siège
+
+Observateur
+
+DAM1010  
+
+Animateur Junior Beni Mellal
+
+Observateur
+
+DAM1011  
+
+Animateur Junior
+
+Observateur
+
+DAM1012  
+
+Animateur Terrain Acquisition
+
+Observateur
+
+DAMTEST  
+
+Animateur Junior
+
+Observateur
+
+DETACZA  
+
+Animateur Commercial Zone Anglophone
+
+Observateur
+
+DETACZF  
+
+Animateur Commercial Zone Francophone
+
+Observateur
+
+ 
+
+Je vous remercie à l’avance et reste à votre disposition pour tout complément.
+
+ 
+
+Cordialement,
+
+Salwa
+
+ 
+
+De : Salwa NANA
+Envoyé : jeudi 19 mars 2026 11:12
+À : Mohamed Amine KHEDIDJ <makhedidj@bankofafrica.ma>; 'Hicham ROCHDI' <hrochdi@bankofafrica.ma>
+Cc : 'Salma BOURAK' <sbourak@bankofafrica.ma>; 'Maria LAHMAMI' <MLAHMAMI@bankofafrica.ma>; 'Houssam Bouzarzar' <houssam.bouzarzar@nouvellesdonnes.com>
+Objet : RE: BOA Follow up: cadrage fonctionnel - Règles de gestion
+
+ 
+
+Bonjour Amine, Hicham,
+
+ 
+
+J’espère que vous vous portez bien et vous remercie pour votre disponibilité lors de notre dernier atelier.
+
+Vous trouverez ci-après un récapitulatif des principaux points abordés :
+
+ 
+
+Présentation des maquettes UX/UI 
+Validation de la liste des profils utilisateurs du MVP (Cf. Slide 5 du PPT en PJ)
+Validation des règles de gestion afférentes à la saisie et à la consultation des observations (Cf, fichier Excel en PJ)
+Validation des actions et des statuts des observations au niveau de l’historique (Cf. Slide 12 du PPT en PJ)
+Retour sur les règles d’affectation des animateurs :
+Les animateurs du marché des particuliers sont rattachés à la région et affectés à un ou plusieurs groupes
+Les animateurs des CEMM et des CAF sont rattachés au siège et affectés à un ou plusieurs CEMM/CAF
+ 
+
+Décisions retenues:
+
+Offrir de la flexibilité en laissant à l’administrateur fonctionnel la gestion des affectations des animateurs ainsi que l’affectation des autres utilisateurs de la solution :
+Avis favorable de Amine quant à la mise à disposition de l’application en mode WEB responsive accessible via SSO sur l’intranet de la banque
+Offrir a l’observateur un délai de 24h pour annuler une observation saisie
+Limiter la profondeur de l’historique à une année historique
+Archiver l’historique des observateurs à l’issue d’un changement de périmètre, l’historique relatif à l’ancien périmètre ne sera plus visible ni consultable au niveau de la solution
+ 
+
+N’hésitez pas à compléter ou à amender ce CR si nécessaire.
+
+ 
+
+Cordialement,
+
+Salwa
+
+ 
+
+ 
+
+De : Salwa NANA
+Envoyé : lundi 16 mars 2026 09:20
+À : Mohamed Amine KHEDIDJ <makhedidj@bankofafrica.ma>; 'Houssam Bouzarzar' <houssam.bouzarzar@nouvellesdonnes.com>
+Cc : 'Salma BOURAK' <sbourak@bankofafrica.ma>; 'Maria LAHMAMI' <MLAHMAMI@bankofafrica.ma>; 'Hicham ROCHDI' <hrochdi@bankofafrica.ma>
+Objet : RE: BOA Follow up: cadrage fonctionnel
+
+ 
+
+Bonjour Amine,  Houssam,
+
+ 
+
+J’espère que la nouvelle semaine commence bien pour vous.
+
+ 
+
+Serait il possible de nous faire un retour s’il vous plait ?
+
+ 
+
+D’avance merci.
+
+Cordialement,
+
+ 
+
+Salwa
+
+ 
+
+De : Salwa NANA
+Envoyé : jeudi 12 mars 2026 09:35
+À : Mohamed Amine KHEDIDJ <makhedidj@bankofafrica.ma>; 'Houssam Bouzarzar' <houssam.bouzarzar@nouvellesdonnes.com>
+Cc : 'Salma BOURAK' <sbourak@bankofafrica.ma>; 'Maria LAHMAMI' <MLAHMAMI@bankofafrica.ma>; 'Hicham ROCHDI' <hrochdi@bankofafrica.ma>
+Objet : TR: BOA Follow up: cadrage fonctionnel
+
+ 
+
+Bonjour Amine, Houssam,
+
+ 
+
+J’espère que vous vous portez bien.
+
+ 
+
+Serait-il possible de nous faire un retour sur le mail ci-dessous, s’il vous plait ?
+
+Vos éléments de réponses constituent des prérequis pour la définition de l’architecture de la solution.
+
+D’avance merci.
+
+ 
+
+Salwa
+
+ 
+
+De : Salwa NANA
+Envoyé : mardi 10 mars 2026 14:58
+À : Mohamed Amine KHEDIDJ <makhedidj@bankofafrica.ma>; Houssam Bouzarzar <houssam.bouzarzar@nouvellesdonnes.com>
+Cc : Salma BOURAK <sbourak@bankofafrica.ma>; Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>; Hicham ROCHDI <hrochdi@bankofafrica.ma>
+Objet : RE: BOA Follow up: cadrage fonctionnel
+
+ 
+
+Re-Bonjour,
+
+ 
+
+Comme échangé lors de notre réunion, nous avons besoin de votre validation sur les éléments suivants ,  s’il vous plait :
+
+ 
+
+La liste des profils utilisateurs du MVP (Cf. Slide 5 du PPT en PJ)
+Les règles de saisie des observations (Cf. Fichier Excel en PJ)
+Les règles de consultation de l’historique des observations (Cf. Fichier Excel en PJ)
+Par ailleurs, nous avons deux questions concernant l’historique :
+Auriez vous une idée de la volumétrie des observations par an afin de déterminer  s’il est nécessaire de définir une profondeur d’historisation ?
+Dans le cas de changement d’affectation d’un collaborateur ayant le rôle ‘observé’, doit-on continuer à afficher l’historique des observations réalisées par son ancien observateur au niveau de l’historique de ce dernier ?
+ 
+
+...
+
+[Message clipped]  View entire message
+ 2 attachment
+  •  Scanned by Gmail

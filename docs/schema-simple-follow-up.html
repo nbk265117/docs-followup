@@ -1,0 +1,2081 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Follow Up BOA - Schéma Simple</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; background: #f5f5f5; }
+        .container { max-width: 1400px; margin: 0 auto; }
+        h1 { color: #003D7C; text-align: center; }
+        h2 { color: #003D7C; border-bottom: 2px solid #003D7C; padding-bottom: 10px; }
+        h3 { color: #4A90E2; }
+
+        .box { background: white; padding: 20px; margin: 20px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .schema { background: #1a1a2e; color: white; padding: 30px; border-radius: 8px; font-family: monospace; overflow-x: auto; }
+        .schema pre { margin: 0; line-height: 1.4; }
+
+        .highlight { background: #fef3c7; padding: 15px; border-left: 4px solid #f59e0b; margin: 15px 0; }
+        .info { background: #eff6ff; padding: 15px; border-left: 4px solid #3b82f6; margin: 15px 0; }
+        .success { background: #ecfdf5; padding: 15px; border-left: 4px solid #10b981; margin: 15px 0; }
+
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; }
+        th { background: #003D7C; color: white; padding: 12px; text-align: left; }
+        td { padding: 10px; border: 1px solid #ddd; }
+        tr:hover { background: #f0f0f0; }
+
+        .badge { display: inline-block; padding: 4px 12px; border-radius: 20px; font-size: 12px; font-weight: bold; margin: 2px; }
+        .badge-blue { background: #003D7C; color: white; }
+        .badge-green { background: #10b981; color: white; }
+        .badge-orange { background: #f59e0b; color: white; }
+        .badge-purple { background: #8b5cf6; color: white; }
+        .badge-red { background: #ef4444; color: white; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .card { background: #f8f9fa; border: 1px solid #ddd; border-radius: 8px; padding: 15px; }
+        .card h4 { color: #003D7C; margin-top: 0; }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>FOLLOW UP BOA - SCHEMA SIMPLE v2.0</h1>
+<p style="text-align:center; color:#666;">Mise à jour: Avril 2026 - Intégration complète Mail 4</p>
+
+<!-- SCHEMA 1: HIERARCHIE ORGANISATIONNELLE -->
+<div class="box">
+<h2>1. HIERARCHIE ORGANISATIONNELLE (Qui est sous qui ?)</h2>
+
+<div class="schema">
+<pre>
+┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                                     │
+│                                    ┌─────────────────────┐                                          │
+│                                    │      REGION         │  ← Niveau N5 (Le plus haut)             │
+│                                    │    (7 régions)      │                                          │
+│                                    │  Ex: Grand Casablanca│                                          │
+│                                    │      Code: 8720     │                                          │
+│                                    └──────────┬──────────┘                                          │
+│                                               │                                                     │
+│                          ┌────────────────────┼────────────────────┐                                │
+│                          ▼                    ▼                    ▼                                │
+│                 ┌─────────────────┐  ┌─────────────────┐  ┌─────────────────┐                       │
+│                 │  SOUS-REGION    │  │  SOUS-REGION    │  │  SOUS-REGION    │  ← Niveau N4         │
+│                 │ Casa Littoral   │  │ Casa Centre&Est │  │ Casa Sud Ouest  │                       │
+│                 │   Code: 8730    │  │   Code: 8740    │  │   Code: 8750    │                       │
+│                 └────────┬────────┘  └────────┬────────┘  └────────┬────────┘                       │
+│                          │                    │                    │                                │
+│            ┌─────────────┼─────────────┐      │       ┌────────────┼────────────┐                   │
+│            ▼             ▼             ▼      ▼       ▼            ▼            ▼                   │
+│    ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌────────────┐ ┌────────────┐        │
+│    │  GROUPE    │ │  GROUPE    │ │  GROUPE    │ │  GROUPE    │ │  GROUPE    │ │  GROUPE    │  ← N3  │
+│    │ Mohammedia │ │ Ain Sebaa  │ │ Sidi Moumen│ │Casa Medina │ │ Zenith     │ │ El Oulfa   │        │
+│    │ Code: 1212 │ │ Code: 1213 │ │ Code: 1218 │ │ Code: 1347 │ │ Code: 1231 │ │ Code: 1237 │        │
+│    └─────┬──────┘ └─────┬──────┘ └─────┬──────┘ └─────┬──────┘ └─────┬──────┘ └─────┬──────┘        │
+│          │              │              │              │              │              │               │
+│          ▼              ▼              ▼              ▼              ▼              ▼               │
+│    ┌──────────────────────────────────────────────────────────────────────────────────────┐        │
+│    │                           POINTS DE VENTE (Niveau N2)                                │        │
+│    │  ┌────────────┐  ┌────────────┐  ┌────────────┐  ┌────────────┐  ┌────────────┐     │        │
+│    │  │  AGENCE    │  │    CAF     │  │    CEMM    │  │  AGENCE    │  │  AGENCE    │     │        │
+│    │  │ (Citadine) │  │ (A, B, C)  │  │(Multi-March)│ │ (Etendard) │  │ (Contact)  │     │        │
+│    │  └────────────┘  └────────────┘  └────────────┘  └────────────┘  └────────────┘     │        │
+│    └──────────────────────────────────────────────────────────────────────────────────────┘        │
+│                                               │                                                     │
+│                                               ▼                                                     │
+│                                    ┌─────────────────────┐                                          │
+│                                    │       DESK          │  ← Niveau N1 (Le plus bas)              │
+│                                    │  (Bureau annexe)    │                                          │
+│                                    └─────────────────────┘                                          │
+│                                                                                                     │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────┘
+</pre>
+</div>
+
+<div class="info">
+    <strong>Réponse à ta question:</strong> OUI ! Dans le fichier pj_mail_1.xlsx, chaque ligne contient:<br>
+    <code>CodeAgence | NomAgence | CodeGroupe | NomGroupe | CodeSousRegion | SousRegion | CodeRegion | Region | Type</code><br>
+    Donc tu peux filtrer par <strong>CodeRegion</strong> pour avoir toutes les agences d'une région !
+</div>
+</div>
+
+<!-- SCHEMA 2: LES 7 REGIONS - RESUME -->
+<div class="box">
+<h2>2. LES 7 REGIONS - RESUME</h2>
+
+<table>
+    <tr>
+        <th>Code</th>
+        <th>Région</th>
+        <th>Sous-Régions</th>
+        <th>Nb PDV</th>
+    </tr>
+    <tr>
+        <td><span class="badge badge-blue">8720</span></td>
+        <td><strong>Grand Casablanca</strong></td>
+        <td>Casa Littoral (8730), Casa Centre&Est (8740), Casa Sud Ouest (8750)</td>
+        <td><strong>201</strong></td>
+    </tr>
+    <tr>
+        <td><span class="badge badge-blue">8450</span></td>
+        <td><strong>Centre Méridional</strong></td>
+        <td>Dév. & Pilotage (8451), Entreprises (8455)</td>
+        <td><strong>86</strong></td>
+    </tr>
+    <tr>
+        <td><span class="badge badge-blue">8420</span></td>
+        <td><strong>Centre Atlantique</strong></td>
+        <td>Part Pro (8425), Entreprises (8426)</td>
+        <td><strong>77</strong></td>
+    </tr>
+    <tr>
+        <td><span class="badge badge-blue">8440</span></td>
+        <td><strong>Centre</strong></td>
+        <td>Centre (8440), Dév. & Pilotage (8441)</td>
+        <td><strong>65</strong></td>
+    </tr>
+    <tr>
+        <td><span class="badge badge-blue">8350</span></td>
+        <td><strong>Souss Massa Provinces du Sud</strong></td>
+        <td>Agadir Sud (8351), Provinces du Sud (8352)</td>
+        <td><strong>55</strong></td>
+    </tr>
+    <tr>
+        <td><span class="badge badge-blue">8430</span></td>
+        <td><strong>Nord Méditerranée</strong></td>
+        <td>Dév. & Pilotage (8431), Entreprises (8438)</td>
+        <td><strong>55</strong></td>
+    </tr>
+    <tr>
+        <td><span class="badge badge-blue">8460</span></td>
+        <td><strong>Oriental</strong></td>
+        <td>Oriental (8460), Dév. & Pilotage (8461)</td>
+        <td><strong>44</strong></td>
+    </tr>
+</table>
+<p style="text-align:center; color:#666;"><strong>TOTAL: 583 Points de Vente</strong></p>
+</div>
+
+<!-- SCHEMA 2.1: GRAND CASABLANCA DETAIL -->
+<div class="box">
+<h2>2.1 GRAND CASABLANCA (8720) - 201 Points de Vente</h2>
+
+<h3>Sous-Région: Casa Littoral (8730) - 65 PDV</h3>
+<table>
+    <tr><th>Groupe</th><th>Code</th><th>Points de Vente</th></tr>
+    <tr>
+        <td><strong>GROUPE MOHAMMEDIA</strong></td>
+        <td>1212</td>
+        <td>
+            11001 BENSLIMANE [Citadine], 11002 BENSLIMANE BD HASSAN II [Contact], 12201 BENYAKHLEF [Contact],
+            78702 MOHAMMEDIA EL ALIA [Citadine], 78703 MOHAMMEDIA AL HOURRIA [Citadine], 78704 MOHAMMEDIA BD HASSAN II [Exclusive],
+            78705 MOHAMMEDIA BVD SEBTA [Contact], 78706 MOHAMMEDIA HASSANIA [Contact], 78708 MOHAMMEDIA BVD MED V [Exclusive],
+            78710 MOHAMMEDIA RIAD SALAM [Contact], 78711 MOHAMMEDIA BD PALESTINE [Contact], 78712 MOHAMMEDIA AL WAHDA [Contact],
+            78720 MOHAMMEDIA DU PARC [Exclusive]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE AIN SEBAA</strong></td>
+        <td>1213</td>
+        <td>
+            78024 BD. ADARISSA [Contact], 78050 AIN SEBAA [Citadine], 78064 HAY EL MOHAMMADI [Etendard],
+            79318 CASA DOHA AL WIFAK [Contact], 79323 BERNOUSSI [Citadine], 79415 AIN SEBAA EL HAMD [Contact],
+            79423 MOUAHIDINE [Contact], 79426 Bd MED VI PART/PRO [Contact], 79449 AIN SEBAA BVD ALI YAATA [Contact],
+            79452 AIN SEBAA AL WAHDA [Contact], 79464 HAY EL MOHAMMADI FOUARAT [Contact], 79466 CASA AIN SEBAA AHMED MEKOUAR [Contact],
+            79486 SIDI MOUMEN QUARTIER EL WARDA [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE SIDI MOUMEN</strong></td>
+        <td>1218</td>
+        <td>
+            78005 HAY SALAMA [Contact], 78056 SIDI MOUMEN [Citadine], 78079 HAY SAADA [Citadine],
+            79319 CASA BD SAHRAOUI QUARTIER INDUSTRIEL [Contact], 79324 SIDI MOUMEN AL OUALAA [Contact],
+            79430 BD. AKID ALLAM [Contact], 79442 MOULAY RACHID BD SAHRAOUI [Contact], 79443 HAY MOHAM BD GRDE CEINTURE [Contact],
+            79470 MASSIRA II [Contact], 79494 SIDI MOUMEN ALHADIKA [Contact], 79701 TIT MELLIL [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE COTIERE</strong></td>
+        <td>1219</td>
+        <td>
+            78013 MOHAMED V PART/PROF [Etendard], 78063 DAMANE [Etendard], 78068 ROCHES NOIRES [Citadine],
+            78081 LA GIRONDE [Citadine], 78082 MOULAY ISMAIL [Citadine], 78089 IBN TACHFINE [Contact],
+            79359 CASA MARINA [Contact], 79364 SECURITE SOCIALE [Citadine], 79435 CASA BELVEDERE [Contact],
+            79441 IBN TACHEFINE ACIMA [Contact], 79468 CASA BD DE LA RESISTANCE [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE ZENATA</strong></td>
+        <td>1349</td>
+        <td>
+            78027 ZENATA PART/PROF [Exclusive], 78097 BERNOUSSI II [Contact], 79112 AL AZHAR PANORAMA [Contact],
+            79330 CASA ANASSI HAY SALAM [Contact], 79369 AHL LOUGHLAM [Contact], 79412 BERNOUSSI IBN HARITA [Contact],
+            79417 BERNOUSSI AL AZHAR [Contact], 79418 BERNOUSSI HAY TARIK [Contact], 79439 CASA BVD CHEFCHAOUNI [Contact],
+            79440 CASA BERNOUSSI AL QODS [Contact], 79445 BERNOUSSI AL BOUSTANE [Contact], 79601 AIN HARROUDA [Contact]
+        </td>
+    </tr>
+    <tr style="background:#fff3cd;">
+        <td><strong>CAF MOHAMED V</strong></td>
+        <td>78010C</td>
+        <td>78010C CENTRE D'AFFAIRES MOHAMED V [Centre D'Affaires A]</td>
+    </tr>
+    <tr style="background:#fff3cd;">
+        <td><strong>CAF Littoral</strong></td>
+        <td>8730</td>
+        <td>78075C CA ZENATA [CAF B], 78096C CA BD MOHAMED VI [CAF B], 78715C CEMM Mohammedia [Multi-Marchés]</td>
+    </tr>
+</table>
+
+<h3>Sous-Région: Casa Centre & Est (8740) - 60 PDV</h3>
+<table>
+    <tr><th>Groupe</th><th>Code</th><th>Points de Vente</th></tr>
+    <tr>
+        <td><strong>GROUPE SIDI OTHMANE</strong></td>
+        <td>1216</td>
+        <td>
+            78006 HAY LAALOU [Contact], 78028 AIN BORDJA PART/PROF [Citadine], 78058 DRISS EL HARTI [Citadine],
+            78062 CITE DJEMAA [Citadine], 78073 SIDI OTHMANE [Etendard], 78085 SBATA [Citadine],
+            78098 HAY SADRI [Citadine], 79349 REDA GUEDIRA [Contact], 79351 CASA AL WAFAA [Contact],
+            79429 BOUZIANE [Contact], 79436 BD. AL JOULANE [Contact], 79438 BD.6 NOVEMBRE [Contact],
+            79467 CASA AL WAHDA IFRIQUIA [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE ROUDANI</strong></td>
+        <td>1228</td>
+        <td>
+            78016 FAR PART/PROF [Etendard], 78031 CASA PLACE DE LA REVOLUTION [Citadine], 78038 OUED EL MAKHAZINE [Citadine],
+            78047 SOUKTANI [Contact], 78048 ZERKTOUNI [Citadine], 78051 MERS SULTAN [Citadine],
+            78083 ROUDANI [Contact], 79424 RACINE [Contact], 79457 TWIN CENTER [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE HAY EL AMAL</strong></td>
+        <td>1235</td>
+        <td>
+            78003 RUE DE ROME [Contact], 78034 HABOUS [Citadine], 78035 HAY EL FARAH [Citadine],
+            78039 SMYRNE [Citadine], 78046 HAY EL MASJID [Citadine], 78055 2 MARS [Citadine],
+            78066 MEDIOUNA [Etendard], 78069 BOULEVARD EL FIDA [Citadine], 78072 HAY EL AMAL [Etendard],
+            78080 EL WAHDA [Citadine], 79456 DERB MILAN [Contact], 79460 CASA SIDI MAAROUF MODI BOKEITA [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE ABDELMOUMEN</strong></td>
+        <td>1236</td>
+        <td>
+            78017 MAARIF PART/PROF [Etendard], 78032 DERB GHALLEF [Citadine], 78057 GHANDI [Contact],
+            78070 IDRISS 1er [Citadine], 78071 YACOUB EL MANSOUR [Citadine], 78077 MAARIF AL MASSIRA [Citadine],
+            78091 ABDELMOUMEN [Citadine], 78093 ROUTE D'EL JADIDA [Contact], 79374 AL FOURAT [Contact],
+            79448 CASA BVD STENDHAL [Contact], 79497 CASA NORMANDIE [Contact], 79498 ENNAJD [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE CASA MEDINA</strong></td>
+        <td>1347</td>
+        <td>
+            78014 LALLA YACOUT PART/PROF [Etendard], 78030 BAB MARRAKECH [Citadine], 78036 IZDIHAR [Contact],
+            78037 LIBERTE [Citadine], 78040 TAHAR SEBTI [Citadine], 78041 ZIRAOUI [Citadine],
+            78043 MOHAMED SEDKI [Citadine], 78052 MOULAY YOUSSEF [Citadine], 79314 CASA BD. GOULMIMA [Contact],
+            79368 Agence de L'Avocat [Citadine]
+        </td>
+    </tr>
+    <tr style="background:#fff3cd;">
+        <td><strong>CAF HASSAN II</strong></td>
+        <td>78019C</td>
+        <td>78019C CENTRE D'AFFAIRES HASSAN II [Centre D'Affaires A]</td>
+    </tr>
+    <tr style="background:#fff3cd;">
+        <td><strong>CAF LALLA YACOUT</strong></td>
+        <td>78020C</td>
+        <td>78020C CENTRE D'AFFAIRES LALLA YACOUT [Centre D'Affaires A]</td>
+    </tr>
+    <tr style="background:#fff3cd;">
+        <td><strong>CAF Centre Est</strong></td>
+        <td>8740</td>
+        <td>78065C CA MAARIF BIR ANZARANE [Centre D'Affaires B]</td>
+    </tr>
+</table>
+
+<h3>Sous-Région: Casa Sud Ouest (8750) - 76 PDV</h3>
+<table>
+    <tr><th>Groupe</th><th>Code</th><th>Points de Vente</th></tr>
+    <tr>
+        <td><strong>GROUPE AIN CHOCK</strong></td>
+        <td>1221</td>
+        <td>
+            78004 KRIMAT [Contact], 78054 INARA [Citadine], 78061 AIN CHOCK [Citadine], 78094 DES CRETES [Exclusive],
+            79302 MEDIOUNA ALLAL BEN ABDALLAH [Contact], 79331 CASA BD TAH [Contact], 79401 AEROPORT MOHAMED V [Etendard],
+            79427 INARA OUHOUD [Contact], 79431 BD.AL QODS [Contact], 79451 CASA BACHKOU [Contact], 79487 CASA EL FATH [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE EL JADIDA</strong></td>
+        <td>1225</td>
+        <td>
+            17001 EL JADIDA [Citadine], 17002 EL JADIDA MOHAMED V [Citadine], 17003 EL JADIDA ROUTE SIDI BOUZID [Contact],
+            17004 EL JADIDA ROUTE DE MARRAKECH [Contact], 17005 EL JADIDA IBN BADIS [Exclusive], 17007 EL JADIDA CHOUHADA [Contact],
+            17010 EL JADIDA NAJD [Contact], 17013 EL JADIDA NASSIM II [Contact], 17014 EL JADIDA MOHAMMED VI [Contact],
+            17601 AZEMMOUR [Citadine], 17901 SIDI BENNOUR [Contact], 18601 KHMIS ZEMAMRA [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE CIL</strong></td>
+        <td>1229</td>
+        <td>
+            78015 HASSAN II PART/PROF [Etendard], 78029 ZENITH MILLENIUM PART/PROF [Etendard], 78044 LALLA AICHA [Citadine],
+            78053 OASIS [Citadine], 78078 ANFA [Citadine], 78088 BOURGOGNE [Citadine], 79407 BOURNAZIL [Contact],
+            79428 BOUSKOURA GREEN TOWN [Contact], 79437 CASA ZERKTOUNI [Contact], 79454 QUARTIER CIL [Contact],
+            79461 CASA SIDI MAAROUF [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE ZENITH</strong></td>
+        <td>1231</td>
+        <td>
+            78002 BD GHANDI [Contact], 78007 HAY KARIMA [Contact], 78011 BD BRAHIM ROUDANI [Contact],
+            78059 PALMIER [Citadine], 78090 CALIFORNIE [Citadine], 78092 BOURGOGNE II [Contact],
+            79319 SINDIBAD [Contact], 79413 SIDI MAAROUF OULFA [Contact], 79414 OASIS IBNOU ROCHD [Contact],
+            79450 CASA NASSIM [Contact], 79458 CASA 2 MARS ZERKTOUNI [Contact], 79484 QUARTIER ROMANDIE [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE EL OULFA</strong></td>
+        <td>1237</td>
+        <td>
+            78009 OUKACHA [Contact], 78060 LISSASFA [Citadine], 78067 EL OULFA [Etendard], 78084 OULFA NASSIM [Contact],
+            78099 DAR BOUAZZA [Citadine], 79301 NOUACEUR [Contact], 79345 CASA AKID ALLAM [Contact],
+            79363 DAR BOUAZZA TAMARIS [Contact], 79432 EL OULFA ERRAHMA [Contact], 79433 LISSASFA EXTENSION [Contact],
+            79434 MEDIOUNA 2 [Contact], 79459 DAR BOUAZZA FADILA [Contact], 79485 ERRAHMA 2 [Contact],
+            79489 CASA OULFA AL KHEIR [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE SETTAT</strong></td>
+        <td>1238</td>
+        <td>
+            61001 SETTAT [Etendard], 61002 SETTAT BASSATINE [Citadine], 61003 SETTAT SIDI BIBI [Citadine],
+            61004 SETTAT IBN KHALDOUN [Contact], 61005 SETTAT AL MASSIRA [Contact], 61006 SETTAT ALLAL EL FASSI [Contact],
+            61007 SETTAT EL MANFALOUTI [Contact], 61201 BERRECHID [Citadine], 61202 BERRECHID HAY EL HANA [Contact],
+            61203 BERRECHID SIDI EL HABICHI [Contact], 61301 BOUZNIKA [Citadine]
+        </td>
+    </tr>
+    <tr style="background:#fff3cd;">
+        <td><strong>CAF FAR</strong></td>
+        <td>78033C</td>
+        <td>78033C CENTRE D'AFFAIRES FAR [Centre D'Affaires A]</td>
+    </tr>
+    <tr style="background:#fff3cd;">
+        <td><strong>CAF ZENITH</strong></td>
+        <td>78029C</td>
+        <td>78029C CENTRE D'AFFAIRES ZENITH MILLENIUM [Centre D'Affaires B]</td>
+    </tr>
+</table>
+</div>
+
+<!-- SCHEMA 2.2: CENTRE MERIDIONAL DETAIL -->
+<div class="box">
+<h2>2.2 CENTRE MERIDIONAL (8450) - 86 Points de Vente</h2>
+
+<h3>Sous-Région: Développement & Pilotage (8451) - 82 PDV</h3>
+<table>
+    <tr><th>Groupe</th><th>Code</th><th>Points de Vente</th></tr>
+    <tr>
+        <td><strong>GPE SAFI</strong></td>
+        <td>1337</td>
+        <td>
+            24001 ESSAOUIRA [Citadine], 24002 ESSAOUIRA BD MLY IDRISS 1er [Contact],
+            59001 SAFI CENTRE [Etendard], 59002 SAFI IDRISS 1er [Citadine], 59003 SAFI Boulevard Kennedy [Contact],
+            59004 SAFI AV. Abderrahman El Ouazzani [Contact], 59005 SAFI LE POINT [Contact], 59006 SAFI Sidi Abdelkrim [Contact],
+            59007 SAFI Cité Plateau [Contact], 60701 YOUSSOUFIA [Citadine], 60702 YOUSSOUFIA TAKADOM [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GPE MARRAKECH ANNAKHIL</strong></td>
+        <td>1339</td>
+        <td>
+            45001 MARRAKECH MEDINA [Etendard], 45002 MARRAKECH GUELIZ [Etendard], 45003 MARRAKECH BAB FTOUH [Citadine],
+            45008 MARRAKECH HAY HASSANI [Contact], 45009 MARRAKECH MASSIRA AL RAJAE [Contact], 45013 MARRAKECH MASSIRA TARGUA [Citadine],
+            45017 MARRAKECH AIN MEZOUAR [Contact], 45018 MARRAKECH QUARTIER AZLI [Contact], 45019 MARRAKECH TARGA MASMOUDI [Contact],
+            45026 Marrakech Mohamed V [Exclusive], 45029 MKECH GUELIZ TARGUA [Contact], 45032 MARRAKECH CARRE EDEN [Exclusive],
+            46501 CHICHAOUA [Contact], 47101 IMINTANOUT [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GPE MARRAKECH EXTENSION</strong></td>
+        <td>1340</td>
+        <td>
+            19001 KELAA SRAGHNA [Citadine], 19003 KELAA SRAGHNA QUARTIER NAKHLA [Contact], 19501 ATTAOUIA [Contact],
+            45004 MARRAKECH DAOUDIATE [Etendard], 45006 MARRAKECH BAB DOUKKALA [Citadine], 45012 MARRAKECH MENARA PART/PRO [Etendard],
+            45015 MARRAKECH ANNAKHIL [Contact], 45023 MARRAKECH SIDI YOUSSEF BEN ALI [Contact], 45044 MARRAKECH RMILA [Contact],
+            55001 OUARZAZATE [Citadine], 55002 OUARZAZATE DERAA [Contact], 55601 EL KELAA M'GOUNA [Contact],
+            55901 TINGHIR [Contact], 56501 ZAGORA [Citadine]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE BENI MELLAL</strong></td>
+        <td>1341</td>
+        <td>
+            07001 AZILAL [Contact], 09001 BENI MELLAL VILLE [Citadine], 09002 BENI MELLAL HANSALI [Contact],
+            09003 BENI MELLAL AMRIA [Contact], 09004 BENI MELLAL AV IBN KHALDOUN [Contact], 09005 BENI MELLAL MED V [Contact],
+            09007 BENI MELLAL TAQADDOUM [Contact], 09501 SOUK SEBT [Citadine], 10101 FKIH BEN SALEH [Citadine],
+            10102 FKIH BEN SALEH ALLAL BEN ABDELLAH [Contact], 10103 FKIH BEN SALEH BD AL MASSIRA [Contact],
+            10401 KASBAT TADLA [Contact], 38001 KHENIFRA [Etendard], 38002 KHENIFRA ZERKTOUNI [Contact],
+            38801 M'RIRT [Contact], 40501 BEJAAD [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE KHOURIBGA</strong></td>
+        <td>1342</td>
+        <td>
+            40001 KHOURIBGA [Etendard], 40002 KHOURIBGA AHMED EL HIBA [Citadine], 40003 KHOURIBGA TAKADDOUM [Contact],
+            40004 KHOURIBGA MOUKAWAMA [Contact], 40007 KHOURIBGA MOUJAHIDINE [Contact], 40010 KHOURIBGA AL FIRDAOUS [Contact],
+            41101 OUED ZEM [Citadine], 41102 OUED ZEM SOUK TNIN [Contact], 61501 BEN AHMED [Citadine],
+            61902 SIDI HAJJAJ [Contact], 62001 TLAT LOULAD [Contact], 62601 BROUJ [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE MARRAKECH KOUTOUBIA</strong></td>
+        <td>1346</td>
+        <td>
+            20101 BENGUERIR [Citadine], 20102 BENGUERIR BD HASSAN II [Contact], 45007 MARRAKECH SIDI ABBAD [Citadine],
+            45010 MARRAKECH ALLAL EL FASSI [Contact], 45011 MARRAKECH ABDELKRIM KHATTABI [Contact],
+            45014 MARRAKECH MHAMIDE [Contact], 45016 MARRAKECH DAR SAADA [Contact], 45020 MARRAKECH SIDI GHANEM [Contact],
+            45021 MARRAKECH EL HARTI [Contact], 45025 Marrakech Doha Mhamid 9 [Contact], 45037 MARRAKECH ROUTE DE CASA [Contact],
+            45039 MARRAKECH SOFIA [Contact], 45040 MARRAKECH AFAQ [Contact], 45045 MARRAKECH IZDIHAR [Contact],
+            45046 MARRAKECH AMERCHICH [Contact]
+        </td>
+    </tr>
+</table>
+
+<h3>Sous-Région: Entreprises (8455) - 4 PDV</h3>
+<table>
+    <tr><th>Code</th><th>Nom</th><th>Type</th></tr>
+    <tr style="background:#fff3cd;"><td>45005C</td><td>CENTRE D'AFFAIRES MARRAKECH</td><td>Centre D'Affaires B</td></tr>
+    <tr style="background:#fff3cd;"><td>09008</td><td>Centre d'affaire BENI MELLAL</td><td>Centre D'Affaires C</td></tr>
+    <tr style="background:#fff3cd;"><td>45043</td><td>C.A MARRAKECH SIDI GHANEM</td><td>Centre D'Affaires C</td></tr>
+    <tr style="background:#fff3cd;"><td>59009C</td><td>C.A.SAFI</td><td>Centre D'Affaires C</td></tr>
+</table>
+</div>
+
+<!-- SCHEMA 2.3: CENTRE ATLANTIQUE DETAIL -->
+<div class="box">
+<h2>2.3 CENTRE ATLANTIQUE (8420) - 77 Points de Vente</h2>
+
+<h3>Sous-Région: Part Pro (8425) - 73 PDV</h3>
+<table>
+    <tr><th>Groupe</th><th>Code</th><th>Points de Vente</th></tr>
+    <tr>
+        <td><strong>GRP KENITRA EXTENSION</strong></td>
+        <td>01357</td>
+        <td>
+            33003 KENITRA SAKNIA [Citadine], 33005 KENITRA HAY IRCHAD [Contact], 33012 KENITRA AV. MED DIOURI [Contact],
+            33201 SIDI YAHYA AL GHARB [Contact], 34601 SIDI KACEM [Citadine], 34602 SIDI KACEM EXTENSION [Contact],
+            34901 SIDI SLIMANE [Citadine], 36001 KHEMISSET [Citadine], 36002 KHEMISSAT SALAM [Contact],
+            36501 OULMES [Contact], 37401 TIFLET [Citadine]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Groupe Kénitra</strong></td>
+        <td>1316</td>
+        <td>
+            33001 KENITRA VILLE [Etendard], 33002 KENITRA MEDINA [Citadine], 33004 KENITRA OULAD OUJIH [Contact],
+            33006 KENITRA AV. IMAM ALI [Citadine], 33007 KENITRA MAGHRIB EL ARABI [Contact], 33008 KENITRA ESSALAM [Contact],
+            33009 KENITRA AZHAROUNE [Contact], 33010 KENITRA BAB FES [Contact], 33013 KENITRA ATLAS [Contact],
+            33014 KENITRA BD MY ABDELAZIZ [Exclusive], 33601 MECHRAA BEL KSIRI [Contact], 35301 SOUK EL ARBAA [Citadine]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Groupe PART/PROS Rabat Centrale</strong></td>
+        <td>1318</td>
+        <td>
+            81004 RABAT AKKARI [Citadine], 81005 RABAT EL MANAR [Citadine], 81007 RABAT AGDAL [Citadine],
+            81010 RABAT IBNOU SINA [Citadine], 81013 RABAT DIOUR JAMAA [Contact], 81014 RABAT HAUT AGDAL [Contact],
+            81016 RABAT MABELLA [Contact], 81019 RABAT CENTRALE PART/PRO [Etendard]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Groupe RABAT ALEXANDRIE</strong></td>
+        <td>1319</td>
+        <td>
+            81002 RABAT ALEXANDRIE [Etendard], 81006 RABAT OCEAN [Citadine], 81008 RABAT EL MANSOUR [Citadine],
+            81009 RABAT HASSANE [Citadine], 81012 RABAT EL MENZEH [Citadine], 81018 RABAT HAY EL FATH [Contact],
+            81020 RABAT GUICH OUDAYAS [Contact], 81039 RABAT AV. PATRICE LUMUMBA [Contact], 82601 EL HARHOURA [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE SALE</strong></td>
+        <td>1322</td>
+        <td>
+            81501 SALE MEDINA [Citadine], 81504 SALA AL JADIDA [Citadine], 81505 SALE HAY KARIMA [Contact],
+            81506 SALE DYAR [Contact], 81507 SALE EL BARAKA [Contact], 81508 SALE BETTANA [Contact],
+            81509 SALE KARIA [Contact], 81511 SALE HAY SALAM [Contact], 81515 SALE HAY RAHMA [Contact],
+            81519 SALE BVD ABDELKRIM EL KHATTABI [Contact], 81522 SALE HAY EL AMAL [Contact], 81524 SALE TABRIQUET [Multi-Marchés]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE TEMARA</strong></td>
+        <td>1323</td>
+        <td>
+            12101 BOUZNIKA [Citadine], 82101 SKHIRATE [Contact], 82102 AIN ATIK [Contact], 82103 SKHIRAT BVD HASSAN II [Contact],
+            82501 TEMARA VILLE [Citadine], 82502 TEMARA MASSIRA [Citadine], 82503 TEMARA HASSAN 1er [Contact],
+            82504 TEMARA HAY AL MAGHRIB AL ARABI [Contact], 82505 TEMARA FOUARAT [Contact], 82507 TEMARA TARIK BNOU ZIAD [Contact],
+            82509 TEMARA AL WIFAK [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Groupe RABAT SOUISSI</strong></td>
+        <td>1352</td>
+        <td>
+            81003 RABAT SOUISSI [Etendard], 81011 RABAT HAY RIYAD [Citadine], 81015 RABAT HAY ENNAHDA [Contact],
+            81017 RABAT RYAD SALAM [Contact], 81024 RABAT HAY RIAD NAKHIL [Exclusive], 81025 RIAD CHELLAH [Exclusive],
+            81041 RABAT RIAD AL ANDALOUS [Contact], 81043 RABAT MEHDI BEN BARKA [Contact], 81044 RABAT MOHAMED VI [Contact],
+            82201 AIN AOUDA [Contact]
+        </td>
+    </tr>
+</table>
+
+<h3>Sous-Région: Entreprises (8426) - 4 PDV</h3>
+<table>
+    <tr><th>Code</th><th>Nom</th><th>Type</th></tr>
+    <tr style="background:#fff3cd;"><td>81001C</td><td>CENTRE D'AFFAIRES RABAT</td><td>Centre D'Affaires A</td></tr>
+    <tr style="background:#fff3cd;"><td>33011C</td><td>C.A Kénitra</td><td>Centre D'Affaires B</td></tr>
+    <tr style="background:#fff3cd;"><td>81045</td><td>Centre d'affaires RABAT SOUISSI</td><td>Centre D'Affaires B</td></tr>
+    <tr style="background:#fff3cd;"><td>82511</td><td>C.A Témara</td><td>Centre D'Affaires B</td></tr>
+</table>
+</div>
+
+<!-- SCHEMA 2.4: CENTRE DETAIL -->
+<div class="box">
+<h2>2.4 CENTRE (8440) - 65 Points de Vente</h2>
+
+<h3>Sous-Région: Développement & Pilotage (8441) - 63 PDV</h3>
+<table>
+    <tr><th>Groupe</th><th>Code</th><th>Points de Vente</th></tr>
+    <tr>
+        <td><strong>GROUPE MEKNES CENTRE</strong></td>
+        <td>1317</td>
+        <td>
+            48001 MEKNES VILLE [Etendard], 48002 MEKNES MEDINA [Citadine], 48003 MEKNES SEKKAKINE [Citadine],
+            48004 MEKNES ISMAILIA [Citadine], 48005 MEKNES MOHAMED V [Citadine], 48006 MEKNES MOULAY YOUSSEF [Contact],
+            48007 MEKNES BASSATINE [Contact], 48013 MEKNES OUISSLANE RTE DE FES [Contact], 48014 Meknes Avenue des FAR [Contact],
+            48016 MEKNES YACOUB EL MANSOUR [Contact], 48018 MEKNES HAMRIA [Contact], 49101 EL HAJEB [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE FES EXTENSION</strong></td>
+        <td>1324</td>
+        <td>
+            27013 FES AL WAHDA [Contact], 27018 FES QUARTIER AL HADIKA [Contact], 27023 FES LES IRIS [Contact],
+            27025 FES LES TOURNESOLS [Contact], 27037 FES AL KAWTAR [Contact], 28101 SEFROU [Etendard],
+            28102 SEFROU ENNAHDA [Contact], 28103 SEFROU EL MANZEH [Contact], 69001 TAZA [Citadine],
+            69002 TAZA GARE [Contact], 69004 TAZA Bd Moulay Youssef [Contact], 69007 TAZA AL MASSIRA [Contact],
+            69501 OUED AMLIL [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE FES CENTRE</strong></td>
+        <td>1325</td>
+        <td>
+            27006 FES FLORENCE [Citadine], 27007 FES MY EL KAMEL [Citadine], 27012 FES CHEFCHAOUNI [Contact],
+            27015 FES ZOUAGHA (EL AZHAR) [Contact], 27016 FES ROUTE D'IMMOUZER [Contact], 27017 FES VILLE PART/PRO [Etendard],
+            27019 FES ALLAL BEN ABDELLAH [Contact], 27022 JNANE FES [Exclusive], 27026 LES ORCHIDEES BENSOUDA [Contact],
+            27028 FES RTE SIDI HARAZEM [Contact], 27029 FES ZOHOUR [Contact], 27033 FES SAISS [Contact],
+            27035 FES CHAMPS DE COURSE [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE FES ATLAS</strong></td>
+        <td>1350</td>
+        <td>
+            27003 FES IDRISSIA [Citadine], 27005 FES ATLAS [Citadine], 27009 FES NARJISS [Citadine],
+            27010 FES SAADA [Contact], 27011 FES R'CIF [Contact], 27014 FES EL WAFAA (NARJISS 2) [Contact],
+            27021 FES LES TULIPES [Contact], 27024 FES LES VIOLETTES [Contact], 27031 FES RYAD [Contact],
+            27036 FES HAY AL FARAH [Contact], 49201 MEKNES AIN TAOUJTAT [Contact], 66001 TAOUNATE [Contact],
+            66501 KARIAT BA MOHAMED [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE MEKNES EXTENSION</strong></td>
+        <td>1351</td>
+        <td>
+            21001 ERRACHIDIA [Citadine], 21002 ERRACHIDIA ROUTE TARGA [Contact], 21801 ERFOUD [Contact],
+            39101 MIDELT [Contact], 42001 IFRANE [Contact], 42501 AZROU [Citadine],
+            48008 MEKNES BORJ MOULAY OMAR [Contact], 48009 MEKNES SIDI BOUZEKRI [Contact], 48010 MEKNES OUISSLANE [Contact],
+            48012 MEKNES ROUTE AGOURAY [Contact], 48015 MEKNES KORTOBA [Contact], 48020 MEKNES ENNASR [Contact]
+        </td>
+    </tr>
+</table>
+
+<h3>Sous-Région: Centre (8440) - 2 PDV</h3>
+<table>
+    <tr><th>Code</th><th>Nom</th><th>Type</th></tr>
+    <tr style="background:#fff3cd;"><td>27001C</td><td>CENTRE D'AFFAIRES FES</td><td>Centre D'Affaires B</td></tr>
+    <tr style="background:#fff3cd;"><td>48011C</td><td>CENTRE D'AFFAIRES MEKNES</td><td>Centre D'Affaires B</td></tr>
+</table>
+</div>
+
+<!-- SCHEMA 2.5: SOUSS MASSA DETAIL -->
+<div class="box">
+<h2>2.5 SOUSS MASSA PROVINCES DU SUD (8350) - 55 Points de Vente</h2>
+
+<h3>Sous-Région: Réseau Agadir Sud (8351) - 43 PDV</h3>
+<table>
+    <tr><th>Groupe</th><th>Code</th><th>Points de Vente</th></tr>
+    <tr>
+        <td><strong>GROUPE AGADIR CENTRE</strong></td>
+        <td>01343</td>
+        <td>
+            01002 AGADIR 'B' [Citadine], 01003 AGADIR TALBORJT [Citadine], 01004 AGADIR AL MARSA [Contact],
+            01008 AGADIR VILLE PART/PRO [Etendard], 01013 AGADIR AV. MY ISMAIL [Contact], 01019 AGADIR BVD MED V [Contact],
+            01024 AGADIR HAY MOHAMMADI TAZERZITE [Contact], 01025 AGADIR ISLANE HAY MOHAMMADI [Contact], 01026 AGADIR CADI AYYAD [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE AGADIR EXTENSION</strong></td>
+        <td>01344</td>
+        <td>
+            01005 AGADIR DCHIRA [Citadine], 01006 AGADIR HASSAN PREMIER [Citadine], 01007 AGADIR BOUARGANE [Contact],
+            01009 AGADIR SOUK EL HAD [Contact], 01010 AGADIR HAY SALAM [Contact], 01015 AGADIR CITE DAKHLA [Contact],
+            01018 AGADIR BENSERGAOU [Contact], 01023 DCHEIRA PERGOLA [Contact], 02101 INEZGANE [Etendard],
+            02102 INEZGANE MOKHTAR SOUSSI [Citadine]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE AGADIR ATLAS</strong></td>
+        <td>1353</td>
+        <td>
+            01011 AGADIR TIKIOUINE [Contact], 01027 AGADIR DRARGA [Contact], 01029 AGADIR AL HOUDA [Contact],
+            02201 AIT MELLOUL [Citadine], 02202 AIT MELLOUL MOHAMED VI [Contact], 02205 AIT MELLOUL AGDAL [Contact],
+            02801 OULED TEIMA [Citadine], 04101 TAROUDANT [Citadine], 04102 TAROUDANT MHAITA [Contact], 04701 AIT IAZZA [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE AGADIR COTIERE</strong></td>
+        <td>1354</td>
+        <td>
+            01101 BIOUGRA [Citadine], 01201 Khmis Ait Amira [Contact], 01301 BELFAA [Contact], 01501 MASSA [Contact],
+            03201 SIDI BIBI [Contact], 32001 GUELMIM [Citadine], 75001 TIZNIT [Citadine], 75002 TIZNIT BD.HASSAN II [Contact],
+            75003 TIZNIT MOULAY EL HASSAN [Contact], 76101 SIDI IFNI [Contact], 76501 TAFRAOUT [Contact]
+        </td>
+    </tr>
+    <tr style="background:#fff3cd;">
+        <td><strong>CAF Agadir Sud</strong></td>
+        <td>8351</td>
+        <td>01001C CA AGADIR [CAF B], 02204 CA AIT MELLOUL [CAF C]</td>
+    </tr>
+</table>
+
+<h3>Sous-Région: Réseau Provinces du Sud (8352) - 12 PDV</h3>
+<table>
+    <tr><th>Code</th><th>Nom</th><th>Type</th></tr>
+    <tr><td>43001</td><td>LAAYOUNE CENTRE</td><td>Citadine</td></tr>
+    <tr><td>43002</td><td>LAAYOUNE OUM ESSAAD</td><td>Citadine</td></tr>
+    <tr><td>43003</td><td>LAAYOUNE BD. OMAR MOKHTAR</td><td>Contact</td></tr>
+    <tr><td>43004</td><td>LAAYOUNE PORT</td><td>Contact</td></tr>
+    <tr><td>43005</td><td>LAAYOUNE BD MEKKA</td><td>Contact</td></tr>
+    <tr style="background:#fff3cd;"><td>43006</td><td>C.A LAAYOUNE</td><td>Centre D'Affaires C</td></tr>
+    <tr><td>53001</td><td>Centre Expertise Multimarché DAKHLA</td><td>Multi-Marchés</td></tr>
+    <tr><td>53002</td><td>DAKHLA BD BAHNINI</td><td>Contact</td></tr>
+    <tr><td>65001</td><td>TAN TAN PLAGE</td><td>Citadine</td></tr>
+    <tr><td>65002</td><td>TAN TAN VILLE</td><td>Citadine</td></tr>
+    <tr><td>13001</td><td>BOUJDOUR</td><td>Contact</td></tr>
+    <tr><td>26001</td><td>SMARA</td><td>Citadine</td></tr>
+</table>
+</div>
+
+<!-- SCHEMA 2.6: NORD MEDITERRANEE DETAIL -->
+<div class="box">
+<h2>2.6 NORD MEDITERRANEE (8430) - 55 Points de Vente</h2>
+
+<h3>Sous-Région: Développement & Pilotage (8431) - 51 PDV</h3>
+<table>
+    <tr><th>Groupe</th><th>Code</th><th>Points de Vente</th></tr>
+    <tr>
+        <td><strong>GROUPE TANGER CENTRE</strong></td>
+        <td>01320</td>
+        <td>
+            64002 TANGER PLACE 9 AVRIL [Citadine], 64003 TANGER RUE DE FES [Citadine], 64005 TANGER SOUANI [Citadine],
+            64011 TANGER VILLE PART/PRO [Etendard], 64012 TANGER VAL FLEURI [Contact], 64018 TANGER EL BALIA [Contact],
+            64019 TANGER DRADEB [Contact], 64026 TANGER MLY YOUSSEF [Contact], 64032 TANGER CITY CENTER [Contact],
+            64035 TANGER IBN TACHFINE [Exclusive], 64037 TANGER PLACE DES NATIONS [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE TANGER EXTENSION</strong></td>
+        <td>01321</td>
+        <td>
+            64010 TANGER GZENAYA [Citadine], 64017 TANGER MESNANA [Contact], 64021 TANGER HAY HASSANI [Contact],
+            64023 TANGER DOHA EL IRFANE [Contact], 64033 TANGER MY RACHID [Contact], 64036 TANGER ARABIE SAOUDITE [Contact],
+            64301 ASILAH [Citadine], 73101 KSAR EL KEBIR [Citadine], 73102 KSAR EL KEBIR ROUTE DE LARACHE [Contact],
+            73501 LARACHE [Citadine], 73502 LARACHE IBN EL KHATIB [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>TETOUAN CENTRE</strong></td>
+        <td>01360</td>
+        <td>
+            72001 TETOUAN A [Etendard], 72002 TETOUAN B [Citadine], 72003 TETOUAN SAFIR [Citadine],
+            72004 TETOUAN AL HAMAMA [Citadine], 72007 TETOUAN COLEMA [Contact], 72010 TETOUAN ABDELKHALAK TORRES [Contact],
+            72012 TETOUAN BOUJARRAH [Contact], 72016 TETOUAN BAB OQLA [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>TETOUAN LITTORAL</strong></td>
+        <td>01361</td>
+        <td>
+            15001 CHEFCHAOUEN [Citadine], 34101 OUAZZANE [Citadine], 72005 TETOUAN QUARTIER WILAYA [Contact],
+            72006 TETOUAN SOUKNA WA TAAMIR [Contact], 72601 FNIDEQ [Citadine], 72602 FNIDEQ LA CORNICHE [Contact],
+            72701 MARTIL [Etendard], 72702 MARTIL ROUTE DE CABO [Contact], 72801 M'DIQ [Citadine]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>GROUPE TANGER LITTORAL</strong></td>
+        <td>1326</td>
+        <td>
+            64006 TANGER IDRISSIA [Citadine], 64007 TANGER BENI MAKADA [Contact], 64008 TANGER CASABARATA [Citadine],
+            64009 TANGER PLAZA TORO [Citadine], 64013 TANGER BRANS [Contact], 64014 TANGER MANDELSON [Contact],
+            64015 TANGER ENNASR [Contact], 64016 TANGER BENDIBANE [Contact], 64024 TANGER AOUAMA [Contact],
+            64025 TANGER MLY ISMAIL [Contact], 64027 TANGER RTE DE TETOUAN [Contact], 64028 TANGER MLY ALI CHRIF [Contact]
+        </td>
+    </tr>
+</table>
+
+<h3>Sous-Région: Entreprises (8438) - 4 PDV</h3>
+<table>
+    <tr><th>Code</th><th>Nom</th><th>Type</th></tr>
+    <tr style="background:#fff3cd;"><td>64001C</td><td>CENTRE D'AFFAIRES TANGER</td><td>Centre D'Affaires B</td></tr>
+    <tr style="background:#fff3cd;"><td>64031</td><td>CENTRE D'AFFAIRES TANGER GZENAYA</td><td>Centre D'Affaires B</td></tr>
+    <tr style="background:#fff3cd;"><td>72015</td><td>C.A TETOUAN</td><td>Centre D'Affaires B</td></tr>
+    <tr><td>73503</td><td>Centre Expertise Multimarché LARACHE ROUTE DE RABAT</td><td>Multi-Marchés</td></tr>
+</table>
+</div>
+
+<!-- SCHEMA 2.7: ORIENTAL DETAIL -->
+<div class="box">
+<h2>2.7 ORIENTAL (8460) - 44 Points de Vente</h2>
+
+<h3>Sous-Région: Développement & Pilotage Oriental (8461) - 43 PDV</h3>
+<table>
+    <tr><th>Groupe</th><th>Code</th><th>Points de Vente</th></tr>
+    <tr>
+        <td><strong>Groupe AL HOCEIMA</strong></td>
+        <td>01345</td>
+        <td>
+            05001 AL HOCEIMA [Citadine], 05003 AL HOCEIMA BVD BIR ANZARANE [Contact], 05701 IMZOUREN [Contact],
+            06101 TARGUIST [Contact], 50101 DRIOUCH [Contact], 51501 MONTE AROUIT [Citadine],
+            51901 ZAIO [Contact], 52401 MIDAR [Contact], 52501 TEMSAMANE [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Groupe Nador</strong></td>
+        <td>1311</td>
+        <td>
+            50001 NADOR PRINCIPALE [Etendard], 50002 NADOR IBN ROCHD [Citadine], 50003 NADOR TAOUIMA [Citadine],
+            50004 NADOR HAY OULAD MIMOUN [Contact], 50005 NADOR AL MASSIRA [Contact], 50006 NADOR BD. SAKIA AL HAMRA [Contact],
+            50009 NADOR EL JADID [Exclusive], 50011 JAADAR NADOR [Contact], 50401 FARKHANA [Contact],
+            50701 ZEGANGANE [Citadine], 51101 BENI ANSAR [Citadine], 51201 SELOUANE [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Groupe PART/PROS Oujda Centre</strong></td>
+        <td>1355</td>
+        <td>
+            57001 OUJDA VILLE [Etendard], 57002 OUJDA MEDINA [Citadine], 57004 OUJDA LAZARET [Contact],
+            57005 OUJDA ANGAD [Contact], 57007 OUJDA HAY EL QODS [Contact], 57009 OUJDA JAWHARA [Contact],
+            57010 OUJDA ALLAL EL FASSI [Contact], 57014 OUJDA BD. DERFOUFI [Contact], 57016 OUJDA AL WILAYA [Contact],
+            58201 DJERRADA [Citadine]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>Groupe PART/PROS Oujda Extension</strong></td>
+        <td>1356</td>
+        <td>
+            57003 OUJDA ISLY [Contact], 57006 Oujda Route de Taza [Contact], 57501 BERKANE [Citadine],
+            57502 BERKANE BD. HASSAN II [Contact], 57506 BERKANE ROUTE DE SAIDIA [Contact], 57601 AHFIR [Contact],
+            57901 AGENCE SAIDIA [Contact], 58501 TAOURIRT [Citadine], 58502 TAOURIRT AL MASSIRA [Contact],
+            70301 GUERCIF [Citadine], 70302 GUERCIF MOHAMED V [Contact]
+        </td>
+    </tr>
+    <tr>
+        <td><strong>CEMM Oujda</strong></td>
+        <td>8461</td>
+        <td>57013C Centre Expertise Multimarché OUJDA [Multi-Marchés]</td>
+    </tr>
+</table>
+
+<h3>Sous-Région: Oriental (8460) - 1 PDV</h3>
+<table>
+    <tr><th>Code</th><th>Nom</th><th>Type</th></tr>
+    <tr style="background:#fff3cd;"><td>50010C</td><td>C.A NADOR</td><td>Centre D'Affaires C</td></tr>
+</table>
+</div>
+
+<!-- SCHEMA 3: TYPES DE POINTS DE VENTE -->
+<div class="box">
+<h2>3. TYPES DE POINTS DE VENTE</h2>
+
+<div class="grid">
+    <div class="card">
+        <h4>Agences (Marché Particuliers)</h4>
+        <span class="badge badge-green">Citadine</span> - Agence de ville classique<br>
+        <span class="badge badge-green">Etendard</span> - Agence principale de la ville<br>
+        <span class="badge badge-green">Contact</span> - Petite agence de proximité<br>
+        <span class="badge badge-green">Exclusive</span> - Agence clientèle haut de gamme<br>
+    </div>
+    <div class="card">
+        <h4>Centres d'Affaires (Marché Entreprises)</h4>
+        <span class="badge badge-orange">CAF A</span> - Grands comptes (5 CAF)<br>
+        <span class="badge badge-orange">CAF B</span> - Comptes moyens (15 CAF)<br>
+        <span class="badge badge-orange">CAF C</span> - PME/TPE (6 CAF)<br>
+    </div>
+    <div class="card">
+        <h4>Centres Multi-Marchés</h4>
+        <span class="badge badge-purple">CEMM</span> - Centre d'Expertise Multi-Marchés<br>
+        <em>Gère tous les types de clients (Part/Pro/Ent)</em>
+    </div>
+</div>
+</div>
+
+<!-- SCHEMA 4: QUI OBSERVE QUI -->
+<div class="box">
+<h2>4. QUI PEUT OBSERVER QUI ? (Schéma simple)</h2>
+
+<div class="schema">
+<pre>
+┌────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                                    │
+│   OBSERVATEURS (ceux qui font les observations)                                                    │
+│   ════════════════════════════════════════════                                                     │
+│                                                                                                    │
+│   ┌──────────────────────┐         observe         ┌──────────────────────┐                        │
+│   │  DIRECTEUR GROUPE    │ ─────────────────────▶ │  DIRECTEURS AGENCE   │                        │
+│   │      (DIRGP)         │                         │  de son groupe       │                        │
+│   └──────────────────────┘                         └──────────────────────┘                        │
+│                                                                                                    │
+│   ┌──────────────────────┐         observe         ┌──────────────────────┐                        │
+│   │  DIRECTEUR AGENCE    │ ─────────────────────▶ │  CAC, Conseillers    │                        │
+│   │      (DIRAG)         │                         │  de son agence       │                        │
+│   │ ⚠️ DOUBLE ROLE       │ ◀─────────────────────  peut être observé par son │                        │
+│   └──────────────────────┘                         Directeur Groupe       │                        │
+│                                                                                                    │
+│   ┌──────────────────────┐         observe         ┌──────────────────────┐                        │
+│   │       RCP            │ ─────────────────────▶ │  Conseillers         │                        │
+│   │     (RCLPA)          │                         │  de son agence       │                        │
+│   │ ⚠️ DOUBLE ROLE       │ ◀─────────────────────  peut être observé par │                        │
+│   └──────────────────────┘                         DA ou Animateur        │                        │
+│                                                                                                    │
+│   ┌──────────────────────┐         observe         ┌──────────────────────┐                        │
+│   │  DIRECTEUR CAF       │ ─────────────────────▶ │  RCE, Chargés Aff.   │                        │
+│   │     (CCETS)          │                         │  de son CAF          │                        │
+│   │ ⚠️ DOUBLE ROLE       │                         └──────────────────────┘                        │
+│   └──────────────────────┘                                                                         │
+│                                                                                                    │
+│   ┌──────────────────────┐         observe         ┌──────────────────────┐                        │
+│   │      RCE             │ ─────────────────────▶ │  Gestionnaires,      │                        │
+│   │  (RCLEN, RCLENGE)    │                         │  Cash & Trade        │                        │
+│   │ ⚠️ DOUBLE ROLE       │                         └──────────────────────┘                        │
+│   └──────────────────────┘                                                                         │
+│                                                                                                    │
+│   ┌──────────────────────┐         observe         ┌──────────────────────┐                        │
+│   │  DIRECTEUR CEMM      │ ─────────────────────▶ │  TOUS les collab.    │                        │
+│   │ (DIRSUMLM, RSPSUC)   │                         │  de son CEMM         │                        │
+│   └──────────────────────┘                         └──────────────────────┘                        │
+│                                                                                                    │
+│   ┌──────────────────────┐         observe         ┌──────────────────────┐                        │
+│   │     ANIMATEUR        │ ─────────────────────▶ │  Tous les collab.    │                        │
+│   │ (ANIMCOM, ANFORM...) │                         │  de sa région/groupe │                        │
+│   │    (~20 codes)       │                         │  d'affectation       │                        │
+│   └──────────────────────┘                         └──────────────────────┘                        │
+│                                                                                                    │
+└────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+┌────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                                    │
+│   CIBLES (ceux qui sont observés)                                                                  │
+│   ═══════════════════════════════                                                                  │
+│                                                                                                    │
+│   MARCHE PARTICULIERS:                          MARCHE ENTREPRISES:                                │
+│   ┌────────────────────┐                        ┌────────────────────┐                             │
+│   │ CAC (GUPAI)        │                        │ Chargé Affaires    │                             │
+│   │ Conseiller PRO     │                        │ (CHAFF, CACHMN...) │                             │
+│   │ (CCPRO)            │                        ├────────────────────┤                             │
+│   ├────────────────────┤                        │ Cash & Trade       │                             │
+│   │ Conseiller Premium │                        │ (CATASP)           │                             │
+│   │ (CC PRIVE)         │                        ├────────────────────┤                             │
+│   ├────────────────────┤                        │ Gestionnaire Ent.  │                             │
+│   │ Conseiller IGP     │                        │ (À IDENTIFIER)     │                             │
+│   │ (CCIGPF)           │                        └────────────────────┘                             │
+│   └────────────────────┘                                                                           │
+│                                                                                                    │
+└────────────────────────────────────────────────────────────────────────────────────────────────────┘
+</pre>
+</div>
+
+<div class="highlight">
+    <strong>⚠️ DOUBLE ROLE = peut observer ET être observé</strong><br>
+    4 rôles concernés: <span class="badge badge-purple">DA (DIRAG)</span> <span class="badge badge-purple">RCP (RCLPA)</span> <span class="badge badge-purple">Dir. CAF (CCETS)</span> <span class="badge badge-purple">RCE (RCLEN)</span>
+</div>
+</div>
+
+<!-- SCHEMA 5: MAPPING ASAL COMPLET -->
+<div class="box">
+<h2>5. MAPPING COMPLET: CODE ASAL → ROLE FOLLOW UP</h2>
+
+<h3>5.1 Observateurs uniquement</h3>
+<table>
+    <tr><th>Rôle Follow Up</th><th>Code(s) ASAL</th><th>Fonction</th></tr>
+    <tr>
+        <td><strong>Directeur de Groupe</strong></td>
+        <td><code>DIRGP</code></td>
+        <td>Directeur de Groupe</td>
+    </tr>
+    <tr>
+        <td rowspan="5"><strong>Directeur CEMM</strong></td>
+        <td><code>DETRSPSUC</code></td>
+        <td>Responsable Succursale</td>
+    </tr>
+    <tr><td><code>DIRCABO</code></td><td>Directeur de la succursale Tanger Offshore</td></tr>
+    <tr><td><code>DIRSUC</code></td><td>Directeur Succursale Tanger Off Shore</td></tr>
+    <tr><td><code>DIRSUMLM</code></td><td>Directeur de Succursale Multi-marchés</td></tr>
+    <tr><td><code>RSPSUC</code></td><td>Responsable Succursale</td></tr>
+    <tr>
+        <td rowspan="20"><strong>Animateur</strong></td>
+        <td><code>ACTINT2</code></td>
+        <td>Animateur commerce international</td>
+    </tr>
+    <tr><td><code>ANFORM</code></td><td>Animateur Formateur</td></tr>
+    <tr><td><code>ANICOM</code></td><td>Animateur formateur Commercial</td></tr>
+    <tr><td><code>ANIMCOENT</code></td><td>Animateur Commercial Entreprise</td></tr>
+    <tr><td><code>ANIMCOM</code></td><td>Animateur Commercial</td></tr>
+    <tr><td><code>ANIMCOMPME</code></td><td>Animateur Commercial PME</td></tr>
+    <tr><td><code>ANIMCOREG</code></td><td>Animateur Commercial Part / Pro</td></tr>
+    <tr><td><code>ANIMCOREG1</code></td><td>Animateur Commercial Région</td></tr>
+    <tr><td><code>ANIMPRIVE</code></td><td>Animateur Marché Privé</td></tr>
+    <tr><td><code>ANIMPRO</code></td><td>Animateur Commercial Pro.</td></tr>
+    <tr><td><code>ANIMPROSS</code></td><td>Animateur Prospection Sénior</td></tr>
+    <tr><td><code>ANIMTERACQ</code></td><td>Animateur terrain acquisition</td></tr>
+    <tr><td><code>ANSECPCSEC</code></td><td>Animateur Sénior en Charge Partenariats</td></tr>
+    <tr><td><code>CLIPAR6</code></td><td>Animateur force de vente clientèle particuliers</td></tr>
+    <tr><td><code>DAM00027</code></td><td>Animateur réseau</td></tr>
+    <tr><td><code>DAM0010</code></td><td>Animateur Régional</td></tr>
+    <tr><td><code>DAM0011</code></td><td>Animateur Siège</td></tr>
+    <tr><td><code>DAM1010</code></td><td>Animateur Junior Beni Mellal</td></tr>
+    <tr><td><code>DAM1011</code></td><td>Animateur Junior</td></tr>
+    <tr><td><code>DAM1012</code></td><td>Animateur Terrain Acquisition</td></tr>
+</table>
+
+<h3>5.2 Double Rôle (Observateur ET Cible)</h3>
+<table style="background: #fef3c7;">
+    <tr><th>Rôle Follow Up</th><th>Code ASAL</th><th>Fonction</th></tr>
+    <tr>
+        <td><strong>Directeur d'Agence</strong></td>
+        <td><code>DIRAG</code></td>
+        <td>Directeur d'agence</td>
+    </tr>
+    <tr>
+        <td><strong>RCP</strong></td>
+        <td><code>RCLPA</code></td>
+        <td>Responsable Clientèle Particuliers</td>
+    </tr>
+    <tr>
+        <td><strong>Directeur CAF</strong></td>
+        <td><code>CCETS</code></td>
+        <td>Chargé d'Affaires Entreprises</td>
+    </tr>
+    <tr>
+        <td rowspan="2"><strong>RCE</strong></td>
+        <td><code>RCLENGE</code></td>
+        <td>Responsable Clientèle Entreprise GE</td>
+    </tr>
+    <tr><td><code>RCLEN</code></td><td>Responsable Clientèle Entreprises</td></tr>
+</table>
+
+<h3>5.3 Cibles uniquement</h3>
+<table>
+    <tr><th>Rôle Follow Up</th><th>Code(s) ASAL</th><th>Fonction</th></tr>
+    <tr>
+        <td rowspan="3"><strong>CAC</strong></td>
+        <td><code>GUPAI</code></td>
+        <td>Chargé d'Appui Commercial</td>
+    </tr>
+    <tr><td><code>GUPAIF</code></td><td>Chargé d'Appui Commercial en Formation</td></tr>
+    <tr><td><code>GUPAIM</code></td><td>Chargé d'Appui Commercial Mutualisé</td></tr>
+    <tr>
+        <td><strong>Conseiller IGP</strong></td>
+        <td><code>CCIGPF</code></td>
+        <td>Conseillers de Clientèle Part. Intermédiaires en formation</td>
+    </tr>
+    <tr>
+        <td><strong>Conseiller PRO</strong></td>
+        <td><code>CCPRO</code></td>
+        <td>Conseiller de Clientèle Professionnelle et TPE</td>
+    </tr>
+    <tr style="background: #ecfdf5;">
+        <td><strong>Conseiller Premium</strong></td>
+        <td><code>CC PRIVE</code></td>
+        <td>Conseiller de clientèle Privé</td>
+    </tr>
+    <tr>
+        <td><strong>Cash & Trade</strong></td>
+        <td><code>CATASP</code></td>
+        <td>Cash & Trade Specialist</td>
+    </tr>
+    <tr>
+        <td rowspan="6"><strong>Chargé d'Affaires</strong></td>
+        <td><code>CACHMN</code></td>
+        <td>Chargé d'Affaires Cash Management</td>
+    </tr>
+    <tr><td><code>CHAFF</code></td><td>Chargé d'Affaires</td></tr>
+    <tr><td><code>CHAFFAIRCM</code></td><td>Chargé d'affaires CM</td></tr>
+    <tr><td><code>CHAFFCORPJ</code></td><td>Chargé d'Affaires Corporate junior</td></tr>
+    <tr><td><code>CHAFFCORPO</code></td><td>Chargé d'Affaires Corporate</td></tr>
+    <tr><td><code>CCETS</code></td><td>Chargé d'Affaires Entreprises</td></tr>
+    <tr style="background: #ecfdf5;">
+        <td><strong>Gestionnaire Entreprises</strong></td>
+        <td><code>CCOMPTE</code> <span class="badge badge-green">IDENTIFIÉ v2.0</span></td>
+        <td>Chargé de Comptes Entreprises</td>
+    </tr>
+</table>
+</div>
+
+<!-- SCHEMA 5.5: NOUVEAUX CODES ANIMATEUR v2.0 -->
+<div class="box">
+<h2>5.5 NOUVEAUX CODES ANIMATEUR (v2.0)</h2>
+<div class="info">
+    <strong>Source:</strong> pj_mail_4_3.xlsx - 3 nouveaux codes identifiés
+</div>
+<table>
+    <tr><th>Code ASAL</th><th>Fonction</th><th>Profil</th></tr>
+    <tr><td><code>DAMTEST</code></td><td>Animateur Junior</td><td><span class="badge badge-green">Observateur</span></td></tr>
+    <tr><td><code>DETACZA</code></td><td>Animateur Commercial Zone Anglophone</td><td><span class="badge badge-green">Observateur</span></td></tr>
+    <tr><td><code>DETACZF</code></td><td>Animateur Commercial Zone Francophone</td><td><span class="badge badge-green">Observateur</span></td></tr>
+</table>
+
+<div class="highlight">
+    <strong>Règle d'affectation des Animateurs (pj_mail_4_1.pptx):</strong><br>
+    <ul style="margin-left: 20px; margin-top: 8px;">
+        <li><strong>Animateurs AGENCE</strong> → Rattachés à la <strong>RÉGION</strong></li>
+        <li><strong>Animateurs CAF/CEMM</strong> → Rattachés au <strong>SIÈGE</strong></li>
+        <li>Un animateur peut être affecté à <strong>plusieurs groupes, CAFs ou CEMMs</strong></li>
+    </ul>
+</div>
+</div>
+
+<!-- SCHEMA 6: CENTRES D'AFFAIRES -->
+<div class="box">
+<h2>6. LISTE COMPLETE DES CENTRES D'AFFAIRES</h2>
+
+<h3>Centre D'Affaires A (5 CAF - Grands Comptes)</h3>
+<table>
+    <tr><th>Code</th><th>Nom</th><th>Région</th></tr>
+    <tr><td>78033C</td><td>CENTRE D'AFFAIRES FAR</td><td>Grand Casablanca</td></tr>
+    <tr><td>81001C</td><td>CENTRE D'AFFAIRES RABAT</td><td>Centre Atlantique</td></tr>
+    <tr><td>78020C</td><td>CENTRE D'AFFAIRES LALLA YACOUT</td><td>Grand Casablanca</td></tr>
+    <tr><td>78019C</td><td>CENTRE D'AFFAIRES HASSAN II</td><td>Grand Casablanca</td></tr>
+    <tr><td>78010C</td><td>CENTRE D'AFFAIRES MOHAMED V</td><td>Grand Casablanca</td></tr>
+</table>
+
+<h3>Centre D'Affaires B (15 CAF)</h3>
+<table>
+    <tr><th>Code</th><th>Nom</th><th>Région</th></tr>
+    <tr><td>72015</td><td>C.A TETOUAN</td><td>Nord Méditerranée</td></tr>
+    <tr><td>33011C</td><td>C.A Kénitra</td><td>Centre Atlantique</td></tr>
+    <tr><td>45005C</td><td>CENTRE D'AFFAIRES MARRAKECH</td><td>Centre Méridional</td></tr>
+    <tr><td>27001C</td><td>CENTRE D'AFFAIRES FES</td><td>Centre</td></tr>
+    <tr><td>81045</td><td>Centre d'affaires RABAT SOUISSI</td><td>Centre Atlantique</td></tr>
+    <tr><td>78029C</td><td>CENTRE D'AFFAIRES ZENITH MILLENIUM</td><td>Grand Casablanca</td></tr>
+    <tr><td>48011C</td><td>CENTRE D'AFFAIRES MEKNES</td><td>Centre</td></tr>
+    <tr><td>78065C</td><td>CENTRE D'AFFAIRES MAARIF BIR ANZARANE</td><td>Grand Casablanca</td></tr>
+    <tr><td>78096C</td><td>CENTRE D'AFFAIRES BD MOHAMED VI</td><td>Grand Casablanca</td></tr>
+    <tr><td>78075C</td><td>CENTRE D'AFFAIRES ZENATA</td><td>Grand Casablanca</td></tr>
+    <tr><td>01001C</td><td>CENTRE D'AFFAIRES AGADIR</td><td>Souss Massa</td></tr>
+    <tr><td>82511</td><td>C.A Témara</td><td>Centre Atlantique</td></tr>
+    <tr><td>64001C</td><td>CENTRE D'AFFAIRES TANGER</td><td>Nord Méditerranée</td></tr>
+    <tr><td>64031</td><td>CENTRE D'AFFAIRES TANGER GZENAYA</td><td>Nord Méditerranée</td></tr>
+</table>
+
+<h3>Centre D'Affaires C (6 CAF - PME/TPE)</h3>
+<table>
+    <tr><th>Code</th><th>Nom</th><th>Région</th></tr>
+    <tr><td>02204</td><td>Centre d'Affaires AIT MELLOUL</td><td>Souss Massa</td></tr>
+    <tr><td>45043</td><td>C.A MARRAKECH SIDI GHANEM</td><td>Centre Méridional</td></tr>
+    <tr><td>50010C</td><td>C.A NADOR</td><td>Oriental</td></tr>
+    <tr><td>59009C</td><td>C.A.SAFI</td><td>Centre Méridional</td></tr>
+    <tr><td>09008</td><td>Centre d'affaire BENI MELLAL</td><td>Centre Méridional</td></tr>
+    <tr><td>43006</td><td>C.A LAAYOUNE</td><td>Souss Massa Provinces du Sud</td></tr>
+</table>
+</div>
+
+<!-- SCHEMA 6.5: 8 MODELES D'OBSERVATION MVP -->
+<div class="box">
+<h2>6.5 LES 8 MODELES D'OBSERVATION MVP (v2.0)</h2>
+
+<div class="info">
+    <strong>Source:</strong> pj_mail_4_4.xlsx + pj_mail_4_1.pptx | <strong>Validation:</strong> Amine - Call du 17.03
+</div>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Modèle</th>
+        <th>Marché</th>
+        <th>Cible</th>
+        <th>Observateurs autorisés</th>
+        <th>Questions</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td><strong>Observation CAE</strong></td>
+        <td>Entreprises / Multi</td>
+        <td>Chargé d'Affaires</td>
+        <td>Dir. CAF, RCE, Animateur, Dir. CEMM</td>
+        <td><span class="badge badge-blue">9</span></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td><strong>Observation GE</strong></td>
+        <td>Entreprises / Multi</td>
+        <td>Gestionnaire Entreprises</td>
+        <td>Dir. CAF, RCE, Animateur, Dir. CEMM</td>
+        <td><span class="badge badge-blue">10</span></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td><strong>Observation CTS</strong></td>
+        <td>Entreprises / Multi</td>
+        <td>Cash & Trade Specialist</td>
+        <td>Dir. CAF, RCE, Animateur, Dir. CEMM</td>
+        <td><span class="badge badge-blue">11</span></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td><strong>Observation CAC</strong></td>
+        <td>Particuliers / Multi</td>
+        <td>Chargé d'Appui Commercial</td>
+        <td>DA, Animateur, Dir. CEMM</td>
+        <td><span class="badge badge-blue">7</span></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td><strong>Observation DA</strong></td>
+        <td>Particuliers</td>
+        <td>Directeur d'Agence</td>
+        <td>Dir. Groupe, Animateur</td>
+        <td><span class="badge badge-blue">8</span></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td><strong>Observation CC IGP</strong></td>
+        <td>Particuliers / Multi</td>
+        <td>Conseiller IGP</td>
+        <td>DA, Animateur, Dir. CEMM</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td><strong>Observation CC Premium</strong></td>
+        <td>Particuliers / Multi</td>
+        <td>Conseiller Premium</td>
+        <td>DA, Animateur, Dir. CEMM</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td><strong>Observation CC PRO</strong></td>
+        <td>Particuliers / Multi</td>
+        <td>Conseiller PRO</td>
+        <td>DA, Animateur, Dir. CEMM</td>
+        <td>-</td>
+    </tr>
+</table>
+</div>
+
+<!-- SCHEMA 6.6: 32 REGLES DE GESTION -->
+<div class="box">
+<h2>6.6 REGLES DE GESTION SAISIE (32 règles - v2.0)</h2>
+
+<div class="info">
+    <strong>Source:</strong> pj_mail_4_2.xlsx - Feuille "RGs Saisie"
+</div>
+
+<h3>Résumé des règles par Observateur</h3>
+<table>
+    <tr><th>Observateur</th><th>Cibles possibles</th><th>Condition</th><th>Règles</th></tr>
+    <tr>
+        <td><strong>Directeur de Groupe</strong></td>
+        <td>DA</td>
+        <td>Agence appartient à son groupe</td>
+        <td>RG1</td>
+    </tr>
+    <tr>
+        <td><strong>Directeur d'Agence</strong></td>
+        <td>CAC, CC PRO, CC Premium, CC IGP</td>
+        <td>Même agence</td>
+        <td>RG3-6</td>
+    </tr>
+    <tr>
+        <td><strong>RCP</strong></td>
+        <td>CAC, CC PRO, CC Premium, CC IGP</td>
+        <td>Même agence</td>
+        <td>RG7-10</td>
+    </tr>
+    <tr>
+        <td><strong>Directeur CAF</strong></td>
+        <td>GE, CAE, CTS</td>
+        <td>Même CAF</td>
+        <td>RG17-19</td>
+    </tr>
+    <tr>
+        <td><strong>RCE</strong></td>
+        <td>GE, CAE, CTS</td>
+        <td>Même CAF</td>
+        <td>RG20-22</td>
+    </tr>
+    <tr>
+        <td><strong>Directeur CEMM</strong></td>
+        <td>Tous (GE, CAE, CTS, CAC, CC PRO, CC Premium, CC IGP)</td>
+        <td>Même CEMM</td>
+        <td>RG26-32</td>
+    </tr>
+    <tr>
+        <td><strong>Animateur</strong></td>
+        <td>DA, CAC, CC PRO, CC Premium, CC IGP, GE, CAE, CTS</td>
+        <td>Région/CAF/CEMM d'affectation</td>
+        <td>RG11,13-16,23-25</td>
+    </tr>
+</table>
+</div>
+
+<!-- SCHEMA 6.7: STATUTS & ACTIONS -->
+<div class="box">
+<h2>6.7 STATUTS & ACTIONS MVP (v2.0)</h2>
+
+<div class="grid">
+    <div class="card">
+        <h4>Statuts d'une observation</h4>
+        <table>
+            <tr><th>Statut</th><th>Description</th></tr>
+            <tr><td><span class="badge badge-green">SOUMISE</span></td><td>Observation validée et soumise</td></tr>
+            <tr><td><span class="badge badge-red">ANNULEE</span></td><td>Observation annulée (sous 24h)</td></tr>
+        </table>
+    </div>
+    <div class="card">
+        <h4>Actions disponibles</h4>
+        <table>
+            <tr><th>Action</th><th>Description</th></tr>
+            <tr><td><span class="badge badge-blue">CONSULTER</span></td><td>Voir les résultats</td></tr>
+            <tr><td><span class="badge badge-orange">ANNULER</span></td><td>Annuler sous 24h</td></tr>
+            <tr><td><span class="badge badge-purple">TELECHARGER</span></td><td>Export PDF/Excel</td></tr>
+        </table>
+    </div>
+</div>
+
+<div class="success">
+    <strong>Règle de consultation:</strong> Les utilisateurs peuvent uniquement consulter l'historique des observations qu'ils ont <strong>eux-mêmes saisies</strong>.
+</div>
+</div>
+
+<!-- SCHEMA 7: REGLES METIER -->
+<div class="box">
+<h2>7. REGLES METIER VALIDEES</h2>
+
+<table>
+    <tr><th>Règle</th><th>Valeur</th><th>Explication</th></tr>
+    <tr>
+        <td><strong>Délai d'annulation</strong></td>
+        <td><span class="badge badge-orange">24 heures</span></td>
+        <td>Après soumission, l'observation peut être annulée pendant 24h</td>
+    </tr>
+    <tr>
+        <td><strong>Profondeur historique</strong></td>
+        <td><span class="badge badge-blue">12 mois</span></td>
+        <td>L'historique des observations est consultable sur 1 an</td>
+    </tr>
+    <tr>
+        <td><strong>Archivage</strong></td>
+        <td><span class="badge badge-purple">Changement périmètre</span></td>
+        <td>Si un collaborateur change de poste, son historique devient invisible</td>
+    </tr>
+    <tr>
+        <td><strong>Nombre utilisateurs</strong></td>
+        <td><span class="badge badge-green">~800</span></td>
+        <td>Utilisateurs de la solution</td>
+    </tr>
+    <tr>
+        <td><strong>Observations/an</strong></td>
+        <td><span class="badge badge-green">~10 000</span></td>
+        <td>Volume estimé d'observations terrain</td>
+    </tr>
+</table>
+</div>
+
+<!-- SCHEMA 8: INTEGRATION -->
+<div class="box">
+<h2>8. INTEGRATION SYSTEMES</h2>
+
+<div class="schema">
+<pre>
+┌─────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                                                                                     │
+│                                        ARCHITECTURE FOLLOW UP                                       │
+│                                                                                                     │
+│  ┌──────────────┐     ┌──────────────┐     ┌──────────────┐     ┌──────────────┐                   │
+│  │   KEYCLOAK   │     │     ASAL     │     │   FOLLOW UP  │     │   BASE DE    │                   │
+│  │              │     │              │     │   (Backend)  │     │   DONNEES    │                   │
+│  │  - SSO       │     │  - Annuaire  │     │              │     │              │                   │
+│  │  - JWT       │     │  - RH        │     │  Spring Boot │     │  PostgreSQL  │                   │
+│  │  - OIDC      │     │  - SOAP      │     │  Java 21     │     │  15/16       │                   │
+│  └──────┬───────┘     └──────┬───────┘     └──────┬───────┘     └──────┬───────┘                   │
+│         │                    │                    │                    │                            │
+│         │ Authentification   │ Sync collab.       │                    │                            │
+│         │                    │                    │                    │                            │
+│         └─────────┬──────────┴─────────┬──────────┴─────────┬──────────┘                            │
+│                   │                    │                    │                                       │
+│                   ▼                    ▼                    ▼                                       │
+│         ┌───────────────────────────────────────────────────────────────┐                           │
+│         │                      FOLLOW UP (Frontend)                      │                           │
+│         │                                                                │                           │
+│         │   Angular 20 + Single-SPA (Microfrontends)                    │                           │
+│         │                                                                │                           │
+│         │   ┌────────────┐  ┌────────────┐  ┌────────────┐             │                           │
+│         │   │   Admin    │  │ Observations│  │ Dashboard  │             │                           │
+│         │   │    MF      │  │     MF     │  │    MF      │             │                           │
+│         │   └────────────┘  └────────────┘  └────────────┘             │                           │
+│         │                                                                │                           │
+│         └───────────────────────────────────────────────────────────────┘                           │
+│                                        │                                                            │
+│                                        ▼                                                            │
+│                               ┌─────────────────┐                                                   │
+│                               │   UTILISATEUR   │                                                   │
+│                               │  (Web + PWA)    │                                                   │
+│                               └─────────────────┘                                                   │
+│                                                                                                     │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────┘
+</pre>
+</div>
+</div>
+
+<!-- SCHEMA 9: DIAGRAMME DE CLASSES UML -->
+<div class="box">
+<h2>9. DIAGRAMME DE CLASSES UML</h2>
+
+<div class="info">
+    <strong>Architecture domaine:</strong> 4 packages principaux - Organisation, Utilisateurs, Observations, Configuration
+</div>
+
+<div class="schema">
+<pre>
+┌─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│                                    DIAGRAMME DE CLASSES UML - FOLLOW UP BOA                                     │
+├─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                                                 │
+│  ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════╗  │
+│  ║                                    📦 PACKAGE: ORGANISATION                                                ║  │
+│  ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣  │
+│  ║                                                                                                           ║  │
+│  ║  ┌─────────────────────┐         1      ┌─────────────────────┐         1      ┌─────────────────────┐   ║  │
+│  ║  │      Region         │◆────────────*│    SousRegion        │◆────────────*│      Groupe          │   ║  │
+│  ║  ├─────────────────────┤              ├─────────────────────┤              ├─────────────────────┤   ║  │
+│  ║  │ - code: VARCHAR(10) │              │ - code: VARCHAR(10) │              │ - code: VARCHAR(10) │   ║  │
+│  ║  │ - nom: VARCHAR(100) │              │ - nom: VARCHAR(100) │              │ - nom: VARCHAR(100) │   ║  │
+│  ║  │ - niveau: N5        │              │ - niveau: N4        │              │ - niveau: N3        │   ║  │
+│  ║  │ - actif: BOOLEAN    │              │ - regionId: FK      │              │ - sousRegionId: FK  │   ║  │
+│  ║  └─────────────────────┘              └─────────────────────┘              └──────────┬──────────┘   ║  │
+│  ║                                                                                       │ 1            ║  │
+│  ║                                                                                       │              ║  │
+│  ║                                                                                       ▼ *            ║  │
+│  ║                                                                           ┌─────────────────────────┐║  │
+│  ║                                                                           │     PointDeVente        │║  │
+│  ║                                                                           ├─────────────────────────┤║  │
+│  ║  ┌─────────────────────┐                                                  │ - id: UUID             │║  │
+│  ║  │   <<enumeration>>   │                                                  │ - code: VARCHAR(10)    │║  │
+│  ║  │   TypePointVente    │◄─────────────────────────────────────────────────│ - nom: VARCHAR(150)    │║  │
+│  ║  ├─────────────────────┤                                                  │ - type: TypePointVente │║  │
+│  ║  │ AGENCE_CITADINE     │                                                  │ - groupeId: FK         │║  │
+│  ║  │ AGENCE_ETENDARD     │                                                  │ - actif: BOOLEAN       │║  │
+│  ║  │ AGENCE_CONTACT      │                                                  │ - dateCreation: DATE   │║  │
+│  ║  │ AGENCE_EXCLUSIVE    │                                                  └─────────────────────────┘║  │
+│  ║  │ CAF_A               │                                                             │ 1            ║  │
+│  ║  │ CAF_B               │                                                             │              ║  │
+│  ║  │ CAF_C               │                                                             ▼ 0..1         ║  │
+│  ║  │ CEMM                │                                                  ┌─────────────────────────┐║  │
+│  ║  │ DESK                │                                                  │        Desk             │║  │
+│  ║  └─────────────────────┘                                                  ├─────────────────────────┤║  │
+│  ║                                                                           │ - code: VARCHAR(10)    │║  │
+│  ║                                                                           │ - nom: VARCHAR(100)    │║  │
+│  ║                                                                           │ - niveau: N1           │║  │
+│  ║                                                                           │ - pointVenteId: FK     │║  │
+│  ║                                                                           └─────────────────────────┘║  │
+│  ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════╝  │
+│                                                                                                                 │
+│  ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════╗  │
+│  ║                                    📦 PACKAGE: UTILISATEURS                                                ║  │
+│  ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣  │
+│  ║                                                                                                           ║  │
+│  ║  ┌────────────────────────────┐            ┌────────────────────────────┐                                ║  │
+│  ║  │    CollaborateurASAL       │            │      FonctionASAL          │                                ║  │
+│  ║  │ (Source: Webservice SOAP)  │            ├────────────────────────────┤                                ║  │
+│  ║  ├────────────────────────────┤       *    │ - code: VARCHAR(20) [PK]   │                                ║  │
+│  ║  │ - matricule: VARCHAR(20)   │◆──────────│ - libelle: VARCHAR(150)    │                                ║  │
+│  ║  │ - nom: VARCHAR(100)        │            │ - categorie: TypeCategorie │                                ║  │
+│  ║  │ - prenom: VARCHAR(100)     │            └────────────────────────────┘                                ║  │
+│  ║  │ - email: VARCHAR(150)      │                          │                                               ║  │
+│  ║  │ - telephone: VARCHAR(20)   │                          │ mapped to                                     ║  │
+│  ║  │ - fonction: FonctionASAL   │                          ▼                                               ║  │
+│  ║  │ - codeAgence: VARCHAR(10)  │            ┌────────────────────────────┐                                ║  │
+│  ║  │ - nomAgence: VARCHAR(100)  │            │   MappingFonctionRole      │                                ║  │
+│  ║  │ - dateMaj: TIMESTAMP       │            ├────────────────────────────┤                                ║  │
+│  ║  └──────────┬─────────────────┘            │ - fonctionASALCode: FK     │                                ║  │
+│  ║             │                              │ - roleFollowUpId: FK       │                                ║  │
+│  ║             │ sync                         │ - actif: BOOLEAN           │                                ║  │
+│  ║             ▼                              └────────────────────────────┘                                ║  │
+│  ║  ┌────────────────────────────┐                          │                                               ║  │
+│  ║  │    UtilisateurFollowUp     │                          │ resolves to                                   ║  │
+│  ║  ├────────────────────────────┤                          ▼                                               ║  │
+│  ║  │ - id: UUID [PK]            │            ┌────────────────────────────┐     ┌───────────────────────┐  ║  │
+│  ║  │ - matricule: VARCHAR(20)   │       *    │      RoleFollowUp          │     │   <<enumeration>>     │  ║  │
+│  ║  │ - roleId: FK               │◆──────────│ ────────────────────────────│◄────│     TypeRole          │  ║  │
+│  ║  │ - pointVenteId: FK         │            │ - id: UUID [PK]            │     ├───────────────────────┤  ║  │
+│  ║  │ - keycloakId: VARCHAR(50)  │            │ - code: VARCHAR(30)        │     │ OBSERVATEUR           │  ║  │
+│  ║  │ - actif: BOOLEAN           │            │ - libelle: VARCHAR(100)    │     │ CIBLE                 │  ║  │
+│  ║  │ - dateCreation: TIMESTAMP  │            │ - typeRole: TypeRole       │     │ DOUBLE_ROLE           │  ║  │
+│  ║  │ - dernierAcces: TIMESTAMP  │            │ - description: TEXT        │     │ ADMINISTRATEUR        │  ║  │
+│  ║  └────────────────────────────┘            └────────────────────────────┘     └───────────────────────┘  ║  │
+│  ║  ┌────────────────────────────┐                                                                          ║  │
+│  ║  │   AffectationAnimateur     │  (Multi-affectation: Région / CAF / CEMM)                               ║  │
+│  ║  ├────────────────────────────┤                                                                          ║  │
+│  ║  │ - id: UUID [PK]            │     ┌───────────────────────┐                                           ║  │
+│  ║  │ - utilisateurId: FK        │     │  <<enumeration>>      │                                           ║  │
+│  ║  │ - typeRattachement: ENUM   │◄────│  TypeRattachement     │                                           ║  │
+│  ║  │ - regionId: FK (nullable)  │     ├───────────────────────┤                                           ║  │
+│  ║  │ - groupeId: FK (nullable)  │     │ REGION                │                                           ║  │
+│  ║  │ - pointVenteId: FK (null)  │     │ SIEGE                 │                                           ║  │
+│  ║  │ - dateDebut: DATE          │     └───────────────────────┘                                           ║  │
+│  ║  │ - dateFin: DATE (nullable) │                                                                          ║  │
+│  ║  └────────────────────────────┘                                                                          ║  │
+│  ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════╝  │
+│                                                                                                                 │
+│  ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════╗  │
+│  ║                                    📦 PACKAGE: OBSERVATIONS                                                ║  │
+│  ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣  │
+│  ║                                                                                                           ║  │
+│  ║  ┌────────────────────────────┐            ┌────────────────────────────┐                                ║  │
+│  ║  │     ModeleObservation      │       1    │        Question            │                                ║  │
+│  ║  ├────────────────────────────┤◆─────────*├────────────────────────────┤                                ║  │
+│  ║  │ - id: UUID [PK]            │            │ - id: UUID [PK]            │                                ║  │
+│  ║  │ - code: VARCHAR(20)        │            │ - modeleId: FK             │                                ║  │
+│  ║  │ - libelle: VARCHAR(100)    │            │ - numero: INTEGER          │                                ║  │
+│  ║  │ - marche: TypeMarche       │            │ - libelle: TEXT            │                                ║  │
+│  ║  │ - cibleRoleId: FK          │            │ - typeReponse: TypeReponse │                                ║  │
+│  ║  │ - actif: BOOLEAN           │            │ - obligatoire: BOOLEAN     │                                ║  │
+│  ║  │ - version: INTEGER         │            │ - ordre: INTEGER           │                                ║  │
+│  ║  └────────────────────────────┘            └────────────────────────────┘                                ║  │
+│  ║             │ 1                                          │                                               ║  │
+│  ║             │                         ┌──────────────────┼──────────────────┐                            ║  │
+│  ║             │                         │                  │                  │                            ║  │
+│  ║             ▼ *                       ▼                  ▼                  ▼                            ║  │
+│  ║  ┌────────────────────────────┐   ┌───────────────────────────────────────────────────────────────────┐  ║  │
+│  ║  │       Observation          │   │                    ReponseObservation                             │  ║  │
+│  ║  ├────────────────────────────┤   ├───────────────────────────────────────────────────────────────────┤  ║  │
+│  ║  │ - id: UUID [PK]            │   │ - id: UUID [PK]                                                   │  ║  │
+│  ║  │ - modeleId: FK             │1 *│ - observationId: FK                                               │  ║  │
+│  ║  │ - observateurId: FK        │◆──│ - questionId: FK                                                  │  ║  │
+│  ║  │ - cibleId: FK              │   │ - valeurBoolean: BOOLEAN                                          │  ║  │
+│  ║  │ - pointVenteId: FK         │   │ - valeurTexte: TEXT                                               │  ║  │
+│  ║  │ - statut: StatutObs        │   │ - valeurNumerique: DECIMAL                                        │  ║  │
+│  ║  │ - dateSoumission: TIMESTAMP│   │ - commentaire: TEXT                                               │  ║  │
+│  ║  │ - dateAnnulation: TIMESTAMP│   └───────────────────────────────────────────────────────────────────┘  ║  │
+│  ║  │ - motifAnnulation: TEXT    │                                                                          ║  │
+│  ║  │ - commentaireGeneral: TEXT │   ┌───────────────────────┐    ┌───────────────────────┐                ║  │
+│  ║  └────────────────────────────┘   │   <<enumeration>>     │    │   <<enumeration>>     │                ║  │
+│  ║             │                     │     StatutObs         │    │     TypeReponse       │                ║  │
+│  ║             ▼                     ├───────────────────────┤    ├───────────────────────┤                ║  │
+│  ║   ┌───────────────────────┐      │ SOUMISE               │    │ BOOLEAN               │                ║  │
+│  ║   │   <<enumeration>>     │      │ ANNULEE               │    │ TEXTE_LIBRE           │                ║  │
+│  ║   │     TypeMarche        │      └───────────────────────┘    │ NOTE_1_5              │                ║  │
+│  ║   ├───────────────────────┤                                   │ CHOIX_MULTIPLE        │                ║  │
+│  ║   │ PARTICULIERS          │                                   └───────────────────────┘                ║  │
+│  ║   │ ENTREPRISES           │                                                                             ║  │
+│  ║   │ MULTI_MARCHES         │                                                                             ║  │
+│  ║   └───────────────────────┘                                                                             ║  │
+│  ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════╝  │
+│                                                                                                                 │
+│  ╔═══════════════════════════════════════════════════════════════════════════════════════════════════════════╗  │
+│  ║                                    📦 PACKAGE: CONFIGURATION                                               ║  │
+│  ╠═══════════════════════════════════════════════════════════════════════════════════════════════════════════╣  │
+│  ║                                                                                                           ║  │
+│  ║  ┌────────────────────────────┐            ┌────────────────────────────┐                                ║  │
+│  ║  │      RegleGestion          │            │    ParametreSysteme        │                                ║  │
+│  ║  ├────────────────────────────┤            ├────────────────────────────┤                                ║  │
+│  ║  │ - id: UUID [PK]            │            │ - cle: VARCHAR(50) [PK]    │                                ║  │
+│  ║  │ - code: VARCHAR(10)        │            │ - valeur: VARCHAR(255)     │                                ║  │
+│  ║  │ - description: TEXT        │            │ - description: TEXT        │                                ║  │
+│  ║  │ - observateurRoleId: FK    │            │ - dateModification: TSTAMP │                                ║  │
+│  ║  │ - cibleRoleId: FK          │            └────────────────────────────┘                                ║  │
+│  ║  │ - conditionSQL: TEXT       │                                                                          ║  │
+│  ║  │ - actif: BOOLEAN           │            Exemples de paramètres:                                       ║  │
+│  ║  │ - priorite: INTEGER        │            - DELAI_ANNULATION = 24 (heures)                              ║  │
+│  ║  └────────────────────────────┘            - PROFONDEUR_HISTORIQUE = 12 (mois)                           ║  │
+│  ║                                            - SYNC_ASAL_CRON = "0 0 2 * * ?"                              ║  │
+│  ╚═══════════════════════════════════════════════════════════════════════════════════════════════════════════╝  │
+│                                                                                                                 │
+│  ┌───────────────────────────────────────────────────────────────────────────────────────────────────────────┐  │
+│  │                                         LÉGENDE                                                           │  │
+│  ├───────────────────────────────────────────────────────────────────────────────────────────────────────────┤  │
+│  │   ◆────────*  Composition (1 vers N)      │   FK = Foreign Key        │   [PK] = Primary Key             │  │
+│  │   ────────▶   Référence / Association     │   TIMESTAMP = Date+Heure  │   UUID = Identifiant unique      │  │
+│  │   <<enum>>    Enumération                 │   TEXT = Texte long       │   BOOLEAN = Oui/Non              │  │
+│  └───────────────────────────────────────────────────────────────────────────────────────────────────────────┘  │
+│                                                                                                                 │
+└─────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+</pre>
+</div>
+
+<div class="highlight">
+    <strong>8 Modèles d'Observation MVP:</strong> CAE (9Q), GE (10Q), CTS (11Q), CAC (7Q), DA (8Q), CC IGP, CC Premium, CC PRO
+</div>
+</div>
+
+<!-- SCHEMA 10: ARCHITECTURE DDL POSTGRESQL -->
+<div class="box">
+<h2>10. ARCHITECTURE DDL POSTGRESQL</h2>
+
+<div class="info">
+    <strong>Base de données:</strong> PostgreSQL 15/16 | <strong>Encodage:</strong> UTF-8 | <strong>Schema:</strong> followup
+</div>
+
+<div class="schema" style="background: #0d1117; font-size: 13px;">
+<pre style="color: #c9d1d9;">
+<span style="color:#ff7b72;">-- ============================================</span>
+<span style="color:#ff7b72;">-- FOLLOW UP BOA - DDL PostgreSQL v2.0</span>
+<span style="color:#ff7b72;">-- Base de données: PostgreSQL 15/16</span>
+<span style="color:#ff7b72;">-- Date: Avril 2026</span>
+<span style="color:#ff7b72;">-- ============================================</span>
+
+<span style="color:#ff7b72;">-- Création du schéma</span>
+<span style="color:#79c0ff;">CREATE SCHEMA IF NOT EXISTS</span> followup;
+<span style="color:#79c0ff;">SET</span> search_path <span style="color:#79c0ff;">TO</span> followup;
+
+<span style="color:#ff7b72;">-- Extension pour UUID</span>
+<span style="color:#79c0ff;">CREATE EXTENSION IF NOT EXISTS</span> <span style="color:#a5d6ff;">"uuid-ossp"</span>;
+
+<span style="color:#ff7b72;">-- ============================================</span>
+<span style="color:#ff7b72;">-- 1. TYPES ENUMÉRÉS</span>
+<span style="color:#ff7b72;">-- ============================================</span>
+
+<span style="color:#79c0ff;">CREATE TYPE</span> type_point_vente <span style="color:#79c0ff;">AS ENUM</span> (
+    <span style="color:#a5d6ff;">'AGENCE_CITADINE'</span>, <span style="color:#a5d6ff;">'AGENCE_ETENDARD'</span>, <span style="color:#a5d6ff;">'AGENCE_CONTACT'</span>, <span style="color:#a5d6ff;">'AGENCE_EXCLUSIVE'</span>,
+    <span style="color:#a5d6ff;">'CAF_A'</span>, <span style="color:#a5d6ff;">'CAF_B'</span>, <span style="color:#a5d6ff;">'CAF_C'</span>, <span style="color:#a5d6ff;">'CEMM'</span>, <span style="color:#a5d6ff;">'DESK'</span>
+);
+
+<span style="color:#79c0ff;">CREATE TYPE</span> type_role <span style="color:#79c0ff;">AS ENUM</span> (
+    <span style="color:#a5d6ff;">'OBSERVATEUR'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>, <span style="color:#a5d6ff;">'DOUBLE_ROLE'</span>, <span style="color:#a5d6ff;">'ADMINISTRATEUR'</span>
+);
+
+<span style="color:#79c0ff;">CREATE TYPE</span> type_rattachement <span style="color:#79c0ff;">AS ENUM</span> (<span style="color:#a5d6ff;">'REGION'</span>, <span style="color:#a5d6ff;">'SIEGE'</span>);
+
+<span style="color:#79c0ff;">CREATE TYPE</span> type_marche <span style="color:#79c0ff;">AS ENUM</span> (<span style="color:#a5d6ff;">'PARTICULIERS'</span>, <span style="color:#a5d6ff;">'ENTREPRISES'</span>, <span style="color:#a5d6ff;">'MULTI_MARCHES'</span>);
+
+<span style="color:#79c0ff;">CREATE TYPE</span> statut_observation <span style="color:#79c0ff;">AS ENUM</span> (<span style="color:#a5d6ff;">'SOUMISE'</span>, <span style="color:#a5d6ff;">'ANNULEE'</span>);
+
+<span style="color:#79c0ff;">CREATE TYPE</span> type_reponse <span style="color:#79c0ff;">AS ENUM</span> (<span style="color:#a5d6ff;">'BOOLEAN'</span>, <span style="color:#a5d6ff;">'TEXTE_LIBRE'</span>, <span style="color:#a5d6ff;">'NOTE_1_5'</span>, <span style="color:#a5d6ff;">'CHOIX_MULTIPLE'</span>);
+
+<span style="color:#ff7b72;">-- ============================================</span>
+<span style="color:#ff7b72;">-- 2. TABLES ORGANISATION</span>
+<span style="color:#ff7b72;">-- ============================================</span>
+
+<span style="color:#79c0ff;">CREATE TABLE</span> region (
+    id          <span style="color:#79c0ff;">UUID PRIMARY KEY DEFAULT</span> uuid_generate_v4(),
+    code        <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">10</span>) <span style="color:#79c0ff;">UNIQUE NOT NULL</span>,
+    nom         <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">100</span>) <span style="color:#79c0ff;">NOT NULL</span>,
+    niveau      <span style="color:#79c0ff;">CHAR</span>(<span style="color:#79c0ff;">2</span>) <span style="color:#79c0ff;">DEFAULT</span> <span style="color:#a5d6ff;">'N5'</span>,
+    actif       <span style="color:#79c0ff;">BOOLEAN DEFAULT TRUE</span>,
+    created_at  <span style="color:#79c0ff;">TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span>,
+    updated_at  <span style="color:#79c0ff;">TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span>
+);
+
+<span style="color:#79c0ff;">CREATE TABLE</span> sous_region (
+    id          <span style="color:#79c0ff;">UUID PRIMARY KEY DEFAULT</span> uuid_generate_v4(),
+    code        <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">10</span>) <span style="color:#79c0ff;">UNIQUE NOT NULL</span>,
+    nom         <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">100</span>) <span style="color:#79c0ff;">NOT NULL</span>,
+    niveau      <span style="color:#79c0ff;">CHAR</span>(<span style="color:#79c0ff;">2</span>) <span style="color:#79c0ff;">DEFAULT</span> <span style="color:#a5d6ff;">'N4'</span>,
+    region_id   <span style="color:#79c0ff;">UUID NOT NULL REFERENCES</span> region(id),
+    actif       <span style="color:#79c0ff;">BOOLEAN DEFAULT TRUE</span>,
+    created_at  <span style="color:#79c0ff;">TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span>,
+    updated_at  <span style="color:#79c0ff;">TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span>
+);
+
+<span style="color:#79c0ff;">CREATE TABLE</span> groupe (
+    id              <span style="color:#79c0ff;">UUID PRIMARY KEY DEFAULT</span> uuid_generate_v4(),
+    code            <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">10</span>) <span style="color:#79c0ff;">UNIQUE NOT NULL</span>,
+    nom             <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">100</span>) <span style="color:#79c0ff;">NOT NULL</span>,
+    niveau          <span style="color:#79c0ff;">CHAR</span>(<span style="color:#79c0ff;">2</span>) <span style="color:#79c0ff;">DEFAULT</span> <span style="color:#a5d6ff;">'N3'</span>,
+    sous_region_id  <span style="color:#79c0ff;">UUID NOT NULL REFERENCES</span> sous_region(id),
+    actif           <span style="color:#79c0ff;">BOOLEAN DEFAULT TRUE</span>,
+    created_at      <span style="color:#79c0ff;">TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span>,
+    updated_at      <span style="color:#79c0ff;">TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span>
+);
+
+<span style="color:#79c0ff;">CREATE TABLE</span> point_de_vente (
+    id          <span style="color:#79c0ff;">UUID PRIMARY KEY DEFAULT</span> uuid_generate_v4(),
+    code        <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">10</span>) <span style="color:#79c0ff;">UNIQUE NOT NULL</span>,
+    nom         <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">150</span>) <span style="color:#79c0ff;">NOT NULL</span>,
+    type        type_point_vente <span style="color:#79c0ff;">NOT NULL</span>,
+    groupe_id   <span style="color:#79c0ff;">UUID NOT NULL REFERENCES</span> groupe(id),
+    niveau      <span style="color:#79c0ff;">CHAR</span>(<span style="color:#79c0ff;">2</span>) <span style="color:#79c0ff;">DEFAULT</span> <span style="color:#a5d6ff;">'N2'</span>,
+    actif       <span style="color:#79c0ff;">BOOLEAN DEFAULT TRUE</span>,
+    created_at  <span style="color:#79c0ff;">TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span>,
+    updated_at  <span style="color:#79c0ff;">TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span>
+);
+
+<span style="color:#79c0ff;">CREATE TABLE</span> desk (
+    id              <span style="color:#79c0ff;">UUID PRIMARY KEY DEFAULT</span> uuid_generate_v4(),
+    code            <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">10</span>) <span style="color:#79c0ff;">UNIQUE NOT NULL</span>,
+    nom             <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">100</span>) <span style="color:#79c0ff;">NOT NULL</span>,
+    niveau          <span style="color:#79c0ff;">CHAR</span>(<span style="color:#79c0ff;">2</span>) <span style="color:#79c0ff;">DEFAULT</span> <span style="color:#a5d6ff;">'N1'</span>,
+    point_vente_id  <span style="color:#79c0ff;">UUID REFERENCES</span> point_de_vente(id),
+    actif           <span style="color:#79c0ff;">BOOLEAN DEFAULT TRUE</span>,
+    created_at      <span style="color:#79c0ff;">TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span>
+);
+
+<span style="color:#ff7b72;">-- ============================================</span>
+<span style="color:#ff7b72;">-- 3. TABLES UTILISATEURS</span>
+<span style="color:#ff7b72;">-- ============================================</span>
+
+<span style="color:#79c0ff;">CREATE TABLE</span> fonction_asal (
+    code        <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">20</span>) <span style="color:#79c0ff;">PRIMARY KEY</span>,
+    libelle     <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">150</span>) <span style="color:#79c0ff;">NOT NULL</span>,
+    categorie   <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">50</span>),  <span style="color:#8b949e;">-- Ex: OBSERVATEUR, CIBLE, DOUBLE_ROLE</span>
+    actif       <span style="color:#79c0ff;">BOOLEAN DEFAULT TRUE</span>
+);
+
+<span style="color:#79c0ff;">CREATE TABLE</span> role_followup (
+    id          <span style="color:#79c0ff;">UUID PRIMARY KEY DEFAULT</span> uuid_generate_v4(),
+    code        <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">30</span>) <span style="color:#79c0ff;">UNIQUE NOT NULL</span>,
+    libelle     <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">100</span>) <span style="color:#79c0ff;">NOT NULL</span>,
+    type_role   type_role <span style="color:#79c0ff;">NOT NULL</span>,
+    description <span style="color:#79c0ff;">TEXT</span>
+);
+
+<span style="color:#79c0ff;">CREATE TABLE</span> mapping_fonction_role (
+    id                  <span style="color:#79c0ff;">UUID PRIMARY KEY DEFAULT</span> uuid_generate_v4(),
+    fonction_asal_code  <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">20</span>) <span style="color:#79c0ff;">REFERENCES</span> fonction_asal(code),
+    role_followup_id    <span style="color:#79c0ff;">UUID REFERENCES</span> role_followup(id),
+    actif               <span style="color:#79c0ff;">BOOLEAN DEFAULT TRUE</span>,
+    <span style="color:#79c0ff;">UNIQUE</span>(fonction_asal_code, role_followup_id)
+);
+
+<span style="color:#79c0ff;">CREATE TABLE</span> utilisateur_followup (
+    id              <span style="color:#79c0ff;">UUID PRIMARY KEY DEFAULT</span> uuid_generate_v4(),
+    matricule       <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">20</span>) <span style="color:#79c0ff;">UNIQUE NOT NULL</span>,
+    nom             <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">100</span>) <span style="color:#79c0ff;">NOT NULL</span>,
+    prenom          <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">100</span>),
+    email           <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">150</span>),
+    telephone       <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">20</span>),
+    fonction_code   <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">20</span>) <span style="color:#79c0ff;">REFERENCES</span> fonction_asal(code),
+    role_id         <span style="color:#79c0ff;">UUID REFERENCES</span> role_followup(id),
+    point_vente_id  <span style="color:#79c0ff;">UUID REFERENCES</span> point_de_vente(id),
+    keycloak_id     <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">50</span>),
+    actif           <span style="color:#79c0ff;">BOOLEAN DEFAULT TRUE</span>,
+    date_sync_asal  <span style="color:#79c0ff;">TIMESTAMP</span>,
+    created_at      <span style="color:#79c0ff;">TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span>,
+    dernier_acces   <span style="color:#79c0ff;">TIMESTAMP</span>
+);
+
+<span style="color:#79c0ff;">CREATE TABLE</span> affectation_animateur (
+    id                  <span style="color:#79c0ff;">UUID PRIMARY KEY DEFAULT</span> uuid_generate_v4(),
+    utilisateur_id      <span style="color:#79c0ff;">UUID NOT NULL REFERENCES</span> utilisateur_followup(id),
+    type_rattachement   type_rattachement <span style="color:#79c0ff;">NOT NULL</span>,
+    region_id           <span style="color:#79c0ff;">UUID REFERENCES</span> region(id),
+    groupe_id           <span style="color:#79c0ff;">UUID REFERENCES</span> groupe(id),
+    point_vente_id      <span style="color:#79c0ff;">UUID REFERENCES</span> point_de_vente(id),
+    date_debut          <span style="color:#79c0ff;">DATE NOT NULL DEFAULT CURRENT_DATE</span>,
+    date_fin            <span style="color:#79c0ff;">DATE</span>,
+    <span style="color:#79c0ff;">CONSTRAINT</span> chk_affectation <span style="color:#79c0ff;">CHECK</span> (
+        (region_id <span style="color:#79c0ff;">IS NOT NULL AND</span> groupe_id <span style="color:#79c0ff;">IS NULL AND</span> point_vente_id <span style="color:#79c0ff;">IS NULL</span>) <span style="color:#79c0ff;">OR</span>
+        (region_id <span style="color:#79c0ff;">IS NULL AND</span> groupe_id <span style="color:#79c0ff;">IS NOT NULL AND</span> point_vente_id <span style="color:#79c0ff;">IS NULL</span>) <span style="color:#79c0ff;">OR</span>
+        (region_id <span style="color:#79c0ff;">IS NULL AND</span> groupe_id <span style="color:#79c0ff;">IS NULL AND</span> point_vente_id <span style="color:#79c0ff;">IS NOT NULL</span>)
+    )
+);
+
+<span style="color:#ff7b72;">-- ============================================</span>
+<span style="color:#ff7b72;">-- 4. TABLES OBSERVATIONS</span>
+<span style="color:#ff7b72;">-- ============================================</span>
+
+<span style="color:#79c0ff;">CREATE TABLE</span> modele_observation (
+    id              <span style="color:#79c0ff;">UUID PRIMARY KEY DEFAULT</span> uuid_generate_v4(),
+    code            <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">20</span>) <span style="color:#79c0ff;">UNIQUE NOT NULL</span>,  <span style="color:#8b949e;">-- Ex: OBS_CAE, OBS_GE, OBS_CAC</span>
+    libelle         <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">100</span>) <span style="color:#79c0ff;">NOT NULL</span>,
+    marche          type_marche <span style="color:#79c0ff;">NOT NULL</span>,
+    cible_role_id   <span style="color:#79c0ff;">UUID REFERENCES</span> role_followup(id),
+    actif           <span style="color:#79c0ff;">BOOLEAN DEFAULT TRUE</span>,
+    version         <span style="color:#79c0ff;">INTEGER DEFAULT</span> <span style="color:#79c0ff;">1</span>,
+    created_at      <span style="color:#79c0ff;">TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span>
+);
+
+<span style="color:#79c0ff;">CREATE TABLE</span> question (
+    id              <span style="color:#79c0ff;">UUID PRIMARY KEY DEFAULT</span> uuid_generate_v4(),
+    modele_id       <span style="color:#79c0ff;">UUID NOT NULL REFERENCES</span> modele_observation(id) <span style="color:#79c0ff;">ON DELETE CASCADE</span>,
+    numero          <span style="color:#79c0ff;">INTEGER NOT NULL</span>,
+    libelle         <span style="color:#79c0ff;">TEXT NOT NULL</span>,
+    type_reponse    type_reponse <span style="color:#79c0ff;">NOT NULL DEFAULT</span> <span style="color:#a5d6ff;">'BOOLEAN'</span>,
+    obligatoire     <span style="color:#79c0ff;">BOOLEAN DEFAULT TRUE</span>,
+    ordre           <span style="color:#79c0ff;">INTEGER NOT NULL</span>,
+    <span style="color:#79c0ff;">UNIQUE</span>(modele_id, numero)
+);
+
+<span style="color:#79c0ff;">CREATE TABLE</span> observation (
+    id                  <span style="color:#79c0ff;">UUID PRIMARY KEY DEFAULT</span> uuid_generate_v4(),
+    modele_id           <span style="color:#79c0ff;">UUID NOT NULL REFERENCES</span> modele_observation(id),
+    observateur_id      <span style="color:#79c0ff;">UUID NOT NULL REFERENCES</span> utilisateur_followup(id),
+    cible_id            <span style="color:#79c0ff;">UUID NOT NULL REFERENCES</span> utilisateur_followup(id),
+    point_vente_id      <span style="color:#79c0ff;">UUID NOT NULL REFERENCES</span> point_de_vente(id),
+    statut              statut_observation <span style="color:#79c0ff;">NOT NULL DEFAULT</span> <span style="color:#a5d6ff;">'SOUMISE'</span>,
+    date_soumission     <span style="color:#79c0ff;">TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP</span>,
+    date_annulation     <span style="color:#79c0ff;">TIMESTAMP</span>,
+    motif_annulation    <span style="color:#79c0ff;">TEXT</span>,
+    commentaire_general <span style="color:#79c0ff;">TEXT</span>,
+    created_at          <span style="color:#79c0ff;">TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span>,
+    <span style="color:#79c0ff;">CONSTRAINT</span> chk_annulation <span style="color:#79c0ff;">CHECK</span> (
+        statut = <span style="color:#a5d6ff;">'ANNULEE'</span> <span style="color:#79c0ff;">AND</span> date_annulation <span style="color:#79c0ff;">IS NOT NULL OR</span>
+        statut = <span style="color:#a5d6ff;">'SOUMISE'</span> <span style="color:#79c0ff;">AND</span> date_annulation <span style="color:#79c0ff;">IS NULL</span>
+    )
+);
+
+<span style="color:#79c0ff;">CREATE TABLE</span> reponse_observation (
+    id              <span style="color:#79c0ff;">UUID PRIMARY KEY DEFAULT</span> uuid_generate_v4(),
+    observation_id  <span style="color:#79c0ff;">UUID NOT NULL REFERENCES</span> observation(id) <span style="color:#79c0ff;">ON DELETE CASCADE</span>,
+    question_id     <span style="color:#79c0ff;">UUID NOT NULL REFERENCES</span> question(id),
+    valeur_boolean  <span style="color:#79c0ff;">BOOLEAN</span>,
+    valeur_texte    <span style="color:#79c0ff;">TEXT</span>,
+    valeur_numerique <span style="color:#79c0ff;">DECIMAL</span>(<span style="color:#79c0ff;">5</span>,<span style="color:#79c0ff;">2</span>),
+    commentaire     <span style="color:#79c0ff;">TEXT</span>,
+    <span style="color:#79c0ff;">UNIQUE</span>(observation_id, question_id)
+);
+
+<span style="color:#ff7b72;">-- ============================================</span>
+<span style="color:#ff7b72;">-- 5. TABLES CONFIGURATION</span>
+<span style="color:#ff7b72;">-- ============================================</span>
+
+<span style="color:#79c0ff;">CREATE TABLE</span> regle_gestion (
+    id                  <span style="color:#79c0ff;">UUID PRIMARY KEY DEFAULT</span> uuid_generate_v4(),
+    code                <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">10</span>) <span style="color:#79c0ff;">UNIQUE NOT NULL</span>,  <span style="color:#8b949e;">-- RG1, RG2, ... RG32</span>
+    description         <span style="color:#79c0ff;">TEXT NOT NULL</span>,
+    observateur_role_id <span style="color:#79c0ff;">UUID REFERENCES</span> role_followup(id),
+    cible_role_id       <span style="color:#79c0ff;">UUID REFERENCES</span> role_followup(id),
+    condition_sql       <span style="color:#79c0ff;">TEXT</span>,  <span style="color:#8b949e;">-- Condition technique pour validation</span>
+    actif               <span style="color:#79c0ff;">BOOLEAN DEFAULT TRUE</span>,
+    priorite            <span style="color:#79c0ff;">INTEGER DEFAULT</span> <span style="color:#79c0ff;">0</span>
+);
+
+<span style="color:#79c0ff;">CREATE TABLE</span> parametre_systeme (
+    cle             <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">50</span>) <span style="color:#79c0ff;">PRIMARY KEY</span>,
+    valeur          <span style="color:#79c0ff;">VARCHAR</span>(<span style="color:#79c0ff;">255</span>) <span style="color:#79c0ff;">NOT NULL</span>,
+    description     <span style="color:#79c0ff;">TEXT</span>,
+    date_modification <span style="color:#79c0ff;">TIMESTAMP DEFAULT CURRENT_TIMESTAMP</span>
+);
+
+<span style="color:#ff7b72;">-- ============================================</span>
+<span style="color:#ff7b72;">-- 6. INDEX POUR PERFORMANCE</span>
+<span style="color:#ff7b72;">-- ============================================</span>
+
+<span style="color:#79c0ff;">CREATE INDEX</span> idx_pdv_groupe <span style="color:#79c0ff;">ON</span> point_de_vente(groupe_id);
+<span style="color:#79c0ff;">CREATE INDEX</span> idx_pdv_type <span style="color:#79c0ff;">ON</span> point_de_vente(type);
+<span style="color:#79c0ff;">CREATE INDEX</span> idx_user_matricule <span style="color:#79c0ff;">ON</span> utilisateur_followup(matricule);
+<span style="color:#79c0ff;">CREATE INDEX</span> idx_user_role <span style="color:#79c0ff;">ON</span> utilisateur_followup(role_id);
+<span style="color:#79c0ff;">CREATE INDEX</span> idx_user_pdv <span style="color:#79c0ff;">ON</span> utilisateur_followup(point_vente_id);
+<span style="color:#79c0ff;">CREATE INDEX</span> idx_obs_observateur <span style="color:#79c0ff;">ON</span> observation(observateur_id);
+<span style="color:#79c0ff;">CREATE INDEX</span> idx_obs_cible <span style="color:#79c0ff;">ON</span> observation(cible_id);
+<span style="color:#79c0ff;">CREATE INDEX</span> idx_obs_date <span style="color:#79c0ff;">ON</span> observation(date_soumission);
+<span style="color:#79c0ff;">CREATE INDEX</span> idx_obs_statut <span style="color:#79c0ff;">ON</span> observation(statut);
+<span style="color:#79c0ff;">CREATE INDEX</span> idx_aff_user <span style="color:#79c0ff;">ON</span> affectation_animateur(utilisateur_id);
+
+<span style="color:#ff7b72;">-- ============================================</span>
+<span style="color:#ff7b72;">-- 7. DONNEES INITIALES</span>
+<span style="color:#ff7b72;">-- ============================================</span>
+
+<span style="color:#8b949e;">-- Paramètres système</span>
+<span style="color:#79c0ff;">INSERT INTO</span> parametre_systeme (cle, valeur, description) <span style="color:#79c0ff;">VALUES</span>
+(<span style="color:#a5d6ff;">'DELAI_ANNULATION_HEURES'</span>, <span style="color:#a5d6ff;">'24'</span>, <span style="color:#a5d6ff;">'Délai en heures pour annuler une observation'</span>),
+(<span style="color:#a5d6ff;">'PROFONDEUR_HISTORIQUE_MOIS'</span>, <span style="color:#a5d6ff;">'12'</span>, <span style="color:#a5d6ff;">'Profondeur historique en mois'</span>),
+(<span style="color:#a5d6ff;">'SYNC_ASAL_CRON'</span>, <span style="color:#a5d6ff;">'0 0 2 * * ?'</span>, <span style="color:#a5d6ff;">'Cron de synchronisation ASAL (2h du matin)'</span>);
+
+<span style="color:#8b949e;">-- Rôles Follow Up</span>
+<span style="color:#79c0ff;">INSERT INTO</span> role_followup (code, libelle, type_role) <span style="color:#79c0ff;">VALUES</span>
+(<span style="color:#a5d6ff;">'DIR_GROUPE'</span>, <span style="color:#a5d6ff;">'Directeur de Groupe'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'DIR_AGENCE'</span>, <span style="color:#a5d6ff;">'Directeur d''Agence'</span>, <span style="color:#a5d6ff;">'DOUBLE_ROLE'</span>),
+(<span style="color:#a5d6ff;">'RCP'</span>, <span style="color:#a5d6ff;">'Responsable Clientèle Particuliers'</span>, <span style="color:#a5d6ff;">'DOUBLE_ROLE'</span>),
+(<span style="color:#a5d6ff;">'DIR_CAF'</span>, <span style="color:#a5d6ff;">'Directeur Centre d''Affaires'</span>, <span style="color:#a5d6ff;">'DOUBLE_ROLE'</span>),
+(<span style="color:#a5d6ff;">'RCE'</span>, <span style="color:#a5d6ff;">'Responsable Clientèle Entreprises'</span>, <span style="color:#a5d6ff;">'DOUBLE_ROLE'</span>),
+(<span style="color:#a5d6ff;">'DIR_CEMM'</span>, <span style="color:#a5d6ff;">'Directeur CEMM'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'ANIMATEUR'</span>, <span style="color:#a5d6ff;">'Animateur'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'CAC'</span>, <span style="color:#a5d6ff;">'Chargé d''Appui Commercial'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>),
+(<span style="color:#a5d6ff;">'CC_IGP'</span>, <span style="color:#a5d6ff;">'Conseiller IGP'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>),
+(<span style="color:#a5d6ff;">'CC_PRO'</span>, <span style="color:#a5d6ff;">'Conseiller PRO'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>),
+(<span style="color:#a5d6ff;">'CC_PREMIUM'</span>, <span style="color:#a5d6ff;">'Conseiller Premium'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>),
+(<span style="color:#a5d6ff;">'CHARGE_AFF'</span>, <span style="color:#a5d6ff;">'Chargé d''Affaires Entreprises'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>),
+(<span style="color:#a5d6ff;">'GEST_ENT'</span>, <span style="color:#a5d6ff;">'Gestionnaire Entreprises'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>),
+(<span style="color:#a5d6ff;">'CASH_TRADE'</span>, <span style="color:#a5d6ff;">'Cash & Trade Specialist'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>),
+(<span style="color:#a5d6ff;">'ADMIN'</span>, <span style="color:#a5d6ff;">'Administrateur'</span>, <span style="color:#a5d6ff;">'ADMINISTRATEUR'</span>);
+
+<span style="color:#8b949e;">-- 8 Modèles d'observation MVP</span>
+<span style="color:#79c0ff;">INSERT INTO</span> modele_observation (code, libelle, marche) <span style="color:#79c0ff;">VALUES</span>
+(<span style="color:#a5d6ff;">'OBS_CAE'</span>, <span style="color:#a5d6ff;">'Observation Chargé d''Affaires'</span>, <span style="color:#a5d6ff;">'ENTREPRISES'</span>),
+(<span style="color:#a5d6ff;">'OBS_GE'</span>, <span style="color:#a5d6ff;">'Observation Gestionnaire Entreprises'</span>, <span style="color:#a5d6ff;">'ENTREPRISES'</span>),
+(<span style="color:#a5d6ff;">'OBS_CTS'</span>, <span style="color:#a5d6ff;">'Observation Cash & Trade Specialist'</span>, <span style="color:#a5d6ff;">'ENTREPRISES'</span>),
+(<span style="color:#a5d6ff;">'OBS_CAC'</span>, <span style="color:#a5d6ff;">'Observation CAC'</span>, <span style="color:#a5d6ff;">'PARTICULIERS'</span>),
+(<span style="color:#a5d6ff;">'OBS_DA'</span>, <span style="color:#a5d6ff;">'Observation Directeur Agence'</span>, <span style="color:#a5d6ff;">'PARTICULIERS'</span>),
+(<span style="color:#a5d6ff;">'OBS_CC_IGP'</span>, <span style="color:#a5d6ff;">'Observation Conseiller IGP'</span>, <span style="color:#a5d6ff;">'PARTICULIERS'</span>),
+(<span style="color:#a5d6ff;">'OBS_CC_PREMIUM'</span>, <span style="color:#a5d6ff;">'Observation Conseiller Premium'</span>, <span style="color:#a5d6ff;">'PARTICULIERS'</span>),
+(<span style="color:#a5d6ff;">'OBS_CC_PRO'</span>, <span style="color:#a5d6ff;">'Observation Conseiller PRO'</span>, <span style="color:#a5d6ff;">'PARTICULIERS'</span>);
+
+<span style="color:#ff7b72;">-- ============================================</span>
+<span style="color:#ff7b72;">-- 8. REGIONS (7 régions)</span>
+<span style="color:#ff7b72;">-- ============================================</span>
+
+<span style="color:#79c0ff;">INSERT INTO</span> region (code, nom) <span style="color:#79c0ff;">VALUES</span>
+(<span style="color:#a5d6ff;">'8720'</span>, <span style="color:#a5d6ff;">'Grand Casablanca'</span>),
+(<span style="color:#a5d6ff;">'8420'</span>, <span style="color:#a5d6ff;">'Centre Atlantique'</span>),
+(<span style="color:#a5d6ff;">'8430'</span>, <span style="color:#a5d6ff;">'Nord Méditerranée'</span>),
+(<span style="color:#a5d6ff;">'8440'</span>, <span style="color:#a5d6ff;">'Centre'</span>),
+(<span style="color:#a5d6ff;">'8450'</span>, <span style="color:#a5d6ff;">'Centre Méridional'</span>),
+(<span style="color:#a5d6ff;">'8460'</span>, <span style="color:#a5d6ff;">'Oriental'</span>),
+(<span style="color:#a5d6ff;">'8350'</span>, <span style="color:#a5d6ff;">'Souss Massa Provinces du Sud'</span>);
+
+<span style="color:#ff7b72;">-- ============================================</span>
+<span style="color:#ff7b72;">-- 9. SOUS-REGIONS (~15 sous-régions)</span>
+<span style="color:#ff7b72;">-- ============================================</span>
+
+<span style="color:#79c0ff;">INSERT INTO</span> sous_region (code, nom, region_id) <span style="color:#79c0ff;">VALUES</span>
+<span style="color:#8b949e;">-- Grand Casablanca (8720)</span>
+(<span style="color:#a5d6ff;">'8730'</span>, <span style="color:#a5d6ff;">'Casa Littoral'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8720'</span>)),
+(<span style="color:#a5d6ff;">'8740'</span>, <span style="color:#a5d6ff;">'Casa Centre & Est'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8720'</span>)),
+(<span style="color:#a5d6ff;">'8750'</span>, <span style="color:#a5d6ff;">'Casa Sud Ouest'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8720'</span>)),
+<span style="color:#8b949e;">-- Centre Atlantique (8420)</span>
+(<span style="color:#a5d6ff;">'8425'</span>, <span style="color:#a5d6ff;">'Part Pro Centre Atlantique'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8420'</span>)),
+(<span style="color:#a5d6ff;">'8426'</span>, <span style="color:#a5d6ff;">'Entreprises Centre Atlantique'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8420'</span>)),
+<span style="color:#8b949e;">-- Nord Méditerranée (8430)</span>
+(<span style="color:#a5d6ff;">'8431'</span>, <span style="color:#a5d6ff;">'Dév. & Pilotage Nord Méditerranée'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8430'</span>)),
+(<span style="color:#a5d6ff;">'8438'</span>, <span style="color:#a5d6ff;">'Entreprises Nord Méditerranée'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8430'</span>)),
+<span style="color:#8b949e;">-- Centre (8440)</span>
+(<span style="color:#a5d6ff;">'8441'</span>, <span style="color:#a5d6ff;">'Dév. & Pilotage Centre'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8440'</span>)),
+<span style="color:#8b949e;">-- Centre Méridional (8450)</span>
+(<span style="color:#a5d6ff;">'8451'</span>, <span style="color:#a5d6ff;">'Dév. & Pilotage Centre Méridional'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8450'</span>)),
+(<span style="color:#a5d6ff;">'8455'</span>, <span style="color:#a5d6ff;">'Entreprises Centre Méridional'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8450'</span>)),
+<span style="color:#8b949e;">-- Oriental (8460)</span>
+(<span style="color:#a5d6ff;">'8461'</span>, <span style="color:#a5d6ff;">'Dév. & Pilotage Oriental'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8460'</span>)),
+<span style="color:#8b949e;">-- Souss Massa (8350)</span>
+(<span style="color:#a5d6ff;">'8351'</span>, <span style="color:#a5d6ff;">'Agadir Sud'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8350'</span>)),
+(<span style="color:#a5d6ff;">'8352'</span>, <span style="color:#a5d6ff;">'Provinces du Sud'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8350'</span>));
+
+<span style="color:#ff7b72;">-- ============================================</span>
+<span style="color:#ff7b72;">-- 10. GROUPES (Exemples représentatifs)</span>
+<span style="color:#ff7b72;">-- ============================================</span>
+
+<span style="color:#79c0ff;">INSERT INTO</span> groupe (code, nom, sous_region_id) <span style="color:#79c0ff;">VALUES</span>
+<span style="color:#8b949e;">-- Casa Littoral (8730)</span>
+(<span style="color:#a5d6ff;">'1212'</span>, <span style="color:#a5d6ff;">'Groupe Mohammedia'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8730'</span>)),
+(<span style="color:#a5d6ff;">'1213'</span>, <span style="color:#a5d6ff;">'Groupe Ain Sebaa'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8730'</span>)),
+(<span style="color:#a5d6ff;">'1218'</span>, <span style="color:#a5d6ff;">'Groupe Sidi Moumen'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8730'</span>)),
+(<span style="color:#a5d6ff;">'1219'</span>, <span style="color:#a5d6ff;">'Groupe Cotiere'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8730'</span>)),
+(<span style="color:#a5d6ff;">'1349'</span>, <span style="color:#a5d6ff;">'Groupe Zenata'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8730'</span>)),
+<span style="color:#8b949e;">-- Casa Centre & Est (8740)</span>
+(<span style="color:#a5d6ff;">'1347'</span>, <span style="color:#a5d6ff;">'Groupe Casa Medina'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8740'</span>)),
+(<span style="color:#a5d6ff;">'1221'</span>, <span style="color:#a5d6ff;">'Groupe 2 Mars'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8740'</span>)),
+(<span style="color:#a5d6ff;">'1222'</span>, <span style="color:#a5d6ff;">'Groupe Derb Sultan'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8740'</span>)),
+(<span style="color:#a5d6ff;">'1224'</span>, <span style="color:#a5d6ff;">'Groupe Oasis'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8740'</span>)),
+<span style="color:#8b949e;">-- Casa Sud Ouest (8750)</span>
+(<span style="color:#a5d6ff;">'1231'</span>, <span style="color:#a5d6ff;">'Groupe Zenith'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8750'</span>)),
+(<span style="color:#a5d6ff;">'1237'</span>, <span style="color:#a5d6ff;">'Groupe El Oulfa'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8750'</span>)),
+(<span style="color:#a5d6ff;">'1238'</span>, <span style="color:#a5d6ff;">'Groupe Ain Chock'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8750'</span>)),
+(<span style="color:#a5d6ff;">'1348'</span>, <span style="color:#a5d6ff;">'Groupe Maarif'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8750'</span>)),
+<span style="color:#8b949e;">-- Centre Atlantique (8425)</span>
+(<span style="color:#a5d6ff;">'1109'</span>, <span style="color:#a5d6ff;">'Groupe Rabat'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8425'</span>)),
+(<span style="color:#a5d6ff;">'1110'</span>, <span style="color:#a5d6ff;">'Groupe Sale'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8425'</span>)),
+(<span style="color:#a5d6ff;">'1111'</span>, <span style="color:#a5d6ff;">'Groupe Kenitra'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8425'</span>)),
+<span style="color:#8b949e;">-- Nord Méditerranée (8431)</span>
+(<span style="color:#a5d6ff;">'1101'</span>, <span style="color:#a5d6ff;">'Groupe Tanger'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8431'</span>)),
+(<span style="color:#a5d6ff;">'1102'</span>, <span style="color:#a5d6ff;">'Groupe Tetouan'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8431'</span>)),
+<span style="color:#8b949e;">-- Centre (8441)</span>
+(<span style="color:#a5d6ff;">'1103'</span>, <span style="color:#a5d6ff;">'Groupe Fes'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8441'</span>)),
+(<span style="color:#a5d6ff;">'1104'</span>, <span style="color:#a5d6ff;">'Groupe Meknes'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8441'</span>)),
+<span style="color:#8b949e;">-- Centre Méridional (8451)</span>
+(<span style="color:#a5d6ff;">'1105'</span>, <span style="color:#a5d6ff;">'Groupe Marrakech'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8451'</span>)),
+(<span style="color:#a5d6ff;">'1106'</span>, <span style="color:#a5d6ff;">'Groupe Beni Mellal'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8451'</span>)),
+(<span style="color:#a5d6ff;">'1107'</span>, <span style="color:#a5d6ff;">'Groupe Safi'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8451'</span>)),
+<span style="color:#8b949e;">-- Oriental (8461)</span>
+(<span style="color:#a5d6ff;">'1113'</span>, <span style="color:#a5d6ff;">'Groupe Oujda'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8461'</span>)),
+(<span style="color:#a5d6ff;">'1114'</span>, <span style="color:#a5d6ff;">'Groupe Nador'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8461'</span>)),
+<span style="color:#8b949e;">-- Souss Massa (8351)</span>
+(<span style="color:#a5d6ff;">'1115'</span>, <span style="color:#a5d6ff;">'Groupe Agadir'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8351'</span>)),
+(<span style="color:#a5d6ff;">'1116'</span>, <span style="color:#a5d6ff;">'Groupe Laayoune'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8352'</span>)),
+(<span style="color:#a5d6ff;">'1117'</span>, <span style="color:#a5d6ff;">'Groupe Dakhla'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> sous_region <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'8352'</span>));
+
+<span style="color:#ff7b72;">-- ============================================</span>
+<span style="color:#ff7b72;">-- 11. POINTS DE VENTE (CAF + CEMM + Agences exemples)</span>
+<span style="color:#ff7b72;">-- ============================================</span>
+
+<span style="color:#8b949e;">-- Centre D'Affaires A (5 CAF - Grands Comptes)</span>
+<span style="color:#79c0ff;">INSERT INTO</span> point_de_vente (code, nom, type, groupe_id) <span style="color:#79c0ff;">VALUES</span>
+(<span style="color:#a5d6ff;">'78033C'</span>, <span style="color:#a5d6ff;">'Centre D''Affaires FAR'</span>, <span style="color:#a5d6ff;">'CAF_A'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1347'</span>)),
+(<span style="color:#a5d6ff;">'81001C'</span>, <span style="color:#a5d6ff;">'Centre D''Affaires Rabat'</span>, <span style="color:#a5d6ff;">'CAF_A'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1109'</span>)),
+(<span style="color:#a5d6ff;">'78020C'</span>, <span style="color:#a5d6ff;">'Centre D''Affaires Lalla Yacout'</span>, <span style="color:#a5d6ff;">'CAF_A'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1347'</span>)),
+(<span style="color:#a5d6ff;">'78019C'</span>, <span style="color:#a5d6ff;">'Centre D''Affaires Hassan II'</span>, <span style="color:#a5d6ff;">'CAF_A'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1347'</span>)),
+(<span style="color:#a5d6ff;">'78010C'</span>, <span style="color:#a5d6ff;">'Centre D''Affaires Mohamed V'</span>, <span style="color:#a5d6ff;">'CAF_A'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1347'</span>));
+
+<span style="color:#8b949e;">-- Centre D'Affaires B (15 CAF)</span>
+<span style="color:#79c0ff;">INSERT INTO</span> point_de_vente (code, nom, type, groupe_id) <span style="color:#79c0ff;">VALUES</span>
+(<span style="color:#a5d6ff;">'72015'</span>, <span style="color:#a5d6ff;">'C.A. Tetouan'</span>, <span style="color:#a5d6ff;">'CAF_B'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1102'</span>)),
+(<span style="color:#a5d6ff;">'33011C'</span>, <span style="color:#a5d6ff;">'C.A. Kenitra'</span>, <span style="color:#a5d6ff;">'CAF_B'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1111'</span>)),
+(<span style="color:#a5d6ff;">'45005C'</span>, <span style="color:#a5d6ff;">'Centre D''Affaires Marrakech'</span>, <span style="color:#a5d6ff;">'CAF_B'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1105'</span>)),
+(<span style="color:#a5d6ff;">'27001C'</span>, <span style="color:#a5d6ff;">'Centre D''Affaires Fes'</span>, <span style="color:#a5d6ff;">'CAF_B'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1103'</span>)),
+(<span style="color:#a5d6ff;">'81045'</span>, <span style="color:#a5d6ff;">'Centre D''Affaires Rabat Souissi'</span>, <span style="color:#a5d6ff;">'CAF_B'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1109'</span>)),
+(<span style="color:#a5d6ff;">'78029C'</span>, <span style="color:#a5d6ff;">'Centre D''Affaires Zenith Millenium'</span>, <span style="color:#a5d6ff;">'CAF_B'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1231'</span>)),
+(<span style="color:#a5d6ff;">'48011C'</span>, <span style="color:#a5d6ff;">'Centre D''Affaires Meknes'</span>, <span style="color:#a5d6ff;">'CAF_B'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1104'</span>)),
+(<span style="color:#a5d6ff;">'78065C'</span>, <span style="color:#a5d6ff;">'Centre D''Affaires Maarif Bir Anzarane'</span>, <span style="color:#a5d6ff;">'CAF_B'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1348'</span>)),
+(<span style="color:#a5d6ff;">'78096C'</span>, <span style="color:#a5d6ff;">'Centre D''Affaires BD Mohamed VI'</span>, <span style="color:#a5d6ff;">'CAF_B'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1348'</span>)),
+(<span style="color:#a5d6ff;">'78075C'</span>, <span style="color:#a5d6ff;">'Centre D''Affaires Zenata'</span>, <span style="color:#a5d6ff;">'CAF_B'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1349'</span>)),
+(<span style="color:#a5d6ff;">'01001C'</span>, <span style="color:#a5d6ff;">'Centre D''Affaires Agadir'</span>, <span style="color:#a5d6ff;">'CAF_B'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1115'</span>)),
+(<span style="color:#a5d6ff;">'82511'</span>, <span style="color:#a5d6ff;">'C.A. Temara'</span>, <span style="color:#a5d6ff;">'CAF_B'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1109'</span>)),
+(<span style="color:#a5d6ff;">'64001C'</span>, <span style="color:#a5d6ff;">'Centre D''Affaires Tanger'</span>, <span style="color:#a5d6ff;">'CAF_B'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1101'</span>)),
+(<span style="color:#a5d6ff;">'64031'</span>, <span style="color:#a5d6ff;">'Centre D''Affaires Tanger Gzenaya'</span>, <span style="color:#a5d6ff;">'CAF_B'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1101'</span>));
+
+<span style="color:#8b949e;">-- Centre D'Affaires C (6 CAF - PME/TPE)</span>
+<span style="color:#79c0ff;">INSERT INTO</span> point_de_vente (code, nom, type, groupe_id) <span style="color:#79c0ff;">VALUES</span>
+(<span style="color:#a5d6ff;">'02204'</span>, <span style="color:#a5d6ff;">'Centre D''Affaires Ait Melloul'</span>, <span style="color:#a5d6ff;">'CAF_C'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1115'</span>)),
+(<span style="color:#a5d6ff;">'45043'</span>, <span style="color:#a5d6ff;">'C.A. Marrakech Sidi Ghanem'</span>, <span style="color:#a5d6ff;">'CAF_C'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1105'</span>)),
+(<span style="color:#a5d6ff;">'50010C'</span>, <span style="color:#a5d6ff;">'C.A. Nador'</span>, <span style="color:#a5d6ff;">'CAF_C'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1114'</span>)),
+(<span style="color:#a5d6ff;">'59009C'</span>, <span style="color:#a5d6ff;">'C.A. Safi'</span>, <span style="color:#a5d6ff;">'CAF_C'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1107'</span>)),
+(<span style="color:#a5d6ff;">'09008'</span>, <span style="color:#a5d6ff;">'Centre D''Affaires Beni Mellal'</span>, <span style="color:#a5d6ff;">'CAF_C'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1106'</span>)),
+(<span style="color:#a5d6ff;">'43006'</span>, <span style="color:#a5d6ff;">'C.A. Laayoune'</span>, <span style="color:#a5d6ff;">'CAF_C'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1116'</span>));
+
+<span style="color:#8b949e;">-- CEMM (Centres d'Expertise Multi-Marchés)</span>
+<span style="color:#79c0ff;">INSERT INTO</span> point_de_vente (code, nom, type, groupe_id) <span style="color:#79c0ff;">VALUES</span>
+(<span style="color:#a5d6ff;">'64507'</span>, <span style="color:#a5d6ff;">'CEMM Tanger Offshore'</span>, <span style="color:#a5d6ff;">'CEMM'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1101'</span>)),
+(<span style="color:#a5d6ff;">'53001'</span>, <span style="color:#a5d6ff;">'CEMM Dakhla'</span>, <span style="color:#a5d6ff;">'CEMM'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1117'</span>)),
+(<span style="color:#a5d6ff;">'57013C'</span>, <span style="color:#a5d6ff;">'CEMM Oujda'</span>, <span style="color:#a5d6ff;">'CEMM'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1113'</span>));
+
+<span style="color:#8b949e;">-- Agences exemples (Mohammedia)</span>
+<span style="color:#79c0ff;">INSERT INTO</span> point_de_vente (code, nom, type, groupe_id) <span style="color:#79c0ff;">VALUES</span>
+(<span style="color:#a5d6ff;">'11001'</span>, <span style="color:#a5d6ff;">'Benslimane'</span>, <span style="color:#a5d6ff;">'AGENCE_CITADINE'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1212'</span>)),
+(<span style="color:#a5d6ff;">'11002'</span>, <span style="color:#a5d6ff;">'Benslimane BD Hassan II'</span>, <span style="color:#a5d6ff;">'AGENCE_CONTACT'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1212'</span>)),
+(<span style="color:#a5d6ff;">'78702'</span>, <span style="color:#a5d6ff;">'Mohammedia El Alia'</span>, <span style="color:#a5d6ff;">'AGENCE_CITADINE'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1212'</span>)),
+(<span style="color:#a5d6ff;">'78704'</span>, <span style="color:#a5d6ff;">'Mohammedia BD Hassan II'</span>, <span style="color:#a5d6ff;">'AGENCE_EXCLUSIVE'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1212'</span>)),
+(<span style="color:#a5d6ff;">'78720'</span>, <span style="color:#a5d6ff;">'Mohammedia Du Parc'</span>, <span style="color:#a5d6ff;">'AGENCE_EXCLUSIVE'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1212'</span>)),
+<span style="color:#8b949e;">-- Agences exemples (Ain Sebaa)</span>
+(<span style="color:#a5d6ff;">'78050'</span>, <span style="color:#a5d6ff;">'Ain Sebaa'</span>, <span style="color:#a5d6ff;">'AGENCE_CITADINE'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1213'</span>)),
+(<span style="color:#a5d6ff;">'78064'</span>, <span style="color:#a5d6ff;">'Hay El Mohammadi'</span>, <span style="color:#a5d6ff;">'AGENCE_ETENDARD'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1213'</span>)),
+(<span style="color:#a5d6ff;">'79323'</span>, <span style="color:#a5d6ff;">'Bernoussi'</span>, <span style="color:#a5d6ff;">'AGENCE_CITADINE'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1213'</span>)),
+<span style="color:#8b949e;">-- Agences exemples (Maarif)</span>
+(<span style="color:#a5d6ff;">'78061'</span>, <span style="color:#a5d6ff;">'Maarif'</span>, <span style="color:#a5d6ff;">'AGENCE_ETENDARD'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1348'</span>)),
+(<span style="color:#a5d6ff;">'78062'</span>, <span style="color:#a5d6ff;">'Ghandi'</span>, <span style="color:#a5d6ff;">'AGENCE_CITADINE'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1348'</span>)),
+<span style="color:#8b949e;">-- Agences exemples (Rabat)</span>
+(<span style="color:#a5d6ff;">'81001'</span>, <span style="color:#a5d6ff;">'Rabat Agdal'</span>, <span style="color:#a5d6ff;">'AGENCE_ETENDARD'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1109'</span>)),
+(<span style="color:#a5d6ff;">'81010'</span>, <span style="color:#a5d6ff;">'Rabat Hassan'</span>, <span style="color:#a5d6ff;">'AGENCE_CITADINE'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1109'</span>)),
+<span style="color:#8b949e;">-- Agences exemples (Tanger)</span>
+(<span style="color:#a5d6ff;">'64001'</span>, <span style="color:#a5d6ff;">'Tanger Ville'</span>, <span style="color:#a5d6ff;">'AGENCE_ETENDARD'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1101'</span>)),
+(<span style="color:#a5d6ff;">'64010'</span>, <span style="color:#a5d6ff;">'Tanger Medina'</span>, <span style="color:#a5d6ff;">'AGENCE_CONTACT'</span>, (<span style="color:#79c0ff;">SELECT</span> id <span style="color:#79c0ff;">FROM</span> groupe <span style="color:#79c0ff;">WHERE</span> code = <span style="color:#a5d6ff;">'1101'</span>));
+
+<span style="color:#ff7b72;">-- ============================================</span>
+<span style="color:#ff7b72;">-- 12. FONCTIONS ASAL (Mapping complet)</span>
+<span style="color:#ff7b72;">-- ============================================</span>
+
+<span style="color:#79c0ff;">INSERT INTO</span> fonction_asal (code, libelle, categorie) <span style="color:#79c0ff;">VALUES</span>
+<span style="color:#8b949e;">-- Observateurs uniquement</span>
+(<span style="color:#a5d6ff;">'DIRGP'</span>, <span style="color:#a5d6ff;">'Directeur de Groupe'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'DIRSUMLM'</span>, <span style="color:#a5d6ff;">'Directeur de Succursale Multi-marchés'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'RSPSUC'</span>, <span style="color:#a5d6ff;">'Responsable Succursale'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'DIRSUC'</span>, <span style="color:#a5d6ff;">'Directeur Succursale'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'DIRCABO'</span>, <span style="color:#a5d6ff;">'Directeur Succursale Tanger Offshore'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'DETRSPSUC'</span>, <span style="color:#a5d6ff;">'Responsable Succursale'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+<span style="color:#8b949e;">-- Animateurs (tous OBSERVATEUR)</span>
+(<span style="color:#a5d6ff;">'ANIMCOM'</span>, <span style="color:#a5d6ff;">'Animateur Commercial'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'ANFORM'</span>, <span style="color:#a5d6ff;">'Animateur Formateur'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'ANICOM'</span>, <span style="color:#a5d6ff;">'Animateur Formateur Commercial'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'ANIMCOENT'</span>, <span style="color:#a5d6ff;">'Animateur Commercial Entreprise'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'ANIMCOMPME'</span>, <span style="color:#a5d6ff;">'Animateur Commercial PME'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'ANIMCOREG'</span>, <span style="color:#a5d6ff;">'Animateur Commercial Part/Pro'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'ANIMCOREG1'</span>, <span style="color:#a5d6ff;">'Animateur Commercial Région'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'ANIMPRIVE'</span>, <span style="color:#a5d6ff;">'Animateur Marché Privé'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'ANIMPRO'</span>, <span style="color:#a5d6ff;">'Animateur Commercial Pro'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'DAM0010'</span>, <span style="color:#a5d6ff;">'Animateur Régional'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'DAM0011'</span>, <span style="color:#a5d6ff;">'Animateur Siège'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'DAMTEST'</span>, <span style="color:#a5d6ff;">'Animateur Junior'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'DETACZA'</span>, <span style="color:#a5d6ff;">'Animateur Commercial Zone Anglophone'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+(<span style="color:#a5d6ff;">'DETACZF'</span>, <span style="color:#a5d6ff;">'Animateur Commercial Zone Francophone'</span>, <span style="color:#a5d6ff;">'OBSERVATEUR'</span>),
+<span style="color:#8b949e;">-- Double Rôle (Observateur ET Cible)</span>
+(<span style="color:#a5d6ff;">'DIRAG'</span>, <span style="color:#a5d6ff;">'Directeur d''Agence'</span>, <span style="color:#a5d6ff;">'DOUBLE_ROLE'</span>),
+(<span style="color:#a5d6ff;">'RCLPA'</span>, <span style="color:#a5d6ff;">'Responsable Clientèle Particuliers'</span>, <span style="color:#a5d6ff;">'DOUBLE_ROLE'</span>),
+(<span style="color:#a5d6ff;">'CCETS'</span>, <span style="color:#a5d6ff;">'Chargé d''Affaires Entreprises'</span>, <span style="color:#a5d6ff;">'DOUBLE_ROLE'</span>),
+(<span style="color:#a5d6ff;">'RCLEN'</span>, <span style="color:#a5d6ff;">'Responsable Clientèle Entreprises'</span>, <span style="color:#a5d6ff;">'DOUBLE_ROLE'</span>),
+(<span style="color:#a5d6ff;">'RCLENGE'</span>, <span style="color:#a5d6ff;">'Responsable Clientèle Entreprise GE'</span>, <span style="color:#a5d6ff;">'DOUBLE_ROLE'</span>),
+<span style="color:#8b949e;">-- Cibles uniquement</span>
+(<span style="color:#a5d6ff;">'GUPAI'</span>, <span style="color:#a5d6ff;">'Chargé d''Appui Commercial'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>),
+(<span style="color:#a5d6ff;">'GUPAIF'</span>, <span style="color:#a5d6ff;">'Chargé d''Appui Commercial en Formation'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>),
+(<span style="color:#a5d6ff;">'GUPAIM'</span>, <span style="color:#a5d6ff;">'Chargé d''Appui Commercial Mutualisé'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>),
+(<span style="color:#a5d6ff;">'CCPRO'</span>, <span style="color:#a5d6ff;">'Conseiller de Clientèle PRO et TPE'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>),
+(<span style="color:#a5d6ff;">'CC PRIVE'</span>, <span style="color:#a5d6ff;">'Conseiller de Clientèle Privé'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>),
+(<span style="color:#a5d6ff;">'CCIGPF'</span>, <span style="color:#a5d6ff;">'Conseiller Clientèle Part. Intermédiaires'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>),
+(<span style="color:#a5d6ff;">'CCOMPTE'</span>, <span style="color:#a5d6ff;">'Chargé de Comptes Entreprises'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>),
+(<span style="color:#a5d6ff;">'CATASP'</span>, <span style="color:#a5d6ff;">'Cash & Trade Specialist'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>),
+(<span style="color:#a5d6ff;">'CHAFF'</span>, <span style="color:#a5d6ff;">'Chargé d''Affaires'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>),
+(<span style="color:#a5d6ff;">'CACHMN'</span>, <span style="color:#a5d6ff;">'Chargé d''Affaires Cash Management'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>),
+(<span style="color:#a5d6ff;">'CHAFFCORPO'</span>, <span style="color:#a5d6ff;">'Chargé d''Affaires Corporate'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>),
+(<span style="color:#a5d6ff;">'CHAFFCORPJ'</span>, <span style="color:#a5d6ff;">'Chargé d''Affaires Corporate Junior'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>),
+(<span style="color:#a5d6ff;">'CHAFFAIRCM'</span>, <span style="color:#a5d6ff;">'Chargé d''Affaires CM'</span>, <span style="color:#a5d6ff;">'CIBLE'</span>);
+</pre>
+</div>
+
+<div class="success">
+    <strong>FICHIER DDL COMPLET DISPONIBLE:</strong> <code>followup-ddl-complet.sql</code><br>
+    Contient le schéma + les 583 points de vente complets. Exécutable directement sur PostgreSQL.
+</div>
+
+<h3>Résumé des tables et données</h3>
+<table>
+    <tr><th>Package</th><th>Table</th><th>Description</th><th>Données initiales</th></tr>
+    <tr><td rowspan="5"><strong>Organisation</strong></td><td>region</td><td>7 régions</td><td><span class="badge badge-green">7</span></td></tr>
+    <tr><td>sous_region</td><td>Sous-régions</td><td><span class="badge badge-green">17</span></td></tr>
+    <tr><td>groupe</td><td>Groupes d'agences</td><td><span class="badge badge-green">65</span></td></tr>
+    <tr><td>point_de_vente</td><td>Agences, CAF, CEMM</td><td><span class="badge badge-green">583</span></td></tr>
+    <tr><td>desk</td><td>Bureaux annexes</td><td>-</td></tr>
+    <tr><td rowspan="5"><strong>Utilisateurs</strong></td><td>fonction_asal</td><td>Fonctions ASAL</td><td><span class="badge badge-green">~40</span></td></tr>
+    <tr><td>role_followup</td><td>Rôles métier</td><td><span class="badge badge-green">15</span></td></tr>
+    <tr><td>mapping_fonction_role</td><td>Mapping ASAL → Follow Up</td><td>-</td></tr>
+    <tr><td>utilisateur_followup</td><td>Utilisateurs actifs</td><td>~800 (sync ASAL)</td></tr>
+    <tr><td>affectation_animateur</td><td>Affectations multi-périmètre</td><td>-</td></tr>
+    <tr><td rowspan="4"><strong>Observations</strong></td><td>modele_observation</td><td>8 modèles MVP</td><td><span class="badge badge-green">8</span></td></tr>
+    <tr><td>question</td><td>Questions par modèle</td><td>-</td></tr>
+    <tr><td>observation</td><td>Observations terrain</td><td>~10 000/an</td></tr>
+    <tr><td>reponse_observation</td><td>Réponses aux questions</td><td>~100 000/an</td></tr>
+    <tr><td rowspan="2"><strong>Configuration</strong></td><td>regle_gestion</td><td>32 règles (RG1-RG32)</td><td>-</td></tr>
+    <tr><td>parametre_systeme</td><td>Paramètres système</td><td><span class="badge badge-green">3</span></td></tr>
+</table>
+
+<h3>Détail des 583 Points de Vente</h3>
+<table>
+    <tr><th>Type</th><th>Nombre</th><th>Description</th></tr>
+    <tr><td><span class="badge badge-green">AGENCE_CONTACT</span></td><td><strong>352</strong></td><td>Petites agences de proximité</td></tr>
+    <tr><td><span class="badge badge-green">AGENCE_CITADINE</span></td><td><strong>146</strong></td><td>Agences de ville classiques</td></tr>
+    <tr><td><span class="badge badge-blue">AGENCE_ETENDARD</span></td><td><strong>36</strong></td><td>Agences principales</td></tr>
+    <tr><td><span class="badge badge-purple">AGENCE_EXCLUSIVE</span></td><td><strong>17</strong></td><td>Clientèle haut de gamme</td></tr>
+    <tr><td><span class="badge badge-orange">CAF_B</span></td><td><strong>14</strong></td><td>Centres d'Affaires moyens</td></tr>
+    <tr><td><span class="badge badge-orange">CEMM</span></td><td><strong>7</strong></td><td>Centres Multi-Marchés</td></tr>
+    <tr><td><span class="badge badge-orange">CAF_C</span></td><td><strong>6</strong></td><td>Centres d'Affaires PME/TPE</td></tr>
+    <tr><td><span class="badge badge-red">CAF_A</span></td><td><strong>5</strong></td><td>Centres d'Affaires Grands Comptes</td></tr>
+    <tr style="background:#f0f0f0;"><td colspan="2"><strong>TOTAL</strong></td><td><strong>583 PDV</strong></td></tr>
+</table>
+</div>
+
+<div style="text-align: center; margin-top: 30px; color: #666;">
+    <p><strong>Document créé le:</strong> Avril 2026 | <strong>Version:</strong> 2.3</p>
+    <p><strong>Sources:</strong> Mail 1-4, pj_mail_1-5.xlsx, pj_mail_4_1.pptx, DAAT Follow Up</p>
+    <p><strong>Nouveautés v2.3:</strong> Fichier DDL complet séparé (followup-ddl-complet.sql) avec les 583 PDV</p>
+    <p><strong>Nouveautés v2.2:</strong> DDL complet avec données, TypeRole sans ANIMATEUR</p>
+    <p><strong>Nouveautés v2.1:</strong> Diagramme UML, Architecture DDL PostgreSQL</p>
+    <p><strong>Nouveautés v2.0:</strong> Code CCOMPTE identifié, 32 RGs, 8 Modèles d'observation, Statuts/Actions</p>
+</div>
+
+</div>
+</body>
+</html>

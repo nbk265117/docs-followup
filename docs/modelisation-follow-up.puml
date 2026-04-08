@@ -1,0 +1,692 @@
+@startuml Diagramme_Classe_FollowUp_BOA
+
+' ============================================================================
+' DIAGRAMME DE CLASSE - PROJET FOLLOW UP BOA
+' Version: 2.0 - MVP (Mise à jour complète avec Mail 4)
+' Date: Avril 2026
+' Auteur: Equipe Digital Dev Transverse
+' Sources: Mail 1-4 + PJ (pj_mail_1-5.xlsx, pj_mail_4_1.pptx)
+' ============================================================================
+
+skinparam classAttributeIconSize 0
+skinparam classFontSize 11
+skinparam packageFontSize 13
+skinparam packageStyle rectangle
+skinparam linetype ortho
+skinparam nodesep 60
+skinparam ranksep 40
+
+' ============================================================================
+' PACKAGE: STRUCTURE ORGANISATIONNELLE (ORG)
+' Source: pj_mail_1.xlsx (584 unités organisationnelles)
+' Hiérarchie: Région(N5) > SousRégion(N4) > Groupe(N3) > PointDeVente(N2) > Desk(N1)
+' ============================================================================
+
+package "Structure Organisationnelle" #E8F1F8 {
+
+    abstract class UniteOrganisationnelle {
+        - id: UUID
+        - codeUO: String
+        - nomUO: String
+        - typeUnite: TypeUniteOrg
+        - niveau: Integer
+        - actif: Boolean
+        - dateCreation: LocalDateTime
+        - dateModification: LocalDateTime
+        + getParent(): UniteOrganisationnelle
+        + getEnfants(): List<UniteOrganisationnelle>
+    }
+
+    class Region {
+        - codeRegion: String
+        - nomRegion: String
+        + getSousRegions(): List<SousRegion>
+        + getGroupes(): List<Groupe>
+        + getCollaborateurs(): List<Collaborateur>
+    }
+
+    class SousRegion {
+        - codeSousRegion: String
+        - nomSousRegion: String
+        + getGroupes(): List<Groupe>
+    }
+
+    class Groupe {
+        - codeGroupe: String
+        - nomGroupe: String
+        + getPointsDeVente(): List<PointDeVente>
+    }
+
+    abstract class PointDeVente {
+        - codePointVente: String
+        - nomPointVente: String
+        - typePointVente: TypePointVente
+        - categorieCAF: CategorieCAF
+        - adresse: String
+        - ville: String
+        + getCollaborateurs(): List<Collaborateur>
+        + getResponsable(): Collaborateur
+    }
+
+    class Agence {
+        - codeAgence: String
+        - nomAgence: String
+        - typeAgence: TypeAgence
+        + getDesks(): List<Desk>
+        + getDirecteur(): Collaborateur
+    }
+
+    class CentreAffaires {
+        - codeCAF: String
+        - nomCAF: String
+        - categorieCAF: CategorieCAF
+        - specialiteMarche: TypeMarche
+        + getDirecteurCAF(): Collaborateur
+        + getRCE(): List<Collaborateur>
+    }
+
+    class CentreExcellenceMultiMarches {
+        - codeCEMM: String
+        - nomCEMM: String
+        - marchesCouverts: List<TypeMarche>
+        + getDirecteurCEMM(): Collaborateur
+    }
+
+    class Desk {
+        - codeDesk: String
+        - nomDesk: String
+    }
+
+    enum TypeUniteOrg {
+        REGION
+        SOUS_REGION
+        GROUPE
+        AGENCE
+        CENTRE_AFFAIRES
+        CEMM
+        DESK
+    }
+
+    enum TypePointVente {
+        AGENCE_BANCAIRE
+        CENTRE_AFFAIRES_A
+        CENTRE_AFFAIRES_B
+        CENTRE_AFFAIRES_C
+        CENTRE_EXCELLENCE
+        SUCCURSALE
+        CITADINE
+        DESK
+    }
+
+    enum CategorieCAF {
+        CENTRE_AFFAIRES_A
+        CENTRE_AFFAIRES_B
+        CENTRE_AFFAIRES_C
+    }
+
+    enum TypeAgence {
+        CITADINE
+        RURALE
+        PREMIUM
+    }
+
+    enum TypeMarche {
+        PARTICULIERS
+        PROFESSIONNELS
+        ENTREPRISES
+        PME
+        CORPORATE
+        GE
+        MULTI_MARCHES
+    }
+
+    ' Relations hiérarchie organisationnelle
+    Region "1" *-- "*" SousRegion : contient
+    SousRegion "1" *-- "*" Groupe : contient
+    Groupe "1" *-- "*" PointDeVente : contient
+    Agence "1" *-- "*" Desk : contient
+
+    UniteOrganisationnelle <|-- Region
+    UniteOrganisationnelle <|-- SousRegion
+    UniteOrganisationnelle <|-- Groupe
+    UniteOrganisationnelle <|-- PointDeVente
+    PointDeVente <|-- Agence
+    PointDeVente <|-- CentreAffaires
+    PointDeVente <|-- CentreExcellenceMultiMarches
+    PointDeVente <|-- Desk
+}
+
+' ============================================================================
+' PACKAGE: UTILISATEURS & HABILITATIONS
+' Source: pj_mail_2.xlsx (2046 fonctions ASAL + Mapping 50 lignes)
+' Collaborateurs synchronisés depuis ASAL + Profils Follow Up
+' ============================================================================
+
+package "Utilisateurs & Habilitations" #E8F8E8 {
+
+    class Collaborateur {
+        - id: UUID
+        - matricule: String
+        - codeSas: String
+        - nom: String
+        - prenom: String
+        - civilite: Civilite
+        - email: String
+        - telephone: String
+        - codeGuichet: String
+        - codeBanque: String
+        - actif: Boolean
+        - dateCreation: LocalDateTime
+        - dateModification: LocalDateTime
+        - dateSynchroASAL: LocalDateTime
+        + getNomComplet(): String
+        + estObservateur(): Boolean
+        + estCibleObservation(): Boolean
+        + estDoubleRole(): Boolean
+        + getPerimetreObservation(): List<UniteOrganisationnelle>
+    }
+
+    class FonctionASAL {
+        - id: UUID
+        - codeFonction: String
+        - libelleFonction: String
+        - actif: Boolean
+        + getRoleFollowUp(): RoleFollowUp
+        + getProfilFollowUp(): ProfilFollowUp
+    }
+
+    class UtilisateurFollowUp {
+        - id: UUID
+        - username: String
+        - profilPrincipal: ProfilFollowUp
+        - profilSecondaire: ProfilFollowUp
+        - datePremiereConnexion: LocalDateTime
+        - dateDerniereConnexion: LocalDateTime
+        - actif: Boolean
+        + getPermissions(): Set<Permission>
+        + getPerimetreObservation(): List<UniteOrganisationnelle>
+        + peutObserver(cible: Collaborateur): Boolean
+        + estDoubleRole(): Boolean
+    }
+
+    class RoleFollowUp {
+        - id: UUID
+        - code: String
+        - libelle: String
+        - description: String
+        - peutEtreObservateur: Boolean
+        - peutEtreCible: Boolean
+        - estDoubleRole: Boolean
+        - actif: Boolean
+        + getPermissions(): Set<Permission>
+        + getFonctionsASAL(): List<FonctionASAL>
+    }
+
+    class Permission {
+        - id: UUID
+        - code: String
+        - libelle: String
+        - module: ModuleApplication
+        - action: ActionPermission
+    }
+
+    class AffectationAnimateur {
+        ' Source: pj_mail_4_1.pptx - Slide 9
+        ' Animateurs AGENCE → rattachés à la Région
+        ' Animateurs CAF/CEMM → rattachés au Siège
+        ' Peuvent être affectés à plusieurs groupes/CAFs/CEMMs
+        - id: UUID
+        - dateDebut: LocalDate
+        - dateFin: LocalDate
+        - actif: Boolean
+        - typeAffectation: TypeAffectation
+        - rattachement: RattachementAnimateur
+        - commentaire: String
+    }
+
+    enum RattachementAnimateur {
+        REGION
+        SIEGE
+    }
+
+    enum ProfilFollowUp {
+        ADMINISTRATEUR
+        OBSERVATEUR
+        CIBLE_OBSERVATION
+        OBSERVATEUR_ET_CIBLE
+        CONSULTATION
+    }
+    note right of ProfilFollowUp
+        ANIMATEUR = OBSERVATEUR
+        (pas de type séparé)
+    end note
+
+    enum Civilite {
+        MR
+        MME
+        MLLE
+    }
+
+    enum TypeAffectation {
+        REGION
+        SOUS_REGION
+        GROUPE
+        CAF
+        CEMM
+    }
+
+    enum ModuleApplication {
+        ADMINISTRATION
+        OBSERVATIONS
+        DASHBOARD
+        PROFIL
+        AUDIT
+    }
+
+    enum ActionPermission {
+        CREER
+        LIRE
+        MODIFIER
+        SUPPRIMER
+        ANNULER
+        VALIDER
+        EXPORTER
+    }
+
+    ' Relations utilisateurs
+    Collaborateur "1" -- "1" UtilisateurFollowUp : accède via
+    Collaborateur "*" -- "1" FonctionASAL : a pour fonction
+    Collaborateur "*" -- "1" PointDeVente : rattaché à
+    UtilisateurFollowUp "*" -- "*" RoleFollowUp : possède
+    RoleFollowUp "*" -- "*" Permission : accorde
+    FonctionASAL "*" -- "1" RoleFollowUp : mappé vers
+    AffectationAnimateur "*" -- "1" Collaborateur : concerne
+    AffectationAnimateur "*" -- "1" UniteOrganisationnelle : affecté à
+}
+
+' ============================================================================
+' PACKAGE: OBSERVATIONS (Coeur métier)
+' Système de saisie et suivi des observations terrain
+' ============================================================================
+
+package "Observations" #FFF8E8 {
+
+    class Observation {
+        - id: UUID
+        - reference: String
+        - dateObservation: LocalDateTime
+        - dateSaisie: LocalDateTime
+        - dateModification: LocalDateTime
+        - dateValidation: LocalDateTime
+        - dateAnnulation: LocalDateTime
+        - statut: StatutObservation
+        - commentaireGeneral: String
+        - pointsForts: String
+        - axesAmelioration: String
+        - planAction: String
+        - scoreGlobal: BigDecimal
+        - dureeObservation: Integer
+        - delaiAnnulationExpire: Boolean
+        + calculerScoreGlobal(): BigDecimal
+        + peutEtreAnnulee(): Boolean
+        + peutEtreModifiee(): Boolean
+        + getDelaiRestantAnnulation(): Duration
+    }
+
+    class ModeleObservation {
+        - id: UUID
+        - code: String
+        - libelle: String
+        - description: String
+        - version: Integer
+        - typeModele: TypeModeleObservation
+        - marcheCible: TypeMarche
+        - rolesCibles: List<RoleFollowUp>
+        - actif: Boolean
+        - dateCreation: LocalDateTime
+        - dateModification: LocalDateTime
+        + getSections(): List<SectionFormulaire>
+        + getScoreMaximum(): BigDecimal
+        + estApplicable(cible: Collaborateur): Boolean
+    }
+
+    class SectionFormulaire {
+        - id: UUID
+        - code: String
+        - libelle: String
+        - description: String
+        - ordre: Integer
+        - poids: BigDecimal
+        - obligatoire: Boolean
+        + getQuestions(): List<Question>
+        + getScoreMaxSection(): BigDecimal
+    }
+
+    class Question {
+        - id: UUID
+        - code: String
+        - libelle: String
+        - description: String
+        - consigne: String
+        - ordre: Integer
+        - typeQuestion: TypeQuestion
+        - obligatoire: Boolean
+        - scoreMaximum: BigDecimal
+        - poids: BigDecimal
+        + getOptionsReponse(): List<OptionReponse>
+    }
+
+    class OptionReponse {
+        - id: UUID
+        - libelle: String
+        - valeur: String
+        - score: BigDecimal
+        - ordre: Integer
+        - estDefaut: Boolean
+    }
+
+    class ReponseObservation {
+        - id: UUID
+        - valeur: String
+        - score: BigDecimal
+        - commentaire: String
+        - dateReponse: LocalDateTime
+    }
+
+    enum StatutObservation {
+        BROUILLON
+        EN_COURS
+        SOUMISE
+        ANNULEE
+        ARCHIVEE
+    }
+
+    enum ActionObservationMVP {
+        CONSULTER
+        ANNULER
+        TELECHARGER
+    }
+
+    enum TypeModeleObservation {
+        ' 8 Modèles MVP validés (Source: pj_mail_4_1.pptx)
+        OBSERVATION_CAE           ' Chargé d'Affaires - 9 questions
+        OBSERVATION_GE            ' Gestionnaire Entreprises - 10 questions
+        OBSERVATION_CTS           ' Cash & Trade Specialist - 11 questions
+        OBSERVATION_CAC           ' Chargé d'Appui Commercial - 7 questions
+        OBSERVATION_DA            ' Directeur d'Agence - 8 questions
+        OBSERVATION_CC_IGP        ' Conseiller IGP
+        OBSERVATION_CC_PREMIUM    ' Conseiller Premium
+        OBSERVATION_CC_PRO        ' Conseiller PRO
+    }
+
+    enum TypeQuestion {
+        CHOIX_UNIQUE
+        CHOIX_MULTIPLE
+        NOTE_1_5
+        NOTE_1_10
+        TEXTE_LIBRE
+        OUI_NON
+        DATE
+        NUMERIQUE
+    }
+
+    ' Relations observations
+    Observation "*" -- "1" Collaborateur : observateur
+    Observation "*" -- "1" Collaborateur : cible (observé)
+    Observation "*" -- "1" ModeleObservation : basée sur
+    Observation "*" -- "1" PointDeVente : lieu observation
+    Observation "1" *-- "*" ReponseObservation : contient
+
+    ModeleObservation "1" *-- "*" SectionFormulaire : composé de
+    ModeleObservation "*" -- "*" RoleFollowUp : applicable à
+    SectionFormulaire "1" *-- "*" Question : contient
+    Question "1" *-- "*" OptionReponse : propose
+
+    ReponseObservation "*" -- "1" Question : répond à
+    ReponseObservation "*" -- "0..1" OptionReponse : sélectionne
+}
+
+' ============================================================================
+' PACKAGE: HISTORIQUE & AUDIT
+' Traçabilité complète des actions
+' ============================================================================
+
+package "Historique & Audit" #F8E8F8 {
+
+    class HistoriqueObservation {
+        - id: UUID
+        - action: ActionObservation
+        - dateAction: LocalDateTime
+        - commentaire: String
+        - donneesAvant: JSON
+        - donneesApres: JSON
+    }
+
+    class AuditLog {
+        - id: UUID
+        - dateAction: LocalDateTime
+        - utilisateur: String
+        - codeSas: String
+        - action: String
+        - module: ModuleApplication
+        - entite: String
+        - entiteId: UUID
+        - adresseIP: String
+        - userAgent: String
+        - donneesAvant: JSON
+        - donneesApres: JSON
+        - succes: Boolean
+        - messageErreur: String
+    }
+
+    class HistoriqueAffectation {
+        - id: UUID
+        - dateDebut: LocalDate
+        - dateFin: LocalDate
+        - motifChangement: String
+        - ancienneUnite: String
+        - nouvelleUnite: String
+    }
+
+    enum ActionObservation {
+        CREATION
+        MODIFICATION
+        SOUMISSION
+        VALIDATION
+        ANNULATION
+        ARCHIVAGE
+        CONSULTATION
+    }
+
+    ' Relations audit
+    HistoriqueObservation "*" -- "1" Observation : trace
+    HistoriqueObservation "*" -- "1" Collaborateur : effectuée par
+    HistoriqueAffectation "*" -- "1" Collaborateur : concerne
+    AuditLog "*" -- "1" UtilisateurFollowUp : effectué par
+}
+
+' ============================================================================
+' PACKAGE: INTEGRATION ASAL (Annuaire Collaborateurs)
+' Données synchronisées depuis le système ASAL via SOAP
+' Source: pj_mail_3_2.txt (format données)
+' ============================================================================
+
+package "Integration ASAL" #F0F0F0 {
+
+    class DonneesASAL <<ValueObject>> {
+        + matricule: String
+        + codeSas: String
+        + nom: String
+        + prenom: String
+        + civilite: String
+        + email: String
+        + codeGuichet: String
+        + nomGuichet: String
+        + codeBanque: String
+        + codeFonction: String
+        + libelleFonction: String
+        + codeSection: String
+        + libEmploi: String
+        + codeObjOrg: String
+        + libObjOrg: String
+        + typeObjOrg: String
+        + telephones: List<String>
+    }
+
+    class SynchronisationASAL {
+        - id: UUID
+        - dateSynchro: LocalDateTime
+        - typeOperation: TypeOperationSync
+        - statut: StatutSync
+        - nombreTraites: Integer
+        - nombreErreurs: Integer
+        - messageErreur: String
+        - dureeMs: Long
+    }
+
+    enum TypeOperationSync {
+        SYNC_COMPLETE
+        SYNC_INCREMENTALE
+        RECHERCHE_UNITAIRE
+        RECHERCHE_PAR_GUICHET
+        RECHERCHE_PAR_ETABLISSEMENT
+    }
+
+    enum StatutSync {
+        EN_COURS
+        SUCCES
+        ECHEC
+        PARTIEL
+    }
+
+    note right of DonneesASAL
+        Format pj_mail_3_2.txt:
+        Matricule;Civilité,Nom,Prénom;
+        CodeUO;NomUO;CodeFonction;
+        LibFonction;Email;Tel
+
+        Services ASAL:
+        - RechSalCodeSasUC
+        - RechSalMatUC
+        - RechRespGuiUC
+        - RechRespSupGuiUC
+        - RechListSalGuiUC
+        - RechListSalEtbUC
+    end note
+}
+
+' ============================================================================
+' PACKAGE: CONFIGURATION & PARAMETRAGE
+' Paramètres système et règles de gestion
+' ============================================================================
+
+package "Configuration" #F8F8F8 {
+
+    class ParametreSysteme {
+        - id: UUID
+        - code: String
+        - valeur: String
+        - description: String
+        - typeParametre: TypeParametre
+        - modifiable: Boolean
+    }
+
+    class RegleGestion {
+        - id: UUID
+        - code: String
+        - libelle: String
+        - description: String
+        - actif: Boolean
+        - expression: String
+    }
+
+    class RegleGestionSaisie {
+        ' Source: pj_mail_4_2.xlsx - Feuille "RGs Saisie" (32 règles)
+        - id: UUID
+        - codeRG: String
+        - marche: TypeMarche
+        - roleObservateur: String
+        - roleObserve: String
+        - condition: String
+        - perimetre: PerimetreObservation
+        - modelesAutorises: List<TypeModeleObservation>
+        - actif: Boolean
+    }
+
+    class RegleGestionConsultation {
+        ' Source: pj_mail_4_2.xlsx - Feuille "RGs Consultation"
+        - id: UUID
+        - codeRG: String
+        - marche: TypeMarche
+        - roleObservateur: String
+        - peutConsulterSesPropresObservations: Boolean
+        - modelesAutorises: List<TypeModeleObservation>
+        - actif: Boolean
+    }
+
+    enum PerimetreObservation {
+        MEME_AGENCE
+        MEME_CAF
+        MEME_CEMM
+        AGENCES_DU_GROUPE
+        SA_REGION
+        CAF_AFFECTES
+        CEMM_AFFECTES
+    }
+
+    class MatriceHabilitation {
+        - id: UUID
+        - roleObservateur: RoleFollowUp
+        - roleCible: RoleFollowUp
+        - typeAction: TypeActionMatrice
+        - autorise: Boolean
+        - conditions: String
+    }
+
+    class MappingFonctionRole {
+        - id: UUID
+        - codeFonctionASAL: String
+        - libelleFonctionASAL: String
+        - roleFollowUp: RoleFollowUp
+        - profilFollowUp: ProfilFollowUp
+        - estDoubleRole: Boolean
+        - actif: Boolean
+        - remarque: String
+    }
+
+    enum TypeParametre {
+        DELAI_ANNULATION_HEURES
+        PROFONDEUR_HISTORIQUE_MOIS
+        SCORE_MINIMUM_VALIDE
+        NOMBRE_MAX_OBSERVATIONS_JOUR
+        DUREE_SESSION_MINUTES
+    }
+
+    enum TypeActionMatrice {
+        PEUT_OBSERVER
+        PEUT_CONSULTER_HISTORIQUE
+        PEUT_MODIFIER
+        PEUT_ANNULER
+        PEUT_VALIDER
+    }
+
+    ' Relations configuration
+    MatriceHabilitation "*" -- "1" RoleFollowUp : observateur
+    MatriceHabilitation "*" -- "1" RoleFollowUp : cible
+    MappingFonctionRole "*" -- "1" RoleFollowUp : mappe vers
+}
+
+' ============================================================================
+' NOTES ET LEGENDES
+' Source: pj_mail_2.xlsx - Feuille Mapping
+' ============================================================================
+
+note "MAPPING ROLES FOLLOW UP ↔ FONCTIONS ASAL\n(Source: pj_mail_4_3.xlsx - Feuille Mapping v2.0)\n\n══════════════════════════════════════\nOBSERVATEURS UNIQUEMENT:\n══════════════════════════════════════\n• Directeur Groupe (DIRGP)\n• Directeur CEMM (DIRSUMLM, RSPSUC, DIRSUC,\n  DIRCABO, DETRSPSUC)\n• Animateur (~23 codes):\n  ANIMCOM, ANFORM, DAM0010, DAM0011,\n  DAMTEST, DETACZA, DETACZF...\n\n══════════════════════════════════════\nDOUBLE ROLE (Observateur ET Cible):\n══════════════════════════════════════\n• Directeur Agence (DIRAG)\n• RCP (RCLPA)\n• Directeur CAF (CCETS)\n• RCE (RCLEN, RCLENGE)\n\n══════════════════════════════════════\nCIBLES UNIQUEMENT:\n══════════════════════════════════════\n• CAC (GUPAI, GUPAIF, GUPAIM)\n• Conseiller PRO (CCPRO)\n• Conseiller Premium (CC PRIVE)\n• Conseiller IGP (CCIGPF)\n• Gestionnaire Entreprises (CCOMPTE) ← IDENTIFIÉ\n• Cash & Trade (CATASP)\n• Chargé Affaires (CHAFF, CACHMN, CHAFFCORPO...)" as N1
+
+note "STRUCTURE ORGANISATIONNELLE\n(Source: pj_mail_1.xlsx - 584 unités)\n\n══════════════════════════════════════\nRÉGIONS (N5):\n══════════════════════════════════════\n• 8720 - Grand Casablanca\n• 8420 - Centre Atlantique\n• 8430 - Nord Méditerranée\n• 8440 - Centre\n• 8450 - Centre Méridional\n• 8460 - Oriental\n• 8350 - Souss Massa Provinces du Sud\n\n══════════════════════════════════════\nTYPES DE CAF:\n══════════════════════════════════════\n• Centre D'Affaires A (5 CAF)\n• Centre D'Affaires B (15 CAF)\n• Centre D'Affaires C (6 CAF)" as N2
+
+note "REGLES METIER MVP VALIDÉES\n(Source: Mail 2 + pj_mail_4_2.xlsx)\n\n══════════════════════════════════════\nRÈGLES GÉNÉRALES:\n══════════════════════════════════════\n1. Délai annulation: 24h après saisie\n2. Profondeur historique: 12 mois\n3. Archivage sur changement périmètre\n4. ~800 utilisateurs estimés\n5. ~10 000 observations/an\n\n══════════════════════════════════════\n32 RÈGLES DE SAISIE (RG1-RG32):\n══════════════════════════════════════\n• RG1: Dir.Groupe → DA (groupe)\n• RG3-6: DA → CAC,CC PRO,Premium,IGP (agence)\n• RG7-10: RCP → CAC,CC PRO,Premium,IGP (agence)\n• RG11,13-16: Animateur → DA,CAC,CC (région)\n• RG17-19: Dir.CAF → GE,CAE,CTS (CAF)\n• RG20-22: RCE → GE,CAE,CTS (CAF)\n• RG23-25: Animateur → GE,CAE,CTS (CAF affecté)\n• RG26-32: Dir.CEMM → Tous (CEMM)\n\n══════════════════════════════════════\nRÈGLE AFFECTATION ANIMATEURS:\n══════════════════════════════════════\n• Animateurs AGENCE → Région\n• Animateurs CAF/CEMM → Siège\n• Peuvent être affectés à plusieurs\n  groupes/CAFs/CEMMs" as N3
+
+note "8 MODÈLES D'OBSERVATION MVP\n(Source: pj_mail_4_4.xlsx)\n\n══════════════════════════════════════\nMARCHÉ ENTREPRISES:\n══════════════════════════════════════\n1. Obs. CAE (9 questions)\n   → GRC, planification, traçage CENT\n2. Obs. GE (10 questions)\n   → Renouvellements, conformité, ANADEFI\n3. Obs. CTS (11 questions)\n   → Planification, coordination CAE/CCE\n\n══════════════════════════════════════\nMARCHÉ PARTICULIERS:\n══════════════════════════════════════\n4. Obs. CAC (7 questions)\n   → Accueil, digital, rebond commercial\n5. Obs. DA (8 questions)\n   → Plan actions, pilotage, feedback\n6. Obs. CC IGP\n7. Obs. CC Premium\n8. Obs. CC PRO\n\n══════════════════════════════════════\nSTATUTS & ACTIONS:\n══════════════════════════════════════\nStatuts: SOUMISE | ANNULEE\nActions: CONSULTER | ANNULER | TELECHARGER" as N4
+
+@enduml

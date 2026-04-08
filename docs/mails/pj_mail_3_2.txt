@@ -1,0 +1,4 @@
+
+95450       ;Mr   ,OUGHANEM                                ,Rachid                        ;45005C    ;C.A. MARRAKECH           ;DIRCA     ;Directeur CAF B     ;ROUGHANEM@bankofafrica.ma                         ;05.28.99.90.41
+21607       ;Mr   ,KHOURI                                  ,Zakaria                       ;59007     ;SAFI Cité Plateau        ;DIRAGC    ;Dir Agence Contact  ;zkhouri@bankofafrica.ma                           ;
+24739       ;Mr   ,IRIFI                                   ,Noureddine                    ;53001     ;CEM DAKHLA               ;DIRSUMLM  ;Dir. Succursale MLM ;nirifi@bankofafrica.ma                            ;

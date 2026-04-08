@@ -1,0 +1,623 @@
+You have 2 new messages.
+
+Skip to content
+Using Gmail with screen readers
+3 of 3
+TR: Outil BOA Follow Up - Annuaire ASAL - ORG
+Inbox
+
+Ayoub YOUB
+Attachments
+13:48 (5 minutes ago)
+to me
+
+ 
+
+ 
+
+
+
+Ayoub YOUB
+Prestataire/Consultant
+Développement & Canaux/Digital Dev Transverse
+ayoub.youb2@eurafric-information.com
+
+
+
+
+
+
+
+
+ 
+
+De : Salwa NANA <snana@bankofafrica.ma>
+Envoyé : jeudi 19 mars 2026 13:45
+À : Ayoub YOUB <ayoub.youb2@eurafric-information.com>; Zakaria HAMMOUDI <zakaria.hammoudi@eurafric-information.com>
+Objet : TR: Outil BOA Follow Up - Annuaire ASAL - ORG
+
+ 
+
+ 
+
+ 
+
+De : Abdeljabbar BENMESSAOUD <abenmessaoud@bankofafrica.ma>
+Envoyé : jeudi 19 mars 2026 13:24
+À : Salwa NANA <snana@bankofafrica.ma>
+Cc : Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>; Salma BOURAK <sbourak@bankofafrica.ma>; Hajar ALAMI <haalami@bankofafrica.ma>; Ghassane CHEHBI <gchehbi@bankofafrica.ma>; Mohamed IBBA <moibba@bankofafrica.ma>
+Objet : TR: Outil BOA Follow Up - Annuaire ASAL - ORG
+
+ 
+
+Bonjour ,
+
+ 
+
+J’espère que tout va bien et Awachar Marbouka
+
+ 
+
+Merci de trouver ci-rattaché l’extraction demandée.
+
+ 
+
+Cordialement
+
+ 
+
+BENMESSAOUD ABDELJABBAR
+
+TPOSIG - Référentiels (Organisation)
+
+Organisation & Excellence opérationnelle - Conduite de Changement & Refonte des Processus
+
+06 61 36 38 34 – 05 22 46 25 78
+
+De : Salwa NANA <snana@bankofafrica.ma>
+Envoyé : mercredi 18 mars 2026 12:50
+À : Abdeljabbar BENMESSAOUD <abenmessaoud@bankofafrica.ma>
+Cc : Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>; Salma BOURAK <sbourak@bankofafrica.ma>; Hajar ALAMI <haalami@bankofafrica.ma>; Ghassane CHEHBI <gchehbi@bankofafrica.ma>; Mohamed IBBA <moibba@bankofafrica.ma>
+Objet : RE: Outil BOA Follow Up - Annuaire ASAL - ORG
+
+ 
+
+Bonjour Abdeljabbar,
+
+ 
+
+J’espère que tu te portes bien.
+
+ 
+
+Dans le cadre du projet Follow Up, serait-il possible de nous partager, s’il te plait, la liste des informations suivantes:
+
+Codes agence
+Noms des agences
+Codes groupe
+Noms des groupes
+Codes CEM
+Noms des CEM
+Codes CAF
+Noms des CAF
+Codes Sous-région
+Noms des sous-région
+Codes région
+Noms des régions
+En te remerciant à l’avance.
+
+Cordialement,
+
+ 
+
+Salwa
+
+ 
+
+De : Salwa NANA
+Envoyé : lundi 9 mars 2026 13:44
+À : Mohamed IBBA <moibba@bankofafrica.ma>
+Cc : Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>; Salma BOURAK <sbourak@bankofafrica.ma>; Hajar ALAMI <haalami@bankofafrica.ma>; Ghassane CHEHBI <gchehbi@bankofafrica.ma>; Abdeljabbar BENMESSAOUD <abenmessaoud@bankofafrica.ma>
+Objet : RE: Outil BOA Follow Up - Annuaire ASAL - ORG
+
+ 
+
+Merci beaucoup pour les compléments d’information.
+
+ 
+
+De : Mohamed IBBA <moibba@bankofafrica.ma>
+Envoyé : lundi 9 mars 2026 13:42
+À : Salwa NANA <snana@bankofafrica.ma>
+Cc : Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>; Salma BOURAK <sbourak@bankofafrica.ma>; Hajar ALAMI <haalami@bankofafrica.ma>; Ghassane CHEHBI <gchehbi@bankofafrica.ma>; Abdeljabbar BENMESSAOUD <abenmessaoud@bankofafrica.ma>
+Objet : RE: Outil BOA Follow Up - Annuaire ASAL - ORG
+
+ 
+
+Bonjour Salwa,
+
+Merci de trouver ci-après nos remarques en surbrillance.
+
+Cordialement,
+
+ 
+
+Mohamed IBBA
+
+ 
+
+De : Salwa NANA <snana@bankofafrica.ma>
+Envoyé : lundi 9 mars 2026 12:59
+À : Mohamed IBBA <moibba@bankofafrica.ma>; Abdeljabbar BENMESSAOUD <abenmessaoud@bankofafrica.ma>
+Cc : Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>; Salma BOURAK <sbourak@bankofafrica.ma>; Hajar ALAMI <haalami@bankofafrica.ma>; Ghassane CHEHBI <gchehbi@bankofafrica.ma>
+Objet : RE: Outil BOA Follow Up - Annuaire ASAL - ORG
+
+ 
+
+Re-bonjour Ssi Mohamed, Abdeljabbar,
+
+ 
+
+Je vous remercie pour votre disponibilité lors de la réunion et je vous prie de trouver ci-après un récapitulatif des principaux points abordés :
+
+ 
+
+Le système ORG permet principalement de gérer les entités, on y gère 3 niveaux : Région, groupe et agence  è Le référentiel Organisation repose sur Cinque grandes structure :
+
+ 
+
+- Structure Groupe : Représente les groupes qui contiennent les différents établissements Par exemple : Groupe Finance Com ou Groupe BMCE
+
+- Structure Etablissement : Représente les établissements (compagnies) à intégrer dans le référentiel Organisations. Par exemple : RMA ,BOA
+
+- Structure Entité : Représente toutes les entités internes à l’établissement, par exemple : directions, départements, pôles...
+
+- Structure point de vente : Représente les points de vente banque et assurance. Par exemple : Agent généraux, BGD, Courtiers, Agences Bancaires...
+
+- Structure point de vente annexe : Représente les points de vente annexe à d’autres points de vente. Par exemple : les desk…
+
+ 
+
+ 
+
+Les entités sont identifiées par des codes uniques è par des Codes unités Organisationnelles
+La mise à jour du système ORG se fait à la demande è ou après nouvelle création d’entité ou un nouvelle nomination
+Les régions sont composées de régions adjoints (sous-région/réseau) è les régions sont découpées en Région (N5) – Sous-région/Réseau (N4) – Groupe(N3) – Agence(N2) - Desk(N1)
+Les animateurs font partie de l’équipe « Animation et pilotage région », rattachée aux sous-régions è à consulter l’entité Organisation pour la partie Organigramme pour la banque de détails
+La gestion des fonctions (rôles) est assurée par l’équipe de M. Mohamed Bricha è à consulter l’entité Organisation pour la partie Organigramme pour la banque de détails
+ 
+
+N’hésitez pas à compéter ou amender ce CR si nécessaire.
+
+ 
+
+Cordialement,
+
+ 
+
+Salwa
+
+ 
+
+ 
+
+_____________________________________________
+De : Salwa NANA
+Envoyé : vendredi 6 mars 2026 12:35
+À : Mohamed IBBA <moibba@bankofafrica.ma>
+Cc : Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>; Salma BOURAK <sbourak@bankofafrica.ma>; Hajar ALAMI <haalami@bankofafrica.ma>; Abdeljabbar BENMESSAOUD <abenmessaoud@bankofafrica.ma>
+Objet : RE: Outil BOA Follow Up - Annuaire ASAL - ORG
+
+ 
+
+Bonjour Ssi Mohamed,
+
+ 
+
+Je vous remercie pour votre retour.
+
+ 
+
+Je vous enverrai sous peu l’invitation pour lundi à 12h00.
+
+ 
+
+Cordialement,
+
+Salwa
+
+ 
+
+ 
+
+ 
+
+De : Mohamed IBBA <moibba@bankofafrica.ma>
+Envoyé : vendredi 6 mars 2026 12:18
+À : Salwa NANA <snana@bankofafrica.ma>
+Cc : Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>; Salma BOURAK <sbourak@bankofafrica.ma>; Hajar ALAMI <haalami@bankofafrica.ma>; Abdeljabbar BENMESSAOUD <abenmessaoud@bankofafrica.ma>
+Objet : RE: Outil BOA Follow Up - Annuaire ASAL - ORG
+
+ 
+
+Bonjour,
+
+Lundi à partir 12h00.
+
+Merci.
+
+Cordialement,
+
+ 
+
+Mohamed IBBA
+
+ 
+
+De : Salwa NANA <snana@bankofafrica.ma>
+Envoyé : jeudi 5 mars 2026 08:52
+À : Mohamed IBBA <moibba@bankofafrica.ma>
+Cc : Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>; Salma BOURAK <sbourak@bankofafrica.ma>
+Objet : RE: Outil BOA Follow Up - Annuaire ASAL - ORG
+
+ 
+
+Bonjour Ssi Mohamed,
+
+ 
+
+J’espère que vous vous portez bien.
+
+ 
+
+Auriez-vous de la disponibilité aujourd’hui ou demain pour échanger autour du sujet du rattachement des collaborateurs réseau, s’il vous plait ?
+
+ 
+
+D’avance merci.
+
+ 
+
+Cordialement,
+
+ 
+
+Salwa
+
+ 
+
+De : Salwa NANA
+Envoyé : mardi 3 mars 2026 13:44
+À : Mohamed IBBA <moibba@bankofafrica.ma>
+Cc : Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>; Salma BOURAK <sbourak@bankofafrica.ma>
+Objet : TR: Outil BOA Follow Up - Annuaire ASAL - ORG
+
+ 
+
+Bonjour Ssi Mohamed,
+
+ 
+
+J’espère que vous vous portez bien.
+
+Dans le cadre du cadrage fonctionnel relatif à la mise en place d’une solution dédiée au suivi de l’appropriation des pratiques commerciales et managériales au sein du réseau, nous avons besoin de recueillir des informations relatives aux collaborateurs du réseau et à leur rattachement hiérarchique et organisationnel dans l’annuaire (Systèmes ASAL et ORG).
+
+ 
+
+Auriez-vous s’il vous plait, des créneaux de disponibilité cette semaine pour échanger à ce sujet?
+
+Je vous remercie par avance.
+
+ 
+
+Cordialement,
+
+ 
+
+Salwa  
+
+ 
+
+ 
+
+De : Salwa NANA
+Envoyé : mardi 3 mars 2026 12:37
+À : Badr MERZAQ <badr.merzaq@eurafric-information.com>
+Cc : Salma BOURAK <sbourak@bankofafrica.ma>; Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>; Omar EL IDRISSI ESSERHROUCHNI <elidriou@eurafric-information.com>; Asmae ALABOUCH <asmae.alabouch@eurafric-information.com>
+Objet : RE: Outil BOA Follow Up - Annuaire ASAL
+
+ 
+
+Re-bonjour Badr,
+
+ 
+
+Je te remercie pour ta disponibilité lors de notre réunion, je prie de trouver ci-après un CR des points discutés :
+
+ 
+
+Le système ASAL contient la liste de l’ensemble des collaborateurs, avec certaines informations relatives à leur rattachement organisationnel.
+La configuration du rattachement organisationnel et hiérarchique se fait principalement sur le système ORG géré par Mr. Ibba.
+Les deux systèmes sont APIsés et connectés entre eux.
+Un point avec Mr. Ibba s’impose afin de vérifier :
+Le rattachement existant des rôles impliqués dans le projet
+La fréquence de la mise à jour des données collaborateurs et leur rattachement
+ 
+
+Nous aurons besoin de planifier un autre point technique, une fois les détails du rattachement récupérés,  afin d’identifier les appels API à implémenter.
+
+Cordialement,
+Salwa
+
+ 
+
+-----Rendez-vous d'origine-----
+De : Salwa NANA
+Envoyé : jeudi 26 février 2026 09:31
+À : Salwa NANA; Badr MERZAQ; Maria LAHMAMI; Asmae ALABOUCH
+Cc : Salma BOURAK; Omar EL IDRISSI ESSERHROUCHNI
+Objet : Outil BOA Follow Up - Annuaire ASAL
+Date : mardi 3 mars 2026 10:30-11:30 (UTC+01:00) Casablanca.
+Où : Webex
+
+ 
+
+Bonjour,
+
+ 
+
+Je vous envoie cette invitation afin de bloquer le créneau de notre réunion. Le lien de connexion sera partagé avant le point.
+
+Lien de la réunion :  Cisco Webex
+
+Bien à vous,
+
+ 
+
+Salwa
+
+ 
+
+_____________________________________________
+De : Badr MERZAQ <badr.merzaq@eurafric-information.com>
+Envoyé : jeudi 26 février 2026 09:15
+À : Salwa NANA <snana@bankofafrica.ma>
+Cc : Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>; Salma BOURAK <sbourak@bankofafrica.ma>; Asmae ALABOUCH <asmae.alabouch@eurafric-information.com>; Omar EL IDRISSI ESSERHROUCHNI <elidriou@eurafric-information.com>
+Objet : RE: Outil BOA Follow Up - Annuaire ASAL
+
+ 
+
+Salam,
+
+ 
+
+Je vous prie de planifier un point le Mardi 03/03 à 10h30.
+
+ 
+
+Cordialement.
+
+ 
+
+
+
+Badr MERZAQ
+
+DIGITAL
+badr.merzaq@eurafric-information.com
+05 20 47 52 14
+
+ 
+
+
+
+ 
+
+De : Omar EL IDRISSI ESSERHROUCHNI <elidriou@eurafric-information.com>
+Envoyé : mercredi 25 février 2026 11:26
+À : Salwa NANA <snana@bankofafrica.ma>
+Cc : Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>; Salma BOURAK <sbourak@bankofafrica.ma>; Asmae ALABOUCH <asmae.alabouch@eurafric-information.com>; Badr MERZAQ <badr.merzaq@eurafric-information.com>
+Objet : RE: Outil BOA Follow Up - Annuaire ASAL
+
+ 
+
+Bonjour,
+
+ 
+
+Le référentiel ASAL est géré par M.Badr MERZAQ en cc qui pourra apporter les éléments de réponse sur le volet technique.
+
+Il reviendra vers vous avec une proposition de créneau.
+
+ 
+
+Cordialement.
+
+ 
+
+
+
+Omar EL IDRISSI ESSERHROUCHNI
+Responsable Transverse
+Département Socle
+elidriou@eurafric-information.com
++212 5 20 47 54 22
+
+ 
+
+
+
+ 
+
+De : Salwa NANA <snana@bankofafrica.ma>
+Envoyé : mercredi 25 février 2026 10:20
+À : Omar EL IDRISSI ESSERHROUCHNI <elidriou@eurafric-information.com>
+Cc : Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>; Salma BOURAK <sbourak@bankofafrica.ma>; Asmae ALABOUCH <asmae.alabouch@eurafric-information.com>
+Objet : Outil BOA Follow Up - Annuaire ASAL
+
+ 
+
+Bonjour Omar,
+
+ 
+
+J’espère que vous vous portez bien.
+
+Dans le cadre du cadrage fonctionnel relatif à la mise en place d’une solution dédiée au suivi de l’appropriation des pratiques commerciales et managériales au sein du réseau, nous souhaitons analyser l’annuaire existant ainsi que les données et interfaces associées.
+
+ 
+
+Auriez-vous s’il vous plait, des créneaux de disponibilité cette semaine afin que nous puissions échanger sur le système actuel (ASAL) et les éléments techniques à prendre en compte ?  
+
+Je vous remercie par avance.
+
+ 
+
+Cordialement,
+
+ 
+
+Salwa  
+
+ 
+
+ 
+
+De : Salwa NANA
+Envoyé : lundi 23 février 2026 14:19
+À : Abdeltif KHALID <akhalid@bankofafrica.ma>; Houssam Bouzarzar <houssam.bouzarzar@nouvellesdonnes.com>; Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>
+Cc : Salma BOURAK <sbourak@bankofafrica.ma>; Ghyzleine MASSOUN <gmassoun@bankofafrica.ma>; Youssef BIKRI <ybikri@bankofafrica.ma>; Ismail ALAOUI ISMAILI <i.alaoui@bmcek.co.ma>; Mohamed Amine KHEDIDJ <makhedidj@bankofafrica.ma>
+Objet : RE: [Pratiques] Outil BOA Follow Up - Spécifications fonctionnelles
+
+ 
+
+Re-bonjour à tous,
+
+ 
+
+Je vous remercie pour votre disponibilité lors de notre atelier de cadrage fonctionnel. Vous trouverez ci-après un récapitulatif des principaux points discutés :
+
+ 
+
+Participants : destinataires du présent mail 
+
+ 
+
+Points abordés :
+
+Présentation du support en pièce jointe restituant :
+Les objectifs du projet
+Notre compréhension du besoin
+La proposition de structuration des modules
+Les matrices par profils ainsi que les points de clarification associés
+Présentation du  macro planning correspondant à la mise en œuvre la solution cible couvrant l’ensemble du périmètre
+Validation du principe de lotissement du projet avec une demande de priorisation des évaluations implémentées au niveau de Appsheet
+ 
+
+Décision:
+
+Accord sur une approche de développement par lots
+Priorisation à initier autour du périmètre implémenté sur Appsheet
+ 
+
+Prochaines étapes :
+
+ 
+
+Planifier un atelier dédié afin de :
+Recueillir les réponses aux questions recensées dans le support et le fichier Excel. A noter que ces éléments sont nécessaires pour consolider la feuille de route du projet et sécuriser les prochaines phases
+Affiner le périmètre fonctionnel et préciser le lotissement de la solution
+Définir le MVP cible
+Affiner le planning du projet
+ 
+
+N’hésitez pas à compéter ou amender ce CR si nécessaire.
+
+ 
+
+Cordialement,
+
+ 
+
+Salwa
+
+ 
+
+ 
+
+De : Maria LAHMAMI <MLAHMAMI@bankofafrica.ma>
+Envoyé : lundi 23 février 2026 12:00
+À : Salma BOURAK <sbourak@bankofafrica.ma>; Mohamed Amine KHEDIDJ <makhedidj@bankofafrica.ma>; Ghyzleine MASSOUN <gmassoun@bankofafrica.ma>; Abdeltif KHALID <akhalid@bankofafrica.ma>; Ismail ALAOUI ISMAILI <i.alaoui@bmcek.co.ma>; Houssam Bouzarzar <houssam.bouzarzar@nouvellesdonnes.com>; Salwa NANA <snana@bankofafrica.ma>; Youssef BIKRI <ybikri@bankofafrica.ma>
+Cc : saloua.nana@gmail.com
+Objet : RE: [Pratiques] Outil BOA Follow Up - Spécifications fonctionnelles
+
+ 
+
+Bonjour à tous,
+
+ 
+
+Merci d’utiliser ce lien pour le point de 12h :
+
+ 
+
+Lien de la Réunion:
+
+https://meetingsemea20.webex.com/meet/pr953419454
+
+ 
+
+Numéro de Réunion:
+
+953 419 454
+
+ 
+
+Se joindre à partir d’un système ou d’une application de conférence vidéo
+
+Composer: pr953419454@meetingsemea20.webex.com
+
+ 
+
+Code d’accès: 953 419 454
+
+ 
+
+Cordialement.
+
+ 
+
+ 
+
+-----Rendez-vous d'origine-----
+De : Salma BOURAK <sbourak@bankofafrica.ma>
+Envoyé : lundi 23 février 2026 11:12
+À : Salma BOURAK; Mohamed Amine KHEDIDJ; Ghyzleine MASSOUN; Abdeltif KHALID; Ismail ALAOUI ISMAILI; Houssam Bouzarzar; Salwa NANA; Maria LAHMAMI
+Cc : Youssef BIKRI; saloua.nana@gmail.com
+Objet : [Pratiques] Outil BOA Follow Up - Spécifications fonctionnelles
+Date : lundi 23 février 2026 12:00-13:00 (UTC+01:00) Casablanca.
+Où :
+
+ 
+
+Lien de la Réunion:
+
+ 
+
+https://meetingsemea24.webex.com/meet/pr1632236511
+
+ 
+
+ 
+
+Se joindre à partir d’un système ou d’une application de conférence vidéo
+
+Composer: pr1632236511@meetingsemea24.webex.com
+
+ 
+
+...
+
+[Message clipped]  View entire message
+ One attachment
+  •  Scanned by Gmail

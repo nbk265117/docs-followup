@@ -1,0 +1,1090 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modélisation & Conception - Follow Up BOA v1.1</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            font-size: 11pt;
+            line-height: 1.5;
+            color: #333;
+            background: #f5f5f5;
+            padding: 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 { color: #003D7C; text-align: center; margin-bottom: 10px; font-size: 24pt; }
+        h2 { color: #003D7C; margin: 25px 0 15px 0; padding-bottom: 8px; border-bottom: 2px solid #003D7C; font-size: 16pt; }
+        h3 { color: #4A90E2; margin: 20px 0 10px 0; font-size: 13pt; }
+        h4 { color: #666; margin: 15px 0 8px 0; font-size: 11pt; }
+        .subtitle { text-align: center; color: #666; margin-bottom: 30px; font-size: 12pt; }
+        .meta { text-align: center; color: #999; font-size: 10pt; margin-bottom: 20px; }
+        .version-badge {
+            display: inline-block;
+            background: #10b981;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 10pt;
+            margin-left: 10px;
+        }
+
+        table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 10pt; }
+        th { background: #003D7C; color: white; padding: 10px; text-align: left; }
+        td { padding: 8px 10px; border: 1px solid #ddd; vertical-align: top; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        tr:hover { background: #e8f1f8; }
+
+        .entity-box {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-left: 4px solid #003D7C;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        .entity-box h4 { color: #003D7C; margin-top: 0; }
+
+        .attribute-list { margin-left: 20px; }
+        .attribute-list li { margin: 5px 0; }
+        .type { color: #e11d48; font-family: monospace; font-size: 10pt; }
+        .key { color: #059669; font-weight: bold; }
+        .new { background: #fef3c7; padding: 2px 6px; border-radius: 3px; font-size: 9pt; color: #b45309; }
+
+        .diagram-container {
+            background: #1a1a2e;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        .diagram-container pre {
+            color: #e2e8f0;
+            font-family: 'Consolas', monospace;
+            font-size: 9pt;
+            line-height: 1.3;
+            margin: 0;
+        }
+
+        .note {
+            background: #fffbeb;
+            border-left: 4px solid #f59e0b;
+            padding: 12px 15px;
+            margin: 15px 0;
+            font-size: 10pt;
+        }
+        .note-info {
+            background: #eff6ff;
+            border-color: #3b82f6;
+        }
+        .note-success {
+            background: #ecfdf5;
+            border-color: #10b981;
+        }
+        .note-danger {
+            background: #fef2f2;
+            border-color: #ef4444;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 3px 10px;
+            border-radius: 12px;
+            font-size: 9pt;
+            font-weight: bold;
+            margin: 2px;
+        }
+        .badge-primary { background: #003D7C; color: white; }
+        .badge-success { background: #10b981; color: white; }
+        .badge-warning { background: #f59e0b; color: white; }
+        .badge-danger { background: #ef4444; color: white; }
+        .badge-light { background: #e8f1f8; color: #003D7C; }
+        .badge-double { background: #8b5cf6; color: white; }
+
+        .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+        .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 15px; }
+        .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+
+        .card {
+            background: white;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            padding: 15px;
+        }
+        .card h4 { color: #003D7C; margin-bottom: 10px; }
+
+        code {
+            background: #f0f0f0;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-family: 'Consolas', monospace;
+            font-size: 10pt;
+            color: #e11d48;
+        }
+
+        .toc {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 6px;
+            margin-bottom: 30px;
+        }
+        .toc ul { list-style: none; margin-left: 0; }
+        .toc li { margin: 8px 0; }
+        .toc a { color: #003D7C; text-decoration: none; }
+        .toc a:hover { text-decoration: underline; }
+
+        .highlight-row { background: #fef3c7 !important; }
+
+        @media print {
+            body { background: white; padding: 0; }
+            .container { box-shadow: none; max-width: 100%; }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<h1>MODELISATION & CONCEPTION <span class="version-badge">v2.0</span></h1>
+<div class="subtitle">Projet Follow Up BOA - Diagramme de Classes</div>
+<div class="meta">
+    Version 2.0 | Avril 2026 | Eurafric Information - Bank of Africa<br>
+    <strong>Mise à jour:</strong> Intégration complète Mail 4 (pj_mail_4_1.pptx à pj_mail_4_5.xlsx)
+</div>
+
+<!-- CHANGELOG -->
+<div class="note note-success">
+    <strong>Nouveautés v2.0 (Mail 4):</strong>
+    <ul style="margin-left: 20px; margin-top: 8px;">
+        <li><strong>Gestionnaire Entreprises IDENTIFIÉ</strong> → Code ASAL = <code>CCOMPTE</code> (Chargé de Comptes Entreprises)</li>
+        <li><strong>32 Règles de Gestion</strong> détaillées (RG1-RG32) pour la saisie des observations</li>
+        <li><strong>8 Modèles d'Observation MVP</strong> avec questions détaillées (CAE, GE, CTS, CAC, DA, CC IGP, CC Premium, CC PRO)</li>
+        <li><strong>Statuts</strong>: SOUMISE, ANNULEE | <strong>Actions</strong>: CONSULTER, ANNULER, TELECHARGER</li>
+        <li><strong>Règle Affectation Animateurs</strong>: Agence→Région, CAF/CEMM→Siège (multi-affectation possible)</li>
+        <li><strong>3 nouveaux codes Animateur</strong>: DAMTEST, DETACZA, DETACZF</li>
+    </ul>
+</div>
+<div class="note">
+    <strong>Rappel v1.1:</strong>
+    <ul style="margin-left: 20px; margin-top: 8px;">
+        <li>Profil <code>OBSERVATEUR_ET_CIBLE</code> pour les rôles doubles (DA, RCP, Directeur CAF, RCE)</li>
+        <li>Conseiller Premium identifié → Code ASAL = <code>CC PRIVE</code></li>
+        <li>Structure organisationnelle complète (584 unités) avec catégories CAF (A/B/C)</li>
+    </ul>
+</div>
+
+<!-- SOMMAIRE -->
+<div class="toc">
+    <h3>Sommaire</h3>
+    <ul>
+        <li><a href="#synthese">1. Synthèse des sources analysées</a></li>
+        <li><a href="#architecture">2. Vue d'ensemble de l'architecture</a></li>
+        <li><a href="#organisation">3. Package: Structure Organisationnelle (584 unités)</a></li>
+        <li><a href="#utilisateurs">4. Package: Utilisateurs & Habilitations</a></li>
+        <li><a href="#observations">5. Package: Observations (Coeur métier)</a></li>
+        <li><a href="#modeles">6. Modèles d'Observation MVP (8 formulaires)</a> <span class="new">NEW</span></li>
+        <li><a href="#regles-saisie">7. Règles de Gestion Saisie (RG1-RG32)</a> <span class="new">NEW</span></li>
+        <li><a href="#mapping">8. Mapping Rôles Follow Up ↔ Fonctions ASAL (COMPLET)</a></li>
+        <li><a href="#regles">9. Règles de gestion métier</a></li>
+        <li><a href="#statuts">10. Statuts & Actions MVP</a> <span class="new">NEW</span></li>
+    </ul>
+</div>
+
+<!-- 1. SYNTHESE -->
+<h2 id="synthese">1. Synthèse des Sources Analysées</h2>
+
+<h3>1.1 Fichiers PJ analysés</h3>
+<table>
+    <tr>
+        <th>Fichier</th>
+        <th>Type</th>
+        <th>Lignes</th>
+        <th>Contenu</th>
+    </tr>
+    <tr>
+        <td><strong>pj_mail_1.xlsx</strong></td>
+        <td>Excel</td>
+        <td>584</td>
+        <td>Structure organisationnelle complète (Régions, Sous-régions, Groupes, Agences, CAF)</td>
+    </tr>
+    <tr>
+        <td><strong>pj_mail_2.xlsx</strong></td>
+        <td>Excel</td>
+        <td>2046 + 50</td>
+        <td>
+            <strong>Feuille "All":</strong> Liste complète des codes fonctions ASAL (2046)<br>
+            <strong>Feuille "Mapping":</strong> Mapping officiel ASAL → Follow Up (50)
+        </td>
+    </tr>
+    <tr>
+        <td><strong>pj_mail_3_1.txt</strong></td>
+        <td>TXT</td>
+        <td>2045</td>
+        <td>Liste des codes fonctions ASAL (même que pj_mail_2 feuille All)</td>
+    </tr>
+    <tr>
+        <td><strong>pj_mail_3_2.txt</strong></td>
+        <td>TXT</td>
+        <td>3</td>
+        <td>Exemples de données collaborateurs avec format complet</td>
+    </tr>
+    <tr class="highlight-row">
+        <td><strong>pj_mail_4_1.pptx</strong> <span class="new">NEW</span></td>
+        <td>PowerPoint</td>
+        <td>15 slides</td>
+        <td>Présentation MVP: contexte, objectifs, fonctionnalités, parcours utilisateurs, planning</td>
+    </tr>
+    <tr class="highlight-row">
+        <td><strong>pj_mail_4_2.xlsx</strong> <span class="new">NEW</span></td>
+        <td>Excel</td>
+        <td>34 + 35</td>
+        <td>
+            <strong>Feuille "RGs Saisie":</strong> 32 règles de gestion pour saisie observations<br>
+            <strong>Feuille "RGs Consultation":</strong> Règles de consultation historique
+        </td>
+    </tr>
+    <tr class="highlight-row">
+        <td><strong>pj_mail_4_3.xlsx</strong> <span class="new">NEW</span></td>
+        <td>Excel</td>
+        <td>2046 + 53</td>
+        <td>
+            <strong>Feuille "All":</strong> Codes fonctions ASAL<br>
+            <strong>Feuille "Mapping":</strong> Mapping v2 avec <code>CCOMPTE</code> identifié
+        </td>
+    </tr>
+    <tr class="highlight-row">
+        <td><strong>pj_mail_4_4.xlsx</strong> <span class="new">NEW</span></td>
+        <td>Excel</td>
+        <td>5 feuilles</td>
+        <td>5 Formulaires d'observation détaillés: CAE (9Q), GE (10Q), CTS (11Q), CAC (7Q), DA (8Q)</td>
+    </tr>
+    <tr class="highlight-row">
+        <td><strong>pj_mail_4_5.xlsx</strong> <span class="new">NEW</span></td>
+        <td>Excel</td>
+        <td>584</td>
+        <td>Structure organisationnelle (identique à pj_mail_1)</td>
+    </tr>
+</table>
+
+<h3>1.2 Informations clés extraites</h3>
+
+<div class="grid-2">
+    <div class="card">
+        <h4>Structure Organisationnelle (pj_mail_1)</h4>
+        <ul>
+            <li><strong>584 unités</strong> organisationnelles</li>
+            <li><strong>7 Régions</strong> identifiées</li>
+            <li><strong>3 catégories de CAF:</strong> A, B, C</li>
+            <li>Types: Agences, CAF, CEMM, Citadine</li>
+        </ul>
+    </div>
+    <div class="card">
+        <h4>Mapping ASAL (pj_mail_2)</h4>
+        <ul>
+            <li><strong>2046 fonctions</strong> ASAL référencées</li>
+            <li><strong>50 mappings</strong> validés</li>
+            <li><strong>4 rôles doubles</strong> identifiés</li>
+            <li>Conseiller Premium = <code>CC PRIVE</code></li>
+        </ul>
+    </div>
+</div>
+
+<!-- 2. ARCHITECTURE -->
+<h2 id="architecture">2. Vue d'Ensemble de l'Architecture</h2>
+
+<div class="diagram-container">
+<pre>
+┌─────────────────────────────────────────────────────────────────────────────────────────┐
+│                            DIAGRAMME DE PACKAGES - FOLLOW UP BOA v1.1                    │
+├─────────────────────────────────────────────────────────────────────────────────────────┤
+│                                                                                          │
+│   ┌───────────────────────────────┐       ┌───────────────────────────────────────┐     │
+│   │  STRUCTURE ORGANISATIONNELLE  │       │     UTILISATEURS & HABILITATIONS      │     │
+│   │  ─────────────────────────────│       │  ─────────────────────────────────────│     │
+│   │  • Region (7 régions)         │       │  • Collaborateur                      │     │
+│   │  • SousRegion                 │       │  • UtilisateurFollowUp                │     │
+│   │  • Groupe                     │       │  • FonctionASAL (2046)                │     │
+│   │  • Agence / CAF (A/B/C) / CEMM│       │  • RoleFollowUp                       │     │
+│   │  • Desk                       │       │  • Permission                         │     │
+│   │  (584 unités totales)         │       │  • AffectationAnimateur               │     │
+│   └───────────────┬───────────────┘       └───────────────────┬───────────────────┘     │
+│                   │                                           │                          │
+│                   └─────────────────┬─────────────────────────┘                          │
+│                                     │                                                    │
+│                                     ▼                                                    │
+│   ┌─────────────────────────────────────────────────────────────────────────────────┐   │
+│   │                         OBSERVATIONS (Coeur Métier)                              │   │
+│   │  ───────────────────────────────────────────────────────────────────────────────│   │
+│   │  • Observation (entité centrale)          • ModeleObservation (12 types)        │   │
+│   │  • ReponseObservation                     • SectionFormulaire                   │   │
+│   │  • StatutObservation                      • Question / OptionReponse            │   │
+│   └─────────────────────────────────────────────────────────────────────────────────┘   │
+│                                     │                                                    │
+│                   ┌─────────────────┼─────────────────┬─────────────────┐                │
+│                   │                 │                 │                 │                │
+│                   ▼                 ▼                 ▼                 ▼                │
+│   ┌───────────────────┐ ┌─────────────────┐ ┌─────────────────┐ ┌─────────────────┐     │
+│   │ HISTORIQUE & AUDIT│ │ INTEGRATION ASAL│ │  CONFIGURATION  │ │ MAPPING ROLES   │     │
+│   │  ─────────────────│ │ ────────────────│ │ ────────────────│ │ ────────────────│     │
+│   │  • AuditLog       │ │ • DonneesASAL   │ │ • Paramètres    │ │ • MappingFonc.  │     │
+│   │  • Historique     │ │ • Synchro       │ │ • Règles        │ │ • Matrice Hab.  │     │
+│   └───────────────────┘ └─────────────────┘ └─────────────────┘ └─────────────────┘     │
+│                                                                                          │
+└─────────────────────────────────────────────────────────────────────────────────────────┘
+</pre>
+</div>
+
+<!-- 3. STRUCTURE ORGANISATIONNELLE -->
+<h2 id="organisation">3. Package: Structure Organisationnelle</h2>
+
+<div class="note note-info">
+    <strong>Source:</strong> pj_mail_1.xlsx (584 lignes)<br>
+    <strong>Hiérarchie:</strong> Région (N5) → Sous-région (N4) → Groupe (N3) → Agence/CAF/CEMM (N2) → Desk (N1)
+</div>
+
+<h3>3.1 Régions identifiées (7)</h3>
+<table>
+    <tr>
+        <th>Code</th>
+        <th>Nom</th>
+        <th>Exemples Sous-régions</th>
+    </tr>
+    <tr>
+        <td><code>8720</code></td>
+        <td><strong>Grand Casablanca</strong></td>
+        <td>Réseau Casa Sud Ouest (8750), Réseau Casa Centre & Est (8740), Réseau Casa Littoral (8730)</td>
+    </tr>
+    <tr>
+        <td><code>8420</code></td>
+        <td><strong>Centre Atlantique</strong></td>
+        <td>Réseau Entreprises Région Centre Atlantique (8426)</td>
+    </tr>
+    <tr>
+        <td><code>8430</code></td>
+        <td><strong>Nord Méditerranée</strong></td>
+        <td>Développement & Pilotage R.N.Méditerranée (8431), Réseau Entreprises Région Nord Méditerranée (8438)</td>
+    </tr>
+    <tr>
+        <td><code>8440</code></td>
+        <td><strong>Centre</strong></td>
+        <td>Développement & Pilotage Centre (8441)</td>
+    </tr>
+    <tr>
+        <td><code>8450</code></td>
+        <td><strong>Centre Méridional</strong></td>
+        <td>DRA Réseau Entreprise Région Centre Méridional (8455)</td>
+    </tr>
+    <tr>
+        <td><code>8460</code></td>
+        <td><strong>Oriental</strong></td>
+        <td>Développement & Pilotage Oriental (8461)</td>
+    </tr>
+    <tr>
+        <td><code>8350</code></td>
+        <td><strong>Souss Massa Provinces du Sud</strong></td>
+        <td>Réseau Agadir Sud (8351), Réseau Provinces du Sud (8352)</td>
+    </tr>
+</table>
+
+<h3>3.2 Types de Centres d'Affaires</h3>
+<div class="grid-3">
+    <div class="card">
+        <h4>Centre D'Affaires A</h4>
+        <span class="badge badge-primary">5 CAF</span>
+        <ul style="margin-top: 10px; font-size: 9pt;">
+            <li>CA FAR (78033C)</li>
+            <li>CA RABAT (81001C)</li>
+            <li>CA LALLA YACOUT (78020C)</li>
+            <li>CA HASSAN II (78019C)</li>
+            <li>CA MOHAMED V (78010C)</li>
+        </ul>
+    </div>
+    <div class="card">
+        <h4>Centre D'Affaires B</h4>
+        <span class="badge badge-warning">15 CAF</span>
+        <ul style="margin-top: 10px; font-size: 9pt;">
+            <li>CA TETOUAN, CA Kénitra</li>
+            <li>CA MARRAKECH, CA FES</li>
+            <li>CA ZENITH MILLENIUM</li>
+            <li>CA MEKNES, CA TANGER</li>
+            <li>Et plus...</li>
+        </ul>
+    </div>
+    <div class="card">
+        <h4>Centre D'Affaires C</h4>
+        <span class="badge badge-success">6 CAF</span>
+        <ul style="margin-top: 10px; font-size: 9pt;">
+            <li>CA AIT MELLOUL</li>
+            <li>CA MARRAKECH SIDI GHANEM</li>
+            <li>CA NADOR</li>
+            <li>CA SAFI</li>
+            <li>CA BENI MELLAL</li>
+            <li>CA LAAYOUNE</li>
+        </ul>
+    </div>
+</div>
+
+<h3>3.3 Enumérations</h3>
+
+<div class="entity-box">
+    <h4>TypePointVente <span class="new">MIS À JOUR</span></h4>
+    <ul class="attribute-list">
+        <li><code>AGENCE_BANCAIRE</code> - Agence classique</li>
+        <li><code>CENTRE_AFFAIRES_A</code> - CAF catégorie A (grands comptes)</li>
+        <li><code>CENTRE_AFFAIRES_B</code> - CAF catégorie B</li>
+        <li><code>CENTRE_AFFAIRES_C</code> - CAF catégorie C</li>
+        <li><code>CENTRE_EXCELLENCE</code> - CEMM</li>
+        <li><code>CITADINE</code> - Agence citadine</li>
+        <li><code>SUCCURSALE</code> - Succursale</li>
+        <li><code>DESK</code> - Bureau annexe</li>
+    </ul>
+</div>
+
+<!-- 4. UTILISATEURS -->
+<h2 id="utilisateurs">4. Package: Utilisateurs & Habilitations</h2>
+
+<div class="note">
+    <strong>Source:</strong> pj_mail_2.xlsx (2046 fonctions + 50 mappings)<br>
+    <strong>Nouveauté v1.1:</strong> Profil <code>OBSERVATEUR_ET_CIBLE</code> pour les rôles doubles
+</div>
+
+<h3>4.1 ProfilFollowUp <span class="new">MIS À JOUR</span></h3>
+<table>
+    <tr>
+        <th>Profil</th>
+        <th>Description</th>
+        <th>Rôles concernés</th>
+    </tr>
+    <tr>
+        <td><span class="badge badge-primary">ADMINISTRATEUR</span></td>
+        <td>Gestion complète du système</td>
+        <td>Admins fonctionnels</td>
+    </tr>
+    <tr>
+        <td><span class="badge badge-success">OBSERVATEUR</span></td>
+        <td>Peut saisir des observations uniquement</td>
+        <td>Directeur Groupe, Directeur CEMM, Animateur</td>
+    </tr>
+    <tr>
+        <td><span class="badge badge-warning">CIBLE_OBSERVATION</span></td>
+        <td>Peut être observé uniquement</td>
+        <td>CAC, Conseillers, Chargés d'affaires, Cash & Trade</td>
+    </tr>
+    <tr class="highlight-row">
+        <td><span class="badge badge-double">OBSERVATEUR_ET_CIBLE</span></td>
+        <td><strong>Peut observer ET être observé</strong></td>
+        <td><strong>DA, RCP, Directeur CAF, RCE</strong></td>
+    </tr>
+    <tr>
+        <td><span class="badge badge-light">ANIMATEUR</span> <small>(= OBSERVATEUR)</small></td>
+        <td>Supervision régionale <em>(type: OBSERVATEUR)</em></td>
+        <td>Animateurs (~23 codes ASAL) - Ne peuvent pas être observés</td>
+    </tr>
+    <tr>
+        <td><span class="badge badge-light">CONSULTATION</span></td>
+        <td>Lecture seule</td>
+        <td>Management, Reporting</td>
+    </tr>
+</table>
+
+<h3>4.2 Nouvelle entité: MappingFonctionRole</h3>
+<div class="entity-box">
+    <h4>MappingFonctionRole <span class="new">NOUVEAU</span></h4>
+    <p>Table de mapping entre les codes fonctions ASAL et les rôles Follow Up</p>
+    <ul class="attribute-list">
+        <li><span class="key">id</span>: <span class="type">UUID</span></li>
+        <li>codeFonctionASAL: <span class="type">String</span> - Ex: "DIRAG", "CCPRO"</li>
+        <li>libelleFonctionASAL: <span class="type">String</span> - Ex: "Directeur d'agence"</li>
+        <li>roleFollowUp: <span class="type">RoleFollowUp</span> (FK)</li>
+        <li>profilFollowUp: <span class="type">ProfilFollowUp</span> - OBSERVATEUR, CIBLE, ou OBSERVATEUR_ET_CIBLE</li>
+        <li>estDoubleRole: <span class="type">Boolean</span> - True si peut observer ET être observé</li>
+        <li>actif: <span class="type">Boolean</span></li>
+        <li>remarque: <span class="type">String</span> - Ex: "À identifier avec RH"</li>
+    </ul>
+</div>
+
+<!-- 5. OBSERVATIONS -->
+<h2 id="observations">5. Package: Observations (Coeur Métier)</h2>
+
+<h3>5.1 TypeModeleObservation <span class="new">MIS À JOUR</span></h3>
+<div class="grid-3">
+    <div class="card">
+        <h4>Marché Particuliers</h4>
+        <ul style="font-size: 9pt;">
+            <li><code>OBSERVATION_CAC</code></li>
+            <li><code>OBSERVATION_CONSEILLER_PRO</code></li>
+            <li><code>OBSERVATION_CONSEILLER_PREMIUM</code></li>
+            <li><code>OBSERVATION_CONSEILLER_IGP</code></li>
+        </ul>
+    </div>
+    <div class="card">
+        <h4>Marché Entreprises</h4>
+        <ul style="font-size: 9pt;">
+            <li><code>OBSERVATION_GESTIONNAIRE_ENTREPRISE</code></li>
+            <li><code>OBSERVATION_CHARGE_AFFAIRES</code></li>
+            <li><code>OBSERVATION_CASH_TRADE</code></li>
+        </ul>
+    </div>
+    <div class="card">
+        <h4>Encadrement (Double rôle)</h4>
+        <ul style="font-size: 9pt;">
+            <li><code>OBSERVATION_DIRECTEUR_AGENCE</code> <span class="new">NEW</span></li>
+            <li><code>OBSERVATION_RCP</code> <span class="new">NEW</span></li>
+            <li><code>OBSERVATION_DIRECTEUR_CAF</code> <span class="new">NEW</span></li>
+            <li><code>OBSERVATION_RCE</code> <span class="new">NEW</span></li>
+            <li><code>OBSERVATION_ANIMATEUR</code></li>
+        </ul>
+    </div>
+</div>
+
+<!-- 6. MODELES D'OBSERVATION MVP -->
+<h2 id="modeles">6. Modèles d'Observation MVP (8 Formulaires)</h2>
+
+<div class="note note-info">
+    <strong>Source:</strong> pj_mail_4_4.xlsx + pj_mail_4_1.pptx (Slide 11)<br>
+    <strong>Validation:</strong> Amine - Call du 17.03
+</div>
+
+<h3>6.1 Liste des 8 Modèles MVP</h3>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Modèle</th>
+        <th>Marché</th>
+        <th>Cible</th>
+        <th>Observateurs</th>
+        <th>Nb Questions</th>
+    </tr>
+    <tr>
+        <td>1</td>
+        <td><strong>Observation CAE</strong></td>
+        <td>Entreprises / Multi</td>
+        <td>Chargé d'affaires</td>
+        <td>Dir. CAF, RCE, Animateur, Dir. CEMM</td>
+        <td><span class="badge badge-primary">9</span></td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td><strong>Observation GE</strong></td>
+        <td>Entreprises / Multi</td>
+        <td>Gestionnaire Entreprises</td>
+        <td>Dir. CAF, RCE, Animateur, Dir. CEMM</td>
+        <td><span class="badge badge-primary">10</span></td>
+    </tr>
+    <tr>
+        <td>3</td>
+        <td><strong>Observation CTS</strong></td>
+        <td>Entreprises / Multi</td>
+        <td>Cash & Trade Specialist</td>
+        <td>Dir. CAF, RCE, Animateur, Dir. CEMM</td>
+        <td><span class="badge badge-primary">11</span></td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td><strong>Observation CAC</strong></td>
+        <td>Particuliers / Multi</td>
+        <td>Chargé d'Appui Commercial</td>
+        <td>DA, Animateur, Dir. CEMM</td>
+        <td><span class="badge badge-primary">7</span></td>
+    </tr>
+    <tr>
+        <td>5</td>
+        <td><strong>Observation DA</strong></td>
+        <td>Particuliers</td>
+        <td>Directeur d'Agence</td>
+        <td>Directeur de Groupe, Animateur</td>
+        <td><span class="badge badge-primary">8</span></td>
+    </tr>
+    <tr>
+        <td>6</td>
+        <td><strong>Observation CC IGP</strong></td>
+        <td>Particuliers / Multi</td>
+        <td>Conseiller IGP</td>
+        <td>DA, Animateur, Dir. CEMM</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>7</td>
+        <td><strong>Observation CC Premium</strong></td>
+        <td>Particuliers / Multi</td>
+        <td>Conseiller Premium</td>
+        <td>DA, Animateur, Dir. CEMM</td>
+        <td>-</td>
+    </tr>
+    <tr>
+        <td>8</td>
+        <td><strong>Observation CC PRO</strong></td>
+        <td>Particuliers / Multi</td>
+        <td>Conseiller PRO</td>
+        <td>DA, Animateur, Dir. CEMM</td>
+        <td>-</td>
+    </tr>
+</table>
+
+<h3>6.2 Détail: Observation CAE (9 questions)</h3>
+<div class="entity-box">
+    <h4>Formulaire Chargé d'Affaires Entreprises</h4>
+    <table>
+        <tr><th>#</th><th>Question</th><th>Type</th></tr>
+        <tr><td>Q1</td><td>Le CAE construit une cible commerciale équilibrée entre fidélisation et conquête (GRC + FIPWEB)</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q2</td><td>Le CAE planifie ses RDV sur 3 semaines (min 4 RDV planifiés à S+2)</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q3</td><td>Le CAE trace systématiquement toutes ses actions et RDV dans CENT et l'Agenda</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q4</td><td>Le CAE prépare chaque entretien avec lecture 360° du client (bilan, flux, besoins, contexte)</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q5</td><td>Le CAE applique la règle des 3 premières minutes sans écran et mène une découverte active</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q6</td><td>Le CAE conclut chaque entretien en enclenchant des prochaines étapes concrètes</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q7</td><td>Le CAE renseigne un compte rendu structuré dans CENT sous 24h avec engagements et prochaines étapes</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q8</td><td>Le CAE respecte ses engagements clients (relances, documents, rappels sous 48h)</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q9</td><td>Le CAE mène des actions régulières de prospection structurée (2 RDV prospects/semaine)</td><td>Échelle 1-5</td></tr>
+    </table>
+</div>
+
+<h3>6.3 Détail: Observation GE (10 questions)</h3>
+<div class="entity-box">
+    <h4>Formulaire Gestionnaire Entreprises</h4>
+    <table>
+        <tr><th>#</th><th>Question</th><th>Type</th></tr>
+        <tr><td>Q1</td><td>Les renouvellements de lignes sont-ils anticipés au moins 60 jours avant échéance?</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q2</td><td>Le CCE vérifie-t-il systématiquement la conformité des dossiers juridiques?</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q3</td><td>Le CCE trace les RDV et comptes rendus dans Agenda/CENT</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q4</td><td>Le CCE tient-il à jour ses fichiers de pilotage (PNB, échéanciers, GNC, avals Tamwilcom)?</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q5</td><td>Les garanties sont-elles bien constituées avant mise en place?</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q6</td><td>Le CCE accueille le client avec ponctualité et applique la règle des 3 premières minutes</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q7</td><td>Les bilans/états financiers sont-ils actualisés et notés sur ANADEFI?</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q8</td><td>Le CCE argumente et traite les objections de manière constructive</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q9</td><td>Le CCE respecte-t-il les recommandations des comités de suivi des comptes en anomalie?</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q10</td><td>Les reportings périodiques sont-ils transmis dans les délais?</td><td>Échelle 1-5</td></tr>
+    </table>
+</div>
+
+<h3>6.4 Détail: Observation CAC (7 questions)</h3>
+<div class="entity-box">
+    <h4>Formulaire Chargé d'Appui Commercial</h4>
+    <table>
+        <tr><th>#</th><th>Question</th><th>Type</th></tr>
+        <tr><td>Q1</td><td>Le CAC accueille chaque client avec professionnalisme et gère activement l'attente</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q2</td><td>Le CAC transforme le premier contact d'un prospect en opportunité commerciale</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q3</td><td>Le CAC prend en charge immédiatement les demandes et propose un RDV si nécessaire</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q4</td><td>Le CAC promeut systématiquement les services digitaux (BMCE Direct, GAB express...)</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q5</td><td>Le CAC sait rebondir commercialement et vendre la gamme produit de son périmètre</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q6</td><td>Le CAC présente l'offre Damane Cash lors d'opérations de retrait/dépôt</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q7</td><td>Le CAC saisit dans agendas des RDVs en précisant leurs objets</td><td>Échelle 1-5</td></tr>
+    </table>
+</div>
+
+<h3>6.5 Détail: Observation DA (8 questions)</h3>
+<div class="entity-box">
+    <h4>Formulaire Directeur d'Agence</h4>
+    <table>
+        <tr><th>#</th><th>Question</th><th>Type</th></tr>
+        <tr><td>Q1</td><td>Le DA formalise un plan d'actions clair et chiffré à partir du potentiel de l'agence</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q2</td><td>Le DA suit régulièrement les indicateurs d'activité et performance, tire des actions correctives</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q3</td><td>Le DA organise et anime des actions collectives de prospection</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q4</td><td>Le DA valorise les réussites et stimule l'engagement par challenges et feedbacks réguliers</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q5</td><td>Le DA pratique un feedback structuré, factuel et suivi dans le temps</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q6</td><td>Le DA détecte rapidement les signaux faibles de conflits et intervient pour désamorcer</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q7</td><td>Le DA répartit les rôles, suit les agendas et gère absences/imprévus pour continuité de service</td><td>Échelle 1-5</td></tr>
+        <tr><td>Q8</td><td>Le DA supervise la qualité d'accueil, le traitement des réclamations et veille à la satisfaction</td><td>Échelle 1-5</td></tr>
+    </table>
+</div>
+
+<!-- 7. REGLES DE GESTION SAISIE -->
+<h2 id="regles-saisie">7. Règles de Gestion Saisie (RG1-RG32)</h2>
+
+<div class="note note-info">
+    <strong>Source:</strong> pj_mail_4_2.xlsx - Feuille "RGs Saisie"<br>
+    <strong>32 règles</strong> définissant qui peut observer qui et sous quelles conditions
+</div>
+
+<h3>7.1 Marché Particuliers (Agence)</h3>
+<table>
+    <tr><th>RG</th><th>Observateur</th><th>Cible</th><th>Condition</th><th>Périmètre</th><th>Formulaires</th></tr>
+    <tr><td>RG1</td><td>Directeur de Groupe</td><td>Directeur d'Agence</td><td>Agence appartient au groupe</td><td>Agences du groupe</td><td>Obs. DA</td></tr>
+    <tr><td>RG3</td><td>Directeur d'Agence</td><td>CAC</td><td>Même agence</td><td>Même agence</td><td>Obs. CAC</td></tr>
+    <tr><td>RG4</td><td>Directeur d'Agence</td><td>Conseiller PRO</td><td>Même agence</td><td>Même agence</td><td>Obs. CC PRO</td></tr>
+    <tr><td>RG5</td><td>Directeur d'Agence</td><td>Conseiller Premium</td><td>Même agence</td><td>Même agence</td><td>Obs. CC Premium</td></tr>
+    <tr><td>RG6</td><td>Directeur d'Agence</td><td>Conseiller IGP</td><td>Même agence</td><td>Même agence</td><td>Obs. CC IGP</td></tr>
+    <tr><td>RG7</td><td>RCP</td><td>CAC</td><td>Même agence</td><td>Même agence</td><td>Obs. CAC</td></tr>
+    <tr><td>RG8</td><td>RCP</td><td>Conseiller PRO</td><td>Même agence</td><td>Même agence</td><td>Obs. CC PRO</td></tr>
+    <tr><td>RG9</td><td>RCP</td><td>Conseiller Premium</td><td>Même agence</td><td>Même agence</td><td>Obs. CC Premium</td></tr>
+    <tr><td>RG10</td><td>RCP</td><td>Conseiller IGP</td><td>Même agence</td><td>Même agence</td><td>Obs. CC IGP</td></tr>
+</table>
+
+<h3>7.2 Marché Entreprises (CAF)</h3>
+<table>
+    <tr><th>RG</th><th>Observateur</th><th>Cible</th><th>Condition</th><th>Périmètre</th><th>Formulaires</th></tr>
+    <tr><td>RG17</td><td>Directeur CAF</td><td>Gestionnaire Entreprises</td><td>Même CAF</td><td>Même CAF</td><td>Obs. GE</td></tr>
+    <tr><td>RG18</td><td>Directeur CAF</td><td>Chargé d'Affaires</td><td>Même CAF</td><td>Même CAF</td><td>Obs. CAE</td></tr>
+    <tr><td>RG19</td><td>Directeur CAF</td><td>Cash & Trade Specialist</td><td>Même CAF</td><td>Même CAF</td><td>Obs. CTS</td></tr>
+    <tr><td>RG20</td><td>RCE</td><td>Gestionnaire Entreprises</td><td>Même CAF</td><td>Même CAF</td><td>Obs. GE</td></tr>
+    <tr><td>RG21</td><td>RCE</td><td>Chargé d'Affaires</td><td>Même CAF</td><td>Même CAF</td><td>Obs. CAE</td></tr>
+    <tr><td>RG22</td><td>RCE</td><td>Cash & Trade Specialist</td><td>Même CAF</td><td>Même CAF</td><td>Obs. CTS</td></tr>
+</table>
+
+<h3>7.3 Multi-Marchés (CEMM)</h3>
+<table>
+    <tr><th>RG</th><th>Observateur</th><th>Cible</th><th>Condition</th><th>Périmètre</th><th>Formulaires</th></tr>
+    <tr><td>RG26</td><td>Directeur CEMM</td><td>Gestionnaire Entreprises</td><td>Même CEMM</td><td>Même CEMM</td><td>Obs. GE</td></tr>
+    <tr><td>RG27</td><td>Directeur CEMM</td><td>Chargé d'Affaires</td><td>Même CEMM</td><td>Même CEMM</td><td>Obs. CAE</td></tr>
+    <tr><td>RG28</td><td>Directeur CEMM</td><td>Cash & Trade Specialist</td><td>Même CEMM</td><td>Même CEMM</td><td>Obs. CTS</td></tr>
+    <tr><td>RG29</td><td>Directeur CEMM</td><td>CAC</td><td>Même CEMM</td><td>Même CEMM</td><td>Obs. CAC</td></tr>
+    <tr><td>RG30</td><td>Directeur CEMM</td><td>Conseiller PRO</td><td>Même CEMM</td><td>Même CEMM</td><td>Obs. CC PRO</td></tr>
+    <tr><td>RG31</td><td>Directeur CEMM</td><td>Conseiller Premium</td><td>Même CEMM</td><td>Même CEMM</td><td>Obs. CC Premium</td></tr>
+    <tr><td>RG32</td><td>Directeur CEMM</td><td>Conseiller IGP</td><td>Même CEMM</td><td>Même CEMM</td><td>Obs. CC IGP</td></tr>
+</table>
+
+<h3>7.4 Animateur (Transverse)</h3>
+<table>
+    <tr><th>RG</th><th>Observateur</th><th>Cible</th><th>Condition</th><th>Périmètre</th><th>Formulaires</th></tr>
+    <tr><td>RG11</td><td>Animateur</td><td>Directeur d'Agence</td><td>Agence dans région d'affectation</td><td>Sa région</td><td>Obs. DA</td></tr>
+    <tr><td>RG13</td><td>Animateur</td><td>CAC</td><td>Agence/CEMM dans région d'affectation</td><td>Sa région</td><td>Obs. CAC</td></tr>
+    <tr><td>RG14</td><td>Animateur</td><td>Conseiller PRO</td><td>Agence/CEMM dans région d'affectation</td><td>Sa région</td><td>Obs. CC PRO</td></tr>
+    <tr><td>RG15</td><td>Animateur</td><td>Conseiller Premium</td><td>Agence/CEMM dans région d'affectation</td><td>Sa région</td><td>Obs. CC Premium</td></tr>
+    <tr><td>RG16</td><td>Animateur</td><td>Conseiller IGP</td><td>Agence/CEMM dans région d'affectation</td><td>Sa région</td><td>Obs. CC IGP</td></tr>
+    <tr><td>RG23</td><td>Animateur</td><td>Gestionnaire Entreprises</td><td>CAF/CEMM dans affectation</td><td>CAF affecté</td><td>Obs. GE</td></tr>
+    <tr><td>RG24</td><td>Animateur</td><td>Chargé d'Affaires</td><td>CAF/CEMM dans affectation</td><td>CAF affecté</td><td>Obs. CAE</td></tr>
+    <tr><td>RG25</td><td>Animateur</td><td>Cash & Trade Specialist</td><td>CAF/CEMM dans affectation</td><td>CAF affecté</td><td>Obs. CTS</td></tr>
+</table>
+
+<div class="note">
+    <strong>Règle Affectation Animateurs (pj_mail_4_1.pptx - Slide 9):</strong>
+    <ul style="margin-left: 20px; margin-top: 8px;">
+        <li><strong>Animateurs AGENCE</strong> → Rattachés à la <strong>RÉGION</strong></li>
+        <li><strong>Animateurs CAF/CEMM</strong> → Rattachés au <strong>SIÈGE</strong></li>
+        <li>Un animateur peut être affecté à <strong>plusieurs groupes, CAFs ou CEMMs</strong></li>
+    </ul>
+</div>
+
+<!-- 8. MAPPING COMPLET -->
+<h2 id="mapping">8. Mapping Rôles Follow Up ↔ Fonctions ASAL (COMPLET)</h2>
+
+<div class="note note-success">
+    <strong>Source:</strong> pj_mail_2.xlsx - Feuille "Mapping" (50 lignes validées)<br>
+    <strong>Validation:</strong> Hicham ROCHDI - Animation Commerciale Retail
+</div>
+
+<h3>8.1 Observateurs uniquement</h3>
+<table>
+    <tr>
+        <th>Rôle Follow Up</th>
+        <th>Code(s) ASAL</th>
+        <th>Fonction ASAL</th>
+        <th>Profil</th>
+    </tr>
+    <tr>
+        <td><strong>Directeur de groupe</strong></td>
+        <td><code>DIRGP</code></td>
+        <td>Directeur de Groupe</td>
+        <td><span class="badge badge-success">Observateur</span></td>
+    </tr>
+    <tr>
+        <td rowspan="5"><strong>Directeur CEMM</strong></td>
+        <td><code>DETRSPSUC</code></td>
+        <td>Responsable Succursale</td>
+        <td><span class="badge badge-success">Observateur</span></td>
+    </tr>
+    <tr>
+        <td><code>DIRCABO</code></td>
+        <td>Directeur de la succursale Tanger Offshore</td>
+        <td><span class="badge badge-success">Observateur</span></td>
+    </tr>
+    <tr>
+        <td><code>DIRSUC</code></td>
+        <td>Directeur Succursale Tanger Off Shore</td>
+        <td><span class="badge badge-success">Observateur</span></td>
+    </tr>
+    <tr>
+        <td><code>DIRSUMLM</code></td>
+        <td>Directeur de Succursale Multi-marchés</td>
+        <td><span class="badge badge-success">Observateur</span></td>
+    </tr>
+    <tr>
+        <td><code>RSPSUC</code></td>
+        <td>Responsable Succursale</td>
+        <td><span class="badge badge-success">Observateur</span></td>
+    </tr>
+    <tr>
+        <td rowspan="4"><strong>Animateur</strong><br>(~23 codes)</td>
+        <td><code>ANIMCOM</code></td>
+        <td>Animateur Commercial</td>
+        <td><span class="badge badge-success">Observateur</span></td>
+    </tr>
+    <tr>
+        <td><code>ANFORM</code></td>
+        <td>Animateur Formateur</td>
+        <td><span class="badge badge-success">Observateur</span></td>
+    </tr>
+    <tr>
+        <td><code>DAM0010</code>, <code>DAM0011</code>, <code>ANICOM</code>, <code>ANIMCOREG</code>...</td>
+        <td>Autres animateurs</td>
+        <td><span class="badge badge-success">Observateur</span></td>
+    </tr>
+    <tr class="highlight-row">
+        <td><code>DAMTEST</code>, <code>DETACZA</code>, <code>DETACZF</code> <span class="new">NEW v2.0</span></td>
+        <td>Animateur Junior, Zone Anglophone, Zone Francophone</td>
+        <td><span class="badge badge-success">Observateur</span></td>
+    </tr>
+</table>
+
+<h3>8.2 Double rôle (Observateur ET Cible) <span class="new">NOUVEAU</span></h3>
+<table>
+    <tr>
+        <th>Rôle Follow Up</th>
+        <th>Code ASAL</th>
+        <th>Fonction ASAL</th>
+        <th>Profil</th>
+    </tr>
+    <tr class="highlight-row">
+        <td><strong>Directeur d'agence (DA)</strong></td>
+        <td><code>DIRAG</code></td>
+        <td>Directeur d'agence</td>
+        <td><span class="badge badge-double">Observateur/Cible</span></td>
+    </tr>
+    <tr class="highlight-row">
+        <td><strong>RCP</strong></td>
+        <td><code>RCLPA</code></td>
+        <td>Responsable Clientèle Particuliers</td>
+        <td><span class="badge badge-double">Observateur/Cible</span></td>
+    </tr>
+    <tr class="highlight-row">
+        <td><strong>Directeur CAF</strong></td>
+        <td><code>CCETS</code></td>
+        <td>Chargé d'Affaires Entreprises</td>
+        <td><span class="badge badge-double">Observateur/Cible</span></td>
+    </tr>
+    <tr class="highlight-row">
+        <td rowspan="2"><strong>RCE</strong></td>
+        <td><code>RCLENGE</code></td>
+        <td>Responsable Clientèle Entreprise GE</td>
+        <td><span class="badge badge-double">Observateur/Cible</span></td>
+    </tr>
+    <tr class="highlight-row">
+        <td><code>RCLEN</code></td>
+        <td>Responsable Clientèle Entreprises</td>
+        <td><span class="badge badge-double">Observateur/Cible</span></td>
+    </tr>
+</table>
+
+<h3>8.3 Cibles uniquement</h3>
+<table>
+    <tr>
+        <th>Rôle Follow Up</th>
+        <th>Code(s) ASAL</th>
+        <th>Fonction ASAL</th>
+        <th>Profil</th>
+    </tr>
+    <tr>
+        <td rowspan="3"><strong>Chargé d'appui commercial (CAC)</strong></td>
+        <td><code>GUPAI</code></td>
+        <td>Chargé d'Appui Commercial</td>
+        <td><span class="badge badge-warning">Cible</span></td>
+    </tr>
+    <tr>
+        <td><code>GUPAIF</code></td>
+        <td>Chargé d'Appui Commercial en Formation</td>
+        <td><span class="badge badge-warning">Cible</span></td>
+    </tr>
+    <tr>
+        <td><code>GUPAIM</code></td>
+        <td>Chargé d'Appui Commercial Mutualisé</td>
+        <td><span class="badge badge-warning">Cible</span></td>
+    </tr>
+    <tr>
+        <td><strong>Conseiller IGP</strong></td>
+        <td><code>CCIGPF</code></td>
+        <td>Conseillers de Clientèle Part. Intermédiaires</td>
+        <td><span class="badge badge-warning">Cible</span></td>
+    </tr>
+    <tr>
+        <td><strong>Conseiller PRO</strong></td>
+        <td><code>CCPRO</code></td>
+        <td>Conseiller de Clientèle Professionnelle et TPE</td>
+        <td><span class="badge badge-warning">Cible</span></td>
+    </tr>
+    <tr class="highlight-row">
+        <td><strong>Conseiller Premium</strong></td>
+        <td><code>CC PRIVE</code> <span class="new">IDENTIFIÉ</span></td>
+        <td>Conseiller de clientèle Privé</td>
+        <td><span class="badge badge-warning">Cible</span></td>
+    </tr>
+    <tr>
+        <td><strong>Cash & Trade Specialist</strong></td>
+        <td><code>CATASP</code></td>
+        <td>Cash & Trade Specialist</td>
+        <td><span class="badge badge-warning">Cible</span></td>
+    </tr>
+    <tr>
+        <td rowspan="6"><strong>Chargé d'affaires</strong></td>
+        <td><code>CACHMN</code></td>
+        <td>Chargé d'Affaires Cash Management</td>
+        <td><span class="badge badge-warning">Cible</span></td>
+    </tr>
+    <tr>
+        <td><code>CHAFF</code></td>
+        <td>Chargé d'Affaires</td>
+        <td><span class="badge badge-warning">Cible</span></td>
+    </tr>
+    <tr>
+        <td><code>CHAFFAIRCM</code></td>
+        <td>Chargé d'affaires CM</td>
+        <td><span class="badge badge-warning">Cible</span></td>
+    </tr>
+    <tr>
+        <td><code>CHAFFCORPJ</code></td>
+        <td>Chargé d'Affaires Corporate junior</td>
+        <td><span class="badge badge-warning">Cible</span></td>
+    </tr>
+    <tr>
+        <td><code>CHAFFCORPO</code></td>
+        <td>Chargé d'Affaires Corporate</td>
+        <td><span class="badge badge-warning">Cible</span></td>
+    </tr>
+    <tr>
+        <td><code>CCETS</code></td>
+        <td>Chargé d'Affaires Entreprises</td>
+        <td><span class="badge badge-warning">Cible</span></td>
+    </tr>
+    <tr class="highlight-row">
+        <td><strong>Gestionnaire entreprises</strong></td>
+        <td><code>CCOMPTE</code> <span class="new">IDENTIFIÉ v2.0</span></td>
+        <td>Chargé de Comptes Entreprises</td>
+        <td><span class="badge badge-warning">Cible</span></td>
+    </tr>
+</table>
+
+<!-- 9. REGLES -->
+<h2 id="regles">9. Règles de Gestion Métier</h2>
+
+<h3>9.1 Règles validées</h3>
+<table>
+    <tr>
+        <th>Code</th>
+        <th>Règle</th>
+        <th>Valeur</th>
+        <th>Source</th>
+    </tr>
+    <tr>
+        <td><strong>RG-001</strong></td>
+        <td>Délai d'annulation d'une observation</td>
+        <td>24 heures après soumission</td>
+        <td>Mail 2</td>
+    </tr>
+    <tr>
+        <td><strong>RG-002</strong></td>
+        <td>Profondeur de l'historique consultable</td>
+        <td>12 mois (1 an)</td>
+        <td>Mail 2</td>
+    </tr>
+    <tr>
+        <td><strong>RG-003</strong></td>
+        <td>Archivage sur changement de périmètre</td>
+        <td>Historique ancien périmètre non visible</td>
+        <td>Mail 2</td>
+    </tr>
+    <tr>
+        <td><strong>RG-004</strong></td>
+        <td>Mode d'accès</td>
+        <td>Web responsive + PWA via SSO intranet</td>
+        <td>Mail 2</td>
+    </tr>
+    <tr>
+        <td><strong>RG-005</strong></td>
+        <td>Gestion des affectations animateurs</td>
+        <td>Par l'administrateur fonctionnel</td>
+        <td>Mail 2</td>
+    </tr>
+    <tr class="highlight-row">
+        <td><strong>RG-006</strong></td>
+        <td>Rôles doubles</td>
+        <td>DA, RCP, Directeur CAF, RCE peuvent observer ET être observés</td>
+        <td>pj_mail_2.xlsx</td>
+    </tr>
+</table>
+
+<h3>9.2 Volumétrie</h3>
+<div class="grid-4">
+    <div class="card" style="text-align: center;">
+        <h4>Utilisateurs</h4>
+        <p style="font-size: 28pt; color: #003D7C; font-weight: bold;">~800</p>
+    </div>
+    <div class="card" style="text-align: center;">
+        <h4>Observations/an</h4>
+        <p style="font-size: 28pt; color: #003D7C; font-weight: bold;">~10K</p>
+    </div>
+    <div class="card" style="text-align: center;">
+        <h4>Unités Org.</h4>
+        <p style="font-size: 28pt; color: #003D7C; font-weight: bold;">584</p>
+    </div>
+    <div class="card" style="text-align: center;">
+        <h4>Fonctions ASAL</h4>
+        <p style="font-size: 28pt; color: #003D7C; font-weight: bold;">2046</p>
+    </div>
+</div>
+
+<!-- 10. STATUTS & ACTIONS -->
+<h2 id="statuts">10. Statuts & Actions MVP</h2>
+
+<div class="note note-info">
+    <strong>Source:</strong> pj_mail_4_1.pptx - Slide 14<br>
+    <strong>Validation:</strong> Amine - Call du 17.03
+</div>
+
+<h3>10.1 Statuts d'une Observation</h3>
+<table>
+    <tr><th>Statut</th><th>Phase</th><th>Description</th></tr>
+    <tr>
+        <td><span class="badge badge-success">SOUMISE</span></td>
+        <td>Soumission</td>
+        <td>Observation dûment renseignée et soumise par l'observateur</td>
+    </tr>
+    <tr>
+        <td><span class="badge badge-danger">ANNULEE</span></td>
+        <td>Annulation</td>
+        <td>Observation annulée dans un délai de <strong>24 heures</strong> à partir de la date de saisie</td>
+    </tr>
+</table>
+
+<h3>10.2 Actions Disponibles</h3>
+<table>
+    <tr><th>Action</th><th>Phase</th><th>Description</th></tr>
+    <tr>
+        <td><span class="badge badge-primary">CONSULTER</span></td>
+        <td>Consultation</td>
+        <td>Consulter les résultats d'une observation soumise</td>
+    </tr>
+    <tr>
+        <td><span class="badge badge-warning">ANNULER</span></td>
+        <td>Annulation</td>
+        <td>Annuler une observation soumise (délai: 24h après saisie)</td>
+    </tr>
+    <tr>
+        <td><span class="badge badge-light">TELECHARGER</span></td>
+        <td>Export</td>
+        <td>Télécharger les résultats d'une observation (PDF/Excel)</td>
+    </tr>
+</table>
+
+<h3>10.3 Règle de Consultation Historique</h3>
+<div class="note note-success">
+    <strong>Règle validée:</strong> Les utilisateurs peuvent uniquement consulter l'historique des observations qu'ils ont <strong>eux-mêmes saisies</strong>.
+</div>
+
+<!-- FOOTER -->
+<div style="margin-top: 40px; padding-top: 20px; border-top: 2px solid #003D7C; text-align: center; color: #666; font-size: 10pt;">
+    <p><strong>Document de Modélisation & Conception - Projet Follow Up BOA</strong></p>
+    <p>Version 2.0 | Avril 2026 | Eurafric Information - Bank of Africa</p>
+    <p>Fichier PlantUML associé: <code>modelisation-follow-up.puml</code></p>
+    <p>Sources: Mail 1-4, pj_mail_1-5.xlsx, pj_mail_4_1.pptx</p>
+    <p>Confidentiel - Usage interne uniquement</p>
+</div>
+
+</div>
+</body>
+</html>
